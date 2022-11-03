@@ -37,4 +37,4 @@ Data:
 Prueba de lectura
 ```
 
-Una versión mas abstracta de esta práctica es la práctica [Callback to Promise](/practicas/callback-2-promise.html)
+Una versión mas abstracta de esta práctica es la práctica [Callback to Promise](/practicas/callback-2-promise.html). ¡Hágala a continuación!
