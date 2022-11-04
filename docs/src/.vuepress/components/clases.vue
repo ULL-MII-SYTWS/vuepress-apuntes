@@ -1,16 +1,18 @@
 <template>
     <div class="clases">
-    <h2>Llevamos {{ numberOfClasses}} clases y {{ numberOfWeeks }} semanas</h2>
-    <ol reversed> 
-        <li v-for="(page, index) in classFiles" :key="page.key"> <a :href="page.path">{{ page.title }}</a>  
-        <b v-if="(index < classFiles.length - 2) && (week(page) !== week(classFiles[index+1]))">{{ week(page) }}ª  semana</b>
-        <b v-else>{{ week(page) }}ª  semana</b>
+      <h2>Llevamos {{ numberOfClasses}} clases y {{ numberOfWeeks }} semanas</h2>
+ 
+      <div v-for="(page, index) in classFiles" :key="page.key">  
+        <h3 v-if="(index >= 1) && (week(page) !== week(classFiles[index-1]))">{{ week(page) }}ª  semana {{ getWeekType(page) }}</h3>
+        <h3 v-else-if="(index == 0)">{{ week(page) }}ª  semana {{  getWeekType(page)}}</h3>
+        <ul>
+            <li><a :href="page.path">{{ page.title }}</a>. Clase nº {{ numberOfClasses - index }}</li>
             <ul>
                 <li>{{ page.frontmatter.summary }}</li>
                 <li v-if="page.frontmatter.video"><a :href="getUrl(page.frontmatter.video)" target="_blank">Vídeo</a></li>
             </ul>
-        </li>
-    </ol>
+        </ul>
+      </div>
     </div>
 </template>
 
@@ -30,6 +32,7 @@
       return Math.round(Math.abs(endDate - startDate) / msInWeek);
     }
     
+    const weekType = ['C', 'A', 'B'];
     const firstLessonDate = new Date("2022-10-03");
     const firstWeek = weekOfTheYear(firstLessonDate);
 
@@ -55,14 +58,17 @@
             week(page) {
                 //console.log(firstWeek);
                 let [year, month, day] = this.getDate(page).split(/[-]/);
-                console.log(year, month, day);
+                //console.log(year, month, day);
                 
                 let date = new Date(`${month}/${day}/${year}`);
-                console.log(date);
+                //console.log(date);
                 const weekDiff = getWeeksDiff(firstLessonDate, date);
-                console.log(weekDiff);
+                //console.log(weekDiff);
                 return weekDiff+1;
                 
+            },
+            getWeekType(page) {
+                return weekType[this.week(page) % 3];
             }
         },
         computed: {
