@@ -2,7 +2,7 @@
 title: Vitepress
 ---
 
-# {{ frontmatter.title }}
+# {{ $frontmatter.title }}
 
 ## References
 
