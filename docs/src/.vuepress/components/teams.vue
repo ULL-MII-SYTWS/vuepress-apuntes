@@ -6,7 +6,7 @@
         <ul>
           <li><a :href="team.repositories" target="_blank">Repositories</a></li>
           <li><a :href="team.userUrl" target="_blank">{{ team.userName }}</a></li>
-          <li><a :href="team.notifications" target="_blank"> Notifications</a></li>  for you
+          <li><a :href="team.notifications" target="_blank"> Notifications</a></li>
         </ul>
       </li>
     </ul>
