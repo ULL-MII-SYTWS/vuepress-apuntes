@@ -6,8 +6,6 @@
 }
 ---
 
-# {{ $frontmatter.title }}
-
 <clases></clases>
 
 
