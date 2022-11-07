@@ -44,7 +44,7 @@ Consider this file `index.html`:
     setTimeout(function(){
       // The onload event occurs when an object has been loaded
       // We only append it to the container when the load has finished
-      // If 1000 the handler is inserted in the event queue too late
+      // The handler is inserted in the event queueAfter after 'waitFor' ms 
       // If an EventListener is added to an EventTarget while it is 
       // processing an event, that event does not trigger the listener.
       image.addEventListener("load", function() {
