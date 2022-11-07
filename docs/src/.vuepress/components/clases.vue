@@ -32,7 +32,7 @@
       return Math.round(Math.abs(endDate - startDate) / msInWeek);
     }
     
-    const weekType = ['C', 'A', 'B'];
+    const weekType = ['C', 'A', 'B (Presencial)'];
     const firstLessonDate = new Date("2022-10-03");
     const firstWeek = weekOfTheYear(firstLessonDate);
 
