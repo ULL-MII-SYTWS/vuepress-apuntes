@@ -59,6 +59,10 @@ Consider this file `index.html`:
 </html>
 ```
 
+Typically [a browser will not wait for one image to be downloaded before requesting the next resource or image](https://stackoverflow.com/questions/53160578/how-do-i-make-a-webpage-think-its-images-are-done-loading). 
+It will request all images simultaneously, as soon as it gets the `src`s of those images.
+
+
 The `EventTarget.addEventListener()` method of the [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) sets up a function that will be called whenever the specified event is delivered to the target.
 
 ## The Experiment
