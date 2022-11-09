@@ -8,6 +8,9 @@
     "email": "crguezl@ull.edu.es"
   },
   "repository": "git@github.com:ULL-MII-SYTWS/vuepress-apuntes.git",
+  "engines" : { 
+    "node" : ">=16.0.0 <16.9.0"
+  },
   "scripts": {
     "dev": "vuepress dev src -t src/.vuepress/dev -c src/.vuepress/cache",
     "raw:dev": "http-server $HOME/campus-virtual/2223/sytws2223/vuepress-sytws-2223-apuntes/docs/src/.vuepress/dist -c-1",
