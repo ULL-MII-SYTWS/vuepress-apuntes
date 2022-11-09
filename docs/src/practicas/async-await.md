@@ -9,7 +9,7 @@ layout: Practica
 order: 13
 sidebar: auto
 prev: callback-2-promise.md
-next: 
+next: generators.md
 rubrica:
   - "códigos correctos"
   - "Informe bien elaborado"
