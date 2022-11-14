@@ -28,7 +28,7 @@ Promise.all([
 ]).then(render); // render method needs results of all fetches
 ```
 
-`Promise.allSettled` just waits for all promises to settle, regardless of the result. The resulting array has:
+Instead `Promise.allSettled` just waits for all promises to settle, regardless of the result. The resulting array has:
 
 
 * `{status:"fulfilled", value:result}` for successful responses,
@@ -39,23 +39,23 @@ For example, we’d like to fetch the information about multiple users. Even if 
 Let’s use `Promise.allSettled`:
 
 ```js
-let urls = [
-  'https://api.github.com/users/iliakan',
-  'https://api.github.com/users/remy',
-  'https://no-such-url'
-];
+        let urls = [
+            'https://api.github.com/users/crguezl',
+            'https://api.github.com/users/alu0101102726',
+            'https://no-such-url'
+        ];
 
-Promise.allSettled(urls.map(url => fetch(url)))
-  .then(results => { // (*)
-    results.forEach((result, num) => {
-      if (result.status == "fulfilled") {
-        alert(`${urls[num]}: ${result.value.status}`);
-      }
-      if (result.status == "rejected") {
-        alert(`${urls[num]}: ${result.reason}`);
-      }
-    });
-  });
+        Promise.allSettled(urls.map(url => fetch(url)))
+            .then(results => { // *
+                results.forEach((result, num) => {
+                    if (result.status == "fulfilled") {
+                        console.log(`Got ${urls[num]}: ${result.value.status}`);
+                    }
+                    if (result.status == "rejected") {
+                        console.log(`Uhm! "${urls[num]}" not reachable:\n${result.reason}`);
+                    }
+                });
+            });
 ```
 
 The results in the line (*) above will be:
@@ -113,3 +113,5 @@ So for each promise we get its status and value/error.
 
 </html>
 ```
+
+It is allowed to use `Promise.all` in your solution
