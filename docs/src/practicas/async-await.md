@@ -77,7 +77,7 @@ Explain the changes in the stack, the running environment, the macrotask queue a
 
 * Solution at: `tema2-async/event-loop/exercises/promises/async-await/stackoverflow-promise-resolve-and-queues.js`
 
-## Rewrite a `fetch` using async/await instead of promises
+## Exercise: Rewrite a `fetch` using async/await instead of promises
 
 Rewrite this example code from the [Javascript.info book](https://javascript.info/promise-chaining#bigger-example-fetch) using `async/await` instead of `.then/catch`:
 
