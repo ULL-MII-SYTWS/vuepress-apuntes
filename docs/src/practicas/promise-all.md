@@ -96,13 +96,15 @@ This can simplify the way you handle failure of your promise.
 ## Hints
 
 The function passed to the `Promise` constructor will have to call then on each of the promises in the given array. 
-When one of them succeeds, two things need to happen. 
-The resulting value needs to be stored in the correct position of a result array, and 
-we must check whether this was the last pending promise and finish our own promise if it was.
+When one of them succeeds, two things need to happen.
+
+1. The resulting value needs to be stored in the correct position of a result array, and 
+2. we must check whether this was the last pending promise and finish our own promise if it was.
 
 The latter can be done with a counter that is initialized to the length of the input array and from which we subtract 1 every time a promise succeeds. 
 When it reaches 0, we are done. 
+
 Make sure you take into account the situation where the input array is empty (and thus no promise will ever resolve).
 
-Handling failure requires some thought but turns out to be extremely simple. Just pass the reject function of the wrapping promise to each of the promises in the array as a catch handler or as a second argument to then so that a failure in one of them triggers the rejection of the whole wrapper promise.
+Handling failure requires some thought but turns out to be extremely simple. Just pass the reject function of the wrapping promise to each of the promises in the array as a catch handler or as a second argument to them so that a failure in one of them triggers the rejection of the whole wrapper promise.
 
