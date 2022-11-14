@@ -98,7 +98,7 @@ loadJson('no-such-user.json').catch(console.log); // Error: 404
 
 * Solution at `campus-virtual/2021/sytws2021/apuntes/tema2-async/event-loop/exercises/promises/async-await/solution-2-rewrite-loadjson-using-async-await.html`
 
-## Simplify a more complex example with async/await
+## Exercise: Rewrite "rethrow" with async/await
 
 Below you can find another exercise from the book javascript.info [Rewrite "rethrow" with async/await](https://javascript.info/task/rewrite-async-2)). 
 
@@ -148,7 +148,35 @@ demoGithubUser();
 
 * See Section [Custom errors, extending Error](https://javascript.info/custom-errors). It is worth to read the [full chapter Error Handling](https://javascript.info/error-handling)
 * See [The Error Class at MDN: The constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#constructor)
-* The GitHub API doc for the end-point to get the public info for an user is here [GitHub API REST Docs: Get a User](https://docs.github.com/en/free-pro-team@latest/rest/reference/users#get-a-user). Here are several examples of how to get the info:
+
+## Exercise: Call async from non-async
+
+Here is another exercise from the [JavaScript.Info book](https://javascript.info/async-await#call-async-from-non-async). As the book says, it is a task that solves a quite common for developers new to async/await.
+
+We have a "regular" function called `f`. How can you call the `async` function `wait()` and use its result inside of `f`?
+
+Give at least two solutions.
+
+```js
+async function wait() {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  return 10;
+}
+
+function f() {
+  // ...what should you write here?
+  // we need to call async wait() and wait to get 10
+  // remember, we can't use "await"
+}
+```
+
+* Solution at `tema2-async/event-loop/exercises/promises/async-await/solution-call-async-from-nonasync.html`
+
+
+## The GitHub REST API
+
+The GitHub API doc for the end-point to get the public info for an user is here [GitHub API REST Docs: Get a User](https://docs.github.com/en/free-pro-team@latest/rest/reference/users#get-a-user). Here are several examples of how to get the info:
 
   ```
   gh api /users/crguezl | jq .name
@@ -192,29 +220,6 @@ demoGithubUser();
   ```
 * Solution at `/campus-virtual/2021/sytws2021/apuntes/tema2-async/event-loop/exercises/promises/async-await/solution-more-complex-example.html`
 
-## Call async from non-async
-
-Here is another exercise from the [JavaScript.Info book](https://javascript.info/async-await#call-async-from-non-async). As the book says, it is a task that solves a quite common for developers new to async/await.
-
-We have a "regular" function called `f`. How can you call the `async` function `wait()` and use its result inside of `f`?
-
-Give at least two solutions.
-
-```js
-async function wait() {
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
-  return 10;
-}
-
-function f() {
-  // ...what should you write here?
-  // we need to call async wait() and wait to get 10
-  // remember, we can't use "await"
-}
-```
-
-* Solution at `tema2-async/event-loop/exercises/promises/async-await/solution-call-async-from-nonasync.html`
 
 ## See
 
