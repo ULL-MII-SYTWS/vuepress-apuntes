@@ -1,5 +1,5 @@
 ---
-title: "Generators"
+title: "Generators and Iterables"
 published: true
 date: "2022/11/09 01"
 campus: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=789"

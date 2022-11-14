@@ -106,5 +106,5 @@ When it reaches 0, we are done.
 
 Make sure you take into account the situation where the input array is empty (and thus no promise will ever resolve).
 
-Handling failure requires some thought but turns out to be extremely simple. Just pass the reject function of the wrapping promise to each of the promises in the array as a catch handler or as a second argument to them so that a failure in one of them triggers the rejection of the whole wrapper promise.
+Handling failure requires some thought but turns out to be extremely simple: Just pass the **reject** function of the wrapping promise to each of the promises in the array as a catch handler or as a second argument to them so that a failure in one of them triggers the rejection of the whole wrapper promise.
 
