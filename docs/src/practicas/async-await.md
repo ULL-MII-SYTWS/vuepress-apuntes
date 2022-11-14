@@ -79,7 +79,7 @@ Explain the changes in the stack, the running environment, the macrotask queue a
 
 ## Exercise 3: Rewrite a `fetch` using async/await instead of promises
 
-Rewrite this example code from the Javascript.info book [Bigger example: fetch](https://javascript.info/promise-chaining#bigger-example-fetch) using `async/await` instead of `.then/catch`:
+Rewrite this example code from the Javascript.info book, section [Bigger example: fetch](https://javascript.info/promise-chaining#bigger-example-fetch) using `async/await` instead of `.then/catch`:
 
 ```js
 function loadJson(url) {
