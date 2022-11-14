@@ -27,19 +27,19 @@ Answer this question before running the program.
 What is the output of this program?
 
 ```js
-setTimeout(function () {
+setTimeout(function () { //C1
     console.log('macrotask 1');
 }, 0);
 
-Promise.resolve().then(function () {
+Promise.resolve().then(function () { // P1
     console.log('microtask 1');
-    setTimeout(function () {
+    setTimeout(function () {  // C2
         console.log('macrotask 2');
-        Promise.resolve().then(
+        Promise.resolve().then( // P3
             () => console.log('Nested microtask 3')
         )
     }, 0);
-}).then(function () {
+}).then(function () { // P2
     console.log('microtask 2');
 });
 ```
@@ -62,11 +62,11 @@ What is the output of this program?
 ```js
 // See https://stackoverflow.com/questions/51793906/settimeout-promise-resolve-macrotask-vs-microtask
 for (let i = 0; i < 2; i++) {
-	setTimeout(() => {
+	setTimeout(() => { // M1
 		console.log("Timeout ", i);
-		Promise.resolve().then(() => {
+		Promise.resolve().then(() => { // P1
 			console.log("Promise 1 ", i);
-		}).then(() => {
+		}).then(() => { // P2
 			console.log("Promise 2 ", i);
 		});
 	})
