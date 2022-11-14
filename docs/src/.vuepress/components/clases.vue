@@ -6,7 +6,10 @@
         <h3 v-if="(index >= 1) && (week(page) !== week(classFiles[index-1]))">{{ week(page) }}ª  semana {{ getWeekType(page) }}</h3>
         <h3 v-else-if="(index == 0)">{{ week(page) }}ª  semana {{  getWeekType(page)}}</h3>
         <ul>
-            <li><a :href="page.path">{{ page.title }}</a>. Clase nº {{ numberOfClasses - index }}</li>
+            <li><a :href="page.path">{{ page.title }}</a>. Clase nº {{ numberOfClasses - index }}
+            <span v-if="presentialWednesday(page)"> (Presential Wednesday)</span>
+            <span v-else-if="(getDayOfTheWeek(page) === 3)"> (Async Wednesday)</span>
+            </li>
             <ul>
                 <li>{{ page.frontmatter.summary }}</li>
                 <li v-if="page.frontmatter.video"><a :href="getUrl(page.frontmatter.video)" target="_blank">Vídeo</a></li>
@@ -32,6 +35,12 @@
       return Math.round(Math.abs(endDate - startDate) / msInWeek);
     }
     
+    function dayOfTheWeek(date) {
+        var d = new Date(+date);
+        d.setHours(0, 0, 0);
+        return d.getDay();
+    }
+
     const weekType = ['C', 'A', 'B (Presencial)'];
     const firstLessonDate = new Date("2022-10-03");
     const firstWeek = weekOfTheYear(firstLessonDate);
@@ -69,6 +78,18 @@
             },
             getWeekType(page) {
                 return weekType[this.week(page) % 3];
+            },
+            getDayOfTheWeek(page) {
+                //console.log(page);
+                let [year, month, day] = this.getDate(page).split(/[-]/); 
+                let date = new Date(`${month}/${day}/${year}`);
+                return date.getDay();
+            },
+            isPresential(page) {
+                return this.getWeekType(page) === weekType[2];
+            },
+            presentialWednesday(page) {
+                return (this.getDayOfTheWeek(page) === 3) && (this.isPresential(page))
             }
         },
         computed: {
