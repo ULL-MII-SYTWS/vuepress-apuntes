@@ -12,11 +12,11 @@
     "node" : ">=16.0.0 <16.9.0"
   },
   "scripts": {
-    "dev": "nvm use; vuepress dev src -t src/.vuepress/dev -c src/.vuepress/cache",
+    "dev": "nvm use && vuepress dev src -t src/.vuepress/dev -c src/.vuepress/cache",
     "raw:dev": "http-server $HOME/campus-virtual/2223/sytws2223/vuepress-sytws-2223-apuntes/docs/src/.vuepress/dist -c-1",
     "raw:build": "nodemon -w . -e 'vue,md,html,js,json,png,jpeg,jpg' --exec 'node_modules/.bin/vuepress build src'",
     "deb": "vuepress --debug dev src",
-    "build": "nvm use; vuepress build src",
+    "build": "nvm use && vuepress build src",
     "deploy": "touch src/.vuepress/dist/.nojekyll; ./deploy.sh",
     "push": "git ci -am 2223; git push origin; git push origin main",
     "push2223": "git ci -am 2223; git push origin; git push sytws2223",
