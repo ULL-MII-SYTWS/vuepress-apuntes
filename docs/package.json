@@ -13,7 +13,7 @@
   },
   "config": {
     "nvm": "source $HOME/.nvm/nvm.sh; nvm use && node --version ",
-    "size": 7
+    "version": "16"
   },
   "scripts": {
     "dev": "source $HOME/.nvm/nvm.sh; nvm use && node --version && vuepress dev src -t src/.vuepress/dev -c src/.vuepress/cache",
