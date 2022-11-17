@@ -242,4 +242,10 @@ release-it --dry-run
 * [bower](https://bower.io/)
 * [browserify](https://browserify.org/)
 
+## Workspaces
+
+* [Working with workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) npm docs
+* [Example](https://github.com/ULL-ESIT-DMSI/npm-workspaces-learning)
+
 ## [Documentation](documentation)
+
