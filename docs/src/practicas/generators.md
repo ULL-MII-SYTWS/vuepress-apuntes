@@ -22,6 +22,13 @@ rubrica:
 
 ### Iterables
 
+**Iterable objects** are a generalization of arrays. That’s a concept that allows us to make any object useable in a `for..of` loop.
+
+-  Iterables must implement the method named `Symbol.iterator`
+-  The result of obj[Symbol.iterator]() is called an iterator
+-  An iterator must have the method named `next()` that returns an object `{done: Boolean, value: any}`
+-  The `Symbol.iterator` method is called automatically by `for..of`
+
 See the example [hello-symbol-iterator.js](https://github.com/ULL-MII-SYTWS-2021/learning-generators/blob/main/00-symbol-iterator/hello-symbol-iterator.js) in the repo 
 [ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators). (What will be the output?)
 
@@ -30,6 +37,10 @@ Read the chapter [Iterables](https://javascript.info/iterable).
 
 ### Generators
 
+**Generators**  are created by generator functions `function* f(…) {…}`.
+
+* Inside generators (only) there exists a `yield` operator.
+* The outer code and the generator may exchange results via `next/yield` calls.
 
 See the examples
 * [01-generator-functions/hello-generators.js](https://github.com/ULL-MII-SYTWS-2021/learning-generators/blob/main/01-generator-functions/hello-generators.js).
