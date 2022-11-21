@@ -53,8 +53,8 @@ Read the chapter [Generators](https://javascript.info/generators) of JavaScript.
 
 ### Delivery
 
-Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators). 
-(See folder campus-virtual/2021/learning/asyncjs-learning/learning-generators). 
+Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators)
+<!-- (See folder campus-virtual/2021/learning/asyncjs-learning/learning-generators).--> 
 
 ## Exercise *Groups* in the book EloquentJS Chapter 6
 
