@@ -180,46 +180,55 @@ function f() {
 
 The GitHub API doc for the end-point to get the public info for an user is here [GitHub API REST Docs: Get a User](https://docs.github.com/en/free-pro-team@latest/rest/reference/users#get-a-user). Here are several examples of how to get the info:
 
-  ```
-  gh api /users/crguezl | jq .name
-  ```
+```
+gh api /users/crguezl --jq '.name'
+```
 
-  or with `curl`
+or with `curl`
 
-   ```
-   curl \
-  -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/users/crguezl
-  ```
+```
+✗ curl \
+-H "Accept: application/vnd.github.v3+json" \
+https://api.github.com/users/crguezl | jq '.name'
+```
 
-  or using the `@octokit/core`module:
+or using the `@octokit/core`module:
 
-  ```js
-  const { Octokit } = require("@octokit/core");
+```js
+cat the-github-api/octokit--example.js 
+const { Octokit } = require('@octokit/core')
 
-  const octokit = new Octokit({ 
-    // auth: `personal-access-token123` 
-  });
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN
+})
 
-  async function getUsername(name) {
-    return await octokit.request('GET /users/{username}', {
-      username: name
-    })
-  }
+async function getUsername (name) {
+  return await octokit.request('GET /users/{username}', {
+    username: name
+  })
+}
 
-  getUsername('crguezl').then(r => console.log(r.data.name));
-  ```
+getUsername('crguezl').then(r => console.log('NAME: ', r.data.name))
 
-  when we run it:
+async function getRepos (name) {
+  return await octokit.graphql(
+    `query ($login: String!) {
+      organization(login: $login) {
+        repositories(privacy: PRIVATE, first: 100) {
+          totalCount
+        }
+      }
+    }`,
+    { login: name }
+  )
+}
 
-  ```
-  ➜  hello-octokit git:(master) pwd
-  /Users/casianorodriguezleon/campus-virtual/2021/learning/octokit-learning/hello-octokit
-  ➜  hello-octokit git:(master) node --version         
-  v14.4.0
-  ➜  hello-octokit git:(master) node octokit-example.js
-  Casiano Rodriguez-Leon
-  ```
+getRepos('ULL-MII-SYTWS-2223').then(r =>
+  console.log('REPOS: ', r.organization.repositories.totalCount)
+```
+
+Reproduzca los requests hechos en esta sección.
+
 * Solution at `/campus-virtual/2021/sytws2021/apuntes/tema2-async/event-loop/exercises/promises/async-await/solution-more-complex-example.html`
 
 
