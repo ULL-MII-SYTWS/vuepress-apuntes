@@ -155,7 +155,7 @@ demoGithubUser();
 
 Here is another exercise from the [JavaScript.Info book](https://javascript.info/async-await#call-async-from-non-async). As the book says, it is a task that solves a quite common for developers new to async/await.
 
-We have a "regular" function called `f`. How can you call the `async` function `wait()` and use its result inside of `f`?
+**We have a "regular" function called `f`. How can you call the `async` function `wait()` and use its result inside of `f`?**
 
 Give at least two solutions.
 
