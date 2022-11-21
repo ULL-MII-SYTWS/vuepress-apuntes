@@ -24,8 +24,8 @@ rubrica:
 
 **Iterable objects** are a generalization of arrays. That’s a concept that allows us to make any object useable in a `for..of` loop.
 
--  Iterables must implement the method named `Symbol.iterator`
--  The result of obj`[Symbol.iterator]()` is called an iterator
+-  Iterables must implement a **method** named `Symbol.iterator`
+-  The object result of `[Symbol.iterator]()` is called an **iterator**
 -  An iterator must have the method named `next()` that returns an object `{done: Boolean, value: any}`
 -  The `Symbol.iterator` method is called automatically by `for..of`
 
