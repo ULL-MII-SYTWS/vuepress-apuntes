@@ -227,7 +227,7 @@ getRepos('ULL-MII-SYTWS-2223').then(r =>
   console.log('REPOS: ', r.organization.repositories.totalCount)
 ```
 
-Reproduzca los requests hechos en esta sección.
+Reproduzca los requests de ejemplo hechos en esta sección.
 
 * Solution at `/campus-virtual/2021/sytws2021/apuntes/tema2-async/event-loop/exercises/promises/async-await/solution-more-complex-example.html`
 
