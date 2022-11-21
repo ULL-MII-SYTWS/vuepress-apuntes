@@ -104,8 +104,8 @@ const navigationBar = [
       { text: 'Campus de Masters', link: "https://campusdoctoradoyposgrado2223.ull.es/"},
       { text: 'Campus de ESIT', link: "https://campusingenieriaytecnologia2223.ull.es/"},
       { text: "DMSI", link: "https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033"},
-      { text: "AET", link: "https://campusdoctoradoyposgrado2223.ull.es/course/view.php?id=2223110052"}
- 
+      { text: "AET", link: "https://campusdoctoradoyposgrado2223.ull.es/course/view.php?id=2223110052"},
+      { text: "SYTWS 2122", link: "https://ull-mii-sytws-2122.github.io/"}, 
 /*
       <li><a :href="$var.foros" target="_blank">Foros</a></li>
 */
