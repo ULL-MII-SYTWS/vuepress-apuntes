@@ -22,7 +22,7 @@ rubrica:
 
 ### Iterables
 
-**Iterable objects** are a generalization of arrays. That’s a concept that allows us to make any object useable in a `for..of` loop.
+**Iterable objects** are a generalization of arrays. That’s a concept that allows us to make any object usable in a `for..of` loop.
 
 -  Iterables must implement a **method** named `Symbol.iterator`
 -  The object result of the call  `[Symbol.iterator]()` is called an **iterator**
