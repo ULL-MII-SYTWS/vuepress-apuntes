@@ -25,7 +25,7 @@ rubrica:
 **Iterable objects** are a generalization of arrays. That’s a concept that allows us to make any object useable in a `for..of` loop.
 
 -  Iterables must implement a **method** named `Symbol.iterator`
--  The object result of `[Symbol.iterator]()` is called an **iterator**
+-  The object result of the call  `[Symbol.iterator]()` is called an **iterator**
 -  An iterator must have the method named `next()` that returns an object `{done: Boolean, value: any}`
 -  The `Symbol.iterator` method is called automatically by `for..of`
 
@@ -51,7 +51,8 @@ Read the chapter [Generators](https://javascript.info/generators) of JavaScript.
 
 ### Delivery
 
-Read both chapters and delivery a report like the one in ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators) (campus-virtual/2021/learning/asyncjs-learning/learning-generators). 
+Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators). 
+(See folder campus-virtual/2021/learning/asyncjs-learning/learning-generators). 
 
 ## Exercise *Groups* in the book EloquentJS Chapter 6
 

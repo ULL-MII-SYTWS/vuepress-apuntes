@@ -102,6 +102,8 @@ loadJson('no-such-user.json').catch(console.log); // Error: 404
 
 Below you can find another exercise from the book javascript.info [Rewrite "rethrow" with async/await](https://javascript.info/task/rewrite-async-2)). 
 
+The code keep asking for a GitHub user until a valid login is given. 
+
 Rewrite it using `async/await` instead of `.then/catch` and get rid of the recursion in favour of a loop in `demoGithubUser`: with `async/await`.
 
 ```js 
