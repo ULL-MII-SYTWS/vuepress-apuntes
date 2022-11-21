@@ -22,24 +22,25 @@ rubrica:
 
 ### Iterables
 
-Have a look at the chapter [Iterables](https://javascript.info/iterable). 
-
 See the example [hello-symbol-iterator.js](https://github.com/ULL-MII-SYTWS-2021/learning-generators/blob/main/00-symbol-iterator/hello-symbol-iterator.js) in the repo 
 [ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators). (What will be the output?)
 
+
+Read the chapter [Iterables](https://javascript.info/iterable). 
+
 ### Generators
 
-Read the chapter [Generators](https://javascript.info/generators) of JavaScript.info reproducing the examples and exercises. 
 
 See the examples
 * [01-generator-functions/hello-generators.js](https://github.com/ULL-MII-SYTWS-2021/learning-generators/blob/main/01-generator-functions/hello-generators.js).
 (What will be the output?)
 * [02-generators-are-iterable](https://github.com/ULL-MII-SYTWS-2021/learning-generators/tree/main/02-generators-are-iterable)
 
+Read the chapter [Generators](https://javascript.info/generators) of JavaScript.info reproducing the examples and exercises. 
+
 ### Delivery
 
-Add the examples and exercises of the [Iterables](https://javascript.info/iterable) chapter at the beginning of the report.
-
+Read both chapters and delivery a report like the one in ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators) (campus-virtual/2021/learning/asyncjs-learning/learning-generators). 
 
 ## Exercise *Groups* in the book EloquentJS Chapter 6
 
