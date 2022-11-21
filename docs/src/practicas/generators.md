@@ -35,6 +35,8 @@ See the example [hello-symbol-iterator.js](https://github.com/ULL-MII-SYTWS-2021
 
 Read the chapter [Iterables](https://javascript.info/iterable) of JavaScript.info reproducing the examples and exercises.
 
+See [Name Collisions](https://thecodebarbarian.com/a-practical-guide-to-symbols-in-javascript.html#name-collisions) for an explanation of why is `Symbol.iterator` a symbol rather than a string.
+
 ### Generators
 
 **Generators**  are created by generator functions `function* f(…) {…}`.
