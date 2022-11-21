@@ -58,7 +58,7 @@ Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/lea
 
 ## Exercise *Groups* in the book EloquentJS Chapter 6
 
-1. Write a class called `Group` that works like the `Set` JS  class. Here is a template for the class `Group` (Exercise [Groups](https://eloquentjavascript.net/06_object.html#groups) in the book EloquentJS Chapter 6):
+1. Write a class called `Group` that works like the [Set JS  class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set). Here is a template for the class `Group` (Exercise [Groups](https://eloquentjavascript.net/06_object.html#groups) in the book EloquentJS Chapter 6):
 
     ```js
     class Group {
