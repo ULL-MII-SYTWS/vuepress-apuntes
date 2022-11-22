@@ -23,9 +23,9 @@ Imagine we are given a piece of code like the one below that uses async function
 
 
 ```js
-function doTask1() {
+function doTask1(arg) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(1), 100)
+        setTimeout(() => resolve(arg), 100)
     })
 }
 
@@ -41,8 +41,8 @@ function doTask3(arg) {
     })
 }
 
-async function init() {
-    const res1 = await doTask1();
+async function init(arg) {
+    const res1 = await doTask1(arg);
     console.log(res1);
     
     const res2 = await doTask2(res1);
@@ -54,7 +54,7 @@ async function init() {
     return res3;
 }
 
-init(); // 1\n3\n6
+init(3);
 ```
 
 It performs three asynchronous tasks, one after the other where each task depends on the completion of the previous task. Finally, it returns the result of the last task.
@@ -178,24 +178,35 @@ We need to write a function `waiter` that can control the iterator of this gener
 1. Halt every time a promise is yielded and 
 2. Proceeds once the promise resolves (or rejects). 
 
-Write a function `waiter(generator, arg)` that 
+Write a function `waiter(generator, arg)` that
 
-1. creates and `iterator`  by calling `generator(arg)` and 
-2. returns an auxiliary  function  `waitAndrun` (like we did in the auxiliary callback in the asyncserialize lab)
-3. `waitAndRun` has to
+```js
+/**
+ * Builds the generator object for genFun and returns the waiting function
+ * @param { generator } genFun - the generator function
+ * @param { any } arg     - the argument to pass to the generator function
+ * @returns { function }  - a function that executes the generator waiting for each yielded promise
+ */
+function waiter(genFun, arg) 
+```
+
+1. creates and `iterator`  by calling `genFun(arg)` and 
+2. returns an auxiliary  function  `waitAndrun` (Something like we did in the auxiliary callback in the asyncserialize lab)
+3. The returned auxiliary function `waitAndRun` has to
    - Get the current promise via `.next` and
-   - Wait for the promise to be fulfilled and
+   - Wait for that promise to be fulfilled and
    - call recursively itself unless the iterator is exhausted
  
 It will be used like this:
 
 ```js
-function waiter(genFun, arg) {
-   // ... your code here
-}
-
 const doIt = waiter(init, 3);
 doIt();
+```
+or shorter:
+
+```js
+waiter(init, 3)();
 ```
 
 So that, when we run it with the [generator above](#generator), we obtain:
