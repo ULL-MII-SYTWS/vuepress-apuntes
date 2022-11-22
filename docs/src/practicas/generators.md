@@ -132,7 +132,7 @@ You can see a solution at folder [learning-generators/03-using-generators-for-it
 You have to take into account these facts:
 
 1. When using a generator `g`, you can pass one argument to `next`: `g.next(a)` 
-2. The computation was paused at the last `yield` expression executed inside `g`
+2. The computation was paused **just after the evaluation of  the last `yield` expression executed inside `g`**
 3. The call to `g.next(a)` becomes the result of this last `yield` expression
 4. The first call `generator.next()` should be always made without an argument (If passed the argument will be ignored)
 
@@ -158,7 +158,7 @@ console.log(g.next(10).value);
 
 Play with the example for different inputs
 
-What is the output of the follwing code?
+What is the output of the following code?
 
 ```js
 function* gen() {
