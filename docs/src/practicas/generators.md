@@ -183,6 +183,17 @@ console.log(g.next(1));
 console.log(g.next(2));
 ```
 
+## The *yield\** directive delegates the execution to another generator
+
+The `yield*` directive delegates the execution to another generator. 
+
+`yield* anotherGen` iterates over the generator `anotherGen` and forwards its yields outside,
+**as if the values were yielded by the outer generator**.
+
+The result is the same as if we inlined the code from nested generators into the outer generator.
+
+See the example [hello-composition.js](https://github.com/ULL-MII-SYTWS-2021/learning-generators/tree/main/04-generator-composition)
+
 ## See
 
 * [ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators) (campus-virtual/2021/learning/asyncjs-learning/learning-generators)
