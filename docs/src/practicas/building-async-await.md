@@ -9,7 +9,7 @@ layout: Practica
 order: 15
 sidebar: auto
 prev: generators.md
-next: 
+next: for-await.md
 rubrica:
   - "códigos correctos"
   - "Informe bien elaborado"
@@ -178,6 +178,7 @@ We need to write a function `waiter` that can control the iterator of this gener
 1. Halt every time a promise is yielded and 
 2. Proceeds once the promise resolves (or rejects). 
 
+::: tip Precise Goal
 Write a function `waiter(generator, arg)` that
 
 ```js
@@ -208,6 +209,7 @@ or shorter:
 ```js
 waiter(init, 3)();
 ```
+:::
 
 So that, when we run it with the [generator above](#generator), we obtain:
 
