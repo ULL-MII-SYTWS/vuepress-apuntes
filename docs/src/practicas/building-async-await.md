@@ -137,7 +137,7 @@ Notice how this generator function resembles our async function!
 
 If you change `yield` for `await` is the same code!
 
-The `init` can becalled this way:
+The `init` can be called this way:
 
 ```js 
 gen.next().value.then((res1) => {
@@ -149,9 +149,14 @@ gen.next().value.then((res1) => {
 })
 ```
 
-The problem resembles the `asyncserialize` function we wrote in a previous practice where we found a solution
-making use of recursivity.
+Unfortunately, this current solution is not free of `.then`chains.
 
+We need something better.
+
+::: tip Idea
+The problem resembles the `asyncserialize` function we wrote in a previous lab where we found a solution
+making use of recursivity and detecting when all the tasks were done.
+:::
 
 ## Write the Function Controlling the Execution of the Generator
 
