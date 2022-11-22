@@ -18,6 +18,7 @@ module.exports = [
         items: [
             { text: 'Apartados', link:'/temas/async/'},
             { text: 'The Event Loop', link:'/temas/async/event-lopp/'},
+            { text: 'Event Emitters', link:'/temas/async/event-emitter'},
         ]
     },
     {
