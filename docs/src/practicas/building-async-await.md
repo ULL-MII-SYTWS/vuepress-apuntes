@@ -131,18 +131,41 @@ Notice how this generator function resembles our async function!
 
 If you change `yield` for `await` is the same code!
 
-## A Function Controlling the Execution of the Generator
+The `init` can becalled this way:
 
-But this is only half the story. Now **we need a way to execute its body**. 
+```js 
+gen.next().value.then((res1) => {
+  gen.next(res1).value.then((res2) => {
+    gen.next(res2).value.then((res3) => {
+      gen.next(res3);
+    })
+  })
+})
+```
 
-We need a function `waiter` that can control the iterator of this generator function to "*wait for the fulfillment of the promise yielded on each iteration*". It has to:
+The problem resembles the `asyncserialize` function we wrote in a previous practice where we found a solution
+making use of recursivity.
+
+
+## Write the Function Controlling the Execution of the Generator
+
+Now we need a controlled way to execute `init`. 
+
+We need to write a function `waiter` that can control the iterator of this generator function to "*wait for the fulfillment of the promise yielded on each iteration*". It has to:
 
 1. Halt every time a promise is yielded and 
 2. Proceeds once the promise resolves (or rejects). 
 
-## Write the Function Controlling the Execution of the Generator
+Write a function `waiter(generator, arg)` that 
 
-Write a function `waiter(generator, arg)` that creates and `iterator`  by calling `generator(arg)` and returns a function  that traverses the `iterator` but proceeding with an iteration only when the promise returned by the previous call to `iterator.next()` has been fulfilled. It will be used like this:
+1. creates and `iterator`  by calling `generator(arg)` and 
+2. returns an auxiliary  function  `waitAndrun` (like we did in the auxiliary callback in the asyncserialize lab)
+3. `waitAndRun` has to
+   - Get the current promise via `.next` and
+   - Wait for the promise to be fulfilled and
+   - call recursively itself unless the iterator is exhausted
+ 
+It will be used like this:
 
 ```js
 function waiter(genFun, arg) {
@@ -156,7 +179,7 @@ doIt();
 So that, when we run it with the [generator above](#generator), we obtain:
 
 ```
-➜  learning-async-iteration-and-generators git:(main) ✗ node 07-async-await-equal-generators-plus-promises/example.js 
+➜  async-await-equal-generators-plus-promises git:(main) ✗ node solution.js 
 3
 5
 8
@@ -164,7 +187,7 @@ So that, when we run it with the [generator above](#generator), we obtain:
 
 It sounds complicated, but takes only a few lines to implement.
 
-Heres is a [solution]({{site.baseurl}}/practicas/async-await-is-generators-and-promises/solution)
+Heres is a [solution](/practicas/building-async-await/solution)
 
 ## See
 
