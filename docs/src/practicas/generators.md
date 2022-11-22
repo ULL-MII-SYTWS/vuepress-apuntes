@@ -179,6 +179,15 @@ console.log(g.next(1));
 console.log(g.next(2));
 ```
 
+## Return in a Generator
+
+A `return` statement in a generator, when executed, will make the generator finish:
+
+* The `done` property of the object returned by it will be set to `true`
+* If a value is returned, it will be set as the `value` property of the object returned by the generator
+ 
+Much like a `return` statement, an error `thrown` inside the generator will make the generator finished — unless caught within the generator's body. 
+
 ## The *yield\** directive delegates the execution to another generator
 
 The `yield*` directive delegates the execution to another generator. 
