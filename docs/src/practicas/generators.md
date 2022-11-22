@@ -131,9 +131,11 @@ You can see a solution at folder [learning-generators/03-using-generators-for-it
 
 You have to take into account these facts:
 
-1. When using a generator `g`, you can pass arguments to `next`: `g.next(a)`. 
+1. When using a generator `g`, you can pass one argument to `next`: `g.next(a)` 
 2. The computation was paused at the last `yield` expression executed inside `g`
-3. The call to `g.next(a)` becomes the result of this last `yield` expression.
+3. The call to `g.next(a)` becomes the result of this last `yield` expression
+4. The first call `generator.next()` should be always made without an argument (If passed the argument will be ignored)
+
 
 What is the output of the following code?
 
@@ -150,11 +152,27 @@ function* generator(z) {
 
 let g = generator(999);
 console.log(g.next().value); 
-console.log(g.next("hello", "second parameter").value);
+console.log(g.next("hello", "second ignored parameter").value);
 console.log(g.next(10).value); 
 ```
 
 Play with the example for different inputs
+
+What is the output of the follwing code?
+
+```js
+function* gen() {
+  // On the first iteration, yield does not return anything.
+  //because it returns something ONLY when execution is resumed
+  returnedFromYield = yield 'foo'; 
+  yield returnedFromYield; 
+}
+
+let g = gen();
+
+console.log(g.next(1)); 
+console.log(g.next(2));
+```
 
 ## See
 
