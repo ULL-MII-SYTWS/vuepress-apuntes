@@ -127,15 +127,16 @@ Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/lea
 
 You can see a solution at folder [learning-generators/03-using-generators-for-iterables](https://github.com/ULL-MII-SYTWS-2021/learning-generators/tree/main/03-using-generators-for-iterables) of the repo ULL-MII-SYTWS-2021/learning-generators
 
-## yield is a two way street
+## a = yield exp returns exp and receives a
 
 You have to take into account these facts:
 
-1. When using a generator `g`, you can pass one argument to `next`: `g.next(a)` 
+1. When using a generator `g`, you can pass one argument (and only one) to `next`: `g.next(a)` 
 2. The computation was paused **just after the evaluation of  the last `yield` expression executed inside `g`**
 3. The call to `g.next(a)` becomes the result of this last `yield` expression
 4. The first call `generator.next()` should be always made without an argument (If passed the argument will be ignored)
 
+### Exercise one
 
 What is the output of the following code?
 
@@ -157,6 +158,8 @@ console.log(g.next(10).value);
 ```
 
 Play with the example for different inputs
+
+### Exercise two
 
 What is the output of the following code?
 
