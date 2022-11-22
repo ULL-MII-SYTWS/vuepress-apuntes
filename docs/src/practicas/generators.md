@@ -127,7 +127,7 @@ Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/lea
 
 You can see a solution at folder [learning-generators/03-using-generators-for-iterables](https://github.com/ULL-MII-SYTWS-2021/learning-generators/tree/main/03-using-generators-for-iterables) of the repo ULL-MII-SYTWS-2021/learning-generators
 
-## a = yield exp submits exp and receives the former g.next(b)
+## *a = yield exp* submits *exp* and receives the former *g.next(b)*
 
 You have to take into account these facts:
 
@@ -159,14 +159,17 @@ console.log(g.next(10).value);
 
 Play with the example for different inputs
 
+I like to think that:
+
+1. the `yield` stops after the expression has been evaluated 
+2. but before the assignment has been made.
+
 ### Exercise two
 
 What is the output of the following code?
 
 ```js
 function* gen() {
-  // On the first iteration, yield does not return anything.
-  //because it returns something ONLY when execution is resumed
   returnedFromYield = yield 'foo'; 
   yield returnedFromYield; 
 }
