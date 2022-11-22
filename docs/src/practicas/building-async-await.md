@@ -190,7 +190,7 @@ Write a function `waiter(generator, arg)` that
 function waiter(genFun, arg) 
 ```
 
-1. creates and `iterator`  by calling `genFun(arg)` and 
+1. creates a `generator`  by calling `genFun(arg)` and 
 2. returns an auxiliary  function  `waitAndrun` (Something like we did in the auxiliary callback in the asyncserialize lab)
 3. The returned auxiliary function `waitAndRun` has to
    - Get the current promise via `.next` and
