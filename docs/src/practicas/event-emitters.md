@@ -17,7 +17,7 @@ rubrica:
 
 # {{ $frontmatter.title }}
 
-Lea los * [apuntes de Event Emitters](/temas/async/event-emitter) y reproduzca los ejemplos y ejercicios.
+Lea los [apuntes de Event Emitters](/temas/async/event-emitter) y reproduzca los ejemplos y ejercicios.
 
 ## Exercise: Event Emitters
 
