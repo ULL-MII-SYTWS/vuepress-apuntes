@@ -58,7 +58,7 @@ Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/lea
 
 ## Exercise *Groups* in the book EloquentJS Chapter 6
 
-1. Write a class called `Group` that works like the [Set JS  class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set). Here is a template for the class `Group` (Exercise [Groups](https://eloquentjavascript.net/06_object.html#groups) in the book EloquentJS Chapter 6):
+1. Write an iterable class called `Group` that works like the [Set JS  class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set). Here is a template for the class `Group` (Exercise [Groups](https://eloquentjavascript.net/06_object.html#groups) in the book EloquentJS Chapter 6):
 
     ```js
     class Group {
@@ -126,6 +126,35 @@ Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/lea
     ```
 
 You can see a solution at folder [learning-generators/03-using-generators-for-iterables](https://github.com/ULL-MII-SYTWS-2021/learning-generators/tree/main/03-using-generators-for-iterables) of the repo ULL-MII-SYTWS-2021/learning-generators
+
+## yield is a two way street
+
+You have to take into account these facts:
+
+1. When using a generator `g`, you can pass arguments to `next`: `g.next(a)`. 
+2. The computation was paused at the last `yield` expression executed inside `g`
+3. The call to `g.next(a)` becomes the result of this last `yield` expression.
+
+What is the output of the following code?
+
+```js
+function* generator(z) {
+    console.log(z); 
+    z++;
+    let a = yield z+1;
+    console.log('Inside generator: '+a); // a is hello
+    let b = yield (a+" world!");
+    console.log('Inside generator: '+b); // b is 10
+    yield b*2;
+}
+
+let g = generator(999);
+console.log(g.next().value); 
+console.log(g.next("hello", "second parameter").value); // hello world!
+console.log(g.next(10).value); 
+```
+
+Play with the example for different inputs
 
 ## See
 
