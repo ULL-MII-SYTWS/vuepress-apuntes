@@ -161,8 +161,8 @@ Play with the example for different inputs
 
 I like to think that:
 
-1. the `yield` stops after the expression has been evaluated 
-2. but before the assignment has been made.
+1. the `yield` stops **after** the expression has been evaluated 
+2. but **before** the assignment has been made.
 
 ### Exercise two
 
