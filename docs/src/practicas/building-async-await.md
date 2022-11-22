@@ -60,8 +60,9 @@ init(); // 1\n3\n6
 It performs three asynchronous tasks, one after the other where each task depends on the completion of the previous task. Finally, it returns the result of the last task.
 
 ::: danger Goal
-How can we rewrite this code  using **only** promises and generator functions?
-How can we reinvent our own **async** and **await**?
+* How can we rewrite this code  using **only** promises and generator functions?
+* and we don't want ot make a chain of `promise.then`!
+* How can we reinvent/rebuild our own **async** and **await**?
 ::: 
 
 ## Remember Generators
