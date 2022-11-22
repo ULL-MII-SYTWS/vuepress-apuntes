@@ -20,7 +20,7 @@ rubrica:
 
 ## Description
 
-### Iterables
+## Iterables
 
 **Iterable objects** are a generalization of arrays. That’s a concept that allows us to make any object usable in a `for..of` loop.
 
@@ -37,7 +37,7 @@ Read the chapter [Iterables](https://javascript.info/iterable) of JavaScript.inf
 
 Read the  section [Name Collisions](https://thecodebarbarian.com/a-practical-guide-to-symbols-in-javascript.html#name-collisions) of the article **A Practical Guide to Symbols in JavaScript** for an explanation of why is `Symbol.iterator` a symbol rather than a string.
 
-### Generators
+## Generators
 
 **Generators**  are created by generator functions `function* f(…) {…}`.
 
@@ -51,10 +51,6 @@ See the examples
 
 Read the chapter [Generators](https://javascript.info/generators) of JavaScript.info reproducing the examples and exercises. 
 
-### Delivery
-
-Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators)
-<!-- (See folder campus-virtual/2021/learning/asyncjs-learning/learning-generators).--> 
 
 ## Exercise *Groups* in the book EloquentJS Chapter 6
 
@@ -193,6 +189,11 @@ The `yield*` directive delegates the execution to another generator.
 The result is the same as if we inlined the code from nested generators into the outer generator.
 
 See the example [hello-composition.js](https://github.com/ULL-MII-SYTWS-2021/learning-generators/tree/main/04-generator-composition)
+
+## Delivery
+
+Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators)
+<!-- (See folder campus-virtual/2021/learning/asyncjs-learning/learning-generators).--> 
 
 ## See
 
