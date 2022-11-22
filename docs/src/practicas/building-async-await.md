@@ -140,13 +140,24 @@ If you change `yield` for `await` is the same code!
 The `init` can be called this way:
 
 ```js 
-gen.next().value.then((res1) => {
-  gen.next(res1).value.then((res2) => {
-    gen.next(res2).value.then((res3) => {
-      gen.next(res3);
+// no async no await
+gen.next().value.then(res1 => {
+  gen.next(res1).value.then(res2 => {
+    gen.next(res2).value.then(res3 => {
+      console.log(`Final result: ${JSON.stringify(gen.next(res3), null,0)}`)
     })
   })
 })
+```
+
+That produces an output like:
+
+``` 
+✗ node no-async-await-1.js
+3
+5
+8
+Final result: {"value":8,"done":true}
 ```
 
 Unfortunately, this current solution is not free of `.then`chains.
