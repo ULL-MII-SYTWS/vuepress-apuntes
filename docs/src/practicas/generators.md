@@ -127,7 +127,7 @@ Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/lea
 
 You can see a solution at folder [learning-generators/03-using-generators-for-iterables](https://github.com/ULL-MII-SYTWS-2021/learning-generators/tree/main/03-using-generators-for-iterables) of the repo ULL-MII-SYTWS-2021/learning-generators
 
-## a = yield exp returns exp and receives a
+## a = yield exp submits exp and receives the former g.next(b)
 
 You have to take into account these facts:
 
