@@ -150,7 +150,7 @@ function* generator(z) {
 
 let g = generator(999);
 console.log(g.next().value); 
-console.log(g.next("hello", "second parameter").value); // hello world!
+console.log(g.next("hello", "second parameter").value);
 console.log(g.next(10).value); 
 ```
 
