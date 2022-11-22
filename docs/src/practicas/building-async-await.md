@@ -19,7 +19,8 @@ rubrica:
 
 ## Goal: Async-Await ≈ Generators + Promises
 
-Imagine we are given a piece of code like the one below that uses async functions, how can we rewrite it using only promises and generator functions?
+Imagine we are given a piece of code like the one below that uses async functions, 
+
 
 ```js
 function doTask1() {
@@ -58,14 +59,17 @@ init(); // 1\n3\n6
 
 It performs three asynchronous tasks, one after the other where each task depends on the completion of the previous task. Finally, it returns the result of the last task.
 
-How can we rewrite it using generators?
+::: danger Goal
+How can we rewrite this code  using **only** promises and generator functions?
+How can we reinvent our own **async** and **await**?
+::: 
 
 ## Remember Generators
 
-Remember:
+::: tip Remember:
 
 * When a generator function is called, its body is not executed right away. 
-* Instead it returns an iterator-object which adheres to the iterator protocol i.e. it has a `next` method.
+* Instead it returns an iterator object which adheres to the iterator protocol i.e. it has a `next` method.
 * The only way to execute the body of the generator is by calling the `next` method on its iterator-object. 
 * Every time the `next` method is called, its body is executed until the next `yield` expression. 
 * The result of `next()` is always an object with two properties:
@@ -75,6 +79,7 @@ Remember:
 * Calling it with an `argument` 
   - Makes the `argument`the value of the current yield expression and 
   - Resumes the execution till the next `yield` expression
+:::
 
 ## First Idea: Generators can yield Promises
 

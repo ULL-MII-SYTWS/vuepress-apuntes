@@ -35,7 +35,9 @@ See the example [hello-symbol-iterator.js](https://github.com/ULL-MII-SYTWS-2021
 
 Read the chapter [Iterables](https://javascript.info/iterable) of JavaScript.info reproducing the examples and exercises.
 
+::: danger Interesting
 Read the  section [Name Collisions](https://thecodebarbarian.com/a-practical-guide-to-symbols-in-javascript.html#name-collisions) of the article **A Practical Guide to Symbols in JavaScript** for an explanation of why is `Symbol.iterator` a symbol rather than a string.
+:::
 
 ## Generators
 
@@ -132,12 +134,12 @@ You have to take into account these facts:
 3. The call to `g.next(a)` becomes the result of this last `yield` expression
 4. The first call `generator.next()` should be always made without an argument (If passed the argument will be ignored)
 
-I like to see it this way:
-
+::: tip I like to see it this way:
 1. when a call to `g.next(y)` is made, the generator is executed until the next `a = yield exp` expression is reached. 
 2. the `yield` stops **after** the expression `exp` has been evaluated 
 3. but **before** the assignment `a = ...` has been made!
 4. The next call to `g.next(z)` will be set the value of the `yield` as `z`
+:::
 
 ### Exercise one
 
@@ -181,11 +183,11 @@ console.log(g.next(2));
 
 ## Return in a Generator
 
-A `return` statement in a generator, when executed, will make the generator finish:
-
+::: tip A `return` statement in a generator, when executed, will make the generator finish:
 * The `done` property of the object returned by it will be set to `true`
 * If a value is returned, it will be set as the `value` property of the object returned by the generator
- 
+:::
+
 Much like a `return` statement, an error `thrown` inside the generator will make the generator finished — unless caught within the generator's body. 
 
 ## The *yield\** directive delegates the execution to another generator
