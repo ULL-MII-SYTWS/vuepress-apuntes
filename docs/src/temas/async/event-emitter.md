@@ -212,3 +212,8 @@ class WithTime extends EventEmitter {
 
 module.exports = WithTime;
 ```
+
+## References
+
+* [Práctica de Event Emitters](/practicas/event-emitters)
+* [How to code your own event emitter in Node.js: a step-by-step guide](https://www.freecodecamp.org/news/how-to-code-your-own-event-emitter-in-node-js-a-step-by-step-guide-e13b7e7908e1/)

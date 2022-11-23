@@ -2,7 +2,7 @@ module.exports = [
     {
         text: 'Introduction to SYTWS', 
         items: [
-            {text: 'All themes', link: '/temas/'},
+            {text: 'Apartados', link: '/temas/'},
             {text: "Intro a SYTWS", link:'/temas/introduccion-a-sytws/guia-docente.html'},
         ]
     },
@@ -19,6 +19,7 @@ module.exports = [
             { text: 'Apartados', link:'/temas/async/'},
             { text: 'The Event Loop', link:'/temas/async/event-lopp/'},
             { text: 'Event Emitters', link:'/temas/async/event-emitter'},
+            { text: 'Web Workers', link:'/temas/async/web-workers'},
         ]
     },
     {
