@@ -137,7 +137,7 @@ You have to take into account these facts:
 ::: tip I like to see it this way:
 1. when a call to `g.next(y)` is made, the generator is executed until the next `a = yield exp` expression is reached. 
 2. the `yield` stops **after** the expression `exp` has been evaluated 
-3. but **before** the assignment `a = ...` has been made!
+3. but **before** the assignment `a = ↓ exp` has been made!
 4. The next call to `g.next(z)` will be set the value of the `yield` as `z`
 :::
 
