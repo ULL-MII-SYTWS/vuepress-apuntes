@@ -186,9 +186,34 @@ console.log(g.next(2))
 ## Return in a Generator
 
 ::: tip A `return` statement in a generator, when executed, will make the generator finish:
-* The `done` property of the object returned by it will be set to `true`
-* If a value is returned, it will be set as the `value` property of the object returned by the generator
+
+* If a value `return v;` is returned, it will produce `{done: false, value: v}`
+* The next call to `g.next()` will produce `{done: true, value: undefined}`
+
 :::
+
+What is the output?
+
+```js
+function * foo () {
+  yield 123
+}
+
+function * bar () {
+  return yield 123
+}
+
+const f = foo()
+const b = bar()
+
+console.log(
+  f.next(),
+  f.next(),
+  
+  b.next(),
+  b.next()
+)
+```
 
 Much like a `return` statement, an error `thrown` inside the generator will make the generator finished — unless caught within the generator's body. 
 
@@ -213,6 +238,7 @@ Read both chapters and delivery a report like the one in [ULL-MII-SYTWS-2021/lea
 * [ULL-MII-SYTWS-2021/learning-generators](https://github.com/ULL-MII-SYTWS-2021/learning-generators) (campus-virtual/2021/learning/asyncjs-learning/learning-generators)
 * Chapter [Iterables](https://javascript.info/iterable)
 * Chapter [Generators](https://javascript.info/generators) of JavaScript.info
+* [Stack overflow question](https://stackoverflow.com/questions/42309185/js-generators-how-is-return-yield-different-from-yield) *JS Generators: How is `return yield` different from `yield`?*
 * See the Node.js doc [Modules: Packages](https://nodejs.org/api/packages.html#packages_determining_module_system) for more details on the use of ECMA 6 Modules in Node.js.
 * [How Can I use an es6 Import in Node.JS](https://stackoverflow.com/questions/45854169/how-can-i-use-an-es6-import-in-node-js#:~:text=You%20can%20also%20use%20npm,import%20in%20your%20JavaScript%20files.
 ) Stackoverflow
