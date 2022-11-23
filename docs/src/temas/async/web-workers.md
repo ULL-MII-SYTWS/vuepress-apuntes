@@ -20,6 +20,11 @@ Ejemplo de uso de Web Workers.
 
 Can you create a web worker inside a web worker? Answer: **yes!**
 
+## Things you can do with Web Workers
+
+* [deebloo/things-you-can-do-in-a-web-worker](https://github.com/deebloo/things-you-can-do-in-a-web-worker)
+
+
 ## Tutorial by Chinenye Onuegbu: Code examples for JSDay Canarias 2019
 
 * Fork en SYTWS-1920 del repo de la charla impartida por [Chinenye Onuegbu: Code examples for JSDay Canarias 2019](https://github.com/ULL-MII-SYTWS-1920/jsday-canarias-2019-examples-multithreading)
