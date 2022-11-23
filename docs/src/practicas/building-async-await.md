@@ -141,13 +141,15 @@ The `init` can be called this way:
 
 ```js 
 // no async no await
-gen.next().value.then(res1 => {
-  gen.next(res1).value.then(res2 => {
-    gen.next(res2).value.then(res3 => {
-      console.log(`Final result: ${JSON.stringify(gen.next(res3), null,0)}`)
-    })
-  })
-})
+g.next().value.then(
+  res1 => g.next(res1).value.then(
+      res2 => g.next(res2).value.then(
+          res3 => Promise.resolve(g.next(res3).value).then(
+              returnValue => console.log(`returnValue ${returnValue}`)
+          )
+      )
+  )
+)
 ```
 
 That produces an output like:
