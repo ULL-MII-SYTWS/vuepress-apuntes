@@ -135,10 +135,12 @@ You have to take into account these facts:
 4. The first call `generator.next()` should be always made without an argument (If passed the argument will be ignored)
 
 ::: tip I like to see it this way:
-1. when a call to `g.next(y)` is made, the generator is executed until the next `a = yield exp` expression is reached. 
-2. the `yield` stops **after** the expression `exp` has been evaluated 
-3. but **before** the assignment `a = ↓ exp` has been made!
-4. The next call to `g.next(z)` will be set the value of the `yield` as `z`
+1. when a call to `b = g.next(y)` is made, the generator is executed until the next `a = yield exp` expression is reached. 
+2. the `yield` stops **after** the expression `exp` has been evaluated and `b` gets the yielded value `exp`
+3. but the execution has paused **before** the assignment to `a` 
+   $$a \stackrel{\downarrow}{=}  exp$$
+   has been made!
+4. The next call to `g.next(z)` will be set the value returned by the `yield` as `z` and thus `b` will be `z`
 :::
 
 ### Exercise one
@@ -170,15 +172,16 @@ Play with the example for different inputs
 What is the output of the following code?
 
 ```js
-function* gen() {
-  returnedFromYield = yield 'foo'; 
-  yield returnedFromYield; 
+function * gen () {
+  const returnedFromYield = yield 'foo'
+  yield returnedFromYield
 }
 
-let g = gen();
+const g = gen()
 
-console.log(g.next(1)); 
-console.log(g.next(2));
+console.log(g.next(1))
+console.log(g.next(2))
+
 ```
 
 ## Return in a Generator
