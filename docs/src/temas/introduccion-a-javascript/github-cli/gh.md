@@ -13,8 +13,9 @@ permalink: /temas/introduccion-a-javascript/github-cli/
 
 ```
 ➜  dmsi2223apuntes git:(master) ✗ gh --version
-gh version 2.17.0 (2022-10-04)
-https://github.com/cli/cli/releases/tag/v2.17.0
+ gh --version
+gh version 2.20.2 (2022-11-15)
+https://github.com/cli/cli/releases/tag/v2.20.2
 ```
 
 ## Help 
@@ -34,25 +35,10 @@ Check the [GitHub CLI Manual](https://cli.github.com/manual/) for more details.
 There are several ways you can extend/customize `gh`:
 
 *   Create shorthands using [gh alias set](gh-alias)
-*   Make custom API queries using [gh api](gh-api)
+*   Make custom API queries using the [gh REST api](gh-api)
+*   Make custom API queries using [gh GraphQL api](gh-api-graphql)
 *   Use [environment variables](https://cli.github.com//manual/gh_help_environment)
-*   Use an [extension](gh-extension)
-
-### Aliases
-
-Véase [gh-alias](gh-alias)
-
-### Introduction to `gh api` 
-
-* Véase [gh api](gh-api)
-
-### Introduction to `gh api` using GraphQL
-
-* Véase [gh api graphql](gh-api-graphql)
-  
-### Extensions
-
-* Véase [gh extensions](gh-extension)
+*   Using and writing [gh extensions](gh-extension)
 
 ## Running Manually GitHub Workflows with gh
 

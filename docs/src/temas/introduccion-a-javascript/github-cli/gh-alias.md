@@ -36,7 +36,9 @@ Quotes must always be used when defining a command as in the examples.
 
 ## Simple Example
 
-La opción `--paginate` nos permite obtener todos los items. La opción `--jq` nos permite
+La opción `--paginate` nos permite obtener todos los items. 
+
+La opción `--jq` nos permite
 filtrar los items usando [jq](https://stedolan.github.io/jq/).
 
 ```
@@ -50,6 +52,8 @@ ULL-MII-SYTWS-2223
 ULL-MFP-AET-2223
 ULL-ESIT-LPP-2223
 ```
+
+See the  [GitHub docs](https://docs.github.com/en/rest/orgs/members#list-organization-members) for the REST API.
 
 ## Example search for members of an organization
 
@@ -85,8 +89,6 @@ Let us search for repos inside our organization using GitHub API v3:
 
 ![](/images/gh-api-search-for-repos.png) 
 
-Here is [the JSON with the full output](gh-get-labs-output.json).
-
 * See the [SEARCH](https://docs.github.com/en/free-pro-team@latest/rest/reference/search)
 section of the REST API GitHub docs to know more about the API.
 * See section [Search Repositories](https://docs.github.com/en/free-pro-team@latest/rest/reference/search#search-repositories) for more info on how to search for repos
@@ -111,19 +113,33 @@ And now we can use it:
 Next  we can pipe the output to [jq](jq) to get the names of the repos and the date of the last push:
 
 ```
-➜ gh get-labs ULL-MII-SYTWS-2021 iaas | jq '.items[] | .name, .pushed_at'
-"p01-t1-iaas-juanchojbarroso"
-"2020-10-21T15:58:32Z"
-"p01-t1-iaas-alu0101040882"
-"2020-10-17T16:53:39Z"
-"p01-t1-iaas-fcohdezc"
-"2020-10-06T17:51:52Z"
-"p01-t1-iaas-crguezl"
-"2020-10-19T13:50:13Z"
-"p01-t1-iaas-alu0100886870"
-"2020-10-21T17:05:08Z"
-"p01-t1-iaas-lardabi"
-"2020-10-06T18:01:16Z"
+ ➜  learning-graphql-with-gh git:(main) gh get-labs ULL-MII-SYTWS-2021 iaas | jq '[ .items[] | { name: .name, last: .pushed_at } ] | sort_by(.last)'
+[
+  {
+    "name": "p01-t1-iaas-fcohdezc",
+    "last": "2020-10-06T17:51:52Z"
+  },
+  {
+    "name": "p01-t1-iaas-lardabi",
+    "last": "2020-10-06T18:01:16Z"
+  },
+  {
+    "name": "p01-t1-iaas-alu0101040882",
+    "last": "2020-10-17T16:53:39Z"
+  },
+  {
+    "name": "p01-t1-iaas-crguezl",
+    "last": "2020-10-19T13:50:13Z"
+  },
+  {
+    "name": "p01-t1-iaas-alu0100886870",
+    "last": "2020-10-21T17:05:08Z"
+  },
+  {
+    "name": "p01-t1-iaas-juanchojbarroso",
+    "last": "2020-11-02T11:44:16Z"
+  }
+]
 ```
 We can improve it by writing a script:
 
