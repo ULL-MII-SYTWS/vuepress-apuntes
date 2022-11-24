@@ -8,7 +8,7 @@ key: building-async-await
 layout: Practica
 order: 16
 sidebar: auto
-prev: generators.md
+prev: building-async-await.md
 next: for-await.md
 rubrica:
   - "códigos correctos"
@@ -17,8 +17,10 @@ rubrica:
 
 # {{ $frontmatter.title }}
 
-Add error management to your own home made Async-Await implementation you did in the previous lab 
+Add error management to your own home made Async-Await implementation you did in the [previous lab](/practicas/building-async-await.html)
 so that a program like this:
+
+
 
 ```js
 import { awaitFor, waiter } from './async-await.mjs';
@@ -47,38 +49,68 @@ function doTaskErr(arg) {
     })
 }
 
+function* init(arg) {
+
+    const res1 = yield doTask1(arg);
+    console.log(res1);
+
+    const res2 = yield doTask2(res1);
+    console.log(res2);
+
+    const res3 = yield doTask3(res2);
+    console.log(res3);
+
+    return res3;
+}
+
 function* fails(arg) {
     try {
         console.log("Error handling example");
+
         const res1 = awaitFor(yield doTask1(arg));
         console.log(res1);
+
         const res2 = awaitFor(yield  doTaskErr(res1));
         console.log(res2);
+
         const res3 = awaitFor(yield  doTask3(res2));
         console.log(res3);
+
         return res3;
     } catch (err) {
         console.log(`Inside catch: ${err}`);
     }
+
 }
 
 function* main() {
+    const res = yield waiter(init, 3)();
+    console.log(`res=${res}`);
     yield waiter(fails, 3)();
     console.log(`Executed since the error was catched`);
 }
 
 waiter(main)();
-``` 
+```
 
 should produce an output like this:
 
 ```
-➜  async-await-equal-generators-plus-promises git:(trycatch) node solution.mjs
+➜  async-await-equal-generators-plus-promises git:(trycatch) ✗ node solution.mjs
+3
+5
+8
+res=8
 Error handling example
 3
 Inside catch: Error: Ay!!!!!!!!
 Executed since the error was catched
 ```
+
+## Delivery
+
+Use the  repository created for the [previous lab](/practicas/building-async-await.html).
+Create a branch called `trycatch` and develop your solution to this lab in it. 
 
 ## See
 
