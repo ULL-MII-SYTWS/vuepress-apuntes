@@ -6,7 +6,7 @@ campus: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=793"
 delivery: "2022/11/30"
 key: event-emitters
 layout: Practica
-order: 17
+order: 18
 sidebar: auto
 prev: for-await.md
 next: 
