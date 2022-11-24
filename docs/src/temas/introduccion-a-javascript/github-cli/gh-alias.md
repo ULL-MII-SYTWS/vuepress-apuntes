@@ -79,7 +79,7 @@ JobabaEV
 SantiagoVV
 ```
 
-## Example: Search for repos inside an organization
+## Exercise: Search for repos inside an organization
 
 Let us search for repos inside our organization using GitHub API v3:
 
@@ -112,8 +112,9 @@ And now we can use it:
 
 Next  we can pipe the output to [jq](jq) to get the names of the repos and the date of the last push:
 
-```
- ➜  learning-graphql-with-gh git:(main) gh get-labs ULL-MII-SYTWS-2021 iaas | jq '[ .items[] | { name: .name, last: .pushed_at } ] | sort_by(.last)'
+```json
+ ➜ gh get-labs ULL-MII-SYTWS-2021 iaas | \
+      jq '[ .items[] | { name: .name, last: .pushed_at } ] | sort_by(.last)'
 [
   {
     "name": "p01-t1-iaas-fcohdezc",
@@ -141,49 +142,5 @@ Next  we can pipe the output to [jq](jq) to get the names of the repos and the d
   }
 ]
 ```
-We can improve it by writing a script:
 
-```
-➜  cat ~/bin/repos
-```
-
-```bash
-#!/bin/bash
-
-ORG=ULL-MII-SYTWS-2021
-ASSIGNMENT=iaas
-if [[ $# -gt 0 ]] ; then
-  ASSIGNMENT=$1
-fi
-if [[ $# -gt 1 ]] ; then
-    ORG=$2
-fi
-# echo $ASSIGNMENT $ORG
-gh api --paginate /search/repositories?q=$ASSIGNMENT+org:$ORG+in:name |
-                          jq '.items[] | .name, .pushed_at'           |
-                          sed 'N;s/\n/ => /'
-```
-
-Let us make an alias for `gh`:
-
-```
-➜ gh alias set --shell get-repos 'repos $1 $2'
-- Adding alias for get-repos: repos $1 $2
-✓ Changed alias get-repos from !repos to !repos $1 $2
-```
-
-Watch the use of single quotes.
-
-Let us use our new alias:
-
-```
-➜  apuntes git:(curso2021) gh get-repos TFA ULL-ESIT-PL-1920
-"tfa-module-miguel-tfa" => "2020-09-04T09:40:57Z"
-"tfa-daniel-tfa" => "2020-06-02T14:00:30Z"
-"tfa-manuel-jorge-tfa" => "2020-09-13T21:40:24Z"
-"tfa-basilio-tfa" => "2020-07-14T06:49:29Z"
-"tfa-alien-tfa" => "2020-09-05T07:35:52Z"
-"tfa-miguel-angel-tfa" => "2020-09-15T13:19:47Z"
-"tfa-esther-sergio-tfa" => "2020-07-10T08:53:04Z"
-...
-```
+Make an alias `get-lab-names` to get the names of the repos inside an organization
