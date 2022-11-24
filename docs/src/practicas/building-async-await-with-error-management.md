@@ -17,10 +17,8 @@ rubrica:
 
 # {{ $frontmatter.title }}
 
-Add error management to your own home made Async-Await implementation you did in the [previous lab](/practicas/building-async-await.html)
+Add error management to the home-made Async-Await implementation you did in the [previous lab](/practicas/building-async-await.html)
 so that a program like this:
-
-
 
 ```js
 import { awaitFor, waiter } from './async-await.mjs';
