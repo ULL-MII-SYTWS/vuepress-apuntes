@@ -54,7 +54,7 @@ y nos pide confirmar los permisos.
 
 Placeholder values `:owner`, `:repo`, and `:branch` in the endpoint argument will get replaced with values from the repository of the current directory.
 
-```
+```json
 $  gh api repos/:owner/:repo/issues
 [
   {
@@ -86,28 +86,45 @@ $  gh api repos/:owner/:repo/issues | jq '.[0] | .title'
 Of course, we can explicit the repo and owner. For example:
 
 ```
-➜ gh api repos/ULL-MII-SYTWS-2021/p01-t1-iaas-alu0101040882/issues | jq '.[0] | .user.login, .body'
+➜ gh api repos/ULL-MII-SYTWS-2021/p01-t1-iaas-alu0101040882/issues | \ 
+         jq '.[0] | .user.login, .body'
 "crguezl"
 "Hola @alu0101040882, \r\n\r\nVeo que alguno ya está trabajando en la práctica de
 ```
 
-## POST Example 
+## POST Example: Create a Repo
 
-Let us see an example using the `POST` method. We will start from this `curl` example 
-in the [GitHub API getting started guide](https://docs.github.com/en/free-pro-team@latest/rest/guides/getting-started-with-the-rest-api#repositories):
+Let us see an example using the `POST` method. We will start from the example 
+in the [Create an organization repository in the GitHub API getting started guide](https://docs.github.com/en/rest/repos/repos#create-an-organization-repository):
 
 ```
-$ curl -i -H "Authorization: token 5199831f4dd3b79e7c5b7e0ebe75d67aa66e79d4" \
-    -d '{ \
-        "name": "blog", \
-        "auto_init": true, \
-        "private": true, \
-        "gitignore_template": "nanoc" \
-      }' \
-    https://api.github.com/user/repos
-```
+# GitHub CLI api
+# https://cli.github.com/manual/gh_api
 
-and let us adapt to `gh api`. We use `-X` or `--method string`to set the HTTP method for the request (default `GET`) and `-f`to set the fields:
+gh api \
+  --method POST \
+  -H "Accept: application/vnd.github+json" \
+  /orgs/ORG/repos \
+  -f name='Hello-World' \
+ -f description='This is your first repository' \
+ -f homepage='https://github.com' \
+ -F private=false \
+ -F has_issues=true \
+ -F has_projects=true \
+ -F has_wiki=true 
+ ```
+
+We use 
+
+* `-X` or `--method string`to set the HTTP method for the request (default `GET`) and 
+* `-f`to set the fields:
+
+Pass one or more `-f/--raw-field` values in `"key=value"` format to add static string
+parameters to the request payload. 
+
+The `-F/--field` flag has type conversion based on the format of the value.
+For instance placeholder values `"{owner}"`, `"{repo}"`, and `"{branch}"` get populated with values
+from the repository of the current directory and if the value starts with `"@"`, the rest of the value is interpreted as a filename to read the value from.
 
 ```
 ➜  /tmp gh api -X POST -f name=repo-prueba-gh-api -f private=true /user/repos
@@ -173,30 +190,70 @@ If we use `--paginate` the request takes a long time and gives us near a thousan
 
 ##  Templates for the output
 
-The option `-t, --template string`of `gh api`
-allows to format the response using a [Go template](https://pkg.go.dev/text/template).
+Once the output is legal JSON, it can be formatted according to a required formatting string by adding the `-t` or  `--template` flag. 
 
-Here is an example of template:
+See the docs 
+
+* [gh help for formatting](https://cli.github.com/manual/gh_help_formatting)
+* [Go template](https://pkg.go.dev/text/template).
+
+The command:
+
+```
+gh api repos/crguezl/learning-bash/issues 
+```
+
+produces an array of objects with fields like `title`, `labels` (an array of objects with fields like `name` and `description`) and `body`.
+
+Here is an example of template that traverses the array using the syntax:
+::: v-pre
+(`{{range .}}` ... `{{end}}`)
+:::
+and prints the title, labels and body:
 
 ::: v-pre
 ```
 ➜  gh-learning git:(master) ✗ cat template.gotemplate
-Title: {{range .}}{{.title}}
+{{range .}}Title: {{.title}}
 Labels: ({{.labels | pluck "name" | join ", " | color "yellow"}})
 Body: {{.body}}
 {{end}}
 ```
 :::
 
+The Go docs say:
+
+::: v-pre
+```
+{{range pipeline}} T1 {{end}}
+	The value of the pipeline must be an array, slice, map, or channel.
+	If the value of the pipeline has length zero, nothing is output;
+	otherwise, dot is set to the successive elements of the array,
+	slice, or map and T1 is executed. 
+```
+:::
+
+ In addition to the Go template functions in the standard library, the following functions can be used with this formatting directive:
+
+* `autocolor:` like color, but only emits color to terminals
+* `color <style> <input>:` colorize input using <https://github.com/mgutz/ansi>
+* `join <sep> <list>:` joins values in the list using a separator
+* `pluck <field> <list>:` collects values of a field from all items in the input
+* `tablerow <fields>...:` aligns fields in output vertically as a table
+* `tablerender:` renders fields added by tablerow in place
+* `timeago <time>:` renders a timestamp as relative to now
+* `timefmt <format> <time>:` formats a timestamp using Go's Time.Format function
+* `truncate <length> <input>:` ensures input fits within length
+* `hyperlink <url> <text>:` renders a terminal hyperlink
+
 and let us use it:
 
 ```
-➜  gh-learning git:(master) ✗ gh api repos/crguezl/learning-bash/issues --template "$(cat template.gotemplate)"
+➜  gh-learning git:(master) ✗ gh api repos/crguezl/learning-bash/issues \
+                              --template "$(cat template.gotemplate)"
 Title: issue de prueba
 Labels: (bug, documentation, duplicate, enhancement, help wanted, good first issue, invalid, question)
 Body: 👍  blah ...
 ```
 
 The `Labels` appear in yellow.
-
-* Véase [gh formatting](https://cli.github.com/manual/gh_help_formatting)
