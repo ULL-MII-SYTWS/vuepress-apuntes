@@ -101,6 +101,7 @@ What is the output if we use `-f number_of_repos=3` instead of `-F number_of_rep
 ```
  gh api graphql --paginate -f number_of_repos=3 --field query=@my-repos.gql
 ```
+
 <!-- "explanation": "Could not coerce value \"3\" to Int" -->            
 
 ## Example: Getting issues
