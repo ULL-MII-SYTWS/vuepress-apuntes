@@ -98,7 +98,7 @@ const navigationBar = [
         items: [
           {text: 'Calendario Académico', link: 'https://www.ull.es/estudios-docencia/calendario-academico/'},
           {text: 'Portafirmas', link: 'https://sede.ull.es/ecivilis-signature-inbox-application/inbox.html'},
-          {text: 'cvn', link: 'https://cvn.fecyt.es/editor/'},
+          {text: 'Editor cvn', link: 'https://cvn.fecyt.es/editor/'},
         ]
       },
       { text: 'TFG', link: "https://campusdoctoradoyposgrado2223.ull.es/grade/report/user/index.php?id=2223090070&userid=254"},
