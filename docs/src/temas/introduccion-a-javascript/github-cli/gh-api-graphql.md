@@ -226,7 +226,7 @@ The `labels` field has the type [LabelConnection](https://docs.github.com/en/fre
 
 Execution:
 
-```
+```json
 ➜  gh api graphql --paginate -F query=@gh-api-example.graphql | jq .
 {
   "data": {
