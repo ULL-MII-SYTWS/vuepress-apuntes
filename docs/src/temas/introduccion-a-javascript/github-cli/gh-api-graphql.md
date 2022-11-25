@@ -35,6 +35,13 @@ Execution:
 
 ## Getting my repos
 
+Remember: pass one or more `-f/--raw-field` values in `"key=value"` format to add static string
+parameters to the request payload. 
+
+The `-F/--field` flag has type conversion based on the format of the value.
+For instance placeholder values `"{owner}"`, `"{repo}"`, and `"{branch}"` get populated with values
+from the repository of the current directory and if the value starts with `"@"`, the rest of the value is interpreted as a filename to read the value from.
+
 ```
 ➜  graphql-learning git:(main) ✗ gh config set pager cat
 ➜  graphql-learning git:(main) ✗ cat my-repos.bash
@@ -86,6 +93,15 @@ Here is the output of an execution:
   }
 }
 ```
+
+### Exercise: -F versus -f
+
+What is the output if we use `-f number_of_repos=3` instead of `-F number_of_repos=3` in the former request?
+
+```
+ gh api graphql --paginate -f number_of_repos=3 --field query=@my-repos.gql
+```
+<!-- "explanation": "Could not coerce value \"3\" to Int" -->            
 
 ## Example: Getting issues
 
