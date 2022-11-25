@@ -104,6 +104,15 @@ What is the output if we use `-f number_of_repos=3` instead of `-F number_of_rep
 
 <!-- "explanation": "Could not coerce value \"3\" to Int" -->            
 
+In `gh`, the `--field` flag behaves like `--raw-field` with magic type conversion based on the format of the value:
+
+* literal values "`true`", "`false`", "`null`", and **integer numbers** get converted to appropriate JSON types;
+* placeholder values "`:owner`", "`:repo`", and "`:branch`" get populated with values from the repository of the current directory;
+* if the value starts with "`@`", the rest of the value is interpreted as a filename to read the value from. 
+  * Pass "`-`" to read from standard input.
+
+For GraphQL requests, all fields other than "query" and "operationName" are interpreted as GraphQL variables.
+
 ## Example: Getting issues
 
 Follows an example of query using GraphQL (see [The Example query in GitHub Docs](https://docs.github.com/en/graphql/guides/forming-calls-with-graphql#example-query)).
@@ -214,13 +223,6 @@ Here we specify the `title`, `url`, and `labels` fields of the `Issue` object.
 
 The `labels` field has the type [LabelConnection](https://docs.github.com/en/free-pro-team@latest/v4/object/labelconnection). As with the `issues` object, because `labels` is a connection, we must travel its `edges` to a connected `node`: the `label` object. At the node, we can specify the `label` object fields we want to return, in this case, `name`.
 
-In `gh`, the `--field` flag behaves like `--raw-field` with magic type conversion based on the format of the value:
-
-* literal values "true", "false", "null", and integer numbers get converted to appropriate JSON types;
-* placeholder values ":owner", ":repo", and ":branch" get populated with values from the repository of the current directory;
-* if the value starts with "@", the rest of the value is interpreted as a filename to read the value from. Pass "-" to read from standard input.
-
-For GraphQL requests, all fields other than "query" and "operationName" are interpreted as GraphQL variables.
 
 Execution:
 
