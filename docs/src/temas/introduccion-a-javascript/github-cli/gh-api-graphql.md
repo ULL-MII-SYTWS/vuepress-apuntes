@@ -43,7 +43,7 @@ gh api graphql --paginate -F number_of_repos=3 --field query=@my-repos.gql
 
 In this example `$number_of_repos` is a variable that is set to `3` inside the command using the option `-F number_of_repos=3`
 
-```
+```GraphQL
 ➜  graphql-learning git:(main) ✗ cat my-repos.gql 
 
 query($number_of_repos:Int!){

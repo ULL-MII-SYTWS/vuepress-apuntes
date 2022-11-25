@@ -9,7 +9,7 @@ key: gh-cli
 layout: Practica
 order: 20 # may be there is one in between the emitters and this. to decide
 sidebar: auto
-prev: event-emitters.md
+prev: /practicas/event-emitters.md
 next: 
 rubrica:
   - "códigos correctos"
