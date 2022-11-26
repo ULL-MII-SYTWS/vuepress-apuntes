@@ -10,7 +10,7 @@ prev: gh-api.md
 
 For the examples use also _/ˈɡrafək(ə)l/_ a graphical interactive in-browser GraphQL IDE. 
 [Install it](https://github.com/skevy/graphiql-app) or 
-[try the live demo](http://graphql.org/swapi-graphql).
+[try the live demo](http://graphql.org/swapi-graphql). See the youtube video [GitHub's GraphQL API](https://www.youtube.com/watch?v=B4rY2rgn1RY) by Kent C. Dodds
 
 [![](https://github.com/graphql/graphiql/raw/main/packages/graphiql/resources/graphiql.png)](http://graphql.org/swapi-graphql)
 
