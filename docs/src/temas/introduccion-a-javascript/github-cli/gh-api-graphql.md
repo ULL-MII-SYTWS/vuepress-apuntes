@@ -8,6 +8,13 @@ prev: gh-api.md
 
 **GraphQL** is a query language for web services APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more.
 
+For the examples use also _/ˈɡrafək(ə)l/_ a graphical interactive in-browser GraphQL IDE. 
+[Install it](https://github.com/skevy/graphiql-app) or 
+[try the live demo](http://graphql.org/swapi-graphql).
+
+[![](https://github.com/graphql/graphiql/raw/main/packages/graphiql/resources/graphiql.png)](http://graphql.org/swapi-graphql)
+
+
 ## Example: Number of repos in an Organization 
 
 ```
@@ -266,6 +273,9 @@ Execution:
 ```
 ➜  graphql-learning git:(main) cat findissueid.bash 
 gh api graphql --paginate --field query=@findissueid.gql
+```
+
+```gql
 ➜  graphql-learning git:(main) cat findissueid.gql 
 query FindIssueID {
   repository(owner:"crguezl", name:"learning-graphql-with-gh") {
@@ -274,8 +284,14 @@ query FindIssueID {
     }
   }
 }
+```
+
+```
 ➜  graphql-learning git:(main) cat viewissue.bash 
-gh issue -R crguezl/learning-graphql-with-gh view $@%                                                
+gh issue -R crguezl/learning-graphql-with-gh view $@%
+```
+
+```
 ➜  graphql-learning git:(main) cat addreactiontoissue.bash 
 #!/bin/bash
 # See
@@ -284,6 +300,9 @@ gh issue -R crguezl/learning-graphql-with-gh view $@%
 # https://docs.github.com/en/enterprise-server@3.0/graphql/guides/forming-calls-with-graphql
 # for a list of supported emojis
 gh api graphql --paginate --field query=@addreactiontoissue.gql 
+``` 
+
+```gql
 ➜  graphql-learning git:(main) cat addreactiontoissue.gql 
 mutation AddReactionToIssue {
   addReaction(input:{subjectId:"I_kwDOGLyMF84838wt",content:ROCKET}) {
