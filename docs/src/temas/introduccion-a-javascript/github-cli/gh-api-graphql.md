@@ -8,18 +8,18 @@ prev: gh-api.md
 
 **GraphQL** is a query language for web services APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more.
 
-For the examples use also _/ˈɡrafək(ə)l/_ a graphical interactive in-browser GraphQL IDE. 
-
-You can use it in any of these ways:
+For the examples here you can play with the queries using also _/ˈɡrafək(ə)l/_, a graphical interactive in-browser GraphQL IDE. You can use it in any of these ways:
 
 * [live GraphQL GitHub Explorer](https://docs.github.com/en/graphql/overview/explorer) ([Is an instance of GraphiQL. See the docs](https://docs.github.com/en/graphql/guides/using-the-explorer))
 * [Install the app](https://github.com/skevy/graphiql-app) or 
 * [try the live demo](http://graphql.org/swapi-graphql). 
 
-See the youtube video [GitHub's GraphQL API](https://www.youtube.com/watch?v=B4rY2rgn1RY) by Kent C. Dodds
 
 [![](https://github.com/graphql/graphiql/raw/main/packages/graphiql/resources/graphiql.png)](http://graphql.org/swapi-graphql)
 
+Watch the youtube video [GitHub's GraphQL API](https://www.youtube.com/watch?v=B4rY2rgn1RY) by Kent C. Dodds
+
+<youtube id="B4rY2rgn1RY"></youtube>
 
 ## Example: Number of repos in an Organization 
 
