@@ -23,11 +23,19 @@ Watch the youtube video [GitHub's GraphQL API](https://www.youtube.com/watch?v=B
 
 ## Example: Number of repos in an Organization 
 
-```
-gh api graphql --paginate --field query=@org-num-repos.gql --jq .data.organization.repositories.totalCount
+**GraphQL queries return only the data you specify** and no more ... 
+
+To form a query, you must specify [fields within fields (also known as nested subfields)](https://docs.github.com/en/graphql/guides/introduction-to-graphql#field) until you return only [scalars](https://docs.github.com/en/graphql/reference/scalars).
+
+Queries are structured like this:
+
+```graphql
+query {
+  JSON-OBJECT-TO-RETURN
+}
 ```
 
-These are the contents of the file `org-num-repos.gql`:
+Here is an example. These are the contents of the file `org-num-repos.gql`:
 
 ```GraphQL
 query {
@@ -39,12 +47,17 @@ query {
 }
 ```
 
-Execution:
+Go to the [live GraphQL GitHub Explorer](https://docs.github.com/en/graphql/overview/explorer), authenticate  
+and copy the request.
+
+
+That we can execute in `gh` this way:
+
 
 ```
-✗ source org-num-repos.bash 
-17
+gh api graphql --paginate --field query=@org-num-repos.gql --jq .data.organization.repositories.totalCount
 ```
+
 
 ## Getting my repos
 
@@ -273,6 +286,49 @@ Execution:
 
 [Descripción de la práctica gh-cli]({{site.baseurl}}/practicas/p6-t1-gh-cli)
 -->
+
+## Pagination
+
+In `--paginate` mode, all pages of results will sequentially be requested until there are no more pages of results. 
+
+For GraphQL requests, this requires that 
+
+1. the original query accepts an `$endCursor: String` variable and that 
+2. it fetches the `pageInfo{ hasNextPage, endCursor }` set of fields from a collection.
+
+Here is an example:
+
+```graphql
+➜  apuntes git:(main) ✗ gh api graphql --paginate \
+    --jq '.data.organization.repositories.nodes[] | .defaultBranchRef.name + "\t" + .name' \
+    -F org=ULL-MII-SYTWS-2223 \
+    -f query='
+query($org:String!, $endCursor:String) {
+  organization(login:$org) {
+    repositories(first: 100, after: $endCursor, isFork:false, orderBy: {field:NAME, direction:ASC}) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      nodes {
+        name
+        defaultBranchRef {
+          name
+        }
+      }
+    }
+  }
+}'
+```
+
+Which outputs something like:
+
+```
+main	.github
+main	async-await-ale_hernandez_liberon-alu0101225562
+...
+```
+
 
 ## Mutation Example
 
