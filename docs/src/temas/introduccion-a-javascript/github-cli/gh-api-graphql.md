@@ -345,10 +345,13 @@ Mutations are structured like this:
 
 ```graphql
 mutation {
-  MUTATION-NAME(input: {
+  MUTATION-NAME(
+    input: {
       MUTATION-NAME-INPUT!
-    }) {
+    }) 
+    {
     MUTATION-NAME-PAYLOAD
+    }
   }
 }
 ```
@@ -360,16 +363,20 @@ For instance:
 
 ```graphql
 mutation AddReactionToIssue {
-  addReaction(input: { 
+  addReaction(
+    input: 
+    { 
       subjectId:"I_kwDOGLyMF84838wt",
       content:ROCKET
-    }) {
-    reaction {
-      content
     }
-    subject {
-      id
-    }
+  ) 
+  {
+      reaction {
+        content
+      }
+      subject {
+        id
+      }
   }
 }
 ```
