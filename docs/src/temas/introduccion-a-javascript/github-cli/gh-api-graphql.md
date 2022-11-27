@@ -11,7 +11,7 @@ prev: gh-api.md
 For the examples here you can play with the queries using also _/ˈɡrafək(ə)l/_, a graphical interactive in-browser GraphQL IDE. You can use it in any of these ways:
 
 * [live GraphQL GitHub Explorer](https://docs.github.com/en/graphql/overview/explorer) ([Is an instance of GraphiQL. See the docs](https://docs.github.com/en/graphql/guides/using-the-explorer))
-* [Install the Electron Desktop GraphiQL app](https://github.com/skevy/graphiql-app) or 
+* Or [install the Electron Desktop GraphiQL app](https://github.com/skevy/graphiql-app) or 
 * [Try also the live demo at GraphQL site](http://graphql.org/swapi-graphql): It uses a Star Wars API. Click on the docs on the upper left corner. 
 
 
