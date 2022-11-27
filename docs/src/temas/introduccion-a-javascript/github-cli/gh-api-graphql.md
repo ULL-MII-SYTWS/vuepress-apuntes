@@ -329,8 +329,7 @@ main	async-await-ale_hernandez_liberon-alu0101225562
 ...
 ```
 
-
-## Mutation Example
+## Mutation 
 
 The mutation type defines GraphQL operations **that change data on the server**. 
 
@@ -346,7 +345,9 @@ Mutations are structured like this:
 
 ```graphql
 mutation {
-  MUTATION-NAME(input: {MUTATION-NAME-INPUT!}) {
+  MUTATION-NAME(input: {
+      MUTATION-NAME-INPUT!
+    }) {
     MUTATION-NAME-PAYLOAD
   }
 }
@@ -357,7 +358,7 @@ and the payload object is `MutationNamePayload`.
 
 For instance:
 
-```gql
+```graphql
 mutation AddReactionToIssue {
   addReaction(input: { 
       subjectId:"I_kwDOGLyMF84838wt",
@@ -375,7 +376,7 @@ mutation AddReactionToIssue {
 
 Of course, we have to find the issue id in this case:
 
-```gql
+```graphql
 ➜  graphql-learning git:(main) cat findissueid.gql 
 query FindIssueID {
   repository(owner:"crguezl", name:"learning-graphql-with-gh") {
@@ -388,7 +389,7 @@ query FindIssueID {
 
 which we can get with:
 
-```
+```graphql
 ✗ gh api graphql --paginate -F num=1 --field query=@findissueid.gql
 {
   "data": {
@@ -410,7 +411,7 @@ gh issue -R crguezl/learning-graphql-with-gh view $@%
 
 Now we can add a reaction to the issue:
 
-```gql
+```graphql
 ➜  graphql-learning git:(main) cat addreactiontoissue.gql 
 mutation AddReactionToIssue {
   addReaction(input:{subjectId:"I_kwDOGLyMF84838wt",content:ROCKET}) {
@@ -423,6 +424,7 @@ mutation AddReactionToIssue {
   }
 }
 ```
+
 using the command:
 
 ```
