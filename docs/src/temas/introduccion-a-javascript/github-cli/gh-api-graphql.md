@@ -332,10 +332,48 @@ main	async-await-ale_hernandez_liberon-alu0101225562
 
 ## Mutation Example
 
+The mutation type defines GraphQL operations **that change data on the server**. 
+
+It is analogous to performing HTTP verbs such as `POST`, `PATCH`, and `DELETE`.
+
+To form a mutation, you must specify three things:
+
+1. *Mutation name*. The type of modification you want to perform.
+2. *Input object*. The data you want to send to the server, composed of *input fields*. Pass it as an argument to the mutation name.
+3. *Payload object*. The data you want to return from the server, composed of *return fields*. Pass it as the body of the mutation name.
+
+Mutations are structured like this:
+
+```graphql
+mutation {
+  MUTATION-NAME(input: {MUTATION-NAME-INPUT!}) {
+    MUTATION-NAME-PAYLOAD
+  }
+}
 ```
-➜  graphql-learning git:(main) cat findissueid.bash 
-gh api graphql --paginate --field query=@findissueid.gql
+
+The input object in this example is `MutationNameInput`, 
+and the payload object is `MutationNamePayload`.
+
+For instance:
+
+```gql
+mutation AddReactionToIssue {
+  addReaction(input: { 
+      subjectId:"I_kwDOGLyMF84838wt",
+      content:ROCKET
+    }) {
+    reaction {
+      content
+    }
+    subject {
+      id
+    }
+  }
+}
 ```
+
+Of course, we have to find the issue id in this case:
 
 ```gql
 ➜  graphql-learning git:(main) cat findissueid.gql 
@@ -348,21 +386,29 @@ query FindIssueID {
 }
 ```
 
+which we can get with:
+
+```
+✗ gh api graphql --paginate -F num=1 --field query=@findissueid.gql
+{
+  "data": {
+    "repository": {
+      "issue": {
+        "id": "I_kwDOGLyMF84837de"
+      }
+    }
+  }
+}
+```
+
+We can always view an issue with the command:
+
 ```
 ➜  graphql-learning git:(main) cat viewissue.bash 
 gh issue -R crguezl/learning-graphql-with-gh view $@%
 ```
 
-```
-➜  graphql-learning git:(main) cat addreactiontoissue.bash 
-#!/bin/bash
-# See
-# https://docs.github.com/en/graphql/guides/forming-calls-with-graphql#example-mutation 
-# and
-# https://docs.github.com/en/enterprise-server@3.0/graphql/guides/forming-calls-with-graphql
-# for a list of supported emojis
-gh api graphql --paginate --field query=@addreactiontoissue.gql 
-``` 
+Now we can add a reaction to the issue:
 
 ```gql
 ➜  graphql-learning git:(main) cat addreactiontoissue.gql 
@@ -377,3 +423,8 @@ mutation AddReactionToIssue {
   }
 }
 ```
+using the command:
+
+```
+gh api graphql --paginate --field query=@addreactiontoissue.gql 
+``` 
