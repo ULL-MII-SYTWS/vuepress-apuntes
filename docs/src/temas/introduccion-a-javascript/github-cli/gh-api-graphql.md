@@ -359,7 +359,11 @@ mutation {
 The input object in this example is `MutationNameInput`, 
 and the payload object is `MutationNamePayload`.
 
-For instance:
+Here is a side-by-side comparison between the structure of SQL equivalent of a mutation, and a GraphQL mutation
+
+![](/images/mutation-vs-sql.png)
+
+For instance, the following example shows a mutation to add an emoji reaction to the issue.
 
 ```graphql
 mutation AddReactionToIssue {
@@ -381,10 +385,26 @@ mutation AddReactionToIssue {
 }
 ```
 
-Of course, we have to find the issue id in this case:
+See the reference docs for [addReaction mutation](https://docs.github.com/en/graphql/reference/mutations#addreaction), whose description is: *Adds a reaction to a subject*.
 
-```graphql
-➜  graphql-learning git:(main) cat findissueid.gql 
+The docs for the mutation list three input fields:
+
+1. `clientMutationId (String)`
+2. `subjectId (ID!)`
+3. `content (ReactionContent!)`
+
+A required content makes sense: 
+
+* we want to add a reaction, so we'll need to specify which emoji to use.
+* the `subjectId` is the only way to identify which issue in which repository to react to.
+
+Mutations often require information that you can only find out by performing a query first.
+In this  example `AddReactionToIssue`, we have to find the issue `id`:
+
+``` 
+➜  graphql-learning git:(main) cat findissueid.gql
+```
+```graphql 
 query FindIssueID {
   repository(owner:"crguezl", name:"learning-graphql-with-gh") {
     issue(number:2) {
@@ -409,12 +429,26 @@ which we can get with:
 }
 ```
 
-We can always view an issue with the command:
+How do we know which value to use for the `content`? 
 
-```
-➜  graphql-learning git:(main) cat viewissue.bash 
-gh issue -R crguezl/learning-graphql-with-gh view $@%
-```
+The [addReaction](https://docs.github.com/en/graphql/reference/mutations#addreaction) docs tell us 
+the `content` field has the type [ReactionContent](https://docs.github.com/en/graphql/reference/enums#reactioncontent), 
+which is an [enum](https://docs.github.com/en/graphql/reference/enums) because only certain emoji reactions are supported on GitHub issues. 
+
+
+The rest of the call is composed of the payload object. 
+
+This is where we specify the data we want the server to return after we've performed the mutation. 
+
+These lines come from the [addReaction](https://docs.github.com/en/graphql/reference/mutations#addreaction) docs, 
+which three possible return fields:
+
+1. `clientMutationId (String)`
+2. `reaction (Reaction!)`
+3. `subject (Reactable!)`
+
+In this example, we return the two required fields (`reaction` and `subject`), both of which have required subfields 
+(respectively, `content` and `id`).
 
 Now we can add a reaction to the issue:
 
