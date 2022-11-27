@@ -50,5 +50,19 @@ See section
 
 ## Number of  repos in an organization
 
-Using the GH GraphQl API write a gh alias `org-num-repos` to count the number of repos in an organization. See
+Using the GH GraphQL API write a gh alias `org-num-repos` to count the number of repos in an organization. See
 section [Example: Number of repos in an Organization](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#example-number-of-repos-in-an-organization) 
+
+
+## Get the Issues 
+
+Using the GH GraphQL API write a gh alias `repo-issues-get` to get the issues of a repo. See the section [Getting issues](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#example-getting-issues)
+
+## Add a Reaction
+
+Using the GH GraphQL API write a gh alias `issue-add-reaction` to 
+
+1. find an issue of a given repo by number and 
+2. adds a given reaction to the issue. 
+
+See the section [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation)
