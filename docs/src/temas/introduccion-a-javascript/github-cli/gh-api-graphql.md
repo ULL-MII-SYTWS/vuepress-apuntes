@@ -359,9 +359,12 @@ mutation {
 The input object in this example is `MutationNameInput`, 
 and the payload object is `MutationNamePayload`.
 
+<!--
 Here is a side-by-side comparison between the structure of SQL equivalent of a mutation, and a GraphQL mutation
 
 ![](/images/mutation-vs-sql.png)
+
+-->
 
 For instance, the following example shows a mutation to add an emoji reaction to the issue.
 
@@ -471,3 +474,25 @@ using the command:
 ```
 gh api graphql --paginate --field query=@addreactiontoissue.gql 
 ``` 
+
+## Rename Repository
+
+Here is a second example of mutation that renames a repository:
+
+
+```GraphQL
+query getRepoId {
+  repository(owner: "ULL-ESIT-DMSI-1920", name: "prueba") {
+    id
+  }
+}
+
+mutation renameRepoName($id: ID!) {
+  updateRepository(input: {name: "prueba-funciona", repositoryId: $id}) {
+    repository {
+      name
+    }
+  }
+}
+
+```

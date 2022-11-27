@@ -65,4 +65,8 @@ Using the GH GraphQL API write a gh alias `issue-add-reaction` to
 1. find an issue of a given repo by number and 
 2. adds a given reaction to the issue. 
 
-See the section [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation)
+See the section [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation) of the [GraphQL Examples chapter](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#graphql-examples)
+
+## Rename a repo
+
+Using the GH GraphQL API write a gh alias `repo-rename` to rename a repo. See the sections [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation) and the section [Rename Repository](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#rename-repository) of the [GraphQL Examples chapter](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#graphql-examples)
