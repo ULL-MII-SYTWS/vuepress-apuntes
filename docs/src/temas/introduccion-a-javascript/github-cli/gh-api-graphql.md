@@ -21,6 +21,10 @@ Watch the youtube video [GitHub's GraphQL API](https://www.youtube.com/watch?v=B
 
 <youtube id="B4rY2rgn1RY"></youtube>
 
+More advanced staff is in the video [Advanced patterns for GitHub's GraphQL API](https://youtu.be/i5pIszu9MeM)
+
+<youtube id="i5pIszu9MeM"></youtube>
+
 ## Example: Number of repos in an Organization 
 
 **GraphQL queries return only the data you specify** and no more ... 
