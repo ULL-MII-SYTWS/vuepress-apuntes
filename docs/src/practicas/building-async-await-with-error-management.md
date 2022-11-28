@@ -21,7 +21,7 @@ Add error management to the home-made Async-Await implementation you did in the 
 so that a program like this:
 
 ```js
-import { awaitFor, waiter } from './async-await.mjs';
+import { awaitFor, catched, waiter } from './async-await.mjs';
 
 function doTask1(arg) {
     return new Promise((resolve, reject) => {
@@ -31,13 +31,13 @@ function doTask1(arg) {
 
 function doTask2(arg) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(arg+2), 100)
+        setTimeout(() => resolve(arg + 2), 100)
     })
 }
 
 function doTask3(arg) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(arg+3), 100)
+        setTimeout(() => resolve(arg + 3), 100)
     })
 }
 
@@ -68,27 +68,39 @@ function* fails(arg) {
         const res1 = awaitFor(yield doTask1(arg));
         console.log(res1);
 
-        const res2 = awaitFor(yield  doTaskErr(res1));
+        const res2 = awaitFor(yield doTaskErr(res1));
         console.log(res2);
 
-        const res3 = awaitFor(yield  doTask3(res2));
+        const res3 = awaitFor(yield doTask3(res2));
         console.log(res3);
 
         return res3;
     } catch (err) {
-        console.log(`Inside catch: ${err}`);
+        console.log(`Inside "fails" catch: ${err}`);
+        catched(err);    
     }
-
 }
 
 function* main() {
-    const res = yield waiter(init, 3)();
-    console.log(`res=${res}`);
-    yield waiter(fails, 3)();
-    console.log(`Executed since the error was catched`);
+    try {
+        const res = awaitFor(yield waiter(init, 3)());
+        console.log(`res=${res}`);
+        awaitFor(yield waiter(fails, 3)());
+        console.log(`Executed since the error was catched`);
+    } catch (err) {
+        console.log(`Inside "main" catch: ${err}`);
+    }
 }
 
 waiter(main)();
+
+/* // Alternatively:
+const doIt = waiter(init, 3);
+doIt().then( () => {
+    const doErr = waiter(fails, 3);
+    doErr();
+});
+*/
 ```
 
 should produce an output like this:
