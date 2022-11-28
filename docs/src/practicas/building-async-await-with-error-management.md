@@ -94,13 +94,6 @@ function* main() {
 
 waiter(main)();
 
-/* // Alternatively:
-const doIt = waiter(init, 3);
-doIt().then( () => {
-    const doErr = waiter(fails, 3);
-    doErr();
-});
-*/
 ```
 
 should produce an output like this:
