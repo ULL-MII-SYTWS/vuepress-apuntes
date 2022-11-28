@@ -510,6 +510,32 @@ mutation renameRepoName($id: ID!) {
 
 ### Get Discussions in the repo crguezl/learning-graphql-with-gh
 
+```GraphQL
+➜  discussions-mutation git:(main) ✗ cat get-discussions.bash 
+#!/bin/bash 
+# Get discussions 
+gh api graphql \
+  -H 'GraphQL-Features: discussions_api' \
+  -F owner=':owner' \
+  -F name=':repo' \
+  -f query='
+query getDiscussions($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    discussions(first: 10) {
+      edges {
+        node {
+          id
+          number
+          body
+        }
+      }
+    }
+  }
+}'
+```
+
+Execution:
+
 ```json
 ➜  discussions-mutation git:(main) ./get-discussions.bash        
 {
@@ -532,6 +558,53 @@ mutation renameRepoName($id: ID!) {
 ```
 
 ### Get Comments in the Discussion
+
+```GraphQL
+➜  discussions-mutation git:(main) ✗ cat get-comments.bash 
+#!/bin/bash 
+# Discussion 3 and comments
+
+```GraphQL
+declare -i DISCUSSION_NUMBER=3
+
+if [[ $# != 0 ]]; then
+  DISCUSSION_NUMBER=$1
+fi
+gh api graphql \
+-H 'GraphQL-Features: discussions_api' \
+-F discussionNumber=${DISCUSSION_NUMBER} \
+-F owner=':owner' \
+-F name=':repo' \
+-f query='query getComments($owner: String!, $name: String!, $discussionNumber: Int!) {
+  repository(owner: $owner, name: $name) {
+    discussion(number: $discussionNumber) {
+      id
+      title
+      body
+      comments(first: 10) {
+        totalCount
+        edges {
+          node {
+            id
+            body
+            replies(first: 5) {
+              edges {
+                node {
+                  body
+                  id
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+'
+```
+
+Execution:
 
 ```json
 ➜  discussions-mutation git:(main) ✗ ./get-comments.bash         
@@ -571,6 +644,40 @@ mutation renameRepoName($id: ID!) {
 
 ### Mutation: Add Reply to Discussion Comment
 
+```GraphQL
+➜  discussions-mutation git:(main) ✗ cat reply-to-discussion-comment.bash 
+#!/bin/bash 
+BODY="Contador de cuerpo: 3"
+discussionId="D_kwDOGLyMF84ARkhY"
+replyToId="DC_kwDOGLyMF84AQN01"
+if [[ $# != 0 ]]; then
+  BODY=$1
+fi
+gh api graphql \
+-H 'GraphQL-Features: discussions_api' \
+-f body="Contador de cuerpo: $BODY" \
+-F discussionId=$discussionId \
+-F replyToId=$replyToId \
+-f query='
+mutation addComment($body: String!, $discussionId: ID!, $replyToId: ID!){
+  addDiscussionComment(input:
+    {
+      body: $body , 
+      discussionId: $discussionId, 
+      replyToId: $replyToId 
+    }
+  )
+  {
+    comment{
+      body
+      id
+    }
+  }
+}'
+```
+
+Execution:
+
 ```json
 ➜  discussions-mutation git:(main) ✗ ./reply-to-discussion-comment.bash
 {
@@ -585,7 +692,7 @@ mutation renameRepoName($id: ID!) {
 }
 ```
 
-### References for Discussions GRaphQL API
+### References for Discussions GraphQL API
 
 * [gist](https://gist.github.com/oleksis/d40a48a343b7e81fe0c6a940f086f43c)
 * GitHub Docs  https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#repositorydiscussions

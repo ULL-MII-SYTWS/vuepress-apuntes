@@ -70,3 +70,7 @@ See the section [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-gr
 ## Rename a repo
 
 Using the GH GraphQL API write a gh alias `repo-rename` to rename a repo. See the sections [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation) and the section [Rename Repository](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#rename-repository) of the [GraphQL Examples chapter](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#graphql-examples)
+
+## Add a Comment in a Discussion
+
+Using the GH GraphQL API write  gh scripts to add a comment to a discussion. See the sections [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation) and the section [Add Reply to Discussion Comment](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#add-reply-to-discussion-comment) of the [GraphQL Examples chapter](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#graphql-examples)
