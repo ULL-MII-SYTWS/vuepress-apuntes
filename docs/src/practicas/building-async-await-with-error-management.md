@@ -89,6 +89,7 @@ function* main() {
         console.log(`Executed since the error was catched`);
     } catch (err) {
         console.log(`Inside "main" catch: ${err}`);
+        catched(err);
     }
 }
 
