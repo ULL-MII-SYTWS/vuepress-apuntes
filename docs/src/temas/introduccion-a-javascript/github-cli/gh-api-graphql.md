@@ -391,6 +391,7 @@ query($org:String!, $endCursor:String) {
 }
 ``` 
 
+See [crguezl/learning-graphql-with-gh/org-getallrepos-graphql-pagination](https://github.com/crguezl/learning-graphql-with-gh/tree/main/org-getallrepos-graphql-pagination)
 
 ## Mutation 
 
