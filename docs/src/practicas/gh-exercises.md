@@ -50,7 +50,7 @@ See section
 
 ## Number of  repos in an organization
 
-Using the GH GraphQL API write a [gh ext[gh extension](/temas/introduccion-a-javascript/github-cli/gh-extension)) `org-num-repos` to count the number of repos in an organization. See
+Using the GH GraphQL API write a [gh extension](/temas/introduccion-a-javascript/github-cli/gh-extension) `org-num-repos` to count the number of repos in an organization. See
 section [Example: Number of repos in an Organization](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#example-number-of-repos-in-an-organization) 
 
 
