@@ -45,3 +45,7 @@ En clase cruzaremos los pull requests y haremos los nuevos problemas.
 
 
 <youtube id="FSn_38gDvzM"></youtube>
+
+Serious Programming with jq?! A Practical and Purely Functional Programming Language! by Charles Chamberlain:
+
+<youtube id="https://youtu.be/PS_9pyIASvQ"></youtube>
