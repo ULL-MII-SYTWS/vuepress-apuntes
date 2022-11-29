@@ -48,7 +48,7 @@ Using  the GH REST API and a Go  template, make a gh alias `repo-issues-list` to
 See section 
 [Templates for the output](/temas/introduccion-a-javascript/github-cli/gh-api.html#templates-for-the-output)
 
-## Number of  repos in an organization
+## Number of  repos in an organization using GraphQL
 
 Using the GH GraphQL API write a [gh extension](/temas/introduccion-a-javascript/github-cli/gh-extension) `org-num-repos` to count the number of repos in an organization. See
 section [Example: Number of repos in an Organization](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#example-number-of-repos-in-an-organization) 

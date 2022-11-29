@@ -25,7 +25,9 @@ More advanced staff is in the video [Advanced patterns for GitHub's GraphQL API]
 
 <youtube id="i5pIszu9MeM"></youtube>
 
-## Example: Number of repos in an Organization 
+## Query Example: Number of repos in an Organization 
+
+### Structure of a Query 
 
 **GraphQL queries return only the data you specify** and no more ... 
 
@@ -51,29 +53,82 @@ query {
 }
 ```
 
+### Executing the Query
+
 Go to the [live GraphQL GitHub Explorer](https://docs.github.com/en/graphql/overview/explorer), authenticate  
 and copy the request.
 
 
-That we can execute in `gh` this way:
+We can also execute in `gh` this way:
 
 
 ```
-gh api graphql --paginate --field query=@org-num-repos.gql --jq .data.organization.repositories.totalCount
+gh api graphql \
+  --field query=@org-num-repos.gql \
+  --jq .data.organization.repositories.totalCount
 ```
 
+### Analysis of the query
 
-## Getting my repos
+Let us comment the former query 
+
+```GraphQL
+query {
+  organization(login: "ULL-MII-SYTWS-2122") {
+    repositories {
+      totalCount
+    }
+  }
+}
+```
+
+step by step:
+
+* `query`: The GraphQL query keyword
+  
+Every GraphQL schema has a **root type** for both **queries** and **mutations**. 
+
+The [query](https://graphql.github.io/graphql-spec/June2018/#sec-Type-System) type defines GraphQL operations that retrieve data from the server.
+
+```GraphQL
+organization(login: "ULL-MII-SYTWS-2122") { ... }
+```
+
+To begin the query, we want to find a organization object. 
+
+The [**schema validation** for organization](https://docs.github.com/en/graphql/reference/queries#organization) indicates this object requires an `login` **argument**.
+
+An **argument** is a set of key-value pairs attached to a specific field. 
+
+Some fields **require**  an argument. We will see later that 
+**Mutations** require an **input object** as an argument.
+
+
+
+Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. Then, when queries come in, they are **validated and executed** against that **schema**.
+
+The query `organization` is an object of type [Organization](https://docs.github.com/en/graphql/reference/objects#organization) that like any GraphQL object
+
+* **Implements** some [interfaces](https://docs.github.com/en/graphql/reference/interfaces). **GraphQL interfaces** represent a list of named fields and their arguments. GraphQL objects can then implement these interfaces which requires that the object type will define all **fields** defined by those interfaces
+* Has some **fields**
+
+Among the fields we can see that [Organization](https://docs.github.com/en/graphql/reference/objects#organization) 
+
+* Has a field `repositories` that is an object of type [RepositoryConnection](https://docs.github.com/en/graphql/reference/objects#repositoryconnection) that 
+* Has a field `totalCount` that is a [scalar](https://docs.github.com/en/graphql/reference/scalars) of type `Int` (integer)
+
+
+## gh cli: argument interpretation
 
 Remember: pass one or more `-f/--raw-field` values in `"key=value"` format to add static string
 parameters to the request payload. 
 
 The `-F/--field` flag has type conversion based on the format of the value.
+
 For instance placeholder values `"{owner}"`, `"{repo}"`, and `"{branch}"` get populated with values
 from the repository of the current directory and if the value starts with `"@"`, the rest of the value is interpreted as a filename to read the value from.
 
 ```
-➜  graphql-learning git:(main) ✗ gh config set pager cat
 ➜  graphql-learning git:(main) ✗ cat my-repos.bash
 gh api graphql --paginate -F number_of_repos=3 --field query=@my-repos.gql
 ```
@@ -98,7 +153,10 @@ query($number_of_repos:Int!){
 Here is the output of an execution:      
 
 ```
-➜  graphql-learning git:(main) ✗ gh api graphql --paginate -F number_of_repos=3 --field query=@my-repos.gql
+➜  graphql-learning git:(main) ✗ gh api graphql \
+   --paginate \
+   -F number_of_repos=3 \
+   --field query=@my-repos.gql
 ```
 
 ```GraphQL
@@ -128,10 +186,6 @@ Here is the output of an execution:
 
 What is the output if we use `-f number_of_repos=3` instead of `-F number_of_repos=3` in the former request?
 
-```
- gh api graphql --paginate -f number_of_repos=3 --field query=@my-repos.gql
-```
-
 <!-- "explanation": "Could not coerce value \"3\" to Int" -->            
 
 In `gh`, the `--field` flag behaves like `--raw-field` with magic type conversion based on the format of the value:
@@ -141,7 +195,7 @@ In `gh`, the `--field` flag behaves like `--raw-field` with magic type conversio
 * if the value starts with "`@`", the rest of the value is interpreted as a filename to read the value from. 
   * Pass "`-`" to read from standard input.
 
-For GraphQL requests, all fields other than "query" and "operationName" are interpreted as GraphQL variables.
+For GraphQL requests, all fields other than "`query`" and "`operationName`" are interpreted as GraphQL variables.
 
 ## Example: Getting issues
 
