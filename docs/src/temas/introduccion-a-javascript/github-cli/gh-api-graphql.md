@@ -103,8 +103,6 @@ An **argument** is a set of key-value pairs attached to a specific field.
 Some fields **require**  an argument. We will see later that 
 **Mutations** require an **input object** as an argument.
 
-
-
 Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. Then, when queries come in, they are **validated and executed** against that **schema**.
 
 The query `organization` is an object of type [Organization](https://docs.github.com/en/graphql/reference/objects#organization) that like any GraphQL object
@@ -114,7 +112,7 @@ The query `organization` is an object of type [Organization](https://docs.github
 
 Among the fields we can see that [Organization](https://docs.github.com/en/graphql/reference/objects#organization) 
 
-* Has a field `repositories` that is an object of type [RepositoryConnection](https://docs.github.com/en/graphql/reference/objects#repositoryconnection) that 
+* Has a field `repositories` that is an object of type [RepositoryConnection](https://docs.github.com/en/graphql/reference/objects#repositoryconnection) that itself  
 * Has a field `totalCount` that is a [scalar](https://docs.github.com/en/graphql/reference/scalars) of type `Int` (integer)
 
 
@@ -232,46 +230,61 @@ To learn more, see the tutorial [Forming calls with GraphQL
 ](https://docs.github.com/en/free-pro-team@latest/graphql/guides/forming-calls-with-graphql).
 
 
+### Analysis of the query 
+
 Looking at the composition line by line:
 
-```
+```graphql
 query {
 ```
 
 Because we want to read data from the server, not modify it, `query` is the **root operation**. (If you don't specify an operation, `query` is also the default.)
 
-```
-repository(owner:"ULL-MII-SYTWS-2021", name:"p01-t1-iaas-alu0101040882") 
+```graphql
+query {
+  repository(owner:"ULL-MII-SYTWS-2021", name:"p01-t1-iaas-alu0101040882") {
 ```
 
 To begin the query, we want to find a [repository object](https://docs.github.com/en/free-pro-team@latest/v4/object/repository). 
 
-The `schema` validation indicates this object requires 
+The `schema` validation for the [query repository](https://docs.github.com/en/graphql/reference/queries#repository) indicates this object requires 
+
 * an `owner` 
 * and a `name` argument. 
 
-A `schema` defines a **GraphQL API's type system**. It describes the complete set of possible data (objects, fields, relationships, everything) that a client can access
+As we said before a `schema` defines a **GraphQL API's type system**. It describes the complete set of possible data (objects, fields, relationships, everything) that a client can access
 
-```
-issues(last:2, states:OPEN) {
+```graphql
+query {
+  repository(owner:"ULL-MII-SYTWS-2021", name:"p01-t1-iaas-alu0101040882") {
+    issues(last:2, states:OPEN) {
 ```
 
 A **field** is a unit of data you can retrieve from an object. As the official GraphQL docs say: *The GraphQL query language is basically about selecting fields on objects*.
 
-To account for all issues in the repository, we call the `issues` object. 
+To account for all issues in the repository, we specify the `issues` field of the repository object. 
 
-Some details about the `issues` object:
+Some details about the `issues` field:
+
+### Connections in GraphQL
 
 The docs tell us this object has the type [IssueConnection](https://docs.github.com/en/free-pro-team@latest/graphql/reference/objects#issueconnection).
 
-Schema validation indicates this object requires a `last` or `first` number of results as an argument, so we provide `2`.
+As usual for connections, the Schema indicates this object requires a field like `last` or `first` to specify the number of results per page as an argument, so we provide `2`.
 
 The docs also tell us this object accepts a `states` argument, which is an `IssueState` enum that accepts `OPEN` or `CLOSED` values. 
 
+
+![](/images/getissues-graphql-github-explorer.png)
+
 To find only open issues, we give the states key a value of `OPEN`.
 
-```
-edges {
+```graphql
+query {
+  repository(owner:"ULL-MII-SYTWS-2021", name:"p01-t1-iaas-alu0101040882") {
+    issues(last:2, states:OPEN) {
+      edges {
+        node { ... }
 ```
 
 **Edges** represent connections between nodes. When you query a **connection**, you traverse its edges to get to its nodes.
@@ -280,64 +293,45 @@ We know **issues** is a *connection** because the Doc says it has the `IssueConn
 
 **Connections** let us query related objects as part of the same call. With connections, we can use a single GraphQL call where we would have to use multiple calls to a REST API. 
 
-To retrieve data about individual issues, we have to access the node via edges.
-
-```
-node {
-```
-
-Here we retrieve the node at the end of the edge. 
-The [IssueConnection docs](https://docs.github.com/en/free-pro-team@latest/v4/object/issueconnection) indicate the node at the end of the `IssueConnection` type is an `Issue` object.
-
-Now that we know we're retrieving an `Issue` object, we can look at the [docs for issue](https://docs.github.com/en/free-pro-team@latest/graphql/reference/objects#issue)  and specify the fields we want to return:
+To retrieve data about individual issues, we have to access the node via `edges`.
 
 ```graphql
-title
-url
-labels(first:5) {
-  edges {
-    node {
-      name
-    }
-  }
-}
-```
-
-Here we specify the `title`, `url`, and `labels` fields of the `Issue` object.
-
-The `labels` field has the type [LabelConnection](https://docs.github.com/en/free-pro-team@latest/v4/object/labelconnection). As with the `issues` object, because `labels` is a connection, we must travel its `edges` to a connected `node`: the `label` object. At the node, we can specify the `label` object fields we want to return, in this case, `name`.
-
-
-Execution:
-
-```json
-➜  gh api graphql --paginate -F query=@gh-api-example.graphql | jq .
-{
-  "data": {
-    "repository": {
-      "issues": {
-        "edges": [
-          {
-            "node": {
-              "title": "Revisión",
-              "url": "https://github.com/ULL-MII-SYTWS-2021/p01-t1-iaas-alu0101040882/issues/2",
-              "labels": {
-                "edges": [
-                  {
-                    "node": {
-                      "name": "enhancement"
-                    }
-                  }
-                ]
+query {
+  repository(owner:"ULL-MII-SYTWS-2021", name:"p01-t1-iaas-alu0101040882") {
+    issues(last:2, states:OPEN) {
+      edges {
+        node {
+          title
+          url
+          labels(first:5) {
+            edges {
+              node {
+                name
               }
             }
           }
-        ]
+        }
       }
     }
   }
 }
 ```
+
+Here we retrieve the `node` at the end of the `edge`. 
+
+The [IssueConnection docs](https://docs.github.com/en/free-pro-team@latest/v4/object/issueconnection) indicate the node at the end of the `IssueConnection` type is an `Issue` object.
+
+Now that we know we're retrieving an `Issue` object, we can look at the [docs for issue](https://docs.github.com/en/free-pro-team@latest/graphql/reference/objects#issue)  and specify the fields we want to return.
+
+Here we specify the `title`, `url`, and `labels` fields of the `Issue` object.
+
+* The `labels` field has the type [LabelConnection](https://docs.github.com/en/free-pro-team@latest/v4/object/labelconnection). 
+* As with the `issues` object, because `labels` is a connection, we must travel its `edges` to a connected `node`: the `label` object. 
+* At the node, we can specify the `label` object fields we want to return, in this case, `name`.
+
+
+You can see the code at [crguezl/learning-graphql-with-gh/tree/main/gh-graphql-connection-example](https://github.com/crguezl/learning-graphql-with-gh/tree/main/gh-graphql-connection-example)
+
 
 <!--
 ## Descripción de la práctica p6-t1-gh-cli
@@ -347,9 +341,7 @@ Execution:
 
 ## Pagination
 
-In `--paginate` mode, all pages of results will sequentially be requested until there are no more pages of results. 
-
-For GraphQL requests, this requires that 
+When in  `gh` we use the `--paginate` option, all pages of results will sequentially be requested until there are no more pages of results. For GraphQL requests, this requires that 
 
 1. the original query accepts an `$endCursor: String` variable and that 
 2. it fetches the `pageInfo{ hasNextPage, endCursor }` set of fields from a collection.
