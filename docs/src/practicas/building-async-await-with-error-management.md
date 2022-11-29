@@ -21,7 +21,7 @@ Add error management to the home-made Async-Await implementation you did in the 
 so that a program like this:
 
 ```js
-import { awaitFor, catched, waiter } from './async-await.mjs';
+import { awaitFor, waiter } from './async-await.mjs';
 
 function doTask1(arg) {
     return new Promise((resolve, reject) => {
@@ -77,7 +77,6 @@ function* fails(arg) {
         return res3;
     } catch (err) {
         console.log(`Inside "fails" catch: ${err}`);
-        catched(err);    
     }
 }
 
@@ -89,25 +88,23 @@ function* main() {
         console.log(`Executed since the error was catched`);
     } catch (err) {
         console.log(`Inside "main" catch: ${err}`);
-        catched(err);
     }
 }
 
 waiter(main)();
-
 ```
 
 should produce an output like this:
 
 ```
-➜  async-await-equal-generators-plus-promises git:(trycatch) ✗ node solution.mjs
+➜  async-await-equal-generators-plus-promises git:(trycatch) node solution.mjs
 3
 5
 8
 res=8
 Error handling example
 3
-Inside catch: Error: Ay!!!!!!!!
+Inside "fails" catch: Ay!!!!!!!!
 Executed since the error was catched
 ```
 
