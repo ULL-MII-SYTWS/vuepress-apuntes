@@ -4,7 +4,7 @@ next: gh-api-graphql.md
 prev: gh.md
 ---
 
-# gh api
+# GH REST API
 
 ## Manual de gh api
 

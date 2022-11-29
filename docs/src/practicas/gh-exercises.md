@@ -39,7 +39,7 @@ section [POST Example: Create a Repo](/temas/introduccion-a-javascript/github-cl
 ## List all repos in an organization
 
 Using the GH REST API, make a gh alias `org-repos-list` to list all repos in an organization. See
-section [Pagination](/temas/introduccion-a-javascript/github-cli/gh-api.html#pagination)
+section [Pagination](/temas/introduccion-a-javascript/github-cli/gh-api.html#pagination) of the [GH REST API](/temas/introduccion-a-javascript/github-cli/gh-api.html) chapter
 
 ## Formatted Issue list
 
@@ -57,6 +57,11 @@ section [Example: Number of repos in an Organization](/temas/introduccion-a-java
 ## Get the Issues 
 
 Using the GH GraphQL API write a gh alias `repo-issues-get` to get the issues of a repo. See the section [Getting issues](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#example-getting-issues)
+
+## List all repos in an organization with GraphQL
+
+Using the GH GraphQL API, make a [gh extension](/temas/introduccion-a-javascript/github-cli/gh-extension) `org-repos-list` to list all repos in an organization. See
+section [Pagination](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#pagination) of the [GH GraphQL API](/temas/introduccion-a-javascript/github-cli/gh-api-graphql) chapter
 
 ## Add a Reaction
 

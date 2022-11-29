@@ -4,7 +4,7 @@ next: gh.md
 prev: gh-api.md
 ---
 
-# GraphQL Examples
+# GH GraphQL Examples
 
 **GraphQL** is a query language for web services APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more.
 
@@ -300,16 +300,36 @@ For GraphQL requests, this requires that
 1. the original query accepts an `$endCursor: String` variable and that 
 2. it fetches the `pageInfo{ hasNextPage, endCursor }` set of fields from a collection.
 
-Here is an example:
+Here is an example that produces an array of objects with the `name` and `branch` fields of all the  repositories in the specified organization:
+
+```sh
+#!/bin/bash
+ORG=$(gh pwd)
+if [[ -n $1 ]]; then ORG=$1; fi
+
+gh api graphql --paginate \
+    --jq '
+    [
+       .data
+       .organization
+       .repositories
+       .nodes[] | 
+       { branch: .defaultBranchRef.name, name: .name }
+    ]
+    ' \
+    -F org=$ORG \
+    -F query=@org-getallrepos.gql
+```
+
+Where the `org-getallrepos.gql` file contains:
 
 ```graphql
-➜  apuntes git:(main) ✗ gh api graphql --paginate \
-    --jq '.data.organization.repositories.nodes[] | .defaultBranchRef.name + "\t" + .name' \
-    -F org=ULL-MII-SYTWS-2223 \
-    -f query='
 query($org:String!, $endCursor:String) {
   organization(login:$org) {
-    repositories(first: 100, after: $endCursor, isFork:false, orderBy: {field:NAME, direction:ASC}) {
+    repositories(first: 100, 
+                 after: $endCursor, 
+                 isFork:false, 
+                 orderBy: {field:NAME, direction:ASC}) {
       pageInfo {
         hasNextPage
         endCursor
@@ -322,16 +342,9 @@ query($org:String!, $endCursor:String) {
       }
     }
   }
-}'
-```
+}
+``` 
 
-Which outputs something like:
-
-```
-main	.github
-main	async-await-ale_hernandez_liberon-alu0101225562
-...
-```
 
 ## Mutation 
 
