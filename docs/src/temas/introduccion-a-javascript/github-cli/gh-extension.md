@@ -2,14 +2,14 @@
 
 GitHub CLI extensions are repositories that provide additional gh commands.
 
-The name of the extension repository must start with "gh-" and it must contain an executable of the same name. All arguments passed to the `gh &lt;extname>` invocation will be forwarded to the gh-&lt;extname> executable of the extension.
+The name of the extension repository must start with "gh-" and it must contain an executable of the same name. All arguments passed to the `gh &lt;extname>` invocation will be forwarded to the` gh-&lt;extname>` executable of the extension.
 
 * gh extension subcommands
-  *  create:     Create a new extension
-  *  install:    Install a gh extension from a repository
-  *  list:       List installed extension commands
-  *  remove:     Remove an installed extension
-  *  upgrade:    Upgrade installed extensions
+  *  `create`:     Create a new extension
+  *  `install`:    Install a gh extension from a repository
+  *  `list`:       List installed extension commands
+  *  `remove`:     Remove an installed extension
+  *  `upgrade`:    Upgrade installed extensions
 
 inside my mac the gh extensions repos are stored in `~/.local/share/gh/extensions/`
 
