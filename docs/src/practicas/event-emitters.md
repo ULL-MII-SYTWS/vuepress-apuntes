@@ -9,7 +9,7 @@ layout: Practica
 order: 18
 sidebar: auto
 prev: for-await.md
-next: 
+next: gh-exercises.md
 rubrica:
   - "códigos correctos"
   - "Informe bien elaborado"
