@@ -52,3 +52,7 @@ Here is an introductory call to jq: *Processing JSON in the command-line made ea
 A more advanced talk on jq is the one at !!Con 2017: *Serious Programming with jq?! A Practical and Purely Functional Programming Language*! by Charles Chamberlain:
 
 <youtube id="https://youtu.be/PS_9pyIASvQ"></youtube>
+
+## References
+
+* [Repo jq-modules-examples](https://github.com/ULL-MII-SYTWS/jq-modules-example) with an example of a module in jq
