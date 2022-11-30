@@ -56,3 +56,4 @@ A more advanced talk on jq is the one at !!Con 2017: *Serious Programming with j
 ## References
 
 * [Repo jq-modules-examples](https://github.com/ULL-MII-SYTWS/jq-modules-example) with an example of a module in jq
+* La extensión VSCode jq [vscode-jq](https://marketplace.visualstudio.com/items?itemName=dandric.vscode-jq) provee que cuando estemos editando un ficher `.json` tengamos un playground para jq en la ventana de comandos.
