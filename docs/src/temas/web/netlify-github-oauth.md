@@ -1,15 +1,29 @@
 ---
-permalink: /oauth-intro/
 ---
-# OAuth Authentication with GitHub as Providere and Netlify as Server
+# OAuth Authentication with GitHub as Oauth2 Provider and Netlify providing the Server
 
 One challenge for frontend projects is handling authentication. 
 
-OAuth2 is a widely accepted standard used by many services and APIs, but the OAuth authentication process requires a server (here the netlify server) to send a signed request to the OAuth server (here GitHub OAuth server), signed with a secret that you can never expose to the client side of your application.
+OAuth2 is a widely accepted standard used by many services and APIs, but  
 
-Netlify solves this problem by providing an integrated service that will sign the OAuth requests for you and give back an access token ready to use.
+::: tip the OAuth authentication process requires
+1. a HTTP server (here we will solve it using the server provided by netlify) 
+2. The HTTP server must be able to send a **signed request** to a OAuth server 
+3. a OAuth server (here we will use the GitHub OAuth server), 
+4. the **signed request** is signed with a secret **that you can never expose to the client side of your application**.
+:::
 
-Netlify currently supports authentication with GitHub, GitLab, and Bitbucket.
+
+![](/images/oauth-players.jpg)
+
+
+Netlify solves this problem by providing an integrated service in their serves **that will sign the OAuth requests for our programs** and give back an **access token** ready to use.
+
+Netlify currently supports authentication with 
+
+- GitHub, 
+- GitLab, and 
+- Bitbucket.
 
 ## OAuth provider setup: GitHub
 
@@ -123,7 +137,7 @@ If you don’t provide a scope, OAuth providers usually apply the **default scop
 * [Use OAuth provider tokens on your site](https://docs.netlify.com/visitor-access/oauth-provider-tokens/#oauth-provider-setup) is the original article
 * [Getting Started with JWT and Identity](https://www.netlify.com/blog/2018/01/23/getting-started-with-jwt-and-identity/?_ga=2.192508130.971053589.1669893799-1485033729.1667990322)
 * [Failed experiment: demo vue](/temas/web/netlify-identity-demo-vue-failed.md)
-
+* Capítulo [Oauth](http://crguezl.github.io/apuntes-ruby/node767.html) de los apuntes de Ruby del profesor Casiano Rodríguez (año 2015)
 ## Footnotes 
 
 [^scoped]: Scopes let you specify exactly what type of access you need. Scopes limit access for OAuth tokens. 

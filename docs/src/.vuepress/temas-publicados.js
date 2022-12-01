@@ -25,7 +25,9 @@ module.exports = [
     {
         text: 'Servicios y Aplicaciones Web', 
         items: [ 
-            { text: 'Jekyll', link: '/temas/web/jekyll.html'} 
+            { text: 'Jekyll', link: '/temas/web/jekyll.html'},
+            { text: 'OAuth Authentication with GitHub as Oauth2 Provider and Netlify providing the Server', 
+              link: '/temas/web/netlify-github-oauth.html'}
         ]
     }, 
 
