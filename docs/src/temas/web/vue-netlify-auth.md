@@ -1,5 +1,5 @@
 ---
-permalink: /netlify/
+permalink: /oauth-netlify-github/
 ---
 # OAuth Authentication with GitHub as Providere and Netlify as Server
 
