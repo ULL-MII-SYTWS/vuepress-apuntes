@@ -43,6 +43,7 @@ When you complete application registration with GitHub, you need to add the **Cl
 Once you’ve configured an authentication provider, you can use it to obtain an access token in your application.
 
 You can preview the OAuth user experience in [this netlify-auth-demo repo](https://github.com/netlify/netlify-auth-demo). It contains two examples: One with jQuery and another in Vanilla JS.
+The repo has been archived by the owner. The demos is running at <https://auth-demo.netlify.app/>
 
 Here’s an example of how to ask users to authenticate with GitHub and use the resulting token in your application’s calls to the GitHub API:
 
