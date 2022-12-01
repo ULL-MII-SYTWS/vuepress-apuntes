@@ -13,9 +13,9 @@ OAuth2 is a widely accepted standard used by many services and APIs, but
 4. the **signed request** is signed with a secret **that you can never expose to the client side of your application**.
 :::
 
+Thus, we have the user of our application, the browser,  the server, and the OAuth server:
 
 ![](/images/oauth-players.jpg)
-
 
 Netlify solves this problem by providing an integrated service in their serves **that will sign the OAuth requests for our programs** and give back an **access token** ready to use.
 
@@ -132,12 +132,18 @@ If you don’t provide a scope, OAuth providers usually apply the **default scop
 
 * [GitHub Scopes for OAuth Apps](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps)
 
+The diagram below shows the communication process when an user authenticates  against our OAuth configured web app:
+
+![](/images/oauth2-scheme.png)
+
 ## References
 
 * [Use OAuth provider tokens on your site](https://docs.netlify.com/visitor-access/oauth-provider-tokens/#oauth-provider-setup) is the original article
 * [Getting Started with JWT and Identity](https://www.netlify.com/blog/2018/01/23/getting-started-with-jwt-and-identity/?_ga=2.192508130.971053589.1669893799-1485033729.1667990322)
 * [Failed experiment: demo vue](/temas/web/netlify-identity-demo-vue-failed.md)
 * Capítulo [Oauth](http://crguezl.github.io/apuntes-ruby/node767.html) de los apuntes de Ruby del profesor Casiano Rodríguez (año 2015)
+
+
 ## Footnotes 
 
 [^scoped]: Scopes let you specify exactly what type of access you need. Scopes limit access for OAuth tokens. 
