@@ -57,7 +57,7 @@ Uno de los primeros pasos a la hora de construir un servicio GraphQL es definir 
 
 ## GraphQL Schema 
 
-A **GraphQL schema**[^1] is at the center of any GraphQL server implementation and describes the functionality available to the clients which connect to it. An Schema is written using the **Schema Definition Language (SDL)**[^2], that defines
+A **GraphQL schema**[^GSL] is at the center of any GraphQL server implementation and describes the functionality available to the clients which connect to it. An Schema is written using the **Schema Definition Language (SDL)**[^SLCS], that defines
 the syntax for writing GraphQL Schemas. It is otherwise known as **Interface Definition Language**. It is the lingua franca shared for building GraphQL APIs regardless of the programming language chosen.
 
 Here is an example of a GraphQL Schema written in SDL:
@@ -100,7 +100,7 @@ function buildSchema(source: string | Source): GraphQLSchema
 ```
 
 Creates a [GraphQLSchema object](https://graphql.org/graphql-js/type/#graphqlschema) from GraphQL schema language. 
-The schema will use default **resolvers**[^3]. 
+The schema will use default **resolvers**[^RFR]. 
 
 ```js
 const AluSchema = buildSchema(StringWithMySchemaDefinition)
@@ -264,29 +264,41 @@ Para ello vea este video:
 
 ## References
 
-* See inside the repo [crguezl/learning-graphql-with-gh](https://github.com/crguezl/learning-graphql-with-gh/tree/main/simple-graphql-express-server-example) the folder `simple-graphql-express-server-example/` with the example used in this description
+### Introduction to GraphQL
 
+* See inside the repo [crguezl/simple-graphql-express-server-example](https://github.com/crguezl/simple-graphql-express-server-example) the folder `simple-graphql-express-server-example/` with the example used in this description
+* [GraphQL Glossary](https://www.apollographql.com/docs/resources/graphql-glossary/)
+* [GraphQL Hello World](https://youtu.be/DyvsMKsEsyE). A YouTube list of videos by Ben Awad
+  * [How GraphQL Resolvers Work](https://youtu.be/pI5CKxyrbiI)
+* [GraphQL fragments explained](https://blog.logrocket.com/graphql-fragments-explained/)
+* [GraphQL Resolvers: Best Practices](https://medium.com/paypal-tech/graphql-resolvers-best-practices-cd36fdbcef55) by Mark Stuart
 * Youtube video [GraphQL Tutorial. Nos montamos una API con Nodejs y Express](https://youtu.be/atRadu-DKCE) 
+
+
+### Express-GraphQL
+
+* [GraphQL HTTP Server Middleware: GitHub repo graphql/express-graphql](https://github.com/graphql/express-graphql)
+
+### GraphiQL
+
+* [Queries y GraphiQL con la API de Rick & Morty (Curso express GraphQL)](https://youtu.be/5BwmvekYCpY)
+* [GraphiQL Shortcuts](https://defkey.com/graphiql-shortcuts)
+
+
+### Parsing, Validation and Execution
+
 * Life of a GraphQL Query by Christian Joudrey
   * [Life of a GraphQL Query — Lexing/Parsing](https://medium.com/@cjoudrey/life-of-a-graphql-query-lexing-parsing-ca7c5045fad8)
   * [Life of a GraphQL Query — Validation](https://medium.com/@cjoudrey/life-of-a-graphql-query-validation-18a8fb52f189) 
 * [GraphQL Specification](https://spec.graphql.org/draft/)
 * [graphql-js](https://github.com/graphql/graphql-js) the JavaScript reference implementation for GraphQL
-* [GraphQL HTTP Server Middleware: GitHub repo graphql/express-graphql](https://github.com/graphql/express-graphql)
-* [GRaphQL Glossary](https://www.apollographql.com/docs/resources/graphql-glossary/)
-
-* [Queries y GraphiQL con la API de Rick & Morty (Curso express GraphQL)](https://youtu.be/5BwmvekYCpY)
-* [GraphiQL Shortcuts](https://defkey.com/graphiql-shortcuts)
-* [GraphQL fragments explained](https://blog.logrocket.com/graphql-fragments-explained/)
-* [GraphQL Resolvers: Best Practices](https://medium.com/paypal-tech/graphql-resolvers-best-practices-cd36fdbcef55) by Mark Stuart
-* <https://astexplorer.net/>
-* [GraphQL Hello World](https://youtu.be/DyvsMKsEsyE). A YouTube list of videos by Ben Awad
-  * [How GraphQL Resolvers Work](https://youtu.be/pI5CKxyrbiI)
 * [Advanced GraphQL Patterns: Embrace the AST!](https://blog.smartive.ch/advanced-graphql-patterns-embrace-the-ast-4929647c5bd3) Overcoming the Fear of Apollo Server Internals. Nick Redmark
+* <https://astexplorer.net/>
+
 
 
 ## FootNotes
 
-[^1]: For more detail on the GraphQL schema language, see the <a href="https://graphql.org/learn/schema/">schema language docs</a> 
-[^2]: <a href="https://wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6#.9oztv0a7n" target="_blank" rel="nofollow noopener noreferrer">Schema language cheat sheet</a>
-[^3]: <a href="https://graphql.org/learn/execution/#root-fields-resolvers" target="_blank">Root fields & resolvers</a>
+[^GSL]: For more detail on the GraphQL schema language, see the [schema language docs](https://graphql.org/learn/schema/) 
+[^SLCS]: <a href="https://wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6#.9oztv0a7n" target="_blank" rel="nofollow noopener noreferrer">Schema language cheat sheet</a>
+[^RFR]: <a href="https://graphql.org/learn/execution/#root-fields-resolvers" target="_blank">Root fields & resolvers</a>
