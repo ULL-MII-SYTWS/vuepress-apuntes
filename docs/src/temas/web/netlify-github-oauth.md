@@ -169,10 +169,13 @@ The diagram below shows the communication process when an user authenticates  ag
 
   ![](/images/oauth-netlify-identity-3.png)
 
-4. A la app en netlify le llega el token de sesión generado y esta instancia de ejecución de la app está autenticada con los scopes con GitHub por lo que puede obtener datos privados:
+4. A la app en netlify le llega el cookie/token de sesión generado y esta instancia de ejecución de la app está autenticada con los scopes con GitHub por lo que puede obtener datos privados:
 
   ![](/images/oauth-netlify-identity-4.png)
 
+5. Podemos ver el cookie establecido en las herramientas del desarrollador de Chrome:
+
+  ![](/images/oauth-netlify-identity-5.png)
 
 ## References
 
