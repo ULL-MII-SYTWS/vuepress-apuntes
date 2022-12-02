@@ -61,68 +61,84 @@ The repo has been archived by the owner. The demos is running at <https://auth-d
 
 Here’s an example of how to ask users to authenticate with GitHub and use the resulting token in your application’s calls to the GitHub API:
 
-```js
+```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GitHub Authentication Example</title>
 
-    <!-- Make sure to include Netlify’s authentication library -->
-    <!-- Also available from npm as netlify-auth-providers -->
-    <script src="https://unpkg.com/netlify-auth-providers"></script>
-  </head>
-  <body>
-    <h1>GitHub Authentication Example:</h1>
-    <p><a href="#" id="login">Authenticate</a></p>
-    <p>Token: <span id="output-token">Not authenticated yet</span></p>
-    <p>
-      User emails:
-      <span id="output-email">Not authenticated yet</span>
-    </p>
+<head>
+  <title>GitHub Authentication Example</title>
 
-    <script>
-      const anchorTag = document.getElementById("login");
-      const outputToken = document.getElementById("output-token");
-      const outputEmail = document.getElementById("output-email");
+  <!-- Make sure to include Netlify’s authentication library -->
+  <!-- Also available from npm as netlify-auth-providers -->
+  <script src="https://unpkg.com/netlify-auth-providers"></script>
+</head>
 
-      anchorTag.addEventListener("click", (event) => {
-        event.preventDefault();
+<body>
+  <h1>GitHub Authentication Example:</h1>
 
-        const authenticator = new netlify.default({});
+  <p><a href="#" id="login">Authenticate</a></p>
 
-        authenticator.authenticate(
-          // Set the OAuth provider and token scope
-          // Provider can be "github", "gitlab", or "bitbucket"
-          // The scopes available depend on your OAuth provider
-          { provider: "github", scope: "user" },
-          async function (error, data) {
-            if (error) {
-              outputToken.innerText =
-                "Error Authenticating with GitHub: " + error;
-            } else {
-              outputToken.innerText =
-                "Authenticated with GitHub. Access Token: " +
-                data.token;
-              outputEmail.innerText = await loadGitHubUserEmails(
-                data.token
-              );
-            }
+  <p>Token: <pre id="output-token">Not authenticated yet</pre></p>
+
+  <p>
+    User login and emails: <br/>
+    <pre id="output-email">Not authenticated yet</pre>
+  </p>
+
+  <script>
+    const anchorTag = document.getElementById("login");
+    const outputToken = document.getElementById("output-token");
+    const outputEmail = document.getElementById("output-email");
+    debugger;
+
+    anchorTag.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const authenticator = new netlify.default({}); // {id: site id, base_url: by default is https://api.netlify.com 
+
+      authenticator.authenticate(
+        // Set the OAuth provider and token scope
+        // Provider can be "github", "gitlab", or "bitbucket"
+        // The scopes available depend on your OAuth provider
+        {
+          provider: "github",
+          scope: "user"
+        },
+        async function (error, data) {
+          if (error) {
+            outputToken.innerText =
+              "Error Authenticating with GitHub: " + error;
+          } else {
+            outputToken.innerText =
+              "Authenticated with GitHub. Access Token: " + data.token.substring(0, Math.min(10, data.token.length)) + "...";
+            outputEmail.innerText =
+              await loadGitHubUserEmails(data.token);
           }
-        );
-      });
+        }
+      );
+    });
 
-      async function loadGitHubUserEmails(token) {
-        return await fetch("https://api.github.com/user/emails", {
-          headers: {
-            Accept: "application/vnd.github.v3+json",
-            Authorization: `token ${token}`,
-          },
-        })
-          .then((response) => response.json())
-          .then((response) => JSON.stringify(response));
-      }
-    </script>
-  </body>
+    async function getGH(url, token) {
+      let response = await fetch(url, {
+        Accept: "application/vnd.github.v3+json",
+        headers: {
+          Authorization: `token ${token}`,
+        },
+      });
+      return await response.json();
+    }
+
+    async function loadGitHubUserEmails(token) {
+
+      let user = await getGH("https://api.github.com/user", token);
+      let emails = await getGH("https://api.github.com/user/emails", token);
+      emails = emails.map(e => e.email);
+      let result = { login: user.login, emails: emails};
+      return JSON.stringify(result, 2);
+    }
+  </script>
+</body>
+
 </html>
 ```
 
@@ -139,8 +155,9 @@ The diagram below shows the communication process when an user authenticates  ag
 ## References
 
 * [Use OAuth provider tokens on your site](https://docs.netlify.com/visitor-access/oauth-provider-tokens/#oauth-provider-setup) is the original article
-* Repo [ULL-MII-SYTWS/netlify-identity-demo-vue](https://github.com/ULL-MII-SYTWS/netlify-identity-demo-vue) wit the example  
+* Repo [ULL-MII-SYTWS/netlify-identity-demo-vue](https://github.com/ULL-MII-SYTWS/netlify-identity-demo-vue) with the example  
 * [Getting Started with JWT and Identity](https://www.netlify.com/blog/2018/01/23/getting-started-with-jwt-and-identity/?_ga=2.192508130.971053589.1669893799-1485033729.1667990322) at Netlify Blog January 23, 2018
+* [https://unpkg.com/netlify-auth-providers](https://unpkg.com/netlify-auth-providers)
 * Capítulo [Oauth](http://crguezl.github.io/apuntes-ruby/node767.html) de los apuntes de Ruby del profesor Casiano Rodríguez (año 2015)
 * EASY Web App Auth with Netlify Identity! by Brian Morrison
   
