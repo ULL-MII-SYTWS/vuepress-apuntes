@@ -148,9 +148,31 @@ If you don’t provide a scope, OAuth providers usually apply the **default scop
 
 * [GitHub Scopes for OAuth Apps](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps)
 
+## User Identification Process
+
 The diagram below shows the communication process when an user authenticates  against our OAuth configured web app:
 
-![](/images/oauth2-scheme.png)
+   
+  ![](/images/oauth2-scheme.png)
+
+1. El usuario visita la página web de nuestra aplicación desplegada en netlify:
+
+  ![](/images/oauth-netlify-identity-1.png)
+
+2. El usuario ha hecho click en `authenticate`. Se le redirige a GitHub con información adjunta de la web app. 
+ 
+  Aparece el scope **Personal user data: full access**. Se le ofrece la oportunidad de dar acceso a las organizaciones de las que es admin o a solicitarlas a los admins de las mismas.
+
+  ![](/images/oauth-netlify-identity-2.png)
+
+3. GitHub le solicita al usuario que se autentique, a veces incluso si ya lo estaba. 
+
+  ![](/images/oauth-netlify-identity-3.png)
+
+4. A la app en netlify le llega el token de sesión generado y esta instancia de ejecución de la app está autenticada con los scopes con GitHub por lo que puede obtener datos privados:
+
+  ![](/images/oauth-netlify-identity-4.png)
+
 
 ## References
 
