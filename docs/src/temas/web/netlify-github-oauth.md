@@ -179,16 +179,6 @@ The diagram below shows the communication process when an user authenticates  ag
 
   ![](/images/oauth-netlify-identity-5.png)
 
-## Access Identity info with clientContext
-
-If an Identity service is active for a site, functions running on that site have access to an `identity` and a `user` object in the clientContext. You can access the client context with TypeScript or JavaScript like this:
-
-```js
-exports.handler = async function (event, context) {
-  const { identity, user } = context.clientContext;
-  // Do stuff and return a response...
-};
-```
 
 ## References
 
