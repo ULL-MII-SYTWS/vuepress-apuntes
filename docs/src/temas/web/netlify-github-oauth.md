@@ -179,6 +179,7 @@ The diagram below shows the communication process when an user authenticates  ag
 * [Use OAuth provider tokens on your site](https://docs.netlify.com/visitor-access/oauth-provider-tokens/#oauth-provider-setup) is the original article
 * Repo [ULL-MII-SYTWS/netlify-identity-demo-vue](https://github.com/ULL-MII-SYTWS/netlify-identity-demo-vue) with the example  
 * [Getting Started with JWT and Identity](https://www.netlify.com/blog/2018/01/23/getting-started-with-jwt-and-identity/?_ga=2.192508130.971053589.1669893799-1485033729.1667990322) at Netlify Blog January 23, 2018
+* [netlify-identity-widget](https://github.com/netlify/netlify-identity-widget) at GitHub
 * [https://unpkg.com/netlify-auth-providers](https://unpkg.com/netlify-auth-providers)
 * Capítulo [Oauth](http://crguezl.github.io/apuntes-ruby/node767.html) de los apuntes de Ruby del profesor Casiano Rodríguez (año 2015)
 * EASY Web App Auth with Netlify Identity! by Brian Morrison
