@@ -87,6 +87,8 @@ Here’s an example of how to ask users to authenticate with GitHub and use the 
     <pre id="output-email">Not authenticated yet</pre>
   </p>
 
+  <a href="second-page.html">Go to second page</a>
+
   <script>
     const anchorTag = document.getElementById("login");
     const outputToken = document.getElementById("output-token");
@@ -113,8 +115,12 @@ Here’s an example of how to ask users to authenticate with GitHub and use the 
           } else {
             outputToken.innerText =
               "Authenticated with GitHub. Access Token: " + data.token.substring(0, Math.min(10, data.token.length)) + "...";
-            outputEmail.innerText =
-              await loadGitHubUserEmails(data.token);
+            let userInfo = await loadGitHubUserEmails(data.token);
+            
+            outputEmail.innerText = userInfo.login + " " + userInfo.emails.join(", ");
+            
+            localStorage.setItem("login", userInfo.login);
+            localStorage.setItem("emails", JSON.stringify(userInfo.emails));
           }
         }
       );
@@ -136,7 +142,7 @@ Here’s an example of how to ask users to authenticate with GitHub and use the 
       let emails = await getGH("https://api.github.com/user/emails", token);
       emails = emails.map(e => e.email);
       let result = { login: user.login, emails: emails};
-      return JSON.stringify(result, 2);
+      return result;
     }
   </script>
 </body>
