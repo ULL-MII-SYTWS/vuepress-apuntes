@@ -13,11 +13,11 @@ OAuth2 is a widely accepted standard used by many services and APIs, but
 4. the **signed request** is signed with a secret **that you can never expose to the client side of your application**.
 :::
 
-Thus, we have the user of our application, the browser,  the server, and the OAuth server:
+Thus, we have several players: the developer of the application, the user of the application, the browser,  the (web) application, the resource server and the OAuth server. The picture only shows some of them
 
 ![](/images/oauth-players.jpg)
 
-Netlify solves this problem by providing an integrated service in their serves **that will sign the OAuth requests for our programs** and give back an **access token** ready to use.
+Netlify solves this problem by providing an integrated service in their servers **that will sign the OAuth requests for our programs** and give back an **access token** ready to use.
 
 Netlify currently supports authentication with 
 
