@@ -43,6 +43,8 @@ You need to create an API application and make note of the **Client ID** and a *
 
 ## Netlify UI settings
 
+Enable Identity in your site’s Netlify UI settings.
+
 When you complete application registration with GitHub, you need to add the **Client ID** and **Client Secret** to your Netlify site:
 
 1. Go to **Site settings > Access control > OAuth**.
@@ -176,6 +178,17 @@ The diagram below shows the communication process when an user authenticates  ag
 5. Podemos ver el cookie establecido en las herramientas del desarrollador de Chrome:
 
   ![](/images/oauth-netlify-identity-5.png)
+
+## Access Identity info with clientContext
+
+If an Identity service is active for a site, functions running on that site have access to an `identity` and a `user` object in the clientContext. You can access the client context with TypeScript or JavaScript like this:
+
+```js
+exports.handler = async function (event, context) {
+  const { identity, user } = context.clientContext;
+  // Do stuff and return a response...
+};
+```
 
 ## References
 
