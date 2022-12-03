@@ -6,7 +6,15 @@ permalink: /serverless.html
 
 **Serverless functions** open a world of possibilities for running **on-demand**, server-side code without having to run a dedicated server. 
 
-netlify serverless functions are 
+::: tip Netlify Serverless Functions
+With Netlify Functions we can put code into a netlify/functions folder in our project, and Netlify will deploy it for us and give us a URL which will invoke it.
+:::
+
+Functions deployed from Netlify are **immutable**. This means that 
+
+* an update to a function on your production branch won’t change the version that was deployed in a branch deploy, or in a Deploy Preview
+
+Netlify serverless functions are 
 
 1. version-controlled, 
 2. built, and 
@@ -26,13 +34,7 @@ An API gateway acts as a reverse proxy to accept all application programming int
 ![](/images/api-gateway.png)
 :::
 
-::: tip Netlify Serverless Functions
-With Netlify Functions we can put this code into a netlify/functions folder in our project, and Netlify will deploy it for us and give us a URL which will invoke it.
-:::
 
-Functions deployed from Netlify are immutable. This means that 
-
-* an update to a function on your production branch won’t change the version that was deployed in a branch deploy, or in a Deploy Preview
 
 ## Reading "Saving data to Supabase and getting it back again"
 
