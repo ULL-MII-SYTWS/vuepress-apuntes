@@ -37,7 +37,8 @@ Functions deployed from Netlify are immutable. This means that
 ## Reading "Saving data to Supabase and getting it back again"
 
 The article 
-[Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) at Netlify Blog June 28, 2021
+
+[Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) by Phil Hawksworth at Netlify Blog June 28, 2021
 
 shows how to use Netlify erverless functions to save content and also to retrieve it using the Supabase database.
 
