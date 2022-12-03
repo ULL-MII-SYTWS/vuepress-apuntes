@@ -52,4 +52,4 @@ shows how to use Netlify erverless functions to save content and also to retriev
 ## Footnotes
 
 [^1]:  Deploy previews allow you to create a preview of frontend builds before they are merged into a production website. You get some preview URL of a deployment and you can see what changed and make sure it looks great.
-[^2]: Traditionally, when we need to rollback, we simply fetch the .zip artifact file from a previous build, upload and unzip.  There are reasons why we cannot apply this  rollback strategy to Serverless Framework applications. Serverless Framework artifacts are not **immutable**.
+[^2]: In traditional web apps, when we need to rollback, we simply fetch the .zip artifact file from a previous build, upload and unzip.  There are reasons why we cannot apply this  rollback strategy to Serverless Framework applications. Serverless Framework artifacts are not **immutable**.
