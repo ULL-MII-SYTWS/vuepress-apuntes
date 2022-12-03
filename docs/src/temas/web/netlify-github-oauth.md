@@ -181,7 +181,7 @@ The diagram below shows the communication process when an user authenticates  ag
 
   ![](/images/oauth-netlify-identity-4.png)
 
-5. Podemos ver el cookie establecido en las herramientas del desarrollador de Chrome:
+5. Podemos ver el cookie establecido y que hay un session storage y un localstorage para la app en las herramientas del desarrollador de Chrome:
 
   ![](/images/oauth-netlify-identity-5.png)
 
@@ -194,9 +194,14 @@ The diagram below shows the communication process when an user authenticates  ag
 * [netlify-identity-widget](https://github.com/netlify/netlify-identity-widget) at GitHub
 * [https://unpkg.com/netlify-auth-providers](https://unpkg.com/netlify-auth-providers)
 * Capítulo [Oauth](http://crguezl.github.io/apuntes-ruby/node767.html) de los apuntes de Ruby del profesor Casiano Rodríguez (año 2015)
+* [Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/)
+   
+  >  By using a serverless function we avoid sending the authentication credentials out over the wire to our client-side code. This means that we can use the service API without leaking sensitive details
 * EASY Web App Auth with Netlify Identity! by Brian Morrison
-  
+
   <youtube id="uY1HTcTiUkM"></youtube>
+
+
 * [Failed experiment: demo vue](/temas/web/netlify-identity-demo-vue-failed.md)
 
 ## Footnotes 
