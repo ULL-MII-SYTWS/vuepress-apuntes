@@ -34,6 +34,9 @@ An API gateway acts as a reverse proxy to accept all application programming int
 ![](/images/api-gateway.png)
 :::
 
+## Watching the course Up and Running with Serverless Functions with Ben Hong
+
+* [Up and Running with Serverless Functions with Ben Hong](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions)
 
 
 ## Reading "Saving data to Supabase and getting it back again"
