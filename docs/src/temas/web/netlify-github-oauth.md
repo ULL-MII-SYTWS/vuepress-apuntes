@@ -181,7 +181,7 @@ The diagram below shows the communication process when an user authenticates  ag
 
   ![](/images/oauth-netlify-identity-4.png)
 
-5. Podemos ver el cookie establecido y que hay un session storage y un localstorage para la app en las herramientas del desarrollador de Chrome:
+5. Podemos ver el cookie establecido y que hay un session storage y nuestra localstorage para la app en las herramientas del desarrollador de Chrome:
 
   ![](/images/oauth-netlify-identity-5.png)
 
