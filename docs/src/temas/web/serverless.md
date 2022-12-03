@@ -49,9 +49,11 @@ shows how to use Netlify erverless functions to save content and also to retriev
 
 ## References
 
+* [Up and Running with Serverless Functions with Ben Hong](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions)
 * [Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) at Netlify Blog June 28, 2021
 * [Netlify Serverless Functions](https://docs.netlify.com/functions/overview/?_ga=2.94572636.1599880915.1669995646-1446704997.1668527962)
-
+* Create your first Netlify Serverless Function!
+  * <youtube id="n_KASTN0gUE"></youtube>
 ## Footnotes
 
 [^1]:  Deploy previews allow you to create a preview of frontend builds before they are merged into a production website. You get some preview URL of a deployment and you can see what changed and make sure it looks great.
