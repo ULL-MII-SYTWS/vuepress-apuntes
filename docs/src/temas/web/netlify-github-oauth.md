@@ -175,11 +175,17 @@ If you don’t provide a scope, OAuth providers usually apply the **default scop
 
 ## User Identification Process
 
-The video below shows the communication process when an user authenticates  against our OAuth configured web app:
+### Diagrams and Movies of All Oauth Flows
+
+The video below shows the communication process when an user authenticates  against an OAuth configured web app:
 
 <!--![](/images/oauth2-scheme.png)-->
 
   <youtube id="7D-OU4hZW70"></youtube>
+
+To see more Oauth flows visit *Diagrams and Movies of All Oauth Flows*[^oauthflows] by Takahiko Kawasaki (may 26, 2017)
+
+### Snapshots Sequence 
 
 1. El usuario visita la página web de nuestra aplicación desplegada en netlify:
 
@@ -226,3 +232,4 @@ The video below shows the communication process when an user authenticates  agai
 
 [^authentication]: Authentication is the basis for securing data and content online. It enables a client and/or server to assert the ownership of a credential before allowing a user to access confidential information.
 [^scoped]: Scopes let you specify exactly what type of access you need. Scopes limit access for OAuth tokens. 
+[^oauthflows]: [Diagrams and Movies of All Oauth Flows](https://darutk.medium.com/diagrams-and-movies-of-all-the-oauth-2-0-flows-194f3c3ade85) by Takahiko Kawasaki (May 26, 2017)
