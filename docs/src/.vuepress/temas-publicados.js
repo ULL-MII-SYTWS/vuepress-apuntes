@@ -27,7 +27,9 @@ module.exports = [
         items: [ 
             { text: 'Jekyll', link: '/temas/web/jekyll.html'},
             { text: 'OAuth Authentication with GitHub as Oauth2 Provider and Netlify providing the Server', 
-              link: '/temas/web/netlify-github-oauth.html'}
+              link: '/temas/web/netlify-github-oauth.html'},
+            { text: 'Introduction to Serverless',
+              link: '/temas/web/serverless.html'},
         ]
     }, 
 

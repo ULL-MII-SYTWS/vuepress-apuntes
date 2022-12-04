@@ -2,18 +2,35 @@
 ---
 # OAuth Authentication with GitHub as Oauth2 Provider and Netlify providing the Server
 
-One challenge for frontend projects is handling authentication. 
+One challenge for frontend projects is handling authentication[^authentication].
 
-OAuth2 is a widely accepted standard used by many services and APIs, but  
+OAuth is everywhere. The ubiquitous "Login with Facebook, Twitter, Github, etc." can be seen in almost every web app we come across. Tools like 
 
-::: tip the OAuth authentication process requires
+* Auth0, 
+* Netlify Identity, 
+* Firebase and 
+* Okta 
+ 
+ 
+make it pretty simple to add these login buttons to most apps,
+so you can spend less time building out complex authentication frameworks and more time building your application.  
+
+::: tip The OAuth authentication process requires
 1. a HTTP server (here we will solve it using the server provided by netlify) 
 2. The HTTP server must be able to send a **signed request** to a OAuth server 
 3. a OAuth server (here we will use the GitHub OAuth server), 
 4. the **signed request** is signed with a secret **that you can never expose to the client side of your application**.
 :::
 
-Thus, we have several players: the developer of the application, the user of the application, the browser,  the (web) application, the resource server and the OAuth server. The picture only shows some of them
+Thus, we have several players: 
+
+1. the developer of the application, 
+2. the user of the application, the browser,  
+3. the (web) application, 
+4. the resource server and 
+5. the OAuth server. 
+ 
+The picture only shows some of them
 
 ![](/images/oauth-players.jpg)
 
@@ -206,4 +223,5 @@ The diagram below shows the communication process when an user authenticates  ag
 
 ## Footnotes 
 
+[^authentication]: Authentication is the basis for securing data and content online. It enables a client and/or server to assert the ownership of a credential before allowing a user to access confidential information.
 [^scoped]: Scopes let you specify exactly what type of access you need. Scopes limit access for OAuth tokens. 

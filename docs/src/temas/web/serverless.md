@@ -1,6 +1,5 @@
 ---
 title: Introduction to Serverless
-permalink: /serverless.html
 ---
 # {{ $frontmatter.title }}
 
