@@ -28,7 +28,12 @@ module.exports = [
             { text: 'Jekyll', link: '/temas/web/jekyll.html'},
             {
               text: 'GitHub GraphQL API Examples', 
-              link: '/temas/introduccion-a-javascript/github-cli/gh-api-graphql'},
+              link: '/temas/introduccion-a-javascript/github-cli/gh-api-graphql'
+            },
+            {
+                text: 'jq Introduction',
+                link: '/temas/web/jq-introduction'
+            },
             { 
               text: 'OAuth Authentication with GitHub as Oauth2 Provider and Netlify providing the Server', 
               link: '/temas/web/netlify-github-oauth.html'},
