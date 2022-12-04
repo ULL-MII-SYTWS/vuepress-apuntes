@@ -38,7 +38,7 @@ An API gateway acts as a reverse proxy to accept all application programming int
 Here is the course:
 
 * [Up and Running with Serverless Functions with Ben Hong](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions)
-
+* See also repo [ULL-MII-SYTWS/netlify-serverless-functions-intro-solution#edit-netlifyfunctionshello-worldjs](https://github.com/ULL-MII-SYTWS/netlify-serverless-functions-intro-solution#edit-netlifyfunctionshello-worldjs)
 Watch also  *Create your first Netlify Serverless Function!* by Anya Kubów[^3]
 
 ## Reading "Saving data to Supabase and getting it back again"
