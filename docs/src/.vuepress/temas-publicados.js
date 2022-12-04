@@ -28,7 +28,7 @@ module.exports = [
             { text: 'Jekyll', link: '/temas/web/jekyll.html' },
             {
                 text: 'GitHub REST API Examples',
-                link: '/temas/introduccion-a-javascript/github-cli/gh-graphql'
+                link: '/temas/introduccion-a-javascript/github-cli/gh-api'
             },
             {
                 text: 'GitHub GraphQL API Examples',
