@@ -175,10 +175,11 @@ If you don’t provide a scope, OAuth providers usually apply the **default scop
 
 ## User Identification Process
 
-The diagram below shows the communication process when an user authenticates  against our OAuth configured web app:
+The video below shows the communication process when an user authenticates  against our OAuth configured web app:
 
-   
-  ![](/images/oauth2-scheme.png)
+<!--![](/images/oauth2-scheme.png)-->
+
+  <youtube id="7D-OU4hZW70"></youtube>
 
 1. El usuario visita la página web de nuestra aplicación desplegada en netlify:
 
