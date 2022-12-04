@@ -38,6 +38,7 @@ An API gateway acts as a reverse proxy to accept all application programming int
 
 * [Up and Running with Serverless Functions with Ben Hong](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions)
 
+Watch also  *Create your first Netlify Serverless Function!* by Anya Kubów[^3]
 
 ## Reading "Saving data to Supabase and getting it back again"
 
@@ -45,18 +46,19 @@ The article
 
 [Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) by Phil Hawksworth at Netlify Blog June 28, 2021
 
-shows how to use Netlify erverless functions to save content and also to retrieve it using the Supabase database.
+shows how to use Netlify serverless functions to save content and also to retrieve it using the Supabase database.
+
+Watch also *How to use a Serverless Database with Serverless Functions (simple!)* by Anya Kubów[^4]
 
 ## References
 
 * [Up and Running with Serverless Functions with Ben Hong](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions)
 * [Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) at Netlify Blog June 28, 2021
 * [Netlify Serverless Functions](https://docs.netlify.com/functions/overview/?_ga=2.94572636.1599880915.1669995646-1446704997.1668527962)
-* Create your first Netlify Serverless Function! by Anya Kubów
-  * <youtube id="n_KASTN0gUE"></youtube>
-* How to use a Serverless Database with Serverless Functions (simple!) by Anya Kubów
-  * <youtube id="4JK1XmqLqnw"></youtube>
+
 ## Footnotes
 
 [^1]:  Deploy previews allow you to create a preview of frontend builds before they are merged into a production website. You get some preview URL of a deployment and you can see what changed and make sure it looks great.
 [^2]: In traditional web apps, when we need to rollback, we simply fetch the .zip artifact file from a previous build, upload and unzip.  There are reasons why we cannot apply this  rollback strategy to Serverless Framework applications. Serverless Framework artifacts are not **immutable**.
+[^3]: Create your first Netlify Serverless Function! by Anya Kubów. 2 Mar 2021 <youtube id="n_KASTN0gUE"></youtube>
+[^4]: How to use a Serverless Database with Serverless Functions (simple!) by Anya Kubów.  24 Mar 2021 <youtube id="4JK1XmqLqnw"></youtube> 
