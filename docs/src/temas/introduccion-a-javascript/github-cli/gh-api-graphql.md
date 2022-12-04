@@ -4,7 +4,7 @@ next: gh.md
 prev: gh-api.md
 ---
 
-# GH GraphQL Examples
+# GitHub GraphQL API Examples
 
 **GraphQL** is a query language for web services APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more.
 

@@ -185,7 +185,7 @@ The video below shows the communication process when an user authenticates  agai
 
 To see more Oauth flows visit *Diagrams and Movies of All Oauth Flows*[^oauthflows] by Takahiko Kawasaki (may 26, 2017)
 
-### Snapshots Sequence 
+### Snapshots Sequence of our Netlify Example
 
 1. El usuario visita la página web de nuestra aplicación desplegada en netlify:
 
