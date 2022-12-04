@@ -36,6 +36,8 @@ An API gateway acts as a reverse proxy to accept all application programming int
 
 ## Watching the course Up and Running with Serverless Functions with Ben Hong
 
+Here is the course:
+
 * [Up and Running with Serverless Functions with Ben Hong](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions)
 
 Watch also  *Create your first Netlify Serverless Function!* by Anya Kubów[^3]
