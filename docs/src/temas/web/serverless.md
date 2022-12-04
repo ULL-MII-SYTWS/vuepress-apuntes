@@ -42,9 +42,7 @@ Watch also  *Create your first Netlify Serverless Function!* by Anya Kubów[^3]
 
 ## Reading "Saving data to Supabase and getting it back again"
 
-The article 
-
-[Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) by Phil Hawksworth at Netlify Blog June 28, 2021
+Read the article [Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) by Phil Hawksworth at Netlify Blog June 28, 2021
 
 shows how to use Netlify serverless functions to save content and also to retrieve it using the Supabase database.
 
