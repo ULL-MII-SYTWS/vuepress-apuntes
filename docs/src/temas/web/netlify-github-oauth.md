@@ -5,7 +5,7 @@
 One challenge for frontend projects is handling authentication[^authentication].
 Making an informed decision about authentication authentication implies to get familiar with a lot of authentication jargon, like Single Sign On[^SSO], and Multi Factor Authentication[^MFA].
 
-OAuth[^Oauth] is everywhere. The ubiquitous "Login with Facebook, Twitter, Github, etc." can be seen in almost every web app we come across. Tools like 
+OAuth[^OAuth] is everywhere. The ubiquitous "Login with Facebook, Twitter, Github, etc." can be seen in almost every web app we come across. Tools like 
 
 * Auth0, 
 * Netlify Identity, 
@@ -231,10 +231,10 @@ To see more Oauth flows visit *Diagrams and Movies of All Oauth Flows*[^oauthflo
 
 ## Footnotes 
 
-[^authentication]: Authentication is the basis for securing data and content online. It enables a client and/or server to assert the ownership of a credential before allowing a user to access confidential information.
-[^SSO]: Single Sign On (SSO) is the authentication process that enables users to authenticate **once** and gain access to **multiple** applications or services. In order to achieve this, SSO utilizes a **Central Server** to orchestrate signing into multiple applications.
-[^MFA]: Multi Factor Authentication (MFA) is a multi (usually two) step process for verifying a user’s identity when they sign into an application. The first step is to verify the user’s identity with a username and password. The second step is to verify the user’s identity with a second factor, such as a code sent to their phone or a fingerprint scan.
-[^OAuth]: OAuth is an open standard for authorization, commonly used as a way for Internet users to authorize websites or applications to access their information on other websites but without giving them the passwords. This mechanism is used by companies such as Google, Facebook, Microsoft and Twitter to permit the users to share information about their accounts with third party applications or websites.
-[^scoped]: Scopes are a way to limit an application’s access to a user’s account. For example, if an application only needs to read repository data, the application can be granted the scope of repo, which will allow it to read all public and private repository data. If the application needs to be able to create, edit, and delete repositories, the application can be granted the scope of repo, which will allow it to read, create, edit, and delete all public and private repository data.
+[^authentication]: **Authentication** is the basis for securing data and content online. It enables a client and/or server to assert the ownership of a credential before allowing a user to access confidential information.
+[^SSO]: **Single Sign On (SSO)** is the authentication process that enables users to authenticate **once** and gain access to **multiple** applications or services. In order to achieve this, SSO utilizes a **Central Server** to orchestrate signing into multiple applications.
+[^MFA]: **Multi Factor Authentication (MFA)** is a multi (usually two) step process for verifying a user’s identity when they sign into an application. The first step is to verify the user’s identity with a username and password. The second step is to verify the user’s identity with a second factor, such as a code sent to their phone or a fingerprint scan.
+[^OAuth]: **OAuth** is an open standard for authorization, commonly used as a way for Internet users to authorize websites or applications to access their information on other websites but without giving them the passwords. This mechanism is used by companies such as Google, Facebook, Microsoft and Twitter to permit the users to share information about their accounts with third party applications or websites.
+[^scoped]: **Scopes** are a way to limit an application’s access to a user’s account. Scopes let you specify exactly what type of access you need. Scopes limit access for OAuth tokens. 
+For example, if an application only needs to read repository data, the application can be granted the scope of repo, which will allow it to read all public and private repository data. If the application needs to be able to create, edit, and delete repositories, the application can be granted the scope of repo, which will allow it to read, create, edit, and delete all public and private repository data.
 [^oauthflows]: [Diagrams and Movies of All Oauth Flows](https://www.kawasaki.com/tech/oauth.html) by Takahiko Kawasaki (may 26, 2017)
-[^scoped]: Scopes let you specify exactly what type of access you need. Scopes limit access for OAuth tokens. 
