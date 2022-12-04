@@ -39,7 +39,7 @@ module.exports = [
                 link: '/temas/web/jq-introduction'
             },
             {
-                text: 'OAuth Authentication with GitHub as Oauth2 Provider and Netlify providing the Server',
+                text: 'Introduction to OAuth',
                 link: '/temas/web/netlify-github-oauth.html'
             },
             {
