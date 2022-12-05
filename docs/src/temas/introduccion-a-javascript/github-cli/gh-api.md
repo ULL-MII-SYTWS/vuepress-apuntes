@@ -189,6 +189,8 @@ It gave us 30 repos. There are much more than that in that organization.
 
 If we use `--paginate` the request takes a long time and gives us near a thousand repos:
 
+## Paginating Manually
+
 ```
 ➜ gh api --paginate /orgs/ULL-ESIT-PL-1920/repos | jq '.[] | .name' | wc
      990     990   32868
