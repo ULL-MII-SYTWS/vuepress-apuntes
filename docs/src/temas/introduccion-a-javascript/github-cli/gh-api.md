@@ -55,26 +55,14 @@ y nos pide confirmar los permisos.
 Placeholder values `:owner`, `:repo`, and `:branch` in the endpoint argument will get replaced with values from the repository of the current directory.
 
 ```json
-$  gh api repos/:owner/:repo/issues
-[
-  {
-    "url": "https://api.github.com/repos/ULL-MII-SYTWS-1920/ull-mii-sytws-1920.github.io/issues/5",
-    "repository_url": "https://api.github.com/repos/ULL-MII-SYTWS-1920/ull-mii-sytws-1920.github.io",
-    "labels_url": "https://api.github.com/repos/ULL-MII-SYTWS-1920/ull-mii-sytws-1920.github.io/issues/5/labels{/name}",
-    "comments_url": "https://api.github.com/repos/ULL-MII-SYTWS-1920/ull-mii-sytws-1920.github.io/issues/5/comments",
-    "events_url": "https://api.github.com/repos/ULL-MII-SYTWS-1920/ull-mii-sytws-1920.github.io/issues/5/events",
-    "html_url": "https://github.com/ULL-MII-SYTWS-1920/ull-mii-sytws-1920.github.io/issues/5",
-    "id": 715027457,
-    "node_id": "MDU6SXNzdWU3MTUwMjc0NTc=",
-    "number": 5,
-    "title": "tema0-presentacion/practicas/pb-gh-campus-expert/",
-    "user": {
-      ...
-    }
-    ...
-  }
-]
+➜  learning-graphql-with-gh git:(main) gh api repos/:owner/:repo/issues | jless
 ```
+
+We have piped the output to [jless](https://jless.io/user-guide.html)
+
+![](/images/gh-api-issues-jless.png)
+
+If you are familiar with  `vi`  you'll find the shortcuts are similar.
 
 We can pipe the output to [jq](jq) or use the [`-q` or `--jq` option of `gh api`](https://cli.github.com/manual/gh_api):
 
