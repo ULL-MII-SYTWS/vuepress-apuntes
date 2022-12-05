@@ -198,8 +198,8 @@ If we use `--paginate` the request takes a long time and gives us near a thousan
 
 GitHub's API uses two pagination methods: 
 
-1. **Page-based pagination**: If the `link` header includes page, then the operation uses page-based pagination. 
-2. **Cursor-based pagination**: If the link header includes before and after, then the operation uses cursor-based pagination.
+1. **Page-based pagination**: If the `link` header includes `page`, then the operation uses page-based pagination. 
+2. **Cursor-based pagination**: If the link header includes `before` and `after`, then the operation uses cursor-based pagination.
 
 The `link` header for page-based pagination will tell you information about the 
 
