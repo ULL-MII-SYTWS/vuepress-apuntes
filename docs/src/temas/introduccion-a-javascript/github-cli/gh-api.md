@@ -215,8 +215,7 @@ information about the first and previous pages will be omitted.
 
 ## Specifying -f switches the method to POST
 
-
-Note that adding request parameters will automatically switch the
+Note that adding request parameters to `gh` will automatically switch the
 request method to `POST`. To send the parameters as a `GET` query string instead, use
 `--method GET` or `-X GET`.
 
