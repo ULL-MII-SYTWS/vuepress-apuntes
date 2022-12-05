@@ -94,7 +94,7 @@ Of course, we can explicit the repo and owner. For example:
 
 ### Thunder Client
 
-[Thunder Client](https://github.com/rangav/thunder-client-support#thunder-client) is a lightweight Rest API Client Extension for Visual Studio Code.
+[Thunder Client](https://github.com/rangav/thunder-client-support#thunder-client) is a lightweight Rest API Client Extension for Visual Studio Code. You can use it to prepare and test your REST API requests.
 
 ![](/images/thunder-client-1.png)
 
