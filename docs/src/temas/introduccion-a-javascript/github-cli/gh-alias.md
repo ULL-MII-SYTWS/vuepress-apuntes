@@ -144,3 +144,18 @@ Next  we can pipe the output to [jq](jq) to get the names of the repos and the d
 ```
 
 Make an alias `get-lab-names` to get the names of the repos inside an organization
+
+
+Note that adding request parameters will automatically switch the
+request method to `POST`. To send the parameters as a `GET` query string instead, use
+`--method GET`.
+
+```
+✗ gh api --method="GET" orgs/ULL-MII-SYTWS-2223/repos -f  per_page=2 -f type=private | jless
+```
+
+add the `page` field in the query if you want manual pagination:
+
+```
+➜  gh api --method=GET orgs/ULL-MII-SYTWS-2223/repos -f=per_page=2 -f page=3 | jless
+```
