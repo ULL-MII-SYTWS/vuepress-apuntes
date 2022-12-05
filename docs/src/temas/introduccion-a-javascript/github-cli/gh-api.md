@@ -10,10 +10,12 @@ prev: gh.md
 
 * [Manual de gh api](https://cli.github.com/manual/gh_api)
 
-## Authentication Token
+## Authentication 
 
 * [Manual de gh auth](https://cli.github.com/manual/gh_auth)
   * [Manual de gh auth login](https://cli.github.com/manual/gh_auth_login)
+
+### Token Authentication
 
 Go to [github.com/settings/tokens](https://github.com/settings/tokens)
 to generate a new token for `gh` and set then environment variable 
@@ -31,6 +33,8 @@ Una vez se tiene un token:
 # authenticate against github.com by reading the token from a file
 $ gh auth login --with-token < mytoken.txt
 ```
+
+### Browser Authentication
 
 También es posible autenticarse con el browser usando la opción `-w`:
 
@@ -58,6 +62,8 @@ Placeholder values `:owner`, `:repo`, and `:branch` in the endpoint argument wil
 ➜  learning-graphql-with-gh git:(main) gh api repos/:owner/:repo/issues | jless
 ```
 
+### jless
+
 We have piped the output to [jless](https://jless.io/user-guide.html)
 
 ![](/images/gh-api-issues-jless.png)
@@ -67,6 +73,8 @@ jless is a tool to navigate JSON data in the terminal. It is similar to `less` b
 ![](https://jless.io/assets/jless-recording.gif)
 
 If you are familiar with  `vi`  you'll find the shortcuts are similar.
+
+### jq
 
 We can pipe the output to [jq](jq) or use the [`-q` or `--jq` option of `gh api`](https://cli.github.com/manual/gh_api):
 
@@ -83,6 +91,12 @@ Of course, we can explicit the repo and owner. For example:
 "crguezl"
 "Hola @alu0101040882, \r\n\r\nVeo que alguno ya está trabajando en la práctica de
 ```
+
+### Thunder Client
+
+[Thunder Client](https://github.com/rangav/thunder-client-support#thunder-client) is a lightweight Rest API Client Extension for Visual Studio Code.
+
+![](/images/thunder-client-1.png)
 
 ## POST Example: Create a Repo
 
@@ -134,7 +148,7 @@ This way we have created a private repo inside the user scope:
 
 ## Pagination
 
-The option `--paginate`allow us to make additional HTTP requests to fetch 
+The option `--paginate` allow us to make additional HTTP requests to fetch 
 all pages of results. Here is an example. 
 
 ```
