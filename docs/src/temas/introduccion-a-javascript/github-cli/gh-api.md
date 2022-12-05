@@ -62,6 +62,10 @@ We have piped the output to [jless](https://jless.io/user-guide.html)
 
 ![](/images/gh-api-issues-jless.png)
 
+jless is a tool to navigate JSON data in the terminal. It is similar to `less` but for JSON data
+
+![](https://jless.io/assets/jless-recording.gif)
+
 If you are familiar with  `vi`  you'll find the shortcuts are similar.
 
 We can pipe the output to [jq](jq) or use the [`-q` or `--jq` option of `gh api`](https://cli.github.com/manual/gh_api):
