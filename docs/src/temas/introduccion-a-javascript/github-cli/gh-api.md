@@ -204,14 +204,19 @@ request method to `POST`. To send the parameters as a `GET` query string instead
 ::: warning Specifying `-f` switches the method to POST
 
 For instance, to get the private repos of an organization with a pagination of 2 items per page:
+
 ```
-✗ gh api --method="GET" orgs/ULL-MII-SYTWS-2223/repos -f  per_page=2 -f type=private | jless
+✗ gh api --method="GET" orgs/ULL-MII-SYTWS-2223/repos \
+         -f  per_page=2 \
+         -f type=private | jless
 ```
 
 add if we want the third `page`:
 
 ```
-➜  gh api --method=GET orgs/ULL-MII-SYTWS-2223/repos -f=per_page=2 -f page=3 | jless
+➜  gh api --method=GET orgs/ULL-MII-SYTWS-2223/repos \
+          -f=per_page=2 \
+          -f page=3 | jless
 ```
 :::
 
