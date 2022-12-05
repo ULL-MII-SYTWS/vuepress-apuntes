@@ -194,6 +194,18 @@ If we use `--paginate` the request takes a long time and gives us near a thousan
      990     990   32868
 ```
 
+The `link` header for page-based pagination will tell you information about the 
+
+- previous, 
+- next, 
+- first, and 
+- last pages. 
+ 
+If you did not request a specific page, then the response will default to the first page and 
+information about the first and previous pages will be omitted.
+
+![](/images/github-api-pagination-1.png)
+
 ## Specifying -f switches the method to POST
 
 
