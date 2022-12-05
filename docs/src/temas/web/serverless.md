@@ -9,7 +9,7 @@ title: Introduction to Serverless
 With Netlify Functions we can put code into a netlify/functions folder in our project, and Netlify will deploy it for us and give us a URL which will invoke it.
 :::
 
-Functions deployed from Netlify are **immutable**. This means that 
+Functions deployed from Netlify are **immutable**[^2]. This means that 
 
 * an update to a function on your production branch won’t change the version that was deployed in a branch deploy, or in a Deploy Preview
 
@@ -39,6 +39,7 @@ Here is the course:
 
 * [Up and Running with Serverless Functions with Ben Hong](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions)
 * See also repo [ULL-MII-SYTWS/netlify-serverless-functions-intro-solution#edit-netlifyfunctionshello-worldjs](https://github.com/ULL-MII-SYTWS/netlify-serverless-functions-intro-solution#edit-netlifyfunctionshello-worldjs)
+
 Watch also  *Create your first Netlify Serverless Function!* by Anya Kubów[^3]
 
 ## Reading "Saving data to Supabase and getting it back again"
@@ -57,7 +58,7 @@ Watch also *How to use a Serverless Database with Serverless Functions (simple!)
 
 ## Footnotes
 
-[^1]:  Deploy previews allow you to create a preview of frontend builds before they are merged into a production website. You get some preview URL of a deployment and you can see what changed and make sure it looks great.
-[^2]: In traditional web apps, when we need to rollback, we simply fetch the .zip artifact file from a previous build, upload and unzip.  There are reasons why we cannot apply this  rollback strategy to Serverless Framework applications. Serverless Framework artifacts are not **immutable**.
+[^1]:  **Deploy previews** allow you to create a preview of frontend builds before they are merged into a production website. You get some preview URL of a deployment and you can see what changed and make sure it looks great.
+[^2]: In traditional web apps, when we need to **rollback**, we simply fetch the .zip artifact file from a previous build, upload and unzip.  There are reasons why we cannot apply this  rollback strategy to Serverless Framework applications. Serverless Framework artifacts are not **immutable**.
 [^3]: Create your first Netlify Serverless Function! by Anya Kubów. 2 Mar 2021 <youtube id="n_KASTN0gUE"></youtube>
 [^4]: How to use a Serverless Database with Serverless Functions (simple!) by Anya Kubów.  24 Mar 2021 <youtube id="4JK1XmqLqnw"></youtube> 

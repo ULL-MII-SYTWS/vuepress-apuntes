@@ -23,7 +23,10 @@ rubrica:
 
 Using the GH REST API, make a gh alias `get-lab-names` to get the names of the repos inside an organization sorted by last push
 
-See section [Exercise: Search for repos inside an organization](/temas/introduccion-a-javascript/github-cli/gh-alias.html#exercise-search-for-repos-inside-an-organization)
+See 
+
+1. Section [GH REST API](/temas/introduccion-a-javascript/github-cli/gh-api.html)
+2. Section [Exercise: Search for repos inside an organization](/temas/introduccion-a-javascript/github-cli/gh-alias.html#exercise-search-for-repos-inside-an-organization)
 
 
 ## Issues of a repo

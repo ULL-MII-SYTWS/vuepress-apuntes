@@ -25,6 +25,10 @@ A more advanced talk on jq is the one at !!Con 2017: *Serious Programming with j
 
 * [jq Cookbook](https://github.com/stedolan/jq/wiki/Cookbook#convert-a-csv-file-with-headers-to-json) jq recipes
 
+## jless
+
+* [jless](https://jless.io/user-guide.html)
+
 ## Práctica Asociada 
 
 Haga la práctica [jq exercises](/practicas/jq-exercises.html)
@@ -32,3 +36,4 @@ Haga la práctica [jq exercises](/practicas/jq-exercises.html)
 ## References
 * La extensión VSCode jq [vscode-jq](https://marketplace.visualstudio.com/items?itemName=dandric.vscode-jq) provee que cuando estemos editando un ficher `.json` tengamos un playground para jq en la ventana de comandos.
 * Repo [awesome-jq](https://github.com/fiatjaf/awesome-jq)
+* [jless](https://jless.io/user-guide.html)
