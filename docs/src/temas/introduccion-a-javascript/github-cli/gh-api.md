@@ -194,6 +194,27 @@ If we use `--paginate` the request takes a long time and gives us near a thousan
      990     990   32868
 ```
 
+## Specifying -f switches the method to POST
+
+
+Note that adding request parameters will automatically switch the
+request method to `POST`. To send the parameters as a `GET` query string instead, use
+`--method GET` or `-X GET`.
+
+::: warning Specifying `-f` switches the method to POST
+
+For instance, to get the private repos of an organization with a pagination of 2 items per page:
+```
+✗ gh api --method="GET" orgs/ULL-MII-SYTWS-2223/repos -f  per_page=2 -f type=private | jless
+```
+
+add if we want the third `page`:
+
+```
+➜  gh api --method=GET orgs/ULL-MII-SYTWS-2223/repos -f=per_page=2 -f page=3 | jless
+```
+:::
+
 ##  Templates for the output
 
 Once the output is legal JSON, it can be formatted according to a required formatting string by adding the `-t` or  `--template` flag. 
