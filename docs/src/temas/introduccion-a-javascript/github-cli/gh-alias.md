@@ -150,6 +150,9 @@ Note that adding request parameters will automatically switch the
 request method to `POST`. To send the parameters as a `GET` query string instead, use
 `--method GET`.
 
+## Specifying -f switches the method to POST
+
+::: warning Specifying -f switches the method to POST
 ```
 ✗ gh api --method="GET" orgs/ULL-MII-SYTWS-2223/repos -f  per_page=2 -f type=private | jless
 ```
@@ -159,3 +162,4 @@ add the `page` field in the query if you want manual pagination:
 ```
 ➜  gh api --method=GET orgs/ULL-MII-SYTWS-2223/repos -f=per_page=2 -f page=3 | jless
 ```
+:::
