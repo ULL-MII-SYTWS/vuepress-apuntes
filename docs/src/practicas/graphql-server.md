@@ -4,7 +4,7 @@ published: true
 date: "2022/12/01 01"
 campus: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=35670"
 delivery: "2022/12/21"
-permalink: /practicas/graphql-server
+#permalink: /practicas/graphql-server
 key: graphql-server
 layout: Practica
 order: 22 # may be there is one in between the emitters and this. to decide
