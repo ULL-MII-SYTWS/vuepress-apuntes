@@ -48,7 +48,7 @@ module.exports = [
             },
             {
                 text: 'Introduction to Next.js',
-                link: 'https://github.com/ULL-MII-SYTWS/nextjs-solution#pagesapigeneratejs'
+                link: 'https://github.com/ULL-MII-SYTWS/nextjs-solution'
             }
         ]
     },
