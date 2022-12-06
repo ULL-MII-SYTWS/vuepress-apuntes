@@ -46,6 +46,10 @@ module.exports = [
                 text: 'Introduction to Serverless',
                 link: '/temas/web/serverless.html'
             },
+            {
+                text: 'Introduction to Next.js',
+                link: 'https://github.com/ULL-MII-SYTWS/nextjs-solution#pagesapigeneratejs'
+            }
         ]
     },
 
