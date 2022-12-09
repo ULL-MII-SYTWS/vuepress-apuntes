@@ -19,7 +19,7 @@ Netlify serverless functions are
 2. built, and 
 3. deployed 
  
-along with the rest of the Netlify site, and Netlify will automatically handles *service discovery* through their built-in API gateway. 
+along with the rest of the Netlify site, and Netlify will automatically handles **service discovery[^service-discovery]** through their built-in API gateway. 
 
 This eliminates overhead and brings the power of Deploy Previews[^1] and rollbacks[^2] to our functions
 
@@ -40,15 +40,27 @@ Here is the course:
 * [Up and Running with Serverless Functions with Ben Hong](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions)
 * See also repo [ULL-MII-SYTWS/netlify-serverless-functions-intro-solution#edit-netlifyfunctionshello-worldjs](https://github.com/ULL-MII-SYTWS/netlify-serverless-functions-intro-solution#edit-netlifyfunctionshello-worldjs)
 
-Watch also  *Create your first Netlify Serverless Function!* by Anya Kubów[^3]
+
+## Anya Kubov Tutorial on Netlify Serverless Functions
+
+Watch  *Create your first Netlify Serverless Function!* by Anya Kubów
+
+* Create your first Netlify Serverless Function! by Anya Kubów. 2 Mar 2021 
+  
+  <youtube id="n_KASTN0gUE"></youtube>
+
+
+Watch also *How to use a Serverless Database with Serverless Functions (simple!)* by Anya Kubów
+
+* How to use a Serverless Database with Serverless Functions (simple!) by Anya Kubów.  24 Mar 2021 
+  
+  <youtube id="4JK1XmqLqnw"></youtube> 
 
 ## Reading "Saving data to Supabase and getting it back again"
 
 Read the article [Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) by Phil Hawksworth at Netlify Blog June 28, 2021
 
 shows how to use Netlify serverless functions to save content and also to retrieve it using the Supabase database.
-
-Watch also *How to use a Serverless Database with Serverless Functions (simple!)* by Anya Kubów[^4]
 
 ## References
 
@@ -60,5 +72,5 @@ Watch also *How to use a Serverless Database with Serverless Functions (simple!)
 
 [^1]:  **Deploy previews** allow you to create a preview of frontend builds before they are merged into a production website. You get some preview URL of a deployment and you can see what changed and make sure it looks great.
 [^2]: In traditional web apps, when we need to **rollback**, we simply fetch the .zip artifact file from a previous build, upload and unzip.  There are reasons why we cannot apply this  rollback strategy to Serverless Framework applications. Serverless Framework artifacts are not **immutable**.
-[^3]: Create your first Netlify Serverless Function! by Anya Kubów. 2 Mar 2021 <youtube id="n_KASTN0gUE"></youtube>
-[^4]: How to use a Serverless Database with Serverless Functions (simple!) by Anya Kubów.  24 Mar 2021 <youtube id="4JK1XmqLqnw"></youtube> 
+[^service-discovery]: Services typically need to call one another.
+In a traditional distributed system deployment, services run at fixed, well known locations (hosts and ports) and so can easily call one another using HTTP/REST or some RPC mechanism **but** on a modern microservice application like the Netlify one each serverless function  runs in virtualized/containerized environment and so the number of instances of a service and their locations changes dynamically and that is why an additional service discovery is provided. [![](/images/discovery-problem.jpg)](https://microservices.io/patterns/client-side-discovery.html)
