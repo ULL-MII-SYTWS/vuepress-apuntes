@@ -117,8 +117,7 @@ shows how to use Netlify serverless functions to save content and also to retrie
 * [Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) at Netlify Blog June 28, 2021
 * [Netlify Serverless Functions](https://docs.netlify.com/functions/overview/?_ga=2.94572636.1599880915.1669995646-1446704997.1668527962)
 * Repo example of [Ecommerce Store with Netlify Functions, Nuxt, Vue and Stripe](https://github.com/sdras/ecommerce-netlify)
-  * Stripe: [Guías de inicio rápido sobre entornos de desarrollo](https://stripe.com/docs/development/quickstart?lang=node)
-  * [Stripe Pricing And Fees (2022 Guide)](https://www.forbes.com/advisor/business/services/stripe-pricing-fees/)
+  * [Stripe notes](stripe)
 
 ## Footnotes
 

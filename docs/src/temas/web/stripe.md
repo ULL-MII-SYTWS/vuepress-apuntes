@@ -1,12 +1,28 @@
-# Stripe: Plataforma de pago
+# Stripe: Payment Plataform
 
-See <https://stripe.com/docs/development/quickstart?lang=node
+See the [Quickstart Guide](https://stripe.com/docs/development/quickstart?lang=node)  
+
+![stripe payments](/images/stripe_payments2.png)
+
+## Stripe CLI
+
+Stripe CLI is a command-line tool that makes it easy to test and develop your Stripe integration locally. It can also be used to manage your Stripe account from the command line.
+
+### Install
 
 ```
 ➜  explorers-up-and-running-with-serverless-functions git:(main) brew install stripe/stripe-cli/stripe
-```
+``` 
+
+### Login
 
 ```
+➜  explorers-up-and-running-with-serverless-functions git:(main) stripe login
+```
+
+### Create a product
+
+```json
 ➜  explorers-up-and-running-with-serverless-functions git:(main) stripe products create \
 --name="My First Product" \
 --description="Created with the Stripe CLI"
@@ -32,6 +48,8 @@ See <https://stripe.com/docs/development/quickstart?lang=node
   "url": null
 }
 ```
+
+### Create a price
 
 ```json
 ➜  explorers-up-and-running-with-serverless-functions git:(main) stripe prices create \
@@ -60,4 +78,18 @@ See <https://stripe.com/docs/development/quickstart?lang=node
   "unit_amount_decimal": "3000"
 }
 ```
+
+## Identity 
+
+* [Identity verification](https://stripe.com/docs/samples/identity/modal)
+* [stripe-samples GH repo](https://github.com/stripe-samples/identity). This sample shows you how to integrate with Stripe Identity. It uses Stripe Elements to collect the user's personal information and Stripe Elements to collect the user's payment information. It also uses Stripe Identity to verify the user's identity.
+  
+## References
+
+* Repo example of [Ecommerce Store with Netlify Functions, Nuxt, Vue and Stripe](https://github.com/sdras/ecommerce-netlify)
+* [Stripe API](https://stripe.com/docs/api)
+* Stripe: [Guías de inicio rápido sobre entornos de desarrollo](https://stripe.com/docs/development/quickstart?lang=node)
+* [Videos](https://stripe.com/docs/videos/developer-foundations)
+* [Stripe Pricing And Fees (2022 Guide)](https://www.forbes.com/advisor/business/services/stripe-pricing-fees/)
+* [Introduction to Stripe](https://larryullman.com/2012/10/10/introduction-to-stripe/)
 
