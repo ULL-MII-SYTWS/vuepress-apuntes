@@ -2,23 +2,26 @@
 
 See the [Quickstart Guide](https://stripe.com/docs/development/quickstart?lang=node)  
 
-##  Processing Payments
+##  Processing Payments in E-commerce
 
 The payment in an e-commerce site follows this workflow: 
 
-1. The site takes the customer’s billing information and pass it, along with the order information (e.g., the total), to a payment gateway[^payment-gateway] such as [authorize.net](authorize.net).  
-2. The payment gateway confirms that the charge can be made to the customer’s credit card and passes that charge information to the merchant account[^merchant-account]. 
-3. The payment gateway will report the results back to the e-commerce site 
+1. The site takes the customer’s billing information and pass it, along with the order information (e.g., the total), to a **payment gateway**[^payment-gateway] such as [authorize.net](authorize.net) <img src="https://previews.123rf.com/images/nerthuz/nerthuz1609/nerthuz160900099/64887529-point-of-sale-terminal.jpg" width="4%"/>.  
+2. The **payment gateway** confirms that the charge can be made to the customer’s credit card and passes that charge information to the **merchant account**[^merchant-account]. 
+3. The **payment gateway** will report the results back to the e-commerce site 
 
 ![stripe payments](/images/stripe_payments1.png)
 
-Stripe simplifies this process by acting as both the payment gateway and the merchant account. 
+Stripe simplifies this process by acting as both the **payment gateway** and the **merchant account**. 
 
 1. The ecommerce website communicates the customer and order information to Stripe, 
 2. Stripe clears the payment information with the associated credit card company, and 
 3. Stripe puts the money in the bank account. 
 
 ![stripe payments](/images/stripe_payments2.png)
+
+For more details read the article 
+[Introduction to Stripe](https://larryullman.com/2012/10/10/introduction-to-stripe/)
 
 ## Stripe CLI
 
@@ -111,7 +114,7 @@ Stripe CLI is a command-line tool that makes it easy to test and develop your St
 
 ## Footnotes
 
-[^payment-gateway]: A payment gateway is a service that authorizes credit card payments for e-commerce websites. Payment gateways are the equivalent of a physical point-of-sale terminal located in many retail outlets. It is an intermediary between the credit card companies and a merchant account
+[^payment-gateway]: A **payment gateway** is a service that authorizes credit card payments for e-commerce websites. Payment gateways are the equivalent of a physical point-of-sale terminal located in many retail outlets. It is an intermediary between the credit card companies and a **merchant account** 
 
-[^merchant-account]: A merchant account is a bank account that allows you to accept credit card payments. **It is a type of bank account that is specifically designed to accept credit card payments**. The merchant account is what actually allows your business to accept credit card transactions. It coordinates the credit card transactions with your bank account (i.e., getting personally the money).
+[^merchant-account]: A **merchant account** is a bank account that allows you to accept credit card payments. **It is a type of bank account that is specifically designed to accept credit card payments**. The **merchant account** is what actually allows your business to accept credit card transactions. It coordinates the credit card transactions with your bank account (i.e., getting personally the money).
 
