@@ -84,7 +84,7 @@ SantiagoVV
 Let us search for repos inside our organization using GitHub API v3:
 
 ```
-➜ gh api '/search/repositories?q=iaas+org:ULL-MII-SYTWS-2021+in:name'
+➜ gh api '/search/repositories?q=iaas+org:ULL-MII-SYTWS-2021+in:name' --paginate | jless
 ```
 
 * A query can contain any combination of search qualifiers supported on GitHub. The format of the search query is:
@@ -124,7 +124,7 @@ Now we can use `gh alias set` to make an alias `get-lab` to get the repos:
 ✓ Added alias.
 ➜  gh alias list
 co:        pr checkout
-get-labs:  api /search/repositories?q=$2+org:$1+in:name
+get-labs:  api /search/repositories?q=$2+org:$1+in:name  --paginate
 ```
 
 And now we can use it:
