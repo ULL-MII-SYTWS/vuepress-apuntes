@@ -26,7 +26,7 @@ Using the GH REST API, make a gh alias `get-lab-names` to get the names of the r
 See 
 
 1. Section [GH REST API](/temas/introduccion-a-javascript/github-cli/gh-api.html)
-2. Section [Exercise: Search for repos inside an organization](/temas/introduccion-a-javascript/github-cli/gh-alias.html#exercise-search-for-repos-inside-an-organization)
+2. Section [Exercise: Search for repos inside an organization](/temas/introduccion-a-javascript/github-cli/gh-alias.html#exercise-search-for-repos-inside-an-organization) inside the section [gh Alias](/temas/introduccion-a-javascript/github-cli/gh-alias.html)
 
 
 ## Issues of a repo

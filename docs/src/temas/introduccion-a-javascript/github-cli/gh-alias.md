@@ -87,6 +87,9 @@ Let us search for repos inside our organization using GitHub API v3:
 ➜ gh api '/search/repositories?q=iaas+org:ULL-MII-SYTWS-2021+in:name'
 ```
 
+*`+` sign has a semantic meaning in the query string. It is used to represent a space. 
+* Another character that has semantic importance in the query string is `&` which is used to separate the various `var=value` pairs in the query string
+
 ![](/images/gh-api-search-for-repos.png) 
 
 * See the [SEARCH](https://docs.github.com/en/free-pro-team@latest/rest/reference/search)
