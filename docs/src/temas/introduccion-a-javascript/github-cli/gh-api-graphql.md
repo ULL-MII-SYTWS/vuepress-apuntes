@@ -127,7 +127,7 @@ Among the fields we can see that [Organization](https://docs.github.com/en/graph
 * Has a field `totalCount` that is a [scalar](https://docs.github.com/en/graphql/reference/scalars) of type `Int` (integer)
 :::
 
-## gh cli: argument interpretation
+## gh cli: argument conversion
 
 ::: danger `-f` versus `-F`
 Pass one or more `-f/--raw-field` values in `"key=value"` format to add static **string parameters** to the request payload. 
@@ -299,7 +299,7 @@ query {
 
 **Edges** represent connections between nodes. When you query a **connection**, you traverse its edges to get to its nodes.
 
-We know **issues** is a *connection** because the Doc says it has the `IssueConnection` type. 
+We know **issues** is a *connection* because the Doc says it has the `IssueConnection` type. 
 
 **Connections** let us query related objects as part of the same call. With connections, we can use a single GraphQL call where we would have to use multiple calls to a REST API. 
 
