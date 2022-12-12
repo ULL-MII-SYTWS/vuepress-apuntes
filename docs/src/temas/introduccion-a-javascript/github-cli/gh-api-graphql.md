@@ -129,25 +129,26 @@ Among the fields we can see that [Organization](https://docs.github.com/en/graph
 
 ## gh cli: argument interpretation
 
-Remember: 
+::: danger `-f` versus `-F`
+Pass one or more `-f/--raw-field` values in `"key=value"` format to add static **string parameters** to the request payload. 
 
-1. Pass one or more `-f/--raw-field` values in `"key=value"` format to add static **string parameters** to the request payload. 
+The `-F/--field` flag has **type conversion** based on the format of the value.
 
-2. The `-F/--field` flag has **type conversion** based on the format of the value.
   * Placeholder values `"{owner}"`, `"{repo}"`, and `"{branch}"` get populated with values from the repository of the current directory and 
-  * if the value starts with `"@"`, the rest of the value is interpreted as a filename to read the value from.
-     * Pass "`-`" to read from standard input.
+  * if the value starts with `"@"`, the rest of the value is interpreted as a filename to read the value from. Pass "`-`" to read from standard input.
   * literal values "`true`", "`false`", "`null`", and **integer numbers** get converted to appropriate JSON types;
-  * placeholder values "`:owner`", "`:repo`", and "`:branch`" get populated with values from the repository of the current directory;
  
-For GraphQL requests, all fields other than "`query`" and "`operationName`" are interpreted as GraphQL variables.
+For GraphQL requests, all fields other than `query` and `operationName`[^operationname] are interpreted as GraphQL variables.
+:::
 
 ```
 ➜  graphql-learning git:(main) ✗ cat my-repos.bash
 gh api graphql --paginate -F number_of_repos=3 --field query=@my-repos.gql
 ```
 
-In this example `$number_of_repos` is a variable that is set to `3` inside the command using the option `-F number_of_repos=3`
+### Example: -F versus -f
+
+In this example `$number_of_repos` is a variable that is set to number `3` inside the command using the option `-F number_of_repos=3`
 
 ```GraphQL
 ➜  graphql-learning git:(main) ✗ cat my-repos.gql 
@@ -766,4 +767,8 @@ Execution:
 * [gist](https://gist.github.com/oleksis/d40a48a343b7e81fe0c6a940f086f43c)
 * GitHub Docs  https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#repositorydiscussions
 * Feedbacks  https://github.com/github/feedback/discussions/43
-* Discusion API  https://gist.github.com/smashwilson/311e1487ddb40a455fc54d294cc63ad4#adddiscussioncomment
+* Discusion API  https://gist.github.com/smashwilson/311e1487ddb40a455fc54d294cc63ad4#addDiscussionComment
+
+## Footnotes
+
+[^operationname]: The operation name is a meaningful and explicit name for your operation. It is only required in multi-operation documents, but its use is encouraged because it is very helpful for debugging and server-side logging.
