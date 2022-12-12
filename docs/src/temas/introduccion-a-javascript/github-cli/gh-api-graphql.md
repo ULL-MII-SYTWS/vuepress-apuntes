@@ -109,7 +109,9 @@ Some fields **require**  an argument. We will see later that
 **Mutations** require an **input object** as an argument.
 :::
 
-Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. Then, when queries come in, they are **validated and executed** against that **schema**.
+Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. 
+
+When queries come in, they are **[validated](http://spec.graphql.org/June2018/#sec-Validation) and [executed](http://spec.graphql.org/June2018/#sec-Execution)** against that **schema**.
 
 ::: tip GraphQL objects
 The query `organization` is an object of type [Organization](https://docs.github.com/en/graphql/reference/objects#organization) that like any GraphQL object
