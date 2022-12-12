@@ -119,7 +119,7 @@ section of the REST API GitHub docs to know more about the API.
 Now we can use `gh alias set` to make an alias `get-lab` to get the repos:
 
 ```
-➜ gh alias set get-labs 'api /search/repositories?q=$2+org:$1+in:name'
+➜ gh alias set get-labs 'api /search/repositories?q=$2+org:$1+in:name --paginate'
 - Adding alias for get-labs: api /search/repositories?q=$2+org:$1+in:name
 ✓ Added alias.
 ➜  gh alias list
