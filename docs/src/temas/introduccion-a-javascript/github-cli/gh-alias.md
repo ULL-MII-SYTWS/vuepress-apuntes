@@ -87,7 +87,27 @@ Let us search for repos inside our organization using GitHub API v3:
 ➜ gh api '/search/repositories?q=iaas+org:ULL-MII-SYTWS-2021+in:name'
 ```
 
-*`+` sign has a semantic meaning in the query string. It is used to represent a space. 
+* A query can contain any combination of search qualifiers supported on GitHub. The format of the search query is:
+
+  ```
+  SEARCH_KEYWORD_1 ... SEARCH_KEYWORD_N QUALIFIER_1 ... QUALIFIER_N
+  ```
+  In the example above `iaas` is a SEARCH_KEYWORD and `org:ULL-MII-SYTWS-2021` and `in:name` are qualifiers
+* You can use qualifiers to narrow your search and focus on specific categories of information. They are the same qualifiers as the web interface for GitHub.
+  *   [Finding files on GitHub](https://docs.github.com/en/search-github/searching-on-github/finding-files-on-github)
+  *   [Searching for repositories](https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories)
+  *   [Searching topics](https://docs.github.com/en/search-github/searching-on-github/searching-topics)
+  *   [Searching code](https://docs.github.com/en/search-github/searching-on-github/searching-code)
+  *   [Searching commits](https://docs.github.com/en/search-github/searching-on-github/searching-commits)
+  *   [Searching issues and pull requests](https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests)
+  *   [Searching discussions](https://docs.github.com/en/search-github/searching-on-github/searching-discussions)
+  *   [Searching GitHub Marketplace](https://docs.github.com/en/search-github/searching-on-github/searching-github-marketplace)
+  *   [Searching users](https://docs.github.com/en/search-github/searching-on-github/searching-users)
+  *   [Searching for packages](https://docs.github.com/en/search-github/searching-on-github/searching-for-packages)
+  *   [Searching wikis](https://docs.github.com/en/search-github/searching-on-github/searching-wikis)
+  *   [Searching in forks](https://docs.github.com/en/search-github/searching-on-github/searching-in-forks)
+
+* `+` sign has a semantic meaning in the query string. It is used to represent a space. 
 * Another character that has semantic importance in the query string is `&` which is used to separate the various `var=value` pairs in the query string
 
 ![](/images/gh-api-search-for-repos.png) 
