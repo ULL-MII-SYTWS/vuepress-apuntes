@@ -351,10 +351,13 @@ You can see the code at [crguezl/learning-graphql-with-gh/tree/main/gh-graphql-c
 
 ## Pagination
 
+::: tip pageInfo.nextCursor pageInfo.hasNextPage
+
 When in  `gh` we use the `--paginate` option, all pages of results will sequentially be requested until there are no more pages of results. For GraphQL requests, this requires that 
 
 1. the original query accepts an `$endCursor: String` variable and that 
 2. it fetches the `pageInfo{ hasNextPage, endCursor }` set of fields from a collection.
+:::
 
 Here is an example that produces an array of objects with the `name` and `branch` fields of all the  repositories in the specified organization:
 
