@@ -32,7 +32,7 @@ See
 ## Issues of a repo
 
 Using the GH REST API, make a gh alias `repo-issues-get` to get the issues of a repo. See 
-section [Example: Issues of a repo](temas/introduccion-a-javascript/github-cli/gh-api.html#example-issues-of-a-repo)
+section [Example: Issues of a repo](/temas/introduccion-a-javascript/github-cli/gh-api.html#example-issues-of-a-repo)
 
 ## Create repo
 

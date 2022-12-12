@@ -109,9 +109,7 @@ Let us search for repos inside our organization using GitHub API v3:
 
 * `+` sign has a semantic meaning in the query string. It is used to represent a space. 
 * Another character that has semantic importance in the query string is `&` which is used to separate the various `var=value` pairs in the query string
-
-![](/images/gh-api-search-for-repos.png) 
-
+<!-- ![](/images/gh-api-search-for-repos.png) -->
 * See the [SEARCH](https://docs.github.com/en/free-pro-team@latest/rest/reference/search)
 section of the REST API GitHub docs to know more about the API.
 * See section [Search Repositories](https://docs.github.com/en/free-pro-team@latest/rest/reference/search#search-repositories) for more info on how to search for repos
