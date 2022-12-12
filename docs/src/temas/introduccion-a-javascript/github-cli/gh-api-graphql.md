@@ -84,7 +84,7 @@ query {
 
 step by step:
 
-* `query`: The GraphQL query keyword
+* `query`: The GraphQL **query** keyword
   
 Every GraphQL schema has a **root type** for both **queries** and **mutations**. 
 
@@ -96,25 +96,30 @@ organization(login: "ULL-MII-SYTWS-2122") { ... }
 
 To begin the query, we want to find a organization object. 
 
-The [**schema validation** for organization](https://docs.github.com/en/graphql/reference/queries#organization) indicates this object requires an `login` **argument**.
+::: tip arguments for queries
+The [**schema validation** for organization queries](https://docs.github.com/en/graphql/reference/queries#organization) indicates this object requires an `login` **argument**.
 
 An **argument** is a set of key-value pairs attached to a specific field. 
 
 Some fields **require**  an argument. We will see later that 
 **Mutations** require an **input object** as an argument.
+:::
 
 Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. Then, when queries come in, they are **validated and executed** against that **schema**.
 
+::: tip GRaphQL objects
 The query `organization` is an object of type [Organization](https://docs.github.com/en/graphql/reference/objects#organization) that like any GraphQL object
 
-* **Implements** some [interfaces](https://docs.github.com/en/graphql/reference/interfaces). **GraphQL interfaces** represent a list of named fields and their arguments. GraphQL objects can then implement these interfaces which requires that the object type will define all **fields** defined by those interfaces
+* **Implements** some [interfaces](https://docs.github.com/en/graphql/reference/interfaces).
+  *  **GraphQL interfaces** represent a list of named fields and their arguments. 
+  *  GraphQL objects can then implement these interfaces which requires that the object type will define all **fields** defined by those interfaces
 * Has some **fields**
 
 Among the fields we can see that [Organization](https://docs.github.com/en/graphql/reference/objects#organization) 
 
 * Has a field `repositories` that is an object of type [RepositoryConnection](https://docs.github.com/en/graphql/reference/objects#repositoryconnection) that itself  
 * Has a field `totalCount` that is a [scalar](https://docs.github.com/en/graphql/reference/scalars) of type `Int` (integer)
-
+:::
 
 ## gh cli: argument interpretation
 
