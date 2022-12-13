@@ -1,6 +1,4 @@
 ---
-permalink: /firebase
-
 ---
 # Notes taken while reading the Firebase Docs
 

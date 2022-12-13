@@ -1,5 +1,4 @@
 ---
-permalink: /firebase/demo
 ---
 # Firebase Demo
 
