@@ -83,6 +83,10 @@ For production apps, you need to set up a clear development workflow, which usua
 
 See section [Add Firebase to your JavaScript project](firebase/first-steps)
 
+## Get started with Firebase Hosting
+
+See  section [Get started with Firebase Hosting](firebase/hosting)
+
 ## Authentication
 
 See section [Authentication](firebase/authentication)
