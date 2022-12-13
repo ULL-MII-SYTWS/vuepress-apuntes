@@ -22,6 +22,8 @@ Although API keys for Firebase services are safe to include in code, there are a
 * Firebase Authentication with the email/password sign-in method, or 
 * a billable Google Cloud API. 
   
+If you want to learn how to secure all data access to your Firebase backend services is authorized, read up on the documentation on [Firebase security rules](https://firebase.google.com/docs/rules). These rules control access to file storage and database access, and are enforced on the Firebase servers. So no matter if it's your code, or somebody else's code that uses you configuration data, it can only do what the security rules allow it to do.
+
 ## Creating API keys for Firebase
 
 See section [Creating API keys](https://firebase.google.com/docs/projects/api-keys#create-api-keys) of the firebase docs.
@@ -104,7 +106,7 @@ See section [Cloud Functions](firebase/cloud-functions)
   * Google API Console: [https://console.cloud.google.com/apis/](https://console.cloud.google.com/apis/dashboard)
 * [Google Cloud project](https://cloud.google.com/docs/overview/?authuser=0&utm_source=firebase.google.com&utm_medium=referral#projects)
 * Repo [ULL-MII-SYTWS/firebase-quickstart-js](https://github.com/ULL-MII-SYTWS/firebase-quickstart-js)
-* Repo [ULL-MII-SYTWS/firebase-learning](https://github.com/ULL-MII-SYTWS/firebase-learning)
+* Repo [ULL-MII-SYTWS/firebase-learning](https://github.com/ULL-MII-SYTWS/firebase-learning) (private)
 
 
 ## Footnotes
