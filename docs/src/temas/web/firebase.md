@@ -79,6 +79,18 @@ When you set up a project and register apps, you need to make some organizationa
 
 For production apps, you need to set up a clear development workflow, which usually involves using multiple environments. Review our documentation on developer workflows, including general best practices and general security guidelines for setting up Firebase projects and registering apps to create your development workflow.
 
+## First Steps
+
+See section [Add Firebase to your JavaScript project](firebase/first-steps)
+
+## Authentication
+
+See section [Authentication](firebase/authentication)
+
+## Cloud Functions
+
+See section [Cloud Functions](firebase/cloud-functions)
+
 ## References
 
 * [Understand Firebase projects](https://firebase.google.com/docs/projects/learn-more?authuser=0&hl=en)
