@@ -103,6 +103,8 @@ See section [Cloud Functions](firebase/cloud-functions)
   * Google Cloud Console: [https://console.cloud.google.com/](https://console.cloud.google.com/)
   * Google API Console: [https://console.cloud.google.com/apis/](https://console.cloud.google.com/apis/dashboard)
 * [Google Cloud project](https://cloud.google.com/docs/overview/?authuser=0&utm_source=firebase.google.com&utm_medium=referral#projects)
+* Repo [ULL-MII-SYTWS/firebase-learning](https://github.com/ULL-MII-SYTWS/firebase-learning)
+
 
 ## Footnotes
 
