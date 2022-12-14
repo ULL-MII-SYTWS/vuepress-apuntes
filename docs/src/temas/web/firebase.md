@@ -79,8 +79,6 @@ You can set up a Firebase project and register apps in
  
 When you set up a project and register apps, you need to make some organizational decisions and add Firebase-specific configuration information to your local projects.
 
-For production apps, you need to set up a clear development workflow, which usually involves using multiple environments. Review our documentation on developer workflows, including general best practices and general security guidelines for setting up Firebase projects and registering apps to create your development workflow.
-
 ## First Steps
 
 See section [Add Firebase to your JavaScript project](firebase/first-steps)
