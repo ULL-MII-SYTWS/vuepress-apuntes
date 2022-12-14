@@ -64,6 +64,8 @@ section [Example: Number of repos in an Organization](/temas/introduccion-a-java
 
 Using the GH GraphQL API write a gh alias `repo-issues-get` to get the issues of a repo. See the section [Getting issues](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#example-getting-issues)
 
+A solution is in folder [learning-graphql-with-gh/gh-graphql-connection-example](https://github.com/crguezl/learning-graphql-with-gh/tree/main/gh-graphql-connection-example)
+
 ## List all repos in an organization with GraphQL
 
 Using the GH GraphQL API, make a [gh extension](/temas/introduccion-a-javascript/github-cli/gh-extension) `org-repos-list` to list all repos in an organization. See
