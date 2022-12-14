@@ -100,7 +100,14 @@ Using the GH GraphQL API write  gh scripts to
 * Get the comments in a discussion
 * Add a reply to a comment in a discussion
  
-See the sections [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation) and the section [Add Reply to Discussion Comment](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#add-reply-to-discussion-comment) of the [GraphQL Examples chapter](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#graphql-examples)
+See the sections 
+
+* [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation) and the section 
+* [Add Reply to Discussion Comment](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#add-reply-to-discussion-comment) 
+
+of the [GraphQL Examples chapter](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#graphql-examples)
+
+See also [learning-graphql-with-gh/discussions-mutation](https://github.com/crguezl/learning-graphql-with-gh/tree/main/discussions-mutation) for a solution to the exercise
 
 ## References
 
