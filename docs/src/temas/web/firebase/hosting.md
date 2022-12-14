@@ -35,6 +35,7 @@ At the end of initialization, Firebase automatically creates and adds two files 
 * A `firebase.json` configuration file that lists your project configuration. Learn more about this file on the [configure hosting behavior](https://firebase.google.com/docs/hosting/full-config?authuser=0) page.
 * A `.firebaserc` file that stores your project aliases.
 
+Here is a capture of the execution:
 
 ```
 auth git:(master) ✗ firebase init
@@ -64,3 +65,4 @@ ection, and <enter> to proceed)
  ◯ Emulators: Set up local emulators for Firebase products
 (Move up and down to reveal more choices)
 ```
+
