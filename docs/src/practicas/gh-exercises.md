@@ -71,6 +71,8 @@ A solution is in folder [learning-graphql-with-gh/gh-graphql-connection-example]
 Using the GH GraphQL API, make a [gh extension](/temas/introduccion-a-javascript/github-cli/gh-extension) `org-repos-list` to list all repos in an organization. See
 section [Pagination](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#pagination) of the [GH GraphQL API](/temas/introduccion-a-javascript/github-cli/gh-api-graphql) chapter
 
+See a solution at folder [learning-graphql-with-gh/org-getallrepos-graphql-pagination](https://github.com/crguezl/learning-graphql-with-gh/tree/main/org-getallrepos-graphql-pagination)
+
 ## Add a Reaction
 
 Using the GH GraphQL API write a gh alias `issue-add-reaction` to 
@@ -80,9 +82,15 @@ Using the GH GraphQL API write a gh alias `issue-add-reaction` to
 
 See the section [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation) of the [GraphQL Examples chapter](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#graphql-examples)
 
+A solution is at folder [/learning-graphql-with-gh/addreactiontoissue](https://github.com/crguezl/learning-graphql-with-gh/tree/main/addreactiontoissue)
+
 ## Rename a repo
 
-Using the GH GraphQL API write a gh alias `repo-rename` to rename a repo. See the sections [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation) and the section [Rename Repository](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#rename-repository) of the [GraphQL Examples chapter](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#graphql-examples)
+Using the GH GraphQL API write a gh alias `repo-rename` to rename a repo. 
+
+See the sections [Mutation](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#mutation) and the section [Rename Repository](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#rename-repository) of the [GraphQL Examples chapter](/temas/introduccion-a-javascript/github-cli/gh-api-graphql.html#graphql-examples)
+
+See folder [learning-graphql-with-gh/repo-rename-mutation](https://github.com/crguezl/learning-graphql-with-gh/tree/main/repo-rename-mutation) for a solution
 
 ## Add a Reply to a Comment in a Discussion
 
