@@ -54,6 +54,10 @@ module.exports = [
                 text: 'Payment Platforms: Stripe',
                 link: '/temas/web/stripe.html'
             },
+            {
+                text: 'Introduction to Firebase',
+                link: '/temas/web/firebase.html'
+            }
 
         ]
     },
