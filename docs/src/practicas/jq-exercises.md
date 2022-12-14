@@ -18,8 +18,13 @@ rubrica:
 
 # {{ $frontmatter.title }}
 
+En el repositorio de la asignación, instale las dependencias:
+  
+```bash
+✗ npm install
+```
 
-En el repositorio de la asignación ejecute 
+Después,  ejecute el tutorial:
 
 ```bash
   ✗ bin/jq-tutorial
@@ -33,15 +38,19 @@ Run jq-tutorial with one of the following:
   * regexp
 ```
 
+## Ejercicios
+
 Realice todos los ejercicios de cada apartado.
 
-Para la entrega:
+## Añada un nuevo ejercicio
 
-Añada un nuevo ejercicio jq al repo de la asignación creando el  correspondiente directorio en la carpeta `problems/mi-problema` y el fichero asociado en `data/mi-problema.json`. Actualice `menu.json` con el nuevo problema.
+Añada un nuevo ejercicio sobre jq al repo de la asignación creando el  correspondiente directorio en la carpeta `problems/mi-problema` y el fichero asociado en `data/mi-problema.json`. Actualice `menu.json` con el nuevo problema.
+
+Los problemas en [jq Cookbook](https://github.com/stedolan/jq/wiki/Cookbook#convert-a-csv-file-with-headers-to-json) pueden ser una fuente de inspiración.
 
 Haga un pull request al repo de template de esta asignación <https://github.com/ULL-MII-SYTWS/jq-tutorial>.
 
-En clase cruzaremos los pull requests y haremos los nuevos problemas.
+En clase mezclaremos los pull requests y haremos los nuevos problemas planteados por los compañeros.
 
 ## Youtube Tutorials
 
