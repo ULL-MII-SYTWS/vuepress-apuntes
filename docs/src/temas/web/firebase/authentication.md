@@ -1,4 +1,4 @@
-## Firebase Authentication
+# Firebase Authentication
 
 See section [Firebase Authentication](https://firebase.google.com/docs/auth)
 

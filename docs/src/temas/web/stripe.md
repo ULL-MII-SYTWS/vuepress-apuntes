@@ -103,9 +103,16 @@ Stripe CLI is a command-line tool that makes it easy to test and develop your St
 * [Identity verification](https://stripe.com/docs/samples/identity/modal)
 * [stripe-samples GH repo](https://github.com/stripe-samples/identity). This sample shows you how to integrate with Stripe Identity. It uses Stripe Elements to collect the user's personal information and Stripe Elements to collect the user's payment information. It also uses Stripe Identity to verify the user's identity.
   
+## Ecommerce Example
+
+* [Let’s Build a JAMstack E-Commerce Store with Netlify Functions](https://css-tricks.com/lets-build-a-jamstack-e-commerce-store-with-netlify-functions/)
+* [Creating Dynamic Routes in Nuxt Application](https://css-tricks.com/creating-dynamic-routes-in-a-nuxt-application/)
+* Repo example of [Ecommerce Store with Netlify Functions, Nuxt, Vue and Stripe](https://github.com/sdras/ecommerce-netlify)
+* [Demo](https://ecommerce-netlify.netlify.app/)
+
+
 ## References
 
-* Repo example of [Ecommerce Store with Netlify Functions, Nuxt, Vue and Stripe](https://github.com/sdras/ecommerce-netlify)
 * [Stripe API](https://stripe.com/docs/api)
 * Stripe: [Guías de inicio rápido sobre entornos de desarrollo](https://stripe.com/docs/development/quickstart?lang=node)
 * [Videos](https://stripe.com/docs/videos/developer-foundations)

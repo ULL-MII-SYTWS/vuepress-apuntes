@@ -1,3 +1,6 @@
+
+# Cloud Functions
+
 See [Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
 
 Cloud Functions for Firebase is a serverless framework that lets you automatically run backend code in response to events triggered by Firebase features and HTTPS requests. 

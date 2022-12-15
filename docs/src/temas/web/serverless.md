@@ -116,7 +116,11 @@ shows how to use Netlify serverless functions to save content and also to retrie
 * [What Are Serverless Functions?](https://www.splunk.com/en_us/data-insider/what-are-serverless-functions.html) 2021
 * [Saving data to Supabase and getting it back again](https://www.netlify.com/blog/2021/06/28/saving-data-to-supabase-and-getting-it-back-again/) at Netlify Blog June 28, 2021
 * [Netlify Serverless Functions](https://docs.netlify.com/functions/overview/?_ga=2.94572636.1599880915.1669995646-1446704997.1668527962)
-* Repo example of [Ecommerce Store with Netlify Functions, Nuxt, Vue and Stripe](https://github.com/sdras/ecommerce-netlify)
+* [Let’s Build a JAMstack E-Commerce Store with Netlify Function](https://css-tricks.com/lets-build-a-jamstack-e-commerce-store-with-netlify-functions/)
+* Ecommerce Example with Netlify Functions, Nuxt, Vue and Stripe
+  * [Let’s Build a JAMstack E-Commerce Store with Netlify Functions](https://css-tricks.com/lets-build-a-jamstack-e-commerce-store-with-netlify-functions/)
+  * [Creating Dynamic Routes in Nuxt Application](https://css-tricks.com/creating-dynamic-routes-in-a-nuxt-application/)
+  * Repo example of [Ecommerce Store with Netlify Functions, Nuxt, Vue and Stripe](https://github.com/sdras/ecommerce-netlify)
   * [Stripe notes](stripe)
 
 ## Footnotes
