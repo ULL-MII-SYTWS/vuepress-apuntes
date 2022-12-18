@@ -365,8 +365,6 @@ const resolvers = {
 
 ## References
 
-## References
-
 * [See folder `subscriptions/hello/ in the repo `crguezl/graphql-yoga-examples`](https://github.com/crguezl/graphql-yoga-examples/blob/main/subscriptions/hello/index.js)
 * [Tutorial](https://pusher.com/tutorials/chat-graphql-subscriptions/) *Building live chat app with GraphQL subscriptions*
   * [Repo crguezl/graphql-subscriptions-with-node-js](https://github.com/crguezl/graphql-subscriptions-with-node-js)

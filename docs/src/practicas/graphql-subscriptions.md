@@ -20,7 +20,7 @@ rubrica:
 
 ## Goals
 
-Follow the two tutorials below and reproduce the steps.
+Follow the two tutorials below, reproduce the steps and be sure to understand the concepts.
 
 ## First Tutorial: Hello Subscriptions
 
