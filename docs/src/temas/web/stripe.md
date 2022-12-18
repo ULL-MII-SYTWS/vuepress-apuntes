@@ -105,7 +105,7 @@ Stripe CLI is a command-line tool that makes it easy to test and develop your St
   
 ## Ecommerce Example
 
-* [Let’s Build a JAMstack E-Commerce Store with Netlify Functions](https://css-tricks.com/lets-build-a-jamstack-e-commerce-store-with-netlify-functions/)
+* [Let’s Build a JAMstack E-Commerce Store with Netlify Functions](https://css-tricks.com/lets-build-a-jamstack-e-commerce-store-with-netlify-functions/) Sarah Drasner on Aug 20, 2019 (Updated on Aug 21, 2019)
 * [Creating Dynamic Routes in Nuxt Application](https://css-tricks.com/creating-dynamic-routes-in-a-nuxt-application/)
 * Repo example of [Ecommerce Store with Netlify Functions, Nuxt, Vue and Stripe](https://github.com/sdras/ecommerce-netlify)
 * [Demo](https://ecommerce-netlify.netlify.app/)
