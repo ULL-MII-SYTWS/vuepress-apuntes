@@ -1,6 +1,26 @@
 ---
 title: GraphQL Subscriptions with Node.js
+repo: "https://github.com/crguezl/graphql-subscriptions-with-node-js/main/blob"
 ---
+
+We’ll use predefined post data stored inside a JSON file [postdata.js](https://github.com/crguezl/graphql-subscriptions-with-node-js/blob/main/postData.js) to perform the following operations:
+
+* getPosts : read all posts
+* getPost: read a specific post by ID
+* updatePost: update a post
+* deletePost: delete a post
+* createPost: create a post
+
+Each time a change is made to a post object, an event will be triggered that returns the name of the mutation performed , either update, delete, or create a post.
+
+## Dependencies
+
+```
+✗ jq '.dependencies' package.json 
+{
+  "graphql-yoga": "^1.18.3"
+}
+```
 
 # {{ $frontmatter.title }}
 
