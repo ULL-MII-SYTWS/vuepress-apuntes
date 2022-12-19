@@ -15,6 +15,30 @@ rubrica:
   - "códigos correctos"
   - "Informe bien elaborado"
 ---
+- [{{ $frontmatter.title }}](#-frontmattertitle-)
+  - [Requisitos](#requisitos)
+  - [Set up](#set-up)
+  - [GraphQL Schema](#graphql-schema)
+    - [Types](#types)
+    - [Type modifiers](#type-modifiers)
+    - [null and Error Management](#null-and-error-management)
+    - [Interfaces](#interfaces)
+    - [Arguments](#arguments)
+    - [buildSchema](#buildschema)
+  - [Resolvers](#resolvers)
+  - [Starting the express-graphql middleware](#starting-the-express-graphql-middleware)
+  - [Testing with GraphiQL](#testing-with-graphiql)
+  - [Ejercicios](#ejercicios)
+  - [References](#references)
+    - [Introduction to GraphQL](#introduction-to-graphql)
+    - [Error Management](#error-management)
+    - [Express-GraphQL](#express-graphql)
+    - [GraphiQL](#graphiql)
+    - [Parsing, Validation and Execution](#parsing-validation-and-execution)
+    - [Template repo](#template-repo)
+  - [FootNotes](#footnotes)
+
+
 # {{ $frontmatter.title }}
 
 ## Requisitos
@@ -345,7 +369,22 @@ See [app.all](https://expressjs.com/en/4x/api.html#app.all)
 
 ## Testing with GraphiQL
 
-We can now run the app and open the browser at  the url `http://localhost:4000/graphql`  to make graphql queries using GraphiQL.
+We can now run the app with 
+
+* `npm start` or `nodemon index.js [port]`. 
+* Move the JSON at the end of the Query panel to the Query Variables panel:
+
+    ```json
+    {
+    "teacher": "crguezl",
+    "nota": "NO APTO",
+    "myId": "aluNuevo",
+    "id1": "alu0101228587",
+    "id2": "Alu0101232812"
+    }
+    ```
+
+* and open the browser at  the url `http://localhost:4000/graphql`  to make graphql queries using GraphiQL.
 
 Use **GraphiQL** to test your API. GraphiQL is an in-browser IDE for GraphQL development and workflow.
 Para ello vea este video:
