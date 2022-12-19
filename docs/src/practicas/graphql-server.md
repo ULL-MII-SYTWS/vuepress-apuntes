@@ -311,7 +311,7 @@ It  has the following properties:
 
 * **schema**, our GraphQL schema
 * **rootValue**, our resolver functions
-* **graphiql**, It can be a boolean stating whether to use [graphiql](https://youtu.be/5BwmvekYCpY), we want that so we pass true here or an object
+* **graphiql**, It can be a boolean stating whether to use [graphiql](https://youtu.be/5BwmvekYCpY), we want that so we pass an object describing the [graphiql options](https://github.com/graphql/express-graphql/blob/9eef4db29799e3f51dbf386ff779fd1c5f4e21fd/src/renderGraphiQL.ts#L10-L49)
 * **context**, an object that is passed to all resolvers and can be used to contain per-request state, such as authentication information, dataloaders, etc.
 
 ::: danger
