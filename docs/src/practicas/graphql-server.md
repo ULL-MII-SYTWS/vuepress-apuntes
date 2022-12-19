@@ -19,7 +19,7 @@ rubrica:
 
 ## Requisitos
 
-Usando los módulos npm [express](https://expressjs.com/), [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) y [graphql](https://graphql.org/) complete el código web de la asignación que implementa un pequeño servicio web con una API GraphQL y pruébela usando [GraphiQL](https://youtu.be/5BwmvekYCpY).
+Usando los módulos npm [express](https://expressjs.com/), [graphql-http](https://github.com/graphql/graphql-http) o bien [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) y [graphql](https://graphql.org/) complete el código web de la asignación que implementa un pequeño servicio web con una API GraphQL y pruébela usando [GraphiQL](https://youtu.be/5BwmvekYCpY).
 
 ## Set up
 
