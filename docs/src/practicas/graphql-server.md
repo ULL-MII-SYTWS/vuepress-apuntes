@@ -90,7 +90,7 @@ GraphQL SDL is a typed language. Types can be **Scalar** or can be composed as t
 
 GraphQL ships with some scalar types out of the box; `Int`, `Float`, `String`, `Boolean` and `ID`. 
 
-[Object types](https://graphql.org/learn/schema/#enumeration-types), scalars, and [enums](https://graphql.org/learn/schema/#enumeration-types) are the only kinds of types you can define in GraphQL. 
+[Object types](https://graphql.org/learn/schema/#object-types-and-fields), scalars, and [enums](https://graphql.org/learn/schema/#enumeration-types) are the only kinds of types you can define in GraphQL. 
 
 ### Type modifiers
 
@@ -126,6 +126,27 @@ The convention is that if there's an error in the GraphQL layer while executing 
 ```
 
 This means that any type that implements `Pupil` needs to have these exact fields, with these arguments and return types.
+
+### Arguments
+
+Every field on a GraphQL object type can have zero or more [arguments](https://graphql.org/learn/schema/#enumeration-types), for example the query for a student:
+
+```graphql
+  type Query {
+      students: [ Student ]
+      student(AluXXXX: String!): Student
+  }
+```
+
+**All arguments are named**. Unlike languages like JavaScript  where functions take a list of ordered arguments, all arguments in GraphQL are passed by name specifically. In this case, the `student` field has one defined argument, `AluXXXX`.
+
+Arguments can be either required or optional. When an argument is **optional**, we can define a **default value** - For instance if the field `AluXXXX` was declared optional in the query we can write s.t. like:
+
+```graphql
+student(AluXXXX: String = 'alu01013090'): Student
+``` 
+
+if the `AluXXXX` argument is not passed, it will be set to `alu01013090` by default.
 
 ### buildSchema
 
