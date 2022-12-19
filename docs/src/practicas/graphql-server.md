@@ -86,7 +86,12 @@ Like queries, [subscriptions](/temas/web/graphql/hello-subscriptions.html) enabl
 
 ### Types 
 
-GraphQL SDL is a typed language. Types can be **Scalar** or can be composed as the `Student` type in the former example.
+GraphQL SDL is a typed language. 
+
+Every GraphQL service has a `query` type and may or may not have a `mutation` type. 
+These types are the same as a regular [object type](https://graphql.org/learn/schema/#object-types-and-fields), but they are special because they define the **entry point of every GraphQL query**. It's often called the `Root` type or the `Query` type.
+
+Types can be **Scalar** or can be composed as the `Student` type in the former example.
 
 GraphQL ships with some scalar types out of the box; `Int`, `Float`, `String`, `Boolean` and `ID`. 
 
@@ -283,32 +288,26 @@ This is the reason why there was no need to implement the resolvers for these fi
 Now what remains is to set the `graphqlHTTP`  the **[express middleware](/tema3-web/express)** provided by the module `express-graphql` to work
 
 ```js
-
-const app = express()
-
-async function main () {
-    let classroom = await csv().fromFile(csvFilePath);
-    const root = { ... }
-      
-    app.use(
-        '/graphql',
-        graphqlHTTP({
-          schema: AluSchema,
-          rootValue: root,
-          graphiql: true,
-        }),
-      );
-      
-      app.listen(port);
-      console.log("Running at port "+port)
-}
+app.use(
+    '/graphql',
+    graphqlHTTP((request, response, next) => ({
+      schema: AluSchema,
+      rootValue: root,
+      graphiql: {
+        defaultQuery: data,
+        headerEditorEnabled: true,
+      },
+      context: { classroom: classroom, req: request, res: response }
+    })),
+  );
 ```
 
 It  has the following properties:
 
 * **schema**, our GraphQL schema
 * **rootValue**, our resolver functions
-* **graphiql**, a boolean stating whether to use [graphiql](https://youtu.be/5BwmvekYCpY), we want that so we pass true here
+* **graphiql**, It can be a boolean stating whether to use [graphiql](https://youtu.be/5BwmvekYCpY), we want that so we pass true here or an object
+* **context**, an object that is passed to all resolvers and can be used to contain per-request state, such as authentication information, dataloaders, etc.
 
 ## Testing with GraphiQL
 
