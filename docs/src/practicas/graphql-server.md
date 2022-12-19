@@ -43,7 +43,7 @@ rubrica:
 
 ## Requisitos
 
-Usando los módulos npm [express](https://expressjs.com/), [graphql-http](https://github.com/graphql/graphql-http) o bien [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) y [graphql](https://graphql.org/) complete el código web de la asignación que implementa un pequeño servicio web con una API GraphQL y pruébela usando [GraphiQL](https://youtu.be/5BwmvekYCpY).
+Usando los módulos npm [express](https://expressjs.com/), [graphql-http](https://github.com/graphql/graphql-http) o bien [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) y [graphql](https://graphql.org/) complete el código web de la asignación que implementa un pequeño servicio web con una API GraphQL y pruébela usando [GraphiQL](/practicas/graphql-server.html#graphiql).
 
 ## Set up
 
@@ -420,9 +420,10 @@ Reproduzca los ejemplos  [GraphQL Hello Worlds en](https://graphql.org/code/#jav
 
 ### GraphiQL
 
-* [Queries y GraphiQL con la API de Rick & Morty (Curso express GraphQL)](https://youtu.be/5BwmvekYCpY)
-* [GraphiQL Shortcuts](https://defkey.com/graphiql-shortcuts)
-
+* Queries y GraphiQL con la API de Rick & Morty (Curso express GraphQL)
+  * <youtube id="5BwmvekYCpY"></youtube>
+* [GraphiQL Shortcuts](https://github.com/graphql/graphiql/issues/670)
+* Express-GraphQL: [graphiql options](https://github.com/graphql/express-graphql/blob/9eef4db29799e3f51dbf386ff779fd1c5f4e21fd/src/renderGraphiQL.ts#L10-L49)
 
 ### Parsing, Validation and Execution
 
