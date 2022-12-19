@@ -90,7 +90,10 @@ example.
 
 GraphQL ships with some scalar types out of the box; `Int`, `Float`, `String`, `Boolean` and `ID`. 
 
-The fields whose types have an exclamation mark, `!`, next to them are **non-null** fields. These are fields that won’t return a `null` value when you query them.
+* By default, every type is **nullable** - it's legitimate to return `null` as any of the scalar types. 
+* The fields whose types have an exclamation mark, `!`, next to them are **non-null** fields. These are fields that won’t return a `null` value when you query them. 
+
+The convention is that f there's an error in the GraphQL layer while executing a request, the response is still  200 but the server returns a root field called `errors`, from which the client can extract them, and a root field called `data` that has all the requested fields. Any fields with errors have the value `null`.
 
 The function `buildSchema` provided by the `graphql` module has the signature:
 
