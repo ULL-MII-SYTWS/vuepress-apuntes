@@ -3,6 +3,10 @@ title: GraphQL Subscriptions with Node.js
 repo: "https://github.com/crguezl/graphql-subscriptions-with-node-js/main/blob"
 ---
 
+# {{ $frontmatter.title }}
+
+See the tutorial [GraphQL subscriptions with Node.js and Express](https://blog.logrocket.com/graphql-subscriptions-with-node-js/) at <https://blog.logrocket.com/graphql-subscriptions-nodejs-express>
+
 We’ll use predefined post data stored inside a JSON file [postdata.js](https://github.com/crguezl/graphql-subscriptions-with-node-js/blob/main/postData.js) to perform the following operations:
 
 * getPosts : read all posts
@@ -21,10 +25,6 @@ Each time a change is made to a post object, an event will be triggered that ret
   "graphql-yoga": "^1.18.3"
 }
 ```
-
-# {{ $frontmatter.title }}
-
-See the tutorial [GraphQL subscriptions with Node.js and Express](https://blog.logrocket.com/graphql-subscriptions-with-node-js/) at <https://blog.logrocket.com/graphql-subscriptions-nodejs-express>
 
 ## The Query Object: queries
 
