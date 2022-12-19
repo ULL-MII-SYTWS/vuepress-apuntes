@@ -285,7 +285,12 @@ This is the reason why there was no need to implement the resolvers for these fi
 
 ## Starting the express-graphql middleware
 
-Now what remains is to set the `graphqlHTTP`  the **[express middleware](/tema3-web/express)** provided by the module `express-graphql` to work
+Now what remains is to set the express middleware `graphqlHTTP`. The picture below shows the 
+way express middleware works:
+
+![express middleware](/images/express-middleware.jpeg)
+
+The express middleware `graphqlHTTP` is provided by the module `express-graphql` and it is used to create the GraphQL HTTP server:
 
 ```js
 app.use(
@@ -308,6 +313,35 @@ It  has the following properties:
 * **rootValue**, our resolver functions
 * **graphiql**, It can be a boolean stating whether to use [graphiql](https://youtu.be/5BwmvekYCpY), we want that so we pass true here or an object
 * **context**, an object that is passed to all resolvers and can be used to contain per-request state, such as authentication information, dataloaders, etc.
+
+::: danger
+`express-graphql` was the first official reference implementation of using GraphQL with HTTP. It has existed since 2015 and was mostly unmaintained in recent years.
+
+The official [GraphQL over HTTP](https://github.com/graphql/graphql-over-http) work group is standardizing the way you transport GraphQL over HTTP and it made great progress bringing up the need for a fresh reference implementation.
+
+Read the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http) for detailed implementation information. 
+
+**Update your solutionto use [graphql-http](https://github.com/graphql/graphql-http), which is now the GraphQL official reference implementation of the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http)**.
+
+Here is an example of usage of `graphql-http` with express:
+
+```js
+import express from 'express'; 
+import { createHandler } from 'graphql-http/lib/use/express';
+import { schema } from './previous-step';
+
+// Create a express instance serving all methods on `/graphql`
+// where the GraphQL over HTTP express request handler is
+const app = express();
+app.all('/graphql', createHandler({ schema }));
+
+app.listen({ port: 4000 });
+console.log('Listening to port 4000');
+```
+
+See [app.all](https://expressjs.com/en/4x/api.html#app.all)
+
+::: 
 
 ## Testing with GraphiQL
 
