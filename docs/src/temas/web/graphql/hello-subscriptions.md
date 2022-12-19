@@ -157,3 +157,4 @@ const server = new GraphQLServer({ typeDefs, resolvers, context: { pubsub, count
 ## References
 
 * [See folder `subscriptions/hello/ in the repo `crguezl/graphql-yoga-examples`](https://github.com/crguezl/graphql-yoga-examples/blob/main/subscriptions/hello/index.js)
+* [apollographql documentation: subscriptions](https://www.apollographql.com/docs/react/data/subscriptions/)

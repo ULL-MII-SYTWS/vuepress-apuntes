@@ -145,3 +145,9 @@ The default $w=1$ reduces... ✔️
 ## Vue
 
 [Inserting vue as an static asset](/solution.html)
+
+## External link
+
+* <a :href="$page.frontmatter.sytws2122" target="_blank">Ejercicios de Websockets 
+!!!include(includes/external-link.html)!!!
+</a>

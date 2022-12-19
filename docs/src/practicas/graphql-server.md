@@ -19,7 +19,7 @@ rubrica:
 
 ## Requisitos
 
-Usando los módulos npm [express](https://expressjs.com/), [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) y [graphql](https://graphql.org/) escriba un servicio web con una API GraphQL y pruébela usando [GraphiQL](https://youtu.be/5BwmvekYCpY).
+Usando los módulos npm [express](https://expressjs.com/), [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) y [graphql](https://graphql.org/) complete el código web de la asignación que implementa un pequeño servicio web con una API GraphQL y pruébela usando [GraphiQL](https://youtu.be/5BwmvekYCpY).
 
 ## Set up
 
@@ -60,7 +60,7 @@ Uno de los primeros pasos a la hora de construir un servicio GraphQL es definir 
 A **GraphQL schema**[^GSL] is at the center of any GraphQL server implementation and describes the functionality available to the clients which connect to it. An Schema is written using the **Schema Definition Language (SDL)**[^SLCS], that defines
 the syntax for writing GraphQL Schemas. It is otherwise known as **Interface Definition Language**. It is the lingua franca shared for building GraphQL APIs regardless of the programming language chosen.
 
-Here is an example of a GraphQL Schema written in SDL:
+Here is an example of a GraphQL Schema written in SDL (file [aluschema.gql](https://github.com/ULL-MII-SYTWS/graphql-server-template/blob/main/aluschema.gql)):
 
 ```graphql
   type Student {
@@ -80,20 +80,54 @@ Here is an example of a GraphQL Schema written in SDL:
   }
 ```
 
-In addition to queries and mutations, GraphQL supports a third operation type: **[subscriptions](https://www.apollographql.com/docs/react/data/subscriptions/)**
+In addition to queries and mutations, GraphQL supports a third operation type: **[subscriptions](/temas/web/graphql/hello-subscriptions.html)**
 
-Like queries, subscriptions enable you to fetch data. Unlike queries, subscriptions are long-lasting operations that can change their result over time. They can maintain an active connection to your GraphQL server (most commonly via [WebSocket](/tema3-web/websockets)), enabling the server to push updates to the subscription's result.
+Like queries, [subscriptions](/temas/web/graphql/hello-subscriptions.html) enable you to fetch data. Unlike queries, subscriptions are long-lasting operations that can change their result over time. They can maintain an active connection to your GraphQL server (most commonly via [WebSocket](/temas/web/websockets)), enabling the server to push updates to the subscription's result.
 
+### Types 
 
-GraphQL SDL is a typed language. Types can be **Scalar** or can be composed as the `Student` type in the former 
-example.
+GraphQL SDL is a typed language. Types can be **Scalar** or can be composed as the `Student` type in the former example.
 
 GraphQL ships with some scalar types out of the box; `Int`, `Float`, `String`, `Boolean` and `ID`. 
+
+[Object types](https://graphql.org/learn/schema/#enumeration-types), scalars, and [enums](https://graphql.org/learn/schema/#enumeration-types) are the only kinds of types you can define in GraphQL. 
+
+### Type modifiers
+
+But when you use the types in other parts of the schema, or in your query variable declarations, you can apply additional **type modifiers** that affect **validation** of those values. 
+
+* **List** - `[]` - A list is a type modifier that represents an array of a type. Lists can be nested. For example, `[Int]` represents an array of integers, and `[[String]]` represents an array of arrays of strings.
+* The **Non-Null** type modifier can also be used when defining arguments for a field. For  example, `myField: [String!]` means that the list itself can be `null`, but it can't have any `null` members. 
+  
+### null and Error Management
 
 * By default, every type is **nullable** - it's legitimate to return `null` as any of the scalar types. 
 * The fields whose types have an exclamation mark, `!`, next to them are **non-null** fields. These are fields that won’t return a `null` value when you query them. 
 
-The convention is that f there's an error in the GraphQL layer while executing a request, the response is still  200 but the server returns a root field called `errors`, from which the client can extract them, and a root field called `data` that has all the requested fields. Any fields with errors have the value `null`.
+The convention is that if there's an error in the GraphQL layer while executing a request, the response is still  `200` but the server returns a root field called `errors` (with subfields like `locations` to spot the place), from which the client can extract them, and a root field called `data` that has all the requested fields. Any fields with errors have the value `null`.
+
+![/images/graphql/graphql-null-error-management-1.png](/images/graphql/graphql-null-error-management-1.png)
+
+### Interfaces
+
+[Interfaces](https://graphql.org/learn/schema/#interfaces) are a way to describe a set of fields that a type must include to implement the interface. 
+
+```graphql
+  interface Pupil {
+      AluXXXX: String!
+      Nombre: String!
+  }
+
+  type Student implements Pupil {
+      AluXXXX: String!
+      Nombre: String!
+      markdown: String
+  }
+```
+
+This means that any type that implements `Pupil` needs to have these exact fields, with these arguments and return types.
+
+### buildSchema
 
 The function `buildSchema` provided by the `graphql` module has the signature:
 
@@ -264,6 +298,12 @@ Para ello vea este video:
 
 <youtube id="5BwmvekYCpY"></youtube>
 
+## Ejercicios
+
+Reproduzca los ejemplos  [GraphQL Hello Worlds en](https://graphql.org/code/#javascript) <https://graphql.org/code/#javascript> Graphql.js y Apollo Server.
+
+* https://graphql.org/graphql-js/
+* https://www.apollographql.com/docs/apollo-server/getting-started
 
 ## References
 
@@ -277,6 +317,9 @@ Para ello vea este video:
 * [GraphQL Resolvers: Best Practices](https://medium.com/paypal-tech/graphql-resolvers-best-practices-cd36fdbcef55) by Mark Stuart
 * Youtube video [GraphQL Tutorial. Nos montamos una API con Nodejs y Express](https://youtu.be/atRadu-DKCE) 
 
+### Error Management
+
+* [Nulls in GraphQL: Cheatsheet](https://hasura.io/blog/graphql-nulls-cheatsheet/)
 
 ### Express-GraphQL
 
@@ -299,6 +342,9 @@ Para ello vea este video:
 * <https://astexplorer.net/>
 
 
+### Template repo
+
+* <https://github.com/ULL-MII-SYTWS/graphql-server-template>
 
 ## FootNotes
 
