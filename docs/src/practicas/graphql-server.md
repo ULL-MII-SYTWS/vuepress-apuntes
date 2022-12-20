@@ -26,8 +26,14 @@ rubrica:
     - [Arguments](#arguments)
     - [buildSchema](#buildschema)
   - [Resolvers](#resolvers)
+  - [Phases of a GraphQL Query](#phases-of-a-graphql-query)
+    - [Example](#example)
+    - [Validation](#validation)
+    - [Execution](#execution)
+    - [Default resolvers](#default-resolvers)
+    - [Resolver arguments](#resolver-arguments)
   - [Starting the express-graphql middleware](#starting-the-express-graphql-middleware)
-  - [Testing with GraphiQL](#testing-with-graphiql)
+  - [Running and Testing with GraphiQL](#running-and-testing-with-graphiql)
   - [Ejercicios](#ejercicios)
   - [References](#references)
     - [Introduction to GraphQL](#introduction-to-graphql)
@@ -204,57 +210,66 @@ and a REST API. Resolvers can also return strings, ints, null, and other types.
 To define our resolvers we create now the object `root` mapping the  schema fields (`students`, `student`, `addStudent`, `setMarkdown`) to their corresponding functions:
 
 ```js
-async function main () {
-    let classroom=await csv().fromFile(csvFilePath);
-        const root = {
-        students: () => classroom,
-        student: ({AluXXXX}) => {
-            let result = classroom.find(s => {
-                return s["AluXXXX"] == AluXXXX
-            });
-            return result
-        },
-        addStudent: (obj, args, context, info) => {
-            const {AluXXXX, Nombre} = obj; 
+  const root = {
+    students: () => classroom,
+    student: ({ AluXXXX }) => {
+      let result = classroom.find(s => {
+        return s["AluXXXX"] == AluXXXX
+      });
+      return result || null;
+    },
+    /* This console.log proves that parent argument is skipped. See README.md */
+    addStudent: (object, args, context, info) => {
+      console.log("======== parent is args =========")
+      console.log(ins(object))
 
-            let result = classroom.find(s => {
-                return s["AluXXXX"] == AluXXXX
-            });
-            if (!result) {
-                let alu = {AluXXXX : AluXXXX, Nombre: Nombre}
-                console.log(`Not found ${Nombre}! Inserting ${AluXXXX}`)
-                classroom.push(alu)
-                return alu    
-            }
-            return result;
-        },
-        setMarkdown: ({AluXXXX, markdown}) => {
-            let result = classroom.findIndex(s => s["AluXXXX"] === AluXXXX)
-            if (result === -1) {
-              let message = `${AluXXXX} not found!`
-              console.log(message);
-              return null;
-            } 
-            classroom[result].markdown = markdown
-            return classroom[result]
-        }
+      console.log("======== args is context ========")
+      console.log(ins(args.classroom));
+      console.log(`accesing req object from the context: req.baseUrl=${args.req.baseUrl}!`)
+
+      console.log("======== context is info ========")
+      console.log(ins(context, 1));
+
+      console.log("======== info is undefined ========")
+      console.log(info);
+
+      console.log("============= this is the parent ==============")
+      console.log(this)
+
+      const { AluXXXX, Nombre } = object;
+
+      let result = args.classroom.find(s => {
+        // console.log(`Processing ${insp(s, {depth:null})}`);
+        return s["AluXXXX"] == AluXXXX
+      });
+      if (!result) {
+        let alu = { AluXXXX: AluXXXX, Nombre: Nombre, "markdown": "" }
+        console.log(`Not found ${Nombre}! Inserting ${AluXXXX}`)
+
+        classroom.push(alu)
+        return alu
+      }
+      // Update the student found
+      result.Nombre = Nombre
+      return result;
+    },
+    setMarkdown: ({ AluXXXX, markdown }) => {
+      let result = classroom.findIndex(s => s["AluXXXX"] === AluXXXX)
+      console.log(`Updating ${AluXXXX} with ${markdown}`)
+      if (result === -1) {
+        let message = `Student "${AluXXXX}" not found!`
+        console.error(message);
+        throw new Error(message) // will be catched by the GraphQL server
+      }
+      classroom[result].markdown = markdown
+      return classroom[result]
     }
-      
-    ... // Set the express app to work
-}
-
-main();
+  }
 ```
 
-Observe how `setMarkDown` and `addStudent` sometimes return `null` since it is allowed by the schema we have previously set.
+Observe how `student` sometimes return `null` since it is allowed by the schema we have previously set.
 
-```graphql 
- setMarkdown(AluXXXX: String!, markdown: String!): Student
- ```
-
-There is no exclamation `!` at the value returned in the declaration of the `setMarkDown` mutation.
-
-![](/images/graphql-stages.png)
+## Phases of a GraphQL Query 
 
 [Every GraphQL query goes through these phases](https://medium.com/paypal-tech/graphql-resolvers-best-practices-cd36fdbcef55):
 
@@ -266,29 +281,49 @@ There is no exclamation `!` at the value returned in the declaration of the `set
     3. Collecting up results, and 
     4. Emiting the final JSON
 
-<table>
-<tr>
-<td><img src="/images/graphql-query.png" height="80%" /></td>
-<td><img src="/images/graphql-ast.png" /></td>
-</tr>
-</table>
+The picture below shows the stages of a GraphQL query:
 
-In this example, the root Query type is the entry point to the AST and contains two fields, `user` and `album`. The `user` and `album` resolvers are usually executed in parallel or in no particular order. 
+![](/images/graphql-stages.png)
 
-The AST is traversed breadth-first, meaning `user` must be resolved before its children `name` and `email` are visited. 
+### Example
 
-If the user resolver is asynchronous, the user branch delays until its resolved. Once all leaf nodes, `name`, `email`, `title`, are resolved, execution is complete.
+Suppose the following query:
+
+<img src="/images/graphql-query.png" height="80%" />
+
+after parsed we will have an Abstract Syntax Tree (AST) like the following:
+
+<img src="/images/graphql-ast.png" />
+
+In this example, the **root** Query type is the entry point to the AST and contains two fields, `user` and `album`. 
+
+1. The `user` and `album` resolvers are usually executed in parallel or in no particular order. 
+2. The AST is traversed breadth-first, meaning `user` must be resolved before its children `name` and `email` are visited. 
+3. If the user resolver is **async**hronous, the user branch delays until its **resolved**. 
+4. Once all leaf nodes, `name`, `email`, `title`, are resolved, execution is complete.
+
+### Validation
+
+Here is another figure illustrating how the GraphQL schema is used for validation of a query:
 
 ![](/images/graphql-schema-vs-query.jpeg)
 
+### Execution
 
-Typically, fields are executed in the order they appear in the query, but it’s not safe to assume that. Because fields can be executed in parallel, they are assumed to be atomic, idempotent, and side-effect free.
+Typically, fields are executed in the order they appear in the query, but it’s not safe to assume that. Because **fields can be executed in parallel**, they are assumed to be 
+* atomic, 
+* idempotent, and 
+* side-effect free.
 
-A resolver is a function that resolves a value for a type or field in a schema. 
-- Resolvers can return objects or scalars like Strings, Numbers, Booleans, etc. 
-- If an Object is returned, execution **continues to the next child field**. 
-- If a scalar is returned (typically at a leaf node of the AST), execution completes. 
-- If `null` is returned, execution halts and does not continue.
+A **resolver is a function that resolves a value for a type or field in a schema**. 
+
+Resolvers can return objects or scalars like Strings, Numbers, Booleans, etc. 
+
+- If an **Object** is returned, execution **continues to the next child field**. 
+- If a **scalar** is returned (typically at a leaf node of the AST), execution completes. 
+- If **`null`** is returned, execution halts and does not continue.
+
+### Default resolvers
 
 It’s worth noting that a GraphQL server has built-in default resolvers, so you don’t have to specify a resolver function for every field. A default resolver will look in root to find a property with the same name as the field. An implementation likely looks like this:
 
@@ -304,6 +339,8 @@ export default {
 ```
 
 This is the reason why there was no need to implement the resolvers for these fields.
+
+### Resolver arguments
 
 ![](/images/graphql-resolver-arguments.png)
 
@@ -367,29 +404,43 @@ See [app.all](https://expressjs.com/en/4x/api.html#app.all)
 
 ::: 
 
-## Testing with GraphiQL
+## Running and Testing with GraphiQL
 
 We can now run the app with 
 
 * `npm start` or `nodemon index.js [port]`. 
+* open the browser at  the url `http://localhost:4000/graphql`  to make graphql queries using GraphiQL.
 * Move the JSON at the end of the Query panel to the Query Variables panel:
 
     ```json
     {
-    "teacher": "crguezl",
-    "nota": "NO APTO",
-    "myId": "aluNuevo",
-    "id1": "alu0101228587",
-    "id2": "Alu0101232812"
+        "teacher": "crguezl",
+        "nota": "NO APTO",
+        "myId": "aluNuevo",
+        "id1": "alu0101228587",
+        "id2": "Alu0101232812"
     }
     ```
+* The query panel contains an example of use of fragments. A **fragment** is basically a reusable piece of query. In GraphQL, you often need to query for the same data fields in different queries.
 
-* and open the browser at  the url `http://localhost:4000/graphql`  to make graphql queries using GraphiQL.
+    ```Graphql
+    fragment studentInfo on Student {
+            Nombre
+            AluXXXX
+    }
 
-Use **GraphiQL** to test your API. GraphiQL is an in-browser IDE for GraphQL development and workflow.
-Para ello vea este video:
-
-<youtube id="5BwmvekYCpY"></youtube>
+    query ctrlBarra($id1: String!, $id2: String!) {
+        # fragment example
+        
+        left: student(AluXXXX: $id1) {
+            ... studentInfo
+        }
+        
+        right: student(AluXXXX: $id2) {
+            ... studentInfo
+        }
+    }
+    ```
 
 ## Ejercicios
 
@@ -412,6 +463,7 @@ Reproduzca los ejemplos  [GraphQL Hello Worlds en](https://graphql.org/code/#jav
 
 ### Error Management
 
+* [Error Handling in GraphQL](https://dev.to/gethackteam/error-handling-in-graphql-42hp) 2020
 * [Nulls in GraphQL: Cheatsheet](https://hasura.io/blog/graphql-nulls-cheatsheet/)
 
 ### Express-GraphQL
