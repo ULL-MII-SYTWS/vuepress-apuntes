@@ -242,6 +242,8 @@ To define our resolvers we create now the object `root` mapping the  schema fiel
 
 Observe how `student` sometimes return `null` since it is allowed by the schema we have previously set.
 
+### Error Management in resolvers
+
 When you have an error, you would have to throw an error from the resolvers of your GraphQL server. This can simpy be done by throwing an error from the resolver. 
 
 ```js
@@ -260,7 +262,11 @@ In the picture below, you can see how the error produced by the mutation query `
 
 ![/images/graphql/graphql-error-management](/images/graphql/graphql-error-management.png)
 
-See the references on [Error Management](#error-management)
+Notice how the server returns 
+1. a root field called `errors` (with subfields like `locations` and `path` to spot the error), from which the client can extract them, and 
+2. a root field called `data` that has the field `setMarkdown` with value `null`.
+
+For more info see the references on [Error Management](#error-management)
 
 ## Phases of a GraphQL Query 
 
