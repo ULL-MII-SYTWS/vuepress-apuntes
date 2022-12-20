@@ -34,6 +34,7 @@ rubrica:
     - [Resolver arguments](#resolver-arguments)
   - [Starting the express-graphql middleware](#starting-the-express-graphql-middleware)
   - [Running and Testing with GraphiQL](#running-and-testing-with-graphiql)
+    - [Fragments](#fragments)
   - [Ejercicios](#ejercicios)
   - [References](#references)
     - [Introduction to GraphQL](#introduction-to-graphql)
@@ -269,6 +270,26 @@ To define our resolvers we create now the object `root` mapping the  schema fiel
 
 Observe how `student` sometimes return `null` since it is allowed by the schema we have previously set.
 
+When you have an error, you would have to throw an error from the resolvers of your GraphQL server. This can simpy be done by throwing an error from the resolver. 
+
+```js
+    setMarkdown: ({ AluXXXX, markdown }) => {
+      let result = classroom.findIndex(s => s["AluXXXX"] === AluXXXX)
+      if (result === -1) {
+        let message = `Student "${AluXXXX}" not found!`
+        throw new Error(message) // will be catched by the GraphQL server
+      }
+      classroom[result].markdown = markdown
+      return classroom[result]
+    }
+```
+
+In the picture below, you can see how the error produced by the mutation query `ponnota("noexiste", "NO APTO")` is returned to the client.
+
+![/images/graphql/graphql-error-management](/images/graphql/graphql-error-management.png)
+
+See the references on [Error Management](#error-management)
+
 ## Phases of a GraphQL Query 
 
 [Every GraphQL query goes through these phases](https://medium.com/paypal-tech/graphql-resolvers-best-practices-cd36fdbcef55):
@@ -421,26 +442,29 @@ We can now run the app with
         "id2": "Alu0101232812"
     }
     ```
-* The query panel contains an example of use of fragments. A **fragment** is basically a reusable piece of query. In GraphQL, you often need to query for the same data fields in different queries.
 
-    ```Graphql
-    fragment studentInfo on Student {
-            Nombre
-            AluXXXX
-    }
+### Fragments
 
-    query ctrlBarra($id1: String!, $id2: String!) {
-        # fragment example
-        
-        left: student(AluXXXX: $id1) {
-            ... studentInfo
-        }
-        
-        right: student(AluXXXX: $id2) {
-            ... studentInfo
-        }
+The query panel contains an example of use of fragments. A **fragment** is basically a reusable piece of query. In GraphQL, you often need to query for the same data fields in different queries.
+
+```Graphql
+fragment studentInfo on Student {
+        Nombre
+        AluXXXX
+}
+
+query ctrlBarra($id1: String!, $id2: String!) {
+    # fragment example
+    
+    left: student(AluXXXX: $id1) {
+        ... studentInfo
     }
-    ```
+    
+    right: student(AluXXXX: $id2) {
+        ... studentInfo
+    }
+}
+```
 
 ## Ejercicios
 
