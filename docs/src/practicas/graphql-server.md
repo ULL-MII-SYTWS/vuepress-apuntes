@@ -15,42 +15,14 @@ rubrica:
   - "códigos correctos"
   - "Informe bien elaborado"
 ---
-- [{{ $frontmatter.title }}](#-frontmattertitle-)
-  - [Requisitos](#requisitos)
-  - [Set up](#set-up)
-  - [GraphQL Schema](#graphql-schema)
-    - [Types](#types)
-    - [Type modifiers](#type-modifiers)
-    - [null and Error Management](#null-and-error-management)
-    - [Interfaces](#interfaces)
-    - [Arguments](#arguments)
-    - [buildSchema](#buildschema)
-  - [Resolvers](#resolvers)
-  - [Phases of a GraphQL Query](#phases-of-a-graphql-query)
-    - [Example](#example)
-    - [Validation](#validation)
-    - [Execution](#execution)
-    - [Default resolvers](#default-resolvers)
-    - [Resolver arguments](#resolver-arguments)
-  - [Starting the express-graphql middleware](#starting-the-express-graphql-middleware)
-  - [Running and Testing with GraphiQL](#running-and-testing-with-graphiql)
-    - [Fragments](#fragments)
-  - [Ejercicios](#ejercicios)
-  - [References](#references)
-    - [Introduction to GraphQL](#introduction-to-graphql)
-    - [Error Management](#error-management)
-    - [Express-GraphQL](#express-graphql)
-    - [GraphiQL](#graphiql)
-    - [Parsing, Validation and Execution](#parsing-validation-and-execution)
-    - [Template repo](#template-repo)
-  - [FootNotes](#footnotes)
-
 
 # {{ $frontmatter.title }}
 
 ## Requisitos
 
-Usando los módulos npm [express](https://expressjs.com/), [graphql-http](https://github.com/graphql/graphql-http) o bien [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) y [graphql](https://graphql.org/) complete el código web de la asignación que implementa un pequeño servicio web con una API GraphQL y pruébela usando [GraphiQL](/practicas/graphql-server.html#graphiql).
+Usando los módulos npm [express](https://expressjs.com/), [graphql-http](https://github.com/graphql/graphql-http) y [graphql](https://graphql.org/) complete el código web de la asignación que implementa un pequeño servicio web con una API GraphQL y pruébela usando [GraphiQL](/practicas/graphql-server.html#graphiql).
+
+Sustituya [graphql-http](https://github.com/graphql/graphql-http) por [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) para actualizar el código.
 
 ## Set up
 
@@ -425,7 +397,7 @@ See [app.all](https://expressjs.com/en/4x/api.html#app.all)
 
 ::: 
 
-## Running and Testing with GraphiQL
+## Running and Testing the example with GraphiQL
 
 We can now run the app with 
 
