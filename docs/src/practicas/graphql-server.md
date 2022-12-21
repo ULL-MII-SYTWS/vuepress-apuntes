@@ -22,7 +22,7 @@ rubrica:
 
 Usando los módulos npm [express](https://expressjs.com/), [graphql-http](https://github.com/graphql/graphql-http) y [graphql](https://graphql.org/) complete el código web de la asignación que implementa un pequeño servicio web con una API GraphQL y pruébela usando [GraphiQL](/practicas/graphql-server.html#graphiql).
 
-Sustituya [graphql-http](https://github.com/graphql/graphql-http) por [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) para actualizar el código.
+Sustituya [express-graphql](https://graphql.org/graphql-js/running-an-express-graphql-server/) por [graphql-http](https://github.com/graphql/graphql-http) para actualizar el código.
 
 ## Set up
 
