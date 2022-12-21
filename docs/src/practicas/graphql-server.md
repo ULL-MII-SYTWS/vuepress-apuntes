@@ -348,7 +348,7 @@ Every resolver in every language receives these four arguments:
 - `root` — Result from the previous/parent type
 - `args` — Arguments provided to the field
 - `context` — a Mutable object that is provided to all resolvers. Basically a means for resolvers to communicate and share information
-- `info` — Field-specific information relevant to the query (used rarely)
+- `info` — [The decorated AST representation of the query or mutation](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
 
 Here is an overview of the execution process of a simple GraphQL query and the invocations of the  resolvers when traversing the AST:
 
