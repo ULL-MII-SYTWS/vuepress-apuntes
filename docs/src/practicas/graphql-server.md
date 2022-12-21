@@ -347,7 +347,7 @@ Every resolver in every language receives these four arguments:
 
 - `root` — Result from the previous/parent type
 - `args` — Arguments provided to the field
-- `context` — a Mutable object that is provided to all resolvers
+- `context` — a Mutable object that is provided to all resolvers. Basically a means for resolvers to communicate and share information
 - `info` — Field-specific information relevant to the query (used rarely)
 
 Here is an overview of the execution process of a simple GraphQL query and the invocations of the  resolvers when traversing the AST:
