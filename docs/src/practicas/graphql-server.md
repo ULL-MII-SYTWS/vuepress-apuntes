@@ -468,8 +468,8 @@ query ctrlBarra($id1: String!, $id2: String!) {
 
 Reproduzca los ejemplos  [GraphQL Hello Worlds en](https://graphql.org/code/#javascript) <https://graphql.org/code/#javascript> Graphql.js y Apollo Server.
 
-* https://graphql.org/graphql-js/
-* https://www.apollographql.com/docs/apollo-server/getting-started
+* <https://graphql.org/graphql-js/>
+* <https://www.apollographql.com/docs/apollo-server/getting-started>
 
 ## References
 
