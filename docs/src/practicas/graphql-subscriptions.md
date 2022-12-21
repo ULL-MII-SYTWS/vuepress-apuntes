@@ -18,8 +18,6 @@ rubrica:
 
 # {{ $frontmatter.title }}
 
-## Goals
-
 Follow the tutorials in section [hello subscriptions](/temas/web/graphql/hello-subscriptions), reproduce the steps and be sure to understand the concepts.
 
 [See folder `subscriptions/hello-name/` in the repo `crguezl/graphql-yoga-examples`](https://github.com/crguezl/graphql-yoga-examples/blob/main/subscriptions/hello-name/index.js) for the code.
