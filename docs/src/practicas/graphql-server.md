@@ -350,9 +350,11 @@ Every resolver in every language receives these four arguments:
 - `context` — a Mutable object that is provided to all resolvers
 - `info` — Field-specific information relevant to the query (used rarely)
 
-Here is an overview of the execution process of a simple GraphQL query and the invocations of the  resolvers when traversing the AST. Because the resolution of the 2nd  level is trivial, default resolvers are used:
+Here is an overview of the execution process of a simple GraphQL query and the invocations of the  resolvers when traversing the AST:
 
 ![graphql-resolver-execution.png](/images/graphql/graphql-resolver-execution.png)
+
+In the first level the `parent` is `null` because the node is the root of the AST and the `args` is  `{id: 'abc'}`. In the second level the `parent` is the result of the first level and the `args` is `{}`. Because the resolution of the 2nd  level is trivial, default resolvers are used
 
 ## Starting the express-graphql middleware
 
