@@ -137,7 +137,7 @@ This means that any type that implements `Pupil` needs to have these exact field
 
 ### Arguments
 
-Every field on a GraphQL object type can have zero or more [arguments](https://graphql.org/learn/schema/#enumeration-types), for example the query for a student:
+Every field on a GraphQL object type can have zero or more [arguments](https://graphql.org/learn/schema/#enumeration-types), for example the query for a `student`:
 
 ```graphql
   type Query {
@@ -177,7 +177,7 @@ const AluSchema = buildSchema(StringWithMySchemaDefinition)
 A **resolver** is a function that connects **schema fields** and **types** to various backends. 
 Resolvers provide the instructions for turning a GraphQL operation into data. 
 
-A resolver can retrieve data from or write data to anywhere, including a SQL, No-SQL, or graph database, a [micro-service](/tema2-async/message-queues.html), 
+A resolver can retrieve data from or write data to anywhere, including a SQL, No-SQL, or graph database, a [micro-service](/temas/async/message-queues), 
 and a REST API. Resolvers can also return strings, ints, null, and other types.
 
 To define our resolvers we create now the object `root` mapping the  schema fields (`students`, `student`, `addStudent`, `setMarkdown`) to their corresponding functions:
@@ -342,6 +342,17 @@ This is the reason why there was no need to implement the resolvers for these fi
 ### Resolver arguments
 
 ![](/images/graphql-resolver-arguments.png)
+
+Every resolver in every language receives these four arguments:
+
+- `root` — Result from the previous/parent type
+- `args` — Arguments provided to the field
+- `context` — a Mutable object that is provided to all resolvers
+- `info` — Field-specific information relevant to the query (used rarely)
+
+Here is an overview of the execution process of a simple GraphQL query and the invocations of the  resolvers when traversing the AST. Because the resolution of the 2nd  level is trivial, default resolvers are used:
+
+![graphql-resolver-execution.png](/images/graphql/graphql-resolver-execution.png)
 
 ## Starting the express-graphql middleware
 
