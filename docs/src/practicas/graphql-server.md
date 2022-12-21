@@ -361,7 +361,7 @@ To know more, you can read the Nicolas Burk articles:
 
 1. [Structure and Implementation of GraphQL Servers (Part I)](https://www.prisma.io/blog/graphql-server-basics-the-schema-ac5e2950214e) GraphQL Server Basics: GraphQL Schemas, TypeDefs & Resolvers Explained 
 2. [Structure and Implementation of GraphQL Servers (Part II)](https://www.prisma.io/blog/graphql-server-basics-the-network-layer-51d97d21861) GraphQL Server Basics: The Network Layer Explained 
-3. [Structure and Implementation of GraphQL Servers (Part III)](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
+3. [Structure and Implementation of GraphQL Servers (Part III)](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)Demystifying the `info` Argument in GraphQL Resolvers
 
 ## Starting the express-graphql middleware
 
