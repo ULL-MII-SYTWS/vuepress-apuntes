@@ -307,20 +307,6 @@ Here is another figure illustrating how the GraphQL schema is used for validatio
 
 ![](/images/graphql-schema-vs-query.jpeg)
 
-### Execution
-
-Typically, fields are executed in the order they appear in the query, but it’s not safe to assume that. Because **fields can be executed in parallel**, they are assumed to be 
-* atomic, 
-* idempotent, and 
-* side-effect free.
-
-A **resolver is a function that resolves a value for a type or field in a schema**. 
-
-Resolvers can return objects or scalars like Strings, Numbers, Booleans, etc. 
-
-- If an **Object** is returned, execution **continues to the next child field**. 
-- If a **scalar** is returned (typically at a leaf node of the AST), execution completes. 
-- If **`null`** is returned, execution halts and does not continue.
 
 ### Default resolvers
 
@@ -349,6 +335,21 @@ Every resolver in every language receives these four arguments:
 - `args` — Arguments provided to the field
 - `context` — a Mutable object that is provided to all resolvers. Basically a means for resolvers to communicate and share information
 - `info` — [The decorated AST representation of the query or mutation](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
+
+### Execution
+
+Typically, fields are executed in the order they appear in the query, but it’s not safe to assume that. Because **fields can be executed in parallel**, they are assumed to be 
+* atomic, 
+* idempotent, and 
+* side-effect free.
+
+A **resolver is a function that resolves a value for a type or field in a schema**. 
+
+Resolvers can return objects or scalars like Strings, Numbers, Booleans, etc. 
+
+- If an **Object** is returned, execution **continues to the next child field**. 
+- If a **scalar** is returned (typically at a leaf node of the AST), execution completes. 
+- If **`null`** is returned, execution halts and does not continue.
 
 Here is an overview of the execution process of a simple GraphQL query and the invocations of the  resolvers when traversing the AST:
 
