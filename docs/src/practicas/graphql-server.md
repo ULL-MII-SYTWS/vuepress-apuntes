@@ -174,11 +174,19 @@ const AluSchema = buildSchema(StringWithMySchemaDefinition)
 
 ## Resolvers
 
+A **resolver is a function that resolves a value for a type or field in a schema**. 
+
 A **resolver** is a function that connects **schema fields** and **types** to various backends. 
 Resolvers provide the instructions for turning a GraphQL operation into data. 
 
 A resolver can retrieve data from or write data to anywhere, including a SQL, No-SQL, or graph database, a [micro-service](/temas/async/message-queues), 
 and a REST API. Resolvers can also return strings, ints, null, and other types.
+
+Resolvers can return objects or scalars like Strings, Numbers, Booleans, etc. 
+
+- If an **Object** is returned, execution **continues to the next child field**. 
+- If a **scalar** is returned (typically at a leaf node of the AST), execution completes. 
+- If **`null`** is returned, execution halts and does not continue.
 
 To define our resolvers we create now the object `root` mapping the  schema fields (`students`, `student`, `addStudent`, `setMarkdown`) to their corresponding functions:
 
@@ -325,6 +333,11 @@ export default {
 
 This is the reason why there was no need to implement the resolvers for these fields.
 
+Typically, fields are executed in the order they appear in the query, but it’s not safe to assume that. Because **fields can be executed in parallel**, they are assumed to be 
+* atomic, 
+* idempotent, and 
+* side-effect free.
+
 ### Resolver arguments
 
 ![](/images/graphql-resolver-arguments.png)
@@ -337,19 +350,6 @@ Every resolver in every language receives these four arguments:
 - `info` — [The decorated AST representation of the query or mutation](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
 
 ### Execution
-
-Typically, fields are executed in the order they appear in the query, but it’s not safe to assume that. Because **fields can be executed in parallel**, they are assumed to be 
-* atomic, 
-* idempotent, and 
-* side-effect free.
-
-A **resolver is a function that resolves a value for a type or field in a schema**. 
-
-Resolvers can return objects or scalars like Strings, Numbers, Booleans, etc. 
-
-- If an **Object** is returned, execution **continues to the next child field**. 
-- If a **scalar** is returned (typically at a leaf node of the AST), execution completes. 
-- If **`null`** is returned, execution halts and does not continue.
 
 Here is an overview of the execution process of a simple GraphQL query and the invocations of the  resolvers when traversing the AST:
 
