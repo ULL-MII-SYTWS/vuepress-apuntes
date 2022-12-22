@@ -1,9 +1,3 @@
----
-title: GraphQL Subscriptions with Node.js
-repo: "https://github.com/crguezl/graphql-subscriptions-with-node-js/main/blob"
----
-
-# {{ $frontmatter.title }}
 
 See the tutorial [GraphQL subscriptions with Node.js and Express](https://blog.logrocket.com/graphql-subscriptions-with-node-js/) at <https://blog.logrocket.com/graphql-subscriptions-nodejs-express>
 

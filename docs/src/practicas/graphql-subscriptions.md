@@ -8,7 +8,7 @@ permalink: /practicas/graphql-subscriptions/
 key: graphql-subscriptions
 layout: Practica
 order: 23 
-sidebar: false
+sidebar: auto
 prev: /practicas/graphql-server.md
 next: 
 rubrica:
