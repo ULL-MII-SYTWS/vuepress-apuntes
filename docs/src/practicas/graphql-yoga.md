@@ -1,15 +1,14 @@
 ---
-#title: "GraphQL-Subscriptions 2nd part"
-title: GraphQL Subscriptions with Node.js and Express
+title: GraphQL Subscriptions with Graphql-Yoga
 repo: "https://github.com/crguezl/graphql-subscriptions-with-node-js/main/blob"
 published: true
-date: "2022/12/18 01"
+date: "2022/12/21 01"
 campus: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=35670"
-delivery: "2023/01/12"
-permalink: /practicas/graphql-subscriptions-2/
-key: graphql-subscriptions-2
+delivery: "2023/01/16"
+permalink: /practicas/graphql-yoga/
+key: graphql-yoga
 layout: Practica
-order: 23 
+order: 24
 sidebar: auto
 prev: 
 next: 
@@ -426,6 +425,7 @@ Update the example to use the latest version of GraphQL-yoga (v3). See [Migratio
 * GraphQL Yoga
   * [Graphql-yoga tutorials](https://the-guild.dev/graphql/yoga-server/tutorial/basic)
   * [Graphql-yoga repo](https://github.com/dotansimha/graphql-yoga)
+  * [Migration from Yoga V1](https://the-guild.dev/graphql/yoga-server/docs/migration/migration-from-yoga-v1)
 * Other tutorials on GraphQL subscriptions
   * [Tutorial](https://pusher.com/tutorials/chat-graphql-subscriptions/) *Building live chat app with GraphQL subscriptions*
   * [Realtime GraphQL Subscriptions](https://www.howtographql.com/graphql-js/7-subscriptions/) from GRAPHQL-NODE TUTORIAL. Written by Maira Bello: Build your own GraphQL server
