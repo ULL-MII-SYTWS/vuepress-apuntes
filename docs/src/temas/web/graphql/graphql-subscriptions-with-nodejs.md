@@ -1,17 +1,39 @@
 
+## Goals and Introduction
+
 See the tutorial [GraphQL subscriptions with Node.js and Express](https://blog.logrocket.com/graphql-subscriptions-with-node-js/) at <https://blog.logrocket.com/graphql-subscriptions-nodejs-express>
 
 We’ll use predefined post data stored inside a JSON file [postdata.js](https://github.com/crguezl/graphql-subscriptions-with-node-js/blob/main/postData.js) to perform the following operations:
 
-* getPosts : read all posts
-* getPost: read a specific post by ID
-* updatePost: update a post
-* deletePost: delete a post
-* createPost: create a post
+* `getPosts `: read all posts
+* `getPost`: read a specific post by ID
+* `updatePost`: update a post
+* `deletePost`: delete a post
+* `createPost`: create a post
+
+In addition to the normal schema definitions for queries and mutations, we have a type called Subscription that is added on the post object via `SubscriptionPayload`, a custom type.
 
 Each time a change is made to a post object, an event will be triggered that returns the name of the mutation performed , either update, delete, or create a post.
 
+## App structure
+
+Here is the structure of the app:
+
+```
+✗ tree -I node_modules
+.
+├── README.md   # Write your report here
+├── index.js    # Starts the GraphQL server
+├── package-lock.json
+├── package.json
+├── postData.js  # Exports the json. Mimicks the database
+├── resolvers.js # Has the logic to resolve for all queries, mutations, and subscriptions 
+└── typeDefs.gql # the GraphQL Schema
+```
+
 ## Dependencies
+
+We’ll use [graphql-yoga](https://the-guild.dev/graphql/yoga-server). You can follow the tutorial
 
 ```
 ✗ jq '.dependencies' package.json 
@@ -384,5 +406,7 @@ const resolvers = {
   * [Repo crguezl/graphql-subscriptions-with-node-js](https://github.com/crguezl/graphql-subscriptions-with-node-js)
 * [apollographql/graphql-subscriptions](https://github.com/apollographql/graphql-subscriptions)
 * [Realtime GraphQL Subscriptions](https://www.howtographql.com/graphql-js/7-subscriptions/) from GRAPHQL-NODE TUTORIAL. Written by Maira Bello: Build your own GraphQL server
+* [graphql-yoga tutorials](https://the-guild.dev/graphql/yoga-server) module:
+
 
 <youtube  id="bn8qsi8jVew"></youtube>
