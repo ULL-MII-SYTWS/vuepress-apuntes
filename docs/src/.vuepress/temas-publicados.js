@@ -57,7 +57,12 @@ module.exports = [
             {
                 text: 'Introduction to Firebase',
                 link: '/temas/web/firebase.html'
+            },
+            {
+                text: 'Tailwind CSS',
+                link: '/temas/web/tailwind'
             }
+
 
         ]
     },
