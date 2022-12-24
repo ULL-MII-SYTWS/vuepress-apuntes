@@ -18,7 +18,7 @@ With Tailwind, you style elements by applying pre-existing classes directly in y
 
 The primary purpose of the class `.bg-white` is to add a background color of white. There are different classes for different purposes, such as setting background color or adding a margin or padding to a container.
 
-There are other Utility-first frameworks as Tachyons, Sched.css, Basscss, Expresive css and others. See [Top utility-first CSS frameworks](https://blog.logrocket.com/top-utility-first-css-frameworks/) 2021.
+There are other Utility-first frameworks as Tachyons, Sched.css, Basscss, Expresive css and others. See the blog [Top utility-first CSS frameworks](https://blog.logrocket.com/top-utility-first-css-frameworks/) 2021.
 
 ## Tailwind CSS Example
 
@@ -30,7 +30,7 @@ Run:
 npm install
 ```
 
-and 
+and then run
 
 ```
 npm run build:tailwind
@@ -41,8 +41,11 @@ npm run build:tailwind
 
 Use live server extension on VScode to see the results.
 
+let us consider this code in the file `index.html`:
+
 ```html
-  <div class="p-6 max-w-sm mx-auto 
+  <div class="p-6 
+       max-w-sm mx-auto 
        bg-white rounded-xl shadow-lg 
        flex items-center space-x-4">
     <div class="shrink-0">
