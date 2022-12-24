@@ -48,7 +48,7 @@ module.exports = [
             },
             {
                 text: 'Introduction to Next.js',
-                link: 'https://github.com/ULL-MII-SYTWS/nextjs-solution'
+                link: '/temas/web/nextjs/'
             },
             {
                 text: 'Payment Platforms: Stripe',
