@@ -60,7 +60,7 @@ module.exports = [
             },
             {
                 text: 'Tailwind CSS',
-                link: '/temas/web/tailwind'
+                link: '/temas/web/tailwind/'
             }
 
 
