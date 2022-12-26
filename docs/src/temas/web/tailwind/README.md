@@ -69,8 +69,13 @@ In the example above, we’ve used:
 
 This approach allows us to implement a completely custom component design without writing a single line of custom CSS.
 
+## Exercise
+
+Reproduce and understand the concepts introduced in the tutorial [Responsive Global Navbar in Next.js with tailwindcss](https://dev.to/dmuraco3/responsive-global-navbar-in-nextjs-with-tailwindcss-45p4)
+
 ## References
 
 * Repo [ULL-MII-SYTWS/tailwind-learning](https://github.com/ULL-MII-SYTWS/tailwind-learning)
 * [Tailwind docs](https://tailwindcss.com/docs/installation)
 * <youtube id="sNXfI3woBEw"></youtube>
+* [Tailwind CSS Tutorial for Beginners - Crash Course 2021](https://www.youtube.com/watch?v=UBOj6rqRUME)
