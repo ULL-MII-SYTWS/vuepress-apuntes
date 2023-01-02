@@ -1,5 +1,7 @@
 # Rendering Markdown in Next.js
 
+See the examples in the repo <https://github.com/ULL-MII-SYTWS/hello-remark>
+
 ## Remark Syntax tree
 
 The syntax tree format used in remark is mdast[^mdast].
@@ -24,6 +26,7 @@ It represents markdown constructs as JSON objects.
   ]
 }
 ```
+
 ## mdast
 
 [mdast](https://github.com/syntax-tree/mdast) is a specification for representing markdown in a syntax
@@ -81,6 +84,12 @@ Micromark uses a [state machine](https://github.com/micromark/common-markup-stat
 tokens. Its API compiles to HTML, but its parts are made to be used separately, so as to
 generate syntax trees or compile
 to other output formats.
+
+## Example of a remark plugin
+
+![Create a remark Plugin to Modify Markdown Headings](https://egghead.io/lessons/javascript-create-a-remark-plugin-to-modify-markdown-headings)
+
+We'll use unist-util-visit to traverse heading nodes in a Markdown file and prefix all h1s with the text "BREAKING" using a TDD workflow.
 
 ## Footnotes
 

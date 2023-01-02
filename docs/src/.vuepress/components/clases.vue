@@ -77,7 +77,8 @@
                 
             },
             getWeekType(page) {
-                return weekType[this.week(page) % 3];
+                let w = this.week(page);
+                return weekType[w == 15? 1 : w % 3];
             },
             getDayOfTheWeek(page) {
                 //console.log(page);
