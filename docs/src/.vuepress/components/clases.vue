@@ -78,6 +78,7 @@
             },
             getWeekType(page) {
                 let w = this.week(page);
+                // Bug! Christmas holidays are not taken into account
                 return weekType[w == 15? 1 : w % 3];
             },
             getDayOfTheWeek(page) {
