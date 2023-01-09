@@ -249,10 +249,9 @@ It’s worth noting that a GraphQL server has built-in default resolvers, so you
 ```js
 export default {
     Student: {
-        AluXXXX: (root, args, context, info) => root.AluXXXX,
-        Nombre: (root, args, context, info) => root.Nombre,
-        markdown: (root, args, context, info) => root.markdown
-
+        AluXXXX: (parent, args, context, info) => parent.AluXXXX,
+        Nombre: (parent, args, context, info) => parent.Nombre,
+        markdown: (parent, args, context, info) => parent.markdown
     }
 }
 ```
