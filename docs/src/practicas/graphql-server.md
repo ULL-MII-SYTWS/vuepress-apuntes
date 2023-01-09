@@ -180,13 +180,26 @@ A **resolver** is a function that connects **schema fields** and **types** to va
 Resolvers provide the instructions for turning a GraphQL operation into data. 
 
 A resolver can retrieve data from or write data to anywhere, including a SQL, No-SQL, or graph database, a [micro-service](/temas/async/message-queues), 
-and a REST API. Resolvers can also return strings, ints, null, and other types.
+and a REST API. 
 
 Resolvers can return objects or scalars like Strings, Numbers, Booleans, etc. 
 
 - If an **Object** is returned, execution **continues to the next child field**. 
 - If a **scalar** is returned (typically at a leaf node of the AST), execution completes. 
 - If **`null`** is returned, execution halts and does not continue.
+
+### Resolver arguments
+
+![](/images/graphql-resolver-arguments.png)
+
+Every resolver in every language receives these four arguments:
+
+- `root` — Result from the previous/parent type
+- `args` — Arguments provided to the field
+- `context` — a Mutable object that is provided to all resolvers. Basically a means for resolvers to communicate and share information
+- `info` — [The decorated AST representation of the query or mutation](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
+
+### Example
 
 To define our resolvers we create now the object `root` mapping the  schema fields (`students`, `student`, `addStudent`, `setMarkdown`) to their corresponding functions:
 
@@ -199,34 +212,14 @@ To define our resolvers we create now the object `root` mapping the  schema fiel
       });
       return result || null;
     },
-    /* This console.log proves that parent argument is skipped. See README.md */
     addStudent: (object, args, context, info) => {
-      console.log("======== parent is args =========")
-      console.log(ins(object))
-
-      console.log("======== args is context ========")
-      console.log(ins(args.classroom));
-      console.log(`accesing req object from the context: req.baseUrl=${args.req.baseUrl}!`)
-
-      console.log("======== context is info ========")
-      console.log(ins(context, 1));
-
-      console.log("======== info is undefined ========")
-      console.log(info);
-
-      console.log("============= this is the parent ==============")
-      console.log(this)
-
       const { AluXXXX, Nombre } = object;
 
       let result = args.classroom.find(s => {
-        // console.log(`Processing ${insp(s, {depth:null})}`);
         return s["AluXXXX"] == AluXXXX
       });
       if (!result) {
         let alu = { AluXXXX: AluXXXX, Nombre: Nombre, "markdown": "" }
-        console.log(`Not found ${Nombre}! Inserting ${AluXXXX}`)
-
         classroom.push(alu)
         return alu
       }
@@ -236,7 +229,6 @@ To define our resolvers we create now the object `root` mapping the  schema fiel
     },
     setMarkdown: ({ AluXXXX, markdown }) => {
       let result = classroom.findIndex(s => s["AluXXXX"] === AluXXXX)
-      console.log(`Updating ${AluXXXX} with ${markdown}`)
       if (result === -1) {
         let message = `Student "${AluXXXX}" not found!`
         console.error(message);
@@ -249,6 +241,28 @@ To define our resolvers we create now the object `root` mapping the  schema fiel
 ```
 
 Observe how `student` sometimes return `null` since it is allowed by the schema we have previously set.
+
+### Default resolvers
+
+It’s worth noting that a GraphQL server has built-in default resolvers, so you don’t have to specify a resolver function for every field. **A default resolver will look in root to find a property with the same name as the field**. An implementation likely looks like this:
+
+```js
+export default {
+    Student: {
+        AluXXXX: (root, args, context, info) => root.AluXXXX,
+        Nombre: (root, args, context, info) => root.Nombre,
+        markdown: (root, args, context, info) => root.markdown
+
+    }
+}
+```
+
+This is the reason why there was no need to implement the resolvers for these fields.
+
+Typically, fields are executed in the order they appear in the query, but it’s not safe to assume that. Because **fields can be executed in parallel**, they are assumed to be 
+* atomic, 
+* idempotent, and 
+* side-effect free.
 
 ### Error Management in resolvers
 
@@ -276,13 +290,13 @@ Notice how the server returns
 
 For more info see the references on [Error Management](#error-management)
 
-## Phases of a GraphQL Query 
+## Parsing, Validation and  Interpretation of a GraphQL Query
 
 [Every GraphQL query goes through these phases](https://medium.com/paypal-tech/graphql-resolvers-best-practices-cd36fdbcef55):
 
-1. Queries are parsed into an abstract syntax tree (or AST). See <https://astexplorer.net/> 
-2. Validated: Checks for  query  correctness and check if the fields exist. 
-3. Executed: The runtime walks through the AST, 
+1. Queries are **parsed** into an **abstract syntax tree** (or AST). See <https://astexplorer.net/> 
+2. **Validated**: Checks for  query  correctness and check if the fields exist. 
+3. **Interpreted**: The runtime walks through the AST, 
     1. Descending from the root of the tree, 
     2. Invoking resolvers, 
     3. Collecting up results, and 
@@ -294,13 +308,13 @@ The picture below shows the stages of a GraphQL query:
 
 ### Example
 
-Suppose the following query:
+Suppose the  query on the left side of the figure:
 
-<img src="/images/graphql-query.png" height="80%" />
+|<img src="/images/graphql-query.png" width="75%" />|<img src="/images/graphql-ast.png" />|
+|-------|-----|
 
-after parsed we will have an Abstract Syntax Tree (AST) like the following:
+after parsed we will have an Abstract Syntax Tree (AST) like the one in the right side
 
-<img src="/images/graphql-ast.png" />
 
 In this example, the **root** Query type is the entry point to the AST and contains two fields, `user` and `album`. 
 
@@ -311,43 +325,11 @@ In this example, the **root** Query type is the entry point to the AST and conta
 
 ### Validation
 
-Here is another figure illustrating how the **GraphQL interpreter** uses the GraphQL schema for validation of a query:
+After the AST is built and before its interpretation/traversing, there is a validation stage (semantic analysis) by the **GraphQL** compiler, that uses the GraphQL schema to validate the query:
 
 ![](/images/graphql-schema-vs-query.jpeg)
 
-
-### Default resolvers
-
-It’s worth noting that a GraphQL server has built-in default resolvers, so you don’t have to specify a resolver function for every field. **A default resolver will look in root to find a property with the same name as the field**. An implementation likely looks like this:
-
-```js
-export default {
-    Student: {
-        AluXXXX: (root, args, context, info) => root.AluXXXX,
-        Nombre: (root, args, context, info) => root.Nombre,
-        markdown: (root, args, context, info) => root.markdown
-
-    }
-}
-```
-
-This is the reason why there was no need to implement the resolvers for these fields.
-
-Typically, fields are executed in the order they appear in the query, but it’s not safe to assume that. Because **fields can be executed in parallel**, they are assumed to be 
-* atomic, 
-* idempotent, and 
-* side-effect free.
-
-### Resolver arguments
-
-![](/images/graphql-resolver-arguments.png)
-
-Every resolver in every language receives these four arguments:
-
-- `root` — Result from the previous/parent type
-- `args` — Arguments provided to the field
-- `context` — a Mutable object that is provided to all resolvers. Basically a means for resolvers to communicate and share information
-- `info` — [The decorated AST representation of the query or mutation](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
+On the left side appears the AST of the schema. On the right side is the query. The validation process checks that the query is correct and that the fields exist in the schema.
 
 ### Execution
 
