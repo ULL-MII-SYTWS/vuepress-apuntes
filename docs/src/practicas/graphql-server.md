@@ -355,7 +355,8 @@ Here is an overview of the execution process of a simple GraphQL query and the i
 
 ![graphql-resolver-execution.png](/images/graphql/graphql-resolver-execution.png)
 
-In the first level the `parent` is `null` because the node is the root of the AST and the `args` is  `{id: 'abc'}`. In the second level the `parent` is the result of the first level and the `args` is `{}`. Because the resolution of the 2nd  level is trivial, default resolvers are used
+1. In the first level the `parent` is `null` because the node is the root of the AST and the `args` is  `{id: 'abc'}`. The `fetchUserById("abc")` is called and returns something like `{ id: "abc", name: "Sarah" }`
+2. In the second level the `parent` is the result of the first level resolver `{ id: "abc", name: "Sarah" }` and the `args` is `{}`. Because the resolution of the 2nd  level is trivial, default resolvers are used
 
 To know more, you can read the Nicolas Burk articles:
 
