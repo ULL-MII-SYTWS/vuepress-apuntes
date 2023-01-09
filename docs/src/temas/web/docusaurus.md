@@ -104,6 +104,27 @@ That creates the following hierarchy:
 13 directories, 37 files
 ```
 
+## babel.config.js
+
+Babel is a tool that transpiles JavaScript code and can be configured using *presets* to support a particular version of JavaScript or a set of language features.
+
+A *Babel preset* is a set of plugins that are defined in a configuration file and are used to support certain language features, such as **JSX** or **flow**.  Presets can be installed as npm packages and specified in the Babel configuration file.
+
+For example, the the `@babel/preset-react` preset is used to support JSX, a syntax extension used with React.
+
+```js
+➜  my-website git:(main) cat babel.config.js 
+module.exports = {
+  presets: [require.resolve('@docusaurus/core/lib/babel/preset')],
+};
+```
+
+See [facebook/docusaurus/packages/docusaurus/src/babel/preset.ts](https://github.com/facebook/docusaurus/blob/main/packages/docusaurus/src/babel/preset.ts) for the preset definition.
+
+## Blog
+
+See Docusaurus [Blog](https://docusaurus.io/docs/blog) documentation
+
 ## References
 
 * [Awesome Resources](https://docusaurus.io/community/resources)
