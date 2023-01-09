@@ -38,12 +38,10 @@ const typeDefs = `
 const resolvers = {
   Query: {
     hello: (parent, args, context) => {
-      console.log(`Current parent: ${parent} args=${ins(args)}, context keys=${Object.keys(context)}`)
       const {pubsub, countMap}  = context
       const name = args.name;
       let c = countMap.get(name) || 0;
       countMap.set(name, ++c)
-      // console.log(`countMap[${name}]= ${countMap.get(name)}`);
       pubsub.publish("greetings", { counter: { name: name, count: countMap.get(name) }})
       return `Hello ${name}`
     },
@@ -130,22 +128,23 @@ a simple **PubSub** instance - it is a simple *pubsub* implementation, based on 
 
 Alternative `EventEmitter` implementations can be passed by an options object to the `PubSub` constructor.
 
-[PubSub](https://www.apollographql.com/docs/graphql-subscriptions/setup/) is a class that exposes a simple `publish` and `subscribe` API. As you can see at the line:
+[PubSub](https://www.apollographql.com/docs/apollo-server/data/subscriptions/#the-pubsub-class) is a class that exposes a simple `publish` and `subscribe` API. It provides a basic in-memory event bus to help you get started.
+As you can see at the line:
+
+[PubSub](https://www.apollographql.com/docs/apollo-server/data/subscriptions/#the-pubsub-class) sits between your application's logic and the GraphQL subscriptions engine - it receives a *publish* command from your app logic and pushes it to your GraphQL execution engine.
 
 ```js
-pubsub.publish(channel, { counter: { count: count++ } })
+pubsub.publish("greetings", { counter: { name: name, count: countMap.get(name) }})
 ```
-
-[PubSub](https://www.apollographql.com/docs/graphql-subscriptions/setup/) sits between your application's logic and the GraphQL subscriptions engine - it receives a *publish* command from your app logic and pushes it to your GraphQL execution engine.
-
-graphql-subscriptions exposes a default PubSub class you can use for a simple usage of data publication.
-
-The PubSub implementation also includes a mechanism that **converts a specific PubSub event into a stream of AsyncIterator**, which you can use with *graphql subscriptions resolver*.
 
 Notice how we pass the `pubsub` and `countMap` instances to the `context` of the GraphQLServer:
 
 ```js
-const server = new GraphQLServer({ typeDefs, resolvers, context: { pubsub, countMap } })
+const server = new GraphQLServer({ 
+    typeDefs, 
+    resolvers, 
+    context: { pubsub, countMap } 
+  })
 ```
 
 ## References
