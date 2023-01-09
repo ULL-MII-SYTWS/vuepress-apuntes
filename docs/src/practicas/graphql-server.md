@@ -312,7 +312,8 @@ Suppose the  query on the left side of the figure:
 |<img src="/images/graphql-query.png" width="75%" />|<img src="/images/graphql-ast.png" />|
 |-------|-----|
 
-after parsed we will have an Abstract Syntax Tree (AST) like the one in the right side
+after parsed we will have an Abstract Syntax Tree (AST) like the one represented in the right side
+(See the full AST in [astexplorer.net](https://astexplorer.net/#/gist/2f6f3c0ebf13bfaf93222956d0817bfb/4aad8494e364c620c85a77591f52bc08aef0d5dd))
 
 
 In this example, the **root** Query type is the entry point to the AST and contains two fields, `user` and `album`. 
@@ -376,43 +377,12 @@ It  has the following properties:
 * **graphiql**, It can be a boolean stating whether to use [graphiql](https://youtu.be/5BwmvekYCpY), we want that so we pass an object describing the [graphiql options](https://github.com/graphql/express-graphql/blob/9eef4db29799e3f51dbf386ff779fd1c5f4e21fd/src/renderGraphiQL.ts#L10-L49)
 * **context**, an object that is passed to all resolvers and can be used to contain per-request state, such as authentication information, dataloaders, etc.
 
-## Exercise: Update your solution to use graphql-http
-
-::: danger
-`express-graphql` was the first official reference implementation of using GraphQL with HTTP. It has existed since 2015 and was mostly unmaintained in recent years.
-
-The official [GraphQL over HTTP](https://github.com/graphql/graphql-over-http) work group is standardizing the way you transport GraphQL over HTTP and it made great progress bringing up the need for a fresh reference implementation.
-
-Read the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http) for detailed implementation information. 
-
-**Update your solution to use [graphql-http](https://github.com/graphql/graphql-http), which is now the GraphQL official reference implementation of the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http)**.
-
-Here is an example of usage of `graphql-http` with express:
-
-```js
-import express from 'express'; 
-import { createHandler } from 'graphql-http/lib/use/express';
-import { schema } from './previous-step';
-
-// Create a express instance serving all methods on `/graphql`
-// where the GraphQL over HTTP express request handler is
-const app = express();
-app.all('/graphql', createHandler({ schema }));
-
-app.listen({ port: 4000 });
-console.log('Listening to port 4000');
-```
-
-See [app.all](https://expressjs.com/en/4x/api.html#app.all)
-
-::: 
-
 ## Running and Testing the example with GraphiQL
 
 We can now run the app with 
 
 * `npm start` or `nodemon index.js [port]`. 
-* open the browser at  the url `http://localhost:4000/graphql`  to make graphql queries using GraphiQL.
+* open the browser at  the url `http://localhost:[port]/graphql`  to make graphql queries using GraphiQL.
 * Move the JSON at the end of the Query panel to the Query Variables panel:
 
     ```json
@@ -447,6 +417,37 @@ query ctrlBarra($id1: String!, $id2: String!) {
     }
 }
 ```
+
+## Exercise: Update your solution to use graphql-http
+
+::: danger
+`express-graphql` was the first official reference implementation of using GraphQL with HTTP. It has existed since 2015 and was mostly unmaintained in recent years.
+
+The official [GraphQL over HTTP](https://github.com/graphql/graphql-over-http) work group is standardizing the way you transport GraphQL over HTTP and it made great progress bringing up the need for a fresh reference implementation.
+
+Read the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http) for detailed implementation information. 
+
+**Update your solution to use [graphql-http](https://github.com/graphql/graphql-http), which is now the GraphQL official reference implementation of the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http)**.
+
+Here is an example of usage of `graphql-http` with express:
+
+```js
+import express from 'express'; 
+import { createHandler } from 'graphql-http/lib/use/express';
+import { schema } from './previous-step';
+
+// Create a express instance serving all methods on `/graphql`
+// where the GraphQL over HTTP express request handler is
+const app = express();
+app.all('/graphql', createHandler({ schema }));
+
+app.listen({ port: 4000 });
+console.log('Listening to port 4000');
+```
+
+See [app.all](https://expressjs.com/en/4x/api.html#app.all)
+
+::: 
 
 ## GraphQL Exercises
 
