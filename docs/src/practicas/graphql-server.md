@@ -304,14 +304,14 @@ after parsed we will have an Abstract Syntax Tree (AST) like the following:
 
 In this example, the **root** Query type is the entry point to the AST and contains two fields, `user` and `album`. 
 
-1. The `user` and `album` resolvers are usually executed in parallel or in no particular order. 
+1. The `user` and `album` resolvers **are usually executed in parallel or in no particular order**. 
 2. The AST is traversed breadth-first, meaning `user` must be resolved before its children `name` and `email` are visited. 
 3. If the user resolver is **async**hronous, the user branch delays until its **resolved**. 
 4. Once all leaf nodes, `name`, `email`, `title`, are resolved, execution is complete.
 
 ### Validation
 
-Here is another figure illustrating how the GraphQL schema is used for validation of a query:
+Here is another figure illustrating how the GraphQL interpreter uses the GraphQL schema for validation of a query:
 
 ![](/images/graphql-schema-vs-query.jpeg)
 
