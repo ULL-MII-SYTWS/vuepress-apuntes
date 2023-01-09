@@ -318,7 +318,7 @@ Here is another figure illustrating how the GraphQL schema is used for validatio
 
 ### Default resolvers
 
-It’s worth noting that a GraphQL server has built-in default resolvers, so you don’t have to specify a resolver function for every field. A default resolver will look in root to find a property with the same name as the field. An implementation likely looks like this:
+It’s worth noting that a GraphQL server has built-in default resolvers, so you don’t have to specify a resolver function for every field. **A default resolver will look in root to find a property with the same name as the field**. An implementation likely looks like this:
 
 ```js
 export default {
@@ -395,6 +395,8 @@ It  has the following properties:
 * **graphiql**, It can be a boolean stating whether to use [graphiql](https://youtu.be/5BwmvekYCpY), we want that so we pass an object describing the [graphiql options](https://github.com/graphql/express-graphql/blob/9eef4db29799e3f51dbf386ff779fd1c5f4e21fd/src/renderGraphiQL.ts#L10-L49)
 * **context**, an object that is passed to all resolvers and can be used to contain per-request state, such as authentication information, dataloaders, etc.
 
+## Exercise: Update your solution to use graphql-http
+
 ::: danger
 `express-graphql` was the first official reference implementation of using GraphQL with HTTP. It has existed since 2015 and was mostly unmaintained in recent years.
 
@@ -402,7 +404,7 @@ The official [GraphQL over HTTP](https://github.com/graphql/graphql-over-http) w
 
 Read the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http) for detailed implementation information. 
 
-**Update your solutionto use [graphql-http](https://github.com/graphql/graphql-http), which is now the GraphQL official reference implementation of the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http)**.
+**Update your solution to use [graphql-http](https://github.com/graphql/graphql-http), which is now the GraphQL official reference implementation of the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http)**.
 
 Here is an example of usage of `graphql-http` with express:
 
@@ -465,9 +467,9 @@ query ctrlBarra($id1: String!, $id2: String!) {
 }
 ```
 
-## Ejercicios
+## GraphQL Exercises
 
-Reproduzca los ejemplos  [GraphQL Hello Worlds en](https://graphql.org/code/#javascript) <https://graphql.org/code/#javascript> Graphql.js y Apollo Server.
+Study the examples [GraphQL Hello Worlds at](https://graphql.org/code/#javascript) <https://graphql.org/code/#javascript> Graphql.js and Apollo Server.
 
 ## References
 
