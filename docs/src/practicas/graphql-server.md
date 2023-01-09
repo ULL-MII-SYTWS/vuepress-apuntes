@@ -112,7 +112,7 @@ But when you use the types in other parts of the schema, or in your query variab
 * By default, every type is **nullable** - it's legitimate to return `null` as any of the scalar types. 
 * The fields whose types have an exclamation mark, `!`, next to them are **non-null** fields. These are fields that won’t return a `null` value when you query them. 
 
-The convention is that if there's an error in the GraphQL layer while executing a request, the response is still  `200` but the server returns a root field called `errors` (with subfields like `locations` to spot the place), from which the client can extract them, and a root field called `data` that has all the requested fields. Any fields with errors have the value `null`.
+The convention is that if there's an error in the GraphQL interpreter while executing a request, the response is still  `200` but the server returns a root field called `errors` (with subfields like `locations` to spot the place), from which the client can extract them, and a root field called `data` that has all the requested fields. Any fields with errors have the value `null`.
 
 ![/images/graphql/graphql-null-error-management-1.png](/images/graphql/graphql-null-error-management-1.png)
 
@@ -240,7 +240,7 @@ To define our resolvers we create now the object `root` mapping the  schema fiel
       if (result === -1) {
         let message = `Student "${AluXXXX}" not found!`
         console.error(message);
-        throw new Error(message) // will be catched by the GraphQL server
+        throw new Error(message) // will be catched by the GraphQL interpreter
       }
       classroom[result].markdown = markdown
       return classroom[result]
@@ -311,7 +311,7 @@ In this example, the **root** Query type is the entry point to the AST and conta
 
 ### Validation
 
-Here is another figure illustrating how the GraphQL interpreter uses the GraphQL schema for validation of a query:
+Here is another figure illustrating how the **GraphQL interpreter** uses the GraphQL schema for validation of a query:
 
 ![](/images/graphql-schema-vs-query.jpeg)
 
