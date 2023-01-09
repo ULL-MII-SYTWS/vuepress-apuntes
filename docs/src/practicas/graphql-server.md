@@ -325,7 +325,7 @@ In this example, the **root** Query type is the entry point to the AST and conta
 
 ### Validation
 
-After the AST is built and before its interpretation/traversing, there is a validation stage (semantic analysis) by the **GraphQL** compiler, that uses the GraphQL schema to validate the query:
+Before the interpretation/traversing of the query AST, there is a validation stage (semantic analysis) by the **GraphQL** compiler, that uses the GraphQL schema to validate the query:
 
 ![](/images/graphql-schema-vs-query.jpeg)
 
