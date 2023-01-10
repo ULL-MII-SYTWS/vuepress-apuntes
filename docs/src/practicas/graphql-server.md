@@ -418,7 +418,7 @@ query ctrlBarra($id1: String!, $id2: String!) {
 }
 ```
 
-## Exercise: Update your solution to use graphql-http
+## Exercise: Update your solution to use graphql-http or graphql-yoga
 
 ::: danger
 `express-graphql` was the first official reference implementation of using GraphQL with HTTP. It has existed since 2015 and was mostly unmaintained in recent years.
@@ -427,7 +427,68 @@ The official [GraphQL over HTTP](https://github.com/graphql/graphql-over-http) w
 
 Read the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http) for detailed implementation information. 
 
-**Update your solution to use [graphql-http](https://github.com/graphql/graphql-http), which is now the GraphQL official reference implementation of the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http)**.
+Update your solution to use either
+
+* [graphql-http](https://github.com/graphql/graphql-http), which is now the GraphQL official reference implementation of the [GraphQL over HTTP spec](https://graphql.github.io/graphql-over-http)  or
+* [GraphQL Yoga](https://the-guild.dev/graphql/yoga-server/docs/integrations/integration-with-express)
+
+
+### GraphQL Yoga example
+
+Here is an example with GraphQL Yoga and express:
+
+```js
+import express from 'express'
+import { createYoga, createSchema } from 'graphql-yoga'
+
+const app = express()
+const users = [ { id: '1', login: 'alice' }, { id: '2', login: 'bob' } ]
+const simpleSchema = createSchema({
+  typeDefs: /* GraphQL */ `
+    type User {
+      id: ID!
+      login: String!
+    }
+    type Query {
+      user(byId: ID!): User!
+    }
+  `,
+  resolvers: {
+    Query: {
+      user: async (_, args) => {
+        const user = users.find((user) => user.id === args.byId)
+        if (!user) {
+          throw new GraphQLError(`User with id '${args.byId}' not found.`)
+        }
+
+        return user
+      }
+    }
+  }
+})
+
+const yoga = createYoga({
+  schema: simpleSchema,
+  graphiql: {
+    defaultQuery: /* GraphQL */ `
+      query {
+        user(byId: 1) {
+          login
+        }
+      }
+    `
+  }
+})
+
+// Bind GraphQL Yoga to `/graphql` endpoint
+app.use('/graphql', yoga)
+
+app.listen(4000, () => {
+ console.log('Running a GraphQL API server at http://localhost:4000/graphql')
+})
+```
+
+### graphql-http example
 
 Here is an example of usage of `graphql-http` with express:
 
@@ -446,7 +507,6 @@ console.log('Listening to port 4000');
 ```
 
 See [app.all](https://expressjs.com/en/4x/api.html#app.all)
-
 ::: 
 
 ## GraphQL Exercises
