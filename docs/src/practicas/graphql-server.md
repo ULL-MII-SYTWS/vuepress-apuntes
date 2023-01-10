@@ -488,6 +488,8 @@ app.listen(4000, () => {
 })
 ```
 
+See file [graphql-yoga-examples/graphql-yoga-express/index.js](https://github.com/crguezl/graphql-yoga-examples/blob/main/graphql-yoga-express/index.js)
+
 ### graphql-http example
 
 Here is an example of usage of `graphql-http` with express:
