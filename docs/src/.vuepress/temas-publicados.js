@@ -47,6 +47,10 @@ module.exports = [
                 link: '/temas/web/serverless.html'
             },
             {
+                text: 'Authenticate users with Netlify Identity',
+                link: '/temas/web/netlify/authenticate-users-with-netlify-identity'
+            },
+            {
                 text: 'Introduction to Next.js',
                 link: '/temas/web/nextjs/'
             },
