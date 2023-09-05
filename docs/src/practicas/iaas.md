@@ -7,7 +7,7 @@ delivery: "2022/10/20"
 campus: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=24628"
 key: iaas
 prev: "ides.md"
-next: intro2sd.md 
+next: #intro2sd.md 
 order: 5
 rubrica:
   - "<code>SSH</code> configurada para trabajar sin password"
