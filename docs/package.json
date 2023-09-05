@@ -1,5 +1,5 @@
 {
-  "name": "vuepress-sytws-2223-apuntes",
+  "name": "vuepress-sytws-2324-apuntes",
   "version": "2.0.0",
   "description": "ULL SYTWS pages",
   "main": "index.js",
@@ -17,13 +17,13 @@
   },
   "scripts": {
     "dev": "source $HOME/.nvm/nvm.sh; nvm use && node --version && vuepress dev src -t src/.vuepress/dev -c src/.vuepress/cache",
-    "raw:dev": "http-server $HOME/campus-virtual/2223/sytws2223/vuepress-sytws-2223-apuntes/docs/src/.vuepress/dist -c-1",
+    "raw:dev": "http-server $HOME/campus-virtual/2324/sytws2324/vuepress-sytws-2324-apuntes/docs/src/.vuepress/dist -c-1",
     "raw:build": "nodemon -w . -e 'vue,md,html,js,json,png,jpeg,jpg' --exec 'node_modules/.bin/vuepress build src'",
     "deb": "vuepress --debug dev src",
     "build": "source ~/.nvm/nvm.sh; nvm use && node --version && vuepress build src",
     "deploy": "touch src/.vuepress/dist/.nojekyll; ./deploy.sh",
-    "push": "git ci -am 2223; git push origin; git push origin main",
-    "push2223": "git ci -am 2223; git push origin; git push sytws2223",
+    "push": "git ci -am 2324; git push origin; git push origin main",
+    "push2324": "git ci -am 2324; git push origin; git push sytws2324",
     "save": "npm run push; npm run deploy",
     "update-teams": "source ./get-teams.sh"
   },

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 DEPLOYREPO="ULL-MII-SYTWS/ull-mii-sytws"
-COURSEDEPLOYREPO="ULL-MII-SYTWS-2223/ULL-MII-SYTWS-2223"
+COURSEDEPLOYREPO="ULL-MII-SYTWS-2324/ULL-MII-SYTWS-2324"
 
 # abort on errors
 set -e
@@ -25,8 +25,6 @@ git branch -M main
 git push --force --set-upstream git@github.com:${DEPLOYREPO}.github.io.git main
 
 git push --force --set-upstream git@github.com:${COURSEDEPLOYREPO}.github.io.git main
-
-# git push --force --set-upstream git@github.com:ULL-ESIT-PL-2223/ULL-ESIT-PL-2223.github.io.git main
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
