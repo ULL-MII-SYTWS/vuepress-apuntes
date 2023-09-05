@@ -1,7 +1,7 @@
 ---
 title: "GraphQL query to GitHub for teams"
 prev: 
-next: "/practicas/intro2sd.md"
+next: #"/practicas/intro2sd.md"
 ---
 
 # {{ $frontmatter.title }}
