@@ -3,8 +3,8 @@
       <h1>Llevamos {{ numberOfClasses}} clases y {{ numberOfWeeks }} semanas</h1>
  
       <div v-for="(page, index) in classFiles" :key="page.key">  
-        <h3 v-if="(index >= 1) && (week(page) !== week(classFiles[index-1]))">{{ week(page) }}ª  semana {{ getWeekType(page) }}</h3>
-        <h3 v-else-if="(index == 0)">{{ week(page) }}ª  semana {{  getWeekType(page)}}</h3>
+        <h3 v-if="(index >= 1) && (week(page) !== week(classFiles[index-1]))">{{ week(page)+1 }}ª  semana {{ getWeekType(page) }}</h3>
+        <h3 v-else-if="(index == 0)">{{ week(page)+1 }}ª  semana {{  getWeekType(page)}}</h3>
         <ul>
             <li><a :href="page.path">{{ page.title }}</a>. Clase nº {{ numberOfClasses - index }}
             <span v-if="presentialWednesday(page)"> (Presential Wednesday)</span>
@@ -21,6 +21,7 @@
 
 <script>
     import * as path from 'path';
+    const CourseStartDate = "2023-09-11"
 
     function weekOfTheYear(date) {
         var d = new Date(+date);
@@ -42,7 +43,7 @@
     }
 
     const weekType = ['C', 'A', 'B (Presencial)'];
-    const firstLessonDate = new Date("2022-10-03");
+    const firstLessonDate = new Date(CourseStartDate);
     const firstWeek = weekOfTheYear(firstLessonDate);
 
     export default { 
@@ -73,11 +74,12 @@
                 //console.log(date);
                 const weekDiff = getWeeksDiff(firstLessonDate, date);
                 //console.log(weekDiff);
-                return weekDiff+1;
+                return weekDiff; //weekDiff+1;
                 
             },
             getWeekType(page) {
                 let w = this.week(page);
+                console.log(w);
                 // Bug! Christmas holidays are not taken into account
                 return weekType[w == 15? 1 : w % 3];
             },
