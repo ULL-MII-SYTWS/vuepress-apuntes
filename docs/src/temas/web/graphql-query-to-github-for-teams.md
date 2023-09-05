@@ -1,6 +1,6 @@
 ---
 title: "GraphQL query to GitHub for teams"
-prev: "/clases/2022-10-19-leccion.md"
+prev: 
 next: "/practicas/intro2sd.md"
 ---
 
