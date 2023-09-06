@@ -58,11 +58,15 @@ El máster contempla un 50% de no presencialidad y las clases de teoría (Grupos
 
 ## Calendario Académico
 
-[![Calendario Académico](/images/calendario-academico-22-23.png)](https://www.ull.es/estudios-docencia/calendario-academico/)
+[![Calendario Académico](/images/calendario-academico-23-24.png)](https://www.ull.es/estudios-docencia/calendario-academico/)
 
 
 ## Exámenes
 
-* [![imagen de los examenes](/images/examenes-2022-2023.png)](https://www.ull.es/grados/ingenieria-informatica/informacion-academica/horarios-y-calendario-examenes/) 
+* [![imagen de los examenes](/images/examenes-2023-2024.png)](https://docs.google.com/document/d/1bs8rIqrebCvAqWO5f_IbAUa1corBg-M9q6T2CKYl0fc/edit) 
 
-
+| Fecha | Hora | Aula |
+|  ---  |  ---  | --- |
+| 15/01 | 16:00 | 2.2 |
+| 17/06 | 16:00 | 2.2 |
+| 01/07 | 16:00 | 2.2 |
