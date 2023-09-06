@@ -122,9 +122,10 @@ const navigationBar = [
       {
         text: 'Vídeos', 
         items: [
+          { text: 'Curso 22/23', link: 'https://www.youtube.com/playlist?list=PLuPGCp-dfrUQ1SMSQWaW-PDeoxJpk2uzh' },
           { text: 'Curso 21/22', link: 'https://youtube.com/playlist?list=PLuPGCp-dfrUQbbnbT_8qHK1WQYurYwBEY' },
           { text: 'Curso 20/21', link: 'https://www.youtube.com/playlist?list=PLuPGCp-dfrUTzN_o2beArY1QoFUTGH-yd'},
-          { text: 'Curso 19/20', link: 'https://youtube.com/playlist?list=PLuPGCp-dfrUTByhC5b9vInei9OzdYSBs7' }
+          { text: 'Curso 19/20', link: 'https://youtube.com/playlist?list=PLuPGCp-dfrUTByhC5b9vInei9OzdYSBs7' },
         ]
       }
     ]
