@@ -65,6 +65,8 @@ El máster contempla un 50% de no presencialidad y las clases de teoría (Grupos
 
 * [![imagen de los examenes](/images/examenes-2023-2024.png)](https://docs.google.com/document/d/1bs8rIqrebCvAqWO5f_IbAUa1corBg-M9q6T2CKYl0fc/edit) 
 
+En resumen:
+
 | Convocatoria | Fecha | Hora | Aula |
 | ---          |  ---  |  ---  | --- |
 | Enero        | 15/01 | 16:00 | 2.2 |
