@@ -1,5 +1,14 @@
 // Crguezl: My Jekyll _config.yml file for SYTWS web site
 const TemasPublicados = require('./temas-publicados.js')
+const sytwsId = "2324110726"
+const course = "2324"
+const classroomId = "144119227"
+const campus = "https://campusdoctoradoyposgrado2324.ull.es"
+const teacher = "https://www.ull.es/apps/guias/guias/view_teacher_niu/1049/crguezl/"
+const aet = "https://campusdoctoradoyposgrado2324.ull.es/course/view.php?id=2324110055"
+const tfg = { text: 'TFG', link: "https://campusingenieriaytecnologia2324.ull.es/course/view.php?id=2324090185"}
+const dmsi = { text: "DMSI", link: "https://campusingenieriaytecnologia2324.ull.es/course/view.php?id=2324090033"}
+const spreadsheets =  {text: 'Spreadsheets', link: 'https://docs.google.com/spreadsheets/u/0/?tgif=d&q=SYTWS'}
 
 const navigationBar = [
   {
@@ -45,12 +54,12 @@ const navigationBar = [
     text: 'GitHub',
     items: [
       {
-        text: "ULL-MII-SYTWS-2223",
+        text: "ULL-MII-SYTWS-"+course,
         items: [
-          {text: 'Organization', link: 'https://github.com/ULL-MII-SYTWS-2223'},
+          {text: 'Organization', link: 'https://github.com/ULL-MII-SYTWS-'+course},
           {text: 'Teams', link: '/teams/'},
-          {text: 'Projects', link: 'https://github.com/orgs/ULL-MII-SYTWS-2223/projects'},
-          {text: 'Classroom', link: 'https://classroom.github.com/classrooms/108465218-ull-mii-sytws-2223'},
+          {text: 'Projects', link: 'https://github.com/orgs/ULL-MII-SYTWS-'+course+'/projects'},
+          {text: 'Classroom', link: 'https://classroom.github.com/classrooms/'+classroomId+'-ull-mii-sytws-'+course},
           {text: 'Template Org', link: 'https://github.com/ULL-MII-SYTWS'},
 
         ]    
@@ -65,8 +74,8 @@ const navigationBar = [
       },
       {text: 'Teacher',
         items: [
-          {text: 'ULL-MFP-TFM-Y-PCE-2223', link: 'https://github.com/ULL-MFP-TFM-Y-PCE-2223/private'},
-          //{text: 'SYTWS Discussions', link: 'https://github.com/ULL-MII-SYTWS-2223/SYTWS-2223-discussions/discussions'},
+          {text: 'ULL-MFP-TFM-Y-PCE-'+course, link: 'https://github.com/ULL-MFP-TFM-Y-PCE-'+course+'/private'},
+          //{text: 'SYTWS Discussions', link: 'https://github.com/ULL-MII-SYTWS-'+course+'/SYTWS-'+course+'-discussions/discussions'},
           {text: 'Global Campus Teachers', link: 'https://github.com/GitHub-Global-Campus/Global-Campus-Teachers/discussions'},
         ]
       }
@@ -75,22 +84,21 @@ const navigationBar = [
   {
     text: 'Campus Virtual',
     items: [
-      { text:'SYTWS en el Campus Virtual', link: 'https://campusdoctoradoyposgrado2223.ull.es/course/view.php?id=2223110630' },
+      { text:'SYTWS en el Campus Virtual', link: 'https://campusdoctoradoyposgrado'+course+'.ull.es/course/view.php?id='+sytwsId },
       {text: 'Guía Docente',
        items: [
-         { text: "Guía", link: 'https://www.ull.es/apps/guias/guias/view_guide_course/2223/835941105/'},
-         { text: "Casiano", link: 'https://www.ull.es/apps/guias/guias/view_teacher_niu/798/crguezl/'},
-         {text: 'Horario de Tutorías', link: 'https://www.ull.es/apps/guias/guias/view_guide_course/2223/835941105/3/'},
+         { text: "Guía", link: 'https://www.ull.es/apps/guias/guias/view_guide_course/'+course+'/835941105/'},
+         { text: "Casiano", link: teacher},
+         {text: 'Horario de Tutorías', link: 'https://www.ull.es/apps/guias/guias/view_guide_course/'+course+'/835941105/3/'},
        ]
       },
       { text: 'Campus',
         items: [
-          { text: 'Participantes', link: "https://campusdoctoradoyposgrado2223.ull.es/user/index.php?id=2223110630" },
-          { text: 'Calificador', link: "https://campusdoctoradoyposgrado2223.ull.es/grade/report/user/index.php?id=2223110630" },
-          { text: 'Tareas', link: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/index.php?id=2223110630"},
-          { text: 'Foros', link: "https://campusdoctoradoyposgrado2223.ull.es/mod/forum/index.php?id=2223110630"},
-          { text: 'Banco de Preguntas', link: "https://campusdoctoradoyposgrado2223.ull.es/question/edit.php?courseid=2223110630" },
-          { text: 'Introducción a SYTWS', link: 'https://campusdoctoradoyposgrado2223.ull.es/course/view.php?id=2223110630#section-12'}
+          { text: 'Participantes', link: "https://campusdoctoradoyposgrado"+course+".ull.es/user/index.php?id="+sytwsId },
+          { text: 'Calificador', link: "https://campusdoctoradoyposgrado"+course+".ull.es/grade/report/user/index.php?id="+sytwsId },
+          { text: 'Tareas', link: "https://campusdoctoradoyposgrado"+course+".ull.es/mod/assign/index.php?id="+sytwsId},
+          { text: 'Foros', link: "https://campusdoctoradoyposgrado"+course+".ull.es/mod/forum/index.php?id="+sytwsId},
+          { text: 'Banco de Preguntas', link: "https://campusdoctoradoyposgrado"+course+".ull.es/question/edit.php?courseid="+sytwsId },
         ]
       },
       { 
@@ -101,11 +109,11 @@ const navigationBar = [
           {text: 'Editor cvn', link: 'https://cvn.fecyt.es/editor/'},
         ]
       },
-      { text: 'TFG', link: "https://campusdoctoradoyposgrado2223.ull.es/grade/report/user/index.php?id=2223090070&userid=254"},
-      { text: 'Campus de Masters', link: "https://campusdoctoradoyposgrado2223.ull.es/"},
-      { text: 'Campus de ESIT', link: "https://campusingenieriaytecnologia2223.ull.es/"},
-      { text: "DMSI", link: "https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033"},
-      { text: "AET", link: "https://campusdoctoradoyposgrado2223.ull.es/course/view.php?id=2223110052"},
+      tfg,
+      { text: 'Campus de Masters', link: campus+"/"},
+      { text: 'Campus de ESIT', link: "https://campusingenieriaytecnologia2324.ull.es/"},
+      dmsi,
+      { text: "AET", link: aet },
       { text: "SYTWS 2122", link: "https://ull-mii-sytws-2122.github.io/"}, 
 /*
       <li><a :href="$var.foros" target="_blank">Foros</a></li>
@@ -117,8 +125,8 @@ const navigationBar = [
     items: [
       {text: 'Meet', link: 'https://meet.google.com/bhv-togn-ynm'},
       {text: 'Chat', link: 'https://mail.google.com/chat/u/1/#chat/welcome'},
-      {text: 'Spreadsheets', link: 'https://docs.google.com/spreadsheets/d/1aSoJX0QO9gTsGmK_TUXbiNTlBj8Ka4IEJQwJYkY6x5s/edit#gid=1724628448'},
-      {text: 'Community', link: 'https://currents.google.com/u/1/communities/104629784252354892324' },
+      spreadsheets,
+      //{text: 'Community', link: 'https://currents.google.com/u/1/communities/104629784252354892324' },
       {
         text: 'Vídeos', 
         items: [
@@ -197,19 +205,19 @@ const SYTWSinfo = {
   "cita_previa": "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUd1YlJSLURtcE5JfGRlZmF1bHR8ZmNiMWNmMTE4MjNjNzk1MWQwZGQyYTI4ZjZjYjZjY2E",
   "google_plus": "https://currents.google.com/u/1/communities/104629784252354892324",
   "organization": {
-    "url": "https://github.com/ULL-MII-SYTWS-2223",
-    "name": "ULL-MII-SYTWS-2223",
+    "url": "https://github.com/ULL-MII-SYTWS-"+course,
+    "name": "ULL-MII-SYTWS-"+course,
     "main": "https://github.com/ULL-MII-SYTWS/ull-mii-sytws.github.io/tree/main/"
   },
   "apuntes_repo": "https://github.com/ULL-MII-SYTWS/ull-mii-sytws.github.io",
-  "campus_virtual": "https://campusdoctoradoyposgrado2223.ull.es/course/view.php?id=2223110630",
-  "calificador": "https://campusdoctoradoyposgrado2223.ull.es/grade/report/user/index.php?id=2223110630",
-  "participantes": "https://campusdoctoradoyposgrado2223.ull.es/user/index.php?id=2223110630",
-  "tareas": "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/index.php?id=2223110630",
-  "foros": "https://campusdoctoradoyposgrado2223.ull.es/mod/forum/index.php?id=2223110630",
-  "profesor": "https://www.ull.es/apps/guias/guias/view_teacher_niu/745/(%3FPcrguezl.*)/",
+  "campus_virtual": campus+"/course/view.php?id="+sytwsId,
+  "calificador": campus+"/grade/report/user/index.php?id="+sytwsId,
+  "participantes": campus+"/user/index.php?id="+sytwsId,
+  "tareas": campus+"/mod/assign/index.php?id="+sytwsId,
+  "foros": campus+"/mod/forum/index.php?id="+sytwsId,
+  "profesor": teacher,
   "teacher_profile_edit": "https://www.ull.es/apps/guias/teachers/view_profile/",
-  "alu_github": "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=21205",
+  "alu_github": campus+"/mod/assign/view.php?id=21205",
   "udv": "https://udv.ull.es/portal/",
   "profesor_github": "crguezl",
   "chat": "https://chat.google.com/u/1/room/AAAANx1edCg",
@@ -228,8 +236,8 @@ const SYTWSinfo = {
     "comments": true
   },
   "classroom": {
-    "url": "https://classroom.github.com/classrooms/108465218-ull-mii-sytws-2223",
-    "name": "ULL-MII-SYTWS-2223"
+    "url": "https://classroom.github.com/classrooms/"+classroomId+"-ull-mii-sytws-"+course,
+    "name": "ULL-MII-SYTWS-"+course
   },
 };
 
