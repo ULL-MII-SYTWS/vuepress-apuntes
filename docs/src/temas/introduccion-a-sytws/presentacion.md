@@ -18,11 +18,13 @@
 
 ### Rellenar Cuestionario 
 
-Rellena el Cuestionario: <a :href="$frontmatter.cuestionario">Relación GitHub-AluXXXX</a>.  
+Rellena el cuestionario en la
+<a :href="$frontmatter.campus" target="_blank">correspondiente tarea en el campus virtual de la asignatura</a>
 
 * Puedes poner un correo distinto del de la ULL si lo prefieres
 * Pon los usuarios GitHub (si tienes mas de uno) con los que vayas a hacer los commits en las prácticas de la asignatura
 
+<!--
 ### Comunidad
 
 Date de alta en la comunidad <a :href="$var.google_plus">de {{ $var.organization.name }}</a>. 
@@ -30,6 +32,7 @@ Date de alta en la comunidad <a :href="$var.google_plus">de {{ $var.organization
 ::: tip
 * Cuando lo hagas asegúrate de estar usando tu cuenta de gmail ull (*aluXXX@ull.edu.es*)
 :::
+-->
 
 ### Práctica: GitHub Campus Expert
 
