@@ -13,26 +13,26 @@ it can also be used directly in the browser.
 
 ## Map
 
-```js
-async.map(['file1','file2','file3'], (file, cb) => fs.stat(file, cb),  function(err, results)  {
-      // results is now an array of stats for each file
-}); 
-```
-
-* [Documentation of Map](https://caolan.github.io/async/v3/docs.html#map)
-
-```js
-map(
-     coll, 
-     (item, cb) => iteratee(item,cb), 
-     (err, results) => maincallback(err, results)
-   )
-```
+Once installed import the library:
 
 ```js
     import map from 'async/map'; 
-    // En Node.js
-    const { map } = require('async')
+```
+
+or, if using CommonJS, using `require`:
+
+```js
+const { map } = require('async')
+```
+
+See the full [Documentation of Map](https://caolan.github.io/async/v3/docs.html#map). Here is a summary:
+
+```js
+map(
+     coll,         // A collection to iterate over.
+     (item, cb) => iteratee(item,cb), // An async function to apply to each item in coll. The iteratee should complete with the transformed item. Invoked with (item, callback).
+     (err, results) => maincallback(err, results) // A callback which is called when all iteratee functions have finished, or an error occurs. Results is an Array of the transformed items from the coll. Invoked with (err, results).
+   )
 ```
 
 1. Produces a new collection of values by mapping each value in `coll` through the `iteratee` function. 
@@ -41,7 +41,24 @@ map(
 4. If `iteratee` passes an error to its callback `cb`, the `maincallback` (for the `map` function) is immediately called with the error.
 5. Note, that since this function applies the `iteratee` to each item in parallel, there is no guarantee that the `iteratee` functions will complete in order. However, **the `results` array will be in the same order as the original `coll`**.
 
+Here is an example of usage you can test in your assignment repository:
 
+```js
+✗ node          
+Welcome to Node.js v16.0.0.
+Type ".help" for more information.
+> const fs = require("fs")
+undefined
+> const { map } = require('async')
+undefined
+> files = [1,2,3].map(x => 'test/'+x+'.txt')
+[ 'test/1.txt', 'test/2.txt', 'test/3.txt' ]
+> readFile = (item,cb) => fs.readFile(item, 'utf8', cb) 
+[Function: readFile]
+> map(files, readFile, (err, res) => console.log(res))
+undefined
+> [ '1', '2', '3' ]
+```
 ### Ejemplo: Concatenación de ficheros
 
 El objetivo es escribir un programa que usando `fs.readFile` lea  un conjunto de ficheros pasados en vía de comandos y produzca como salida la concatenación de los mismos en el orden especificado, sin usar lecturas síncronas. 
