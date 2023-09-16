@@ -25,7 +25,7 @@ or, if using CommonJS, using `require`:
 const { map } = require('async')
 ```
 
-See the full [Documentation of Map](https://caolan.github.io/async/v3/docs.html#map). Here is a summary:
+Here is a summary of how it is used:
 
 ```js
 map(
@@ -34,6 +34,7 @@ map(
      (err, results) => maincallback(err, results) // A callback which is called when all iteratee functions have finished, or an error occurs. Results is an Array of the transformed items from the coll. Invoked with (err, results).
    )
 ```
+This is the meaning of the parameters:
 
 1. Produces a new collection of values by mapping each value in `coll` through the `iteratee` function. 
 2. The `iteratee` is called with an `item` from `coll` and a callback `cb` for when it has finished processing. 
@@ -59,6 +60,9 @@ undefined
 undefined
 > [ '1', '2', '3' ]
 ```
+
+See [Documentation of Map](https://caolan.github.io/async/v3/docs.html#map)
+
 ### Ejemplo: Concatenación de ficheros
 
 El objetivo es escribir un programa que usando `fs.readFile` lea  un conjunto de ficheros pasados en vía de comandos y produzca como salida la concatenación de los mismos en el orden especificado, sin usar lecturas síncronas. 
