@@ -14,7 +14,6 @@
             <summary>Related Labs</summary>
               <ol>
                 <li v-for="lab in labFiles" :key="lab.frontmatter.key"> {{ lab.title }}
-                  {{ lab.frontmatter.key }}
                   <studentActivity v-if="lab.frontmatter.key" :lab="lab.frontmatter.key" :student="team.name" :name="team.userName"></studentActivity>
                 </li>
               </ol>

@@ -24,6 +24,9 @@
     "deploy": "touch src/.vuepress/dist/.nojekyll; ./deploy.sh",
     "push": "git ci -am 2324; git push origin; git push origin main",
     "push2324": "git ci -am 2324; git push origin; git push sytws2324",
+    "github-campus-expert": "npm run commits github-campus-expert",
+    "commits": "scripts/get-lab-commits.sh",
+    "commits:all": "src/.vuepress/commits-per-lab.js",
     "save": "npm run push; npm run deploy",
     "update-teams": "source ./get-teams.sh > src/.vuepress/teams.mjs"
   },

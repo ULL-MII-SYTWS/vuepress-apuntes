@@ -9,6 +9,7 @@ const aet = "https://campusdoctoradoyposgrado2324.ull.es/course/view.php?id=2324
 const tfg = { text: 'TFG', link: "https://campusingenieriaytecnologia2324.ull.es/course/view.php?id=2324090185"}
 const dmsi = { text: "DMSI", link: "https://campusingenieriaytecnologia2324.ull.es/course/view.php?id=2324090033"}
 const spreadsheets =  {text: 'Spreadsheets', link: 'https://docs.google.com/spreadsheets/u/0/?tgif=d&q=SYTWS'}
+const commitsPerLab = require('./commits-per-lab.json');
 
 const navigationBar = [
   {
@@ -141,6 +142,8 @@ const navigationBar = [
 ];
 
 const SYTWSinfo = {
+  commitsPerLab: commitsPerLab,
+
   networks: ['telegram', 'whatsapp', 'email', 'twitter', ],
   "locale": "en-US",
   "title": "SYTWS",
