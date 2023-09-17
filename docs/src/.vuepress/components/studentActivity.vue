@@ -48,9 +48,9 @@
     computed: {
       repoUrl() {
         let organization = this.$site.pages[0].global.organization.name
-        console.log(organization, this.lab, this.student)
+        //console.log(organization, this.lab, this.student)
         let url = 'https://github.com/'+organization+'/'+this.lab+'-'+removeAccents(this.student)
-        console.log(url)
+        //console.log(url)
         return url
       },
       commits() {
