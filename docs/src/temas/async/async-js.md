@@ -61,7 +61,7 @@ undefined
 > [ '1', '2', '3' ]
 ```
 
-See [Documentation of Map](https://caolan.github.io/async/v3/docs.html#map)
+See the official [Documentation of Map](https://caolan.github.io/async/v3/docs.html#map)
 
 ### Ejemplo: Concatenación de ficheros
 
