@@ -44,16 +44,11 @@ This is the meaning of the parameters:
 
 Here is an example of usage you can test in your assignment repository:
 
-```js
+```bash
 @crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (main) $ npm run create-inputs
 
 > asyncmap-solution@1.0.0 create-inputs
 > scripts/create-inputs.bash ${npm_package_config_numfiles} ${npm_package_config_size}
-
-@crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (main) $ ls ltr test/
-ls: cannot access 'ltr': No such file or directory
-test/:
-expected.txt  f1.txt  f2.txt  f3.txt
 @crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (main) $ ls -ltr test/
 total 16
 -rw-rw-rw- 1 codespace root      74 Sep 18 13:06 expected.txt
@@ -61,6 +56,8 @@ total 16
 -rw-rw-rw- 1 codespace codespace 13 Sep 18 14:48 f3.txt
 -rw-rw-rw- 1 codespace codespace 21 Sep 18 14:48 f2.txt
 @crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (main) $ node
+```    
+```js
 Welcome to Node.js v20.6.1.
 Type ".help" for more information.
 > const fs = require("fs")
