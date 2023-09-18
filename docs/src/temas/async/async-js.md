@@ -45,8 +45,8 @@ This is the meaning of the parameters:
 Here is an example of usage you can test in your assignment repository:
 
 ```js
-✗ node          
-Welcome to Node.js v16.0.0.
+@crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (main) $ node
+Welcome to Node.js v20.6.1.
 Type ".help" for more information.
 > const fs = require("fs")
 undefined
@@ -58,7 +58,16 @@ undefined
 [Function: readFile]
 > map(files, readFile, (err, res) => console.log(res))
 undefined
-> [ '1', '2', '3' ]
+> [ undefined ]
+> files = [1,2,3].map(x => 'test/f'+x+'.txt')
+[ 'test/f1.txt', 'test/f2.txt', 'test/f3.txt' ]
+> map(files, readFile, (err, res) => console.log(res))
+undefined
+> [
+  '1 first line\n2 1\n3 1\n4 1\n5 1',
+  '1 first line\n2 2\n3 2\n',
+  '1 first line\n2 3\n1 3\n'
+]
 ```
 
 See the official [Documentation of Map](https://caolan.github.io/async/v3/docs.html#map)
