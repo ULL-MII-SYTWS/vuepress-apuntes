@@ -73,7 +73,7 @@ Un objetivo de esta tarea es aprender Markdown. Para ello, en el repositorio que
 * Añade una imagen-enlace. Se deberá ver la imagen pero esta será un enlace 
 a otra página
 
-En este [enlace puedes visitar ejemplos de lo que han hecho algunos alumnos de la asignatura *Aprendizaje y Enseñanza de la Tecnología* del master de Formación de Profesorado en el curso 21/22](https://github.com/orgs/ULL-MFP-AET-2122/repositories?q=aprender-markdown&type=all&language=&sort=)
+En este [enlace puedes visitar ejemplos de lo que han hecho algunos alumnos de la asignatura *Aprendizaje y Enseñanza de la Tecnología* del master de Formación de Profesorado en el curso 22/23](https://github.com/orgs/ULL-MFP-AET-2223/repositories?q=aprender-markdown&type=all&language=&sort=)
 
 Te puede ayudar el tutorial de [GitHub Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 
 
