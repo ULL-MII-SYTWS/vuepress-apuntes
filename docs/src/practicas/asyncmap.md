@@ -38,7 +38,7 @@ Use `fs.readFile(path[, options], callback)`.
 Este sería un ejemplo de uso:
 
 ```
-$ concat -f one.txt -f two.txt -f three.txt -o salida.txt
+$ my-async.mjs -f one.txt -f two.txt -f three.txt -o salida.txt
 ```
 
 ## commander
