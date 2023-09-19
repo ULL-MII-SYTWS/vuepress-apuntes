@@ -27,7 +27,7 @@ rubrica:
 
 Para la realización de esta práctica estudie /repase el tema [Async Programming in JavaScript](/temas/async/).
 
-El objetivo es escribir un programa Node.js que usando `fs.readFile` 
+Un primer objetivo es escribir un programa Node.js que usando `fs.readFile` 
 
 1. lea **en paralelo** un conjunto de ficheros pasados como argumentos en línea de comandos y 
 2. produzca como salida la concatenación de los mismos en el orden especificado. 
@@ -61,6 +61,36 @@ Ejecución:
 $ node repeatable-option-commander.js -c a -c b -c c
 [ 'a', 'b', 'c' ]
 ```
+
+o bien usando puntos suspensivos en la descripción:
+
+```js
+program.option('-f, --files <values...>', 'Ficheros de entrada');
+```
+
+## make-big-file.bash
+
+Este script crea un fichero de texto con el nombre, el número de líneas y el contenido especificado:
+
+```
+crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (training) $ scripts/make-big-file.bash test/f9 10 chuchu
+@crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (training) $ tail -n 2 test/f9 
+9 chuchu
+10 chuchu
+```
+## create-inputs.bash
+
+Este script crea en el directorio `test` el número de ficheros `f#number.txt` especificado con el número de líneas decreciente desde el tamaño especificado hacia abajo:
+
+```
+@crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (training) $ scripts/create-inputs.bash 4 1024
+@crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (training) $ ls -l test/f*.txt
+-rw-rw-rw- 1 codespace codespace 6056 Sep 19 12:46 test/f1.txt
+-rw-rw-rw- 1 codespace codespace 6042 Sep 19 12:46 test/f2.txt
+-rw-rw-rw- 1 codespace codespace 6028 Sep 19 12:46 test/f3.txt
+-rw-rw-rw- 1 codespace codespace 6014 Sep 19 12:46 test/f4.txt
+```
+
 ## Entrega
 
 ### Solución con el Módulo async-js
