@@ -57,6 +57,8 @@ Instale las extensiones Remote SSH y compruebe que funcionan con su máquina del
 * [Visual Studio Code Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
 * [Remote - SSH: Editing Configuration](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit)
 
+![/images/remote-ssh-vscode-plugin.png](/images/remote-ssh-vscode-plugin.png)
+
 ## Campus 
 
 <campus></campus>
