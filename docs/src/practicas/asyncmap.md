@@ -11,10 +11,10 @@ prev: iaas.md
 next: 
 rubrica:
   - "Código de la práctica correcto"
-  - "Se da una solucion paralela usando la librería async"
-  - "Se da una solucion paralela sin usar la librería async al problema de la lectura de ficheros"
+  - "Se da una solucion paralela usando la librería async en el fichero sol-using-async.mjs"
+  - "Se da una solucion paralela sin usar la librería async al problema de la lectura de ficheros en el fichero my-async.mjs"
   - "Se crea una función <code>asyncmap</code> genérica que funciona como el <code>map</code> de async"
-  - "Se da una función <code>series</code> que resuelve el problema de serializar llamadas a funciones asíncronas"
+  - "Se da una función <code>series</code> que resuelve el problema de serializar llamadas a funciones asíncronas en el fichero concatSerialize.mjs"
   - "Informe bien elaborado"
   - "Kanban Board project conteniendo las incidencias de la rúbrica"
   - "Ha entregado el .zip en el campus con el repo"
