@@ -65,7 +65,20 @@ $ node repeatable-option-commander.js -c a -c b -c c
 o bien usando puntos suspensivos en la descripción:
 
 ```js
-program.option('-f, --files <values...>', 'Ficheros de entrada');
+import { Command } from 'commander'
+const program = new Command()
+
+program.option('-f, --files <values...>', 'Ficheros de entrada')
+program.option('-o, --output <value>', 'Fichero de salida', 'test/output.txt')
+
+program.on('--help', () => {
+  console.log('')
+  console.log('Solves the parallel concat using the async module')
+  console.log('Example call:')
+  console.log(' $ node concat1.js -f f3.txt -f f2.txt -f f1.txt -o output.txt; cat output.txt')
+})
+
+program.parse(process.argv)
 ```
 
 ## make-big-file.bash
