@@ -126,14 +126,15 @@ Debe funcionar tal como lo hace la función `series`  del módulo [Async.js](/te
 Esta sería la forma de uso de la función `series`:
 
 ```js
-series(program.files, (file, cb) => fs.readFile(file, cb),  function(err, results)  {
+series(program.files, (file, cb) => fs.readFile(file, "utf-8", cb), function (err, results) {
+
     if (err == null) {
-      let file = fs.createWriteStream(program.output);
-      file.on('error', err => { throw new Error("Error en la apertura del archivo " + program.output + " " + err) });
-      results.forEach(i => { file.write(i + '\n'); });
-      file.end();
+        var file = fs.createWriteStream(program.output);
+        file.on('error', err => { throw new Error("Error en la apertura del archivo " + program.output + " " + err) });
+        results.forEach(i => { file.write(i + '\n'); });
+        file.end();
     } else {
-         throw new Error("Fallo en la lectura de los ficheros\n" + err)
+        throw new Error("Fallo en la lectura de los ficheros\n" + err)
     }
 });
 ```
