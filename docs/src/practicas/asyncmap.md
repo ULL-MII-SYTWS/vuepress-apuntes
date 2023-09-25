@@ -139,6 +139,15 @@ series(program.files, (file, cb) => fs.readFile(file, "utf-8", cb), function (er
 });
 ```
 
+### Files 
+
+* Run `npm run create-inputs` to create the `test/f#.txt` files
+* See file[callback-doom-example.mjs](https://github.com/ULL-MII-SYTWS/asyncmap-template/blob/main/callback-doom-example.mjs)  Example of the callback hell
+* [concatSerialize.js](https://github.com/ULL-MII-SYTWS/asyncmap-template/blob/main/concatSerialize.js) write here your solution to the seq problem without using the async module
+* [sol-using-async.mjs](https://github.com/ULL-MII-SYTWS/asyncmap-template/blob/main/sol-using-async.mjs)  write here your solution to the par problem using the async module
+* [my-async.mjs](https://github.com/ULL-MII-SYTWS/asyncmap-template/blob/main/my-async.mjs) write here your solution to the par problem without using the async module. `npm test` checks the solution for a simple case
+* `npm run test-err` checks the solution for a case when one of the input files does not exists
+
 ## Módulos CommonJS y ES6 
 
 Esta es la estructura del template de la práctica:
