@@ -125,6 +125,9 @@ haya ocurrido antes que el manejador sea registrado.
 
 *Event listeners are not called if they are attached after the event has already fired. "You snooze, you lose."*
 
+The `image` object will not be appended to the `container` if the image is loaded before the 2000 milliseconds.
+
+
 ## Test adicional
 
 Con `let waitFor = 0` pruebe a recargar la página. ¿Que ocurrirà?
