@@ -52,3 +52,7 @@ Here is an example working:
 And here an example of your codespaces page:
 
 ![](/images/codespaces-screen.png)
+
+## Personalizing your Codespace
+
+See [Personalizing GitHub Codespaces for your account](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account) and specially [Dotfiles](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles)
