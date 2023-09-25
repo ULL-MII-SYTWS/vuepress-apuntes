@@ -8,7 +8,7 @@ key: asyncmap
 layout: Practica
 order: 7
 prev: iaas.md
-next: 
+next: race-condition.md
 rubrica:
   - "Código de la práctica correcto"
   - "Se da una solucion paralela usando la librería async en el fichero sol-using-async.mjs"
