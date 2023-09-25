@@ -64,6 +64,7 @@ Type ".help" for more information.
 undefined
 > const { map } = require('async')
 undefined
+> readFile = (name, cb) => fs.readFile(name, 'utf-8', cb)
 > files = [1,2,3].map(x => 'test/f'+x+'.txt')
 [ 'test/f1.txt', 'test/f2.txt', 'test/f3.txt' ]
 > map(files, readFile, (err, res) => console.log(res))
