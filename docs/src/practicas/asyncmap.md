@@ -16,7 +16,6 @@ rubrica:
   - "Se crea una función <code>asyncmap</code> genérica que funciona como el <code>map</code> de async"
   - "Se da una función <code>series</code> que resuelve el problema de serializar llamadas a funciones asíncronas en el fichero concatSerialize.mjs"
   - "Informe bien elaborado"
-  - "Kanban Board project conteniendo las incidencias de la rúbrica"
   - "Ha entregado el .zip en el campus con el repo"
 ---
 

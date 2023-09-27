@@ -2,7 +2,7 @@
   <div if lab>
     <ul>
       <li>Repo <a :href="repoUrl" target="_blank">{{ lab }}</a> for {{ name || student }}</li>
-      <li><a :href="commits" target="_blank">Commits</a> of {{ name || student }} for  {{ lab }}  {{ getCommitsForLab }} </li>
+      <li><a :href="commits" target="_blank">Commits</a> of {{ name || student }} for  {{ lab }}  {{ /* getCommitsForLab */ }} </li>
       <li><a :href="graph" target="_blank">Commit Activity Graph</a> of {{ name || student }} for  {{ lab }} </li>
       <li><a :href="pulse" target="_blank">Pulse Activity</a> of {{ name || student }} for  {{ lab }} </li>
       <li><a :href="traffic" target="_blank">Traffic</a> of {{ name || student }} for  {{ lab }} </li>
@@ -73,6 +73,9 @@
       },
       getCommitsForLab() {
         let cplarray = this.$site.pages[0].global.commitsPerLab[this.lab];
+       
+        //console.log(cplarray)
+        
         let cpl = cplarray?.find(x => x?.name?.match(this.student))?.total || 0
         //let cpl = pl.commitsPerLab[this.lab]?.find(x => x?.name?.match(this.student))?.total || 0
         return `(${JSON.stringify(cpl)})`
