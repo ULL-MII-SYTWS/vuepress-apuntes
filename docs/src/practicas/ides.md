@@ -11,11 +11,11 @@ prev: github-project-board.md
 next: iaas.html
 rubrica:
   - Codespaces configurado
+  - Se ha usado un dotfile para personalizar Codespaces
   - "GitPod: dado de alta e informe correcto"
   - "Instalado botón gitpod en su browser"
-  - "Ha usado gitpod: <i>Open in VSCode</i>"
-  - "GitPod: Se ha acogido a la oferta para estudiantes"
-  - "Instalado SSH plugin para VSCode y funciona con máquina del iaas"
+  - "Ha usado codespaces/gitpod: <i>Open in VSCode</i>"
+  - "Instalado SSH Remote plugin para VSCode y funciona con máquina del iaas"
   - "<code>LiveShare</code> instalado y funcionando correctamente"
   - "Informe bien elaborado"
 ---
