@@ -1,5 +1,5 @@
 ---
-permalink: /temas/async/event-lopp
+permalink: /temas/async/event-loop
 ---
 # The JS Event Loop
 
