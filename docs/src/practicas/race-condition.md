@@ -124,7 +124,7 @@ occurred before the handler was registered.
 
 *Event listeners are not called if they are attached after the event has already fired. "You snooze, you lose."*
 
-If a DOM event happens before the handler for that event is set, **the event will not trigger the handler**.
+If a DOM event happens before the handler for that event is set, **the event will not trigger the handler**. Since `image` is already loaded when the `load` event handler is set, the `load` event will not trigger the handler.
 
 This is because the browser only adds event listeners to the callback queue when the event happens. **If there is no event listener associated with the event, the browser will ignore the event**.
 
