@@ -108,24 +108,23 @@ Here is again our image of the event loop:
 
 ## Comments
 
-El código:
+The code:
 
 ```js
- image.addEventListener("load", function() {
-        console.trace();
-        container.appendChild(image)
-      });
+  image.addEventListener("load", function() {
+         console.trace();
+         container.appendChild(image)
+       });
 ```
 
-hace que el evento `load` sea registrado en el elemento `image` que ha sido creado dinámicamente, pero el `setTimeout` que lo envuelve hace que dicho registro ocurra 
-después de al menos `waitFor` milisegundos. 
+causes the `load` event to be registered on the dynamically created `image` element, but the wrapping `setTimeout` causes that registration to occur after at least `waitFor` milliseconds.
 
-Por tanto, si pasa cierto tiempo es posible que el evento `load` (la carga de la imagen)
-haya ocurrido antes que el manejador sea registrado.
+Therefore, if a certain amount of time passes, it is possible that the `load` event (the loading of the image)
+occurred before the handler was registered.
 
 *Event listeners are not called if they are attached after the event has already fired. "You snooze, you lose."*
 
-If a DOM event happens before the handler for that event is set, the event will not trigger the handler.
+If a DOM event happens before the handler for that event is set, **the event will not trigger the handler**.
 
 This is because the browser only adds event listeners to the callback queue when the event happens. **If there is no event listener associated with the event, the browser will ignore the event**.
 
@@ -134,8 +133,8 @@ The `image` object will not be appended to the `container` if the image is loade
 
 ## Test adicional
 
-Con `let waitFor = 0` pruebe a recargar la página. ¿Que ocurrirà?
-¿Pasa lo mismo con todos los navegadores?
+With `let waitFor = 0` try reloading the page. What will happen?
+Is the same thing happening with all browsers?
 
 <hr/>
 
