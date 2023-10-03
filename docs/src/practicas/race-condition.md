@@ -103,12 +103,12 @@ What do you think it will happen? Can you explain it?
 
 Here is again our image of the event loop:
 
-![](/images/event-loop.png)
+![/images/event-loop.png](/images/event-loop.png)
 
 
 ## Comments
 
-The code:
+The method `addEventListener()` works by adding a function, or an object that implements `EventListener`, to the list of event listeners for the specified event type on the `EventTarget` on which it's called. If the function is already in the list of event listeners for this target, the function or object is not added a second time:
 
 ```js
   image.addEventListener("load", function() {
@@ -117,7 +117,7 @@ The code:
        });
 ```
 
-causes the `load` event to be registered on the dynamically created `image` element, but the wrapping `setTimeout` causes that registration to occur after at least `waitFor` milliseconds.
+causes the `load` event to be registered on the dynamically created `image` element, but the wrapping `setTimeout` causes that registration to occur after at least `waitFor` milliseconds. 
 
 Therefore, if a certain amount of time passes, it is possible that the `load` event (the loading of the image)
 occurred before the handler was registered.
