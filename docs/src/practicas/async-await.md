@@ -98,7 +98,7 @@ loadJson('no-such-user.json').catch(console.log); // Error: 404
 
 * <!-- Solution at `campus-virtual/2021/sytws2021/apuntes/tema2-async/event-loop/exercises/promises/async-await/solution-2-rewrite-loadjson-using-async-await.html` -->
 
-## Exercise: Rewrite "rethrow" with async/await
+## Exercise 4: Rewrite "rethrow" with async/await
 
 Below you can find another exercise from the book javascript.info [Rewrite "rethrow" with async/await](https://javascript.info/task/rewrite-async-2)). 
 
