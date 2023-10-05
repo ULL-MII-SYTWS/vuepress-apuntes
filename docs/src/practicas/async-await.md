@@ -151,7 +151,7 @@ demoGithubUser();
 * See Section [Custom errors, extending Error](https://javascript.info/custom-errors). It is worth to read the [full chapter Error Handling](https://javascript.info/error-handling)
 * See [The Error Class at MDN: The constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#constructor)
 
-## Exercise: Call async from non-async
+## Exercise 5: Call async from non-async
 
 Here is another exercise from the [JavaScript.Info book](https://javascript.info/async-await#call-async-from-non-async). As the book says, it is a task that solves a quite common for developers new to async/await.
 
