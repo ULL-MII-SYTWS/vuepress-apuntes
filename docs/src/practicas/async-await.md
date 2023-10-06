@@ -18,7 +18,7 @@ rubrica:
 # {{ $frontmatter.title }}
 
 
-Read chapters [Microtasks](https://javascript.info/microtask-queue), [Async/Await](https://javascript.info/async-await) and [Event Loop](https://javascript.info/event-loop) of the <https://javascript.info> book and make a report using the GitHub Classroom assigned repo. Solve the exercises.
+Read chapters [Microtasks](https://javascript.info/microtask-queue), [Async/Await](https://javascript.info/async-await) and [Event Loop](https://javascript.info/event-loop) (and specially section [Macrotasks and Microtasks](https://javascript.info/event-loop#macrotasks-and-microtasks)) of the <https://javascript.info> book and make a report using the GitHub Classroom assigned repo. Solve the exercises.
 
 ## Exercise 1: MicroTask and MacroTask Queues
 
