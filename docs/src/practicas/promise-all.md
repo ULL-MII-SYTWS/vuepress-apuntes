@@ -98,10 +98,10 @@ This can simplify the way you handle failure of your promise.
 The function passed to the `Promise` constructor will have to call `then` on each of the promises in the given array. 
 When one of them succeeds, two things need to happen.
 
-1. The resulting value needs to be stored in the correct position of a result array, and 
-2. we must check whether this was the last pending promise and finish our own promise if it was.
+1. The resulting value needs to be stored **in the correct position** of a result array, and 
+2. we must **check whether this was the last pending promise** and finish our own promise if it was.
 
-The latter can be done with a counter that is initialized to the length of the input array and from which we subtract 1 every time a promise succeeds. 
+The latter can be done with a `counter` that is initialized to the `length` of the input array and from which we subtract 1 every time a promise succeeds. 
 When it reaches 0, we are done. 
 
 Make sure you take into account the situation where the input array is empty (and thus no promise will ever resolve).
