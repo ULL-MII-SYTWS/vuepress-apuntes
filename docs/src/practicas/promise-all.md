@@ -95,7 +95,7 @@ This can simplify the way you handle failure of your promise.
   
 ## Hints
 
-The function passed to the `Promise` constructor will have to call then on each of the promises in the given array. 
+The function passed to the `Promise` constructor will have to call `then` on each of the promises in the given array. 
 When one of them succeeds, two things need to happen.
 
 1. The resulting value needs to be stored in the correct position of a result array, and 

@@ -194,8 +194,10 @@ https://api.github.com/users/crguezl | jq '.name'
 
 or using the `@octokit/core`module:
 
-```js
+```
 cat the-github-api/octokit--example.js 
+```
+```js
 const { Octokit } = require('@octokit/core')
 
 const octokit = new Octokit({
