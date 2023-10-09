@@ -96,7 +96,7 @@ function loadJson(url) {
 loadJson('no-such-user.json').catch(console.log); // Error: 404
 ```
 
-* <!-- Solution at `campus-virtual/2021/sytws2021/apuntes/tema2-async/event-loop/exercises/promises/async-await/solution-2-rewrite-loadjson-using-async-await.html` -->
+<!-- Solution at `campus-virtual/2021/sytws2021/apuntes/tema2-async/event-loop/exercises/promises/async-await/solution-2-rewrite-loadjson-using-async-await.html` -->
 
 ## Exercise 4: Rewrite "rethrow" with async/await
 
@@ -173,7 +173,7 @@ function f() {
 }
 ```
 
-* <!-- Solution at `tema2-async/event-loop/exercises/promises/async-await/solution-call-async-from-nonasync.html` -->
+<!-- Solution at `tema2-async/event-loop/exercises/promises/async-await/solution-call-async-from-nonasync.html` -->
 
 
 ## The GitHub REST API
