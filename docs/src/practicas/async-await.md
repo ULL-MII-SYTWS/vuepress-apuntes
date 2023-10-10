@@ -175,8 +175,80 @@ function f() {
 
 <!-- Solution at `tema2-async/event-loop/exercises/promises/async-await/solution-call-async-from-nonasync.html` -->
 
+## Exercise 6: ## Exercise: Rendering
 
-## The GitHub REST API
+Explain the differences in behavior between the two progress bar programs: 
+
+- counting-progress-bar-macro.html
+- counting-progress-bar.html
+
+```
+ async-await-solution git:(main) ✗ cat queue-microtask/counting-progress-bar-macro.html 
+ ```
+ ```html
+<div id="progress"></div>
+
+<script>
+  // If we split the heavy task into pieces using setTimeout, 
+  // then changes are painted out in-between them.
+  let chunkSize = 1e5; // 1e5;
+  let i = 0;
+
+  function count() {
+
+    // do a piece of the heavy job (*)
+    do {
+      i++;
+      progress.innerHTML = i;
+    } while (i % chunkSize != 0);
+
+    if (i < 1e7) { // call recursively if incomplete
+      setTimeout(count);
+    }
+
+  }
+
+  count();
+</script>
+```
+and 
+
+```
+➜  async-await-solution git:(main) ✗ cat queue-microtask/counting-progress-bar.html      
+``` 
+```html
+<!doctype html>
+<body>
+<div id="progress"></div>
+
+<script>
+  /* 
+  Here’s an example with “counting progress bar”, but queueMicrotask is used instead of setTimeout. 
+  You can see that it renders at the very end. 
+  */
+  let i = 0;
+
+  function count() {
+    // do a piece of the heavy job (*)
+    do {
+      i++;
+      progress.innerHTML = i;
+    } while (i % 1e3 != 0);
+    //console.log(i);
+    if (i < 1e6) {
+      queueMicrotask(count);
+    }
+  }
+
+  count();
+</script>
+</body>
+```
+
+Why is it so?
+
+
+## Exercise 7: The GitHub REST API
 
 The GitHub API doc for the end-point to get the public info for an user is here [GitHub API REST Docs: Get a User](https://docs.github.com/en/free-pro-team@latest/rest/reference/users#get-a-user). Here are several examples of how to get the info:
 
