@@ -175,7 +175,7 @@ function f() {
 
 <!-- Solution at `tema2-async/event-loop/exercises/promises/async-await/solution-call-async-from-nonasync.html` -->
 
-## Exercise 6: ## Exercise: Rendering
+## Exercise 6: Rendering
 
 Explain the differences in behavior between these two progress bar programs: 
 
@@ -251,8 +251,29 @@ The `counting-progress-bar.html` uses `queueMicrotask` to attempt to split the h
 
 What is the explanation?
 
+## Exercise 7: Yet another microtask-macrotask exercise
 
-## Exercise 7: The GitHub REST API
+Task from <https://javascript.info/event-loop#what-will-be-the-output-of-this-code>
+
+What will be the output of this code?
+
+```js
+console.log(1);
+
+setTimeout(() => console.log(2));
+
+Promise.resolve().then(() => console.log(3));
+
+Promise.resolve().then(() => setTimeout(() => console.log(4)));
+
+Promise.resolve().then(() => console.log(5));
+
+setTimeout(() => console.log(6));
+
+console.log(7);
+```
+
+## Exercise 8: The GitHub REST API
 
 The GitHub API doc for the end-point to get the public info for an user is here [GitHub API REST Docs: Get a User](https://docs.github.com/en/free-pro-team@latest/rest/reference/users#get-a-user). Here are several examples of how to get the info:
 
@@ -310,7 +331,8 @@ Reproduzca los requests de ejemplo hechos en esta sección.
 <!-- * Solution at `/campus-virtual/2021/sytws2021/apuntes/tema2-async/event-loop/exercises/promises/async-await/solution-more-complex-example.html` -->
 
 
-## See
+
+## References
 
 * [JavaScript.Info book: Bigger example: fetch](https://javascript.info/promise-chaining#bigger-example-fetch)
 * [Custom errors, extending Error](https://javascript.info/custom-errors)
