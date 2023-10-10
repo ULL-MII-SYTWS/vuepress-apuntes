@@ -177,7 +177,7 @@ function f() {
 
 ## Exercise 6: ## Exercise: Rendering
 
-Explain the differences in behavior between the two progress bar programs: 
+Explain the differences in behavior between these two progress bar programs: 
 
 - counting-progress-bar-macro.html
 - counting-progress-bar.html
@@ -185,6 +185,9 @@ Explain the differences in behavior between the two progress bar programs:
 ```
  async-await-solution git:(main) ✗ cat queue-microtask/counting-progress-bar-macro.html 
  ```
+ 
+ This one uses `setTimeout` to split the heavy task into pieces and give the browser a chance to paint changes:
+
  ```html
 <div id="progress"></div>
 
@@ -195,7 +198,6 @@ Explain the differences in behavior between the two progress bar programs:
   let i = 0;
 
   function count() {
-
     // do a piece of the heavy job (*)
     do {
       i++;
@@ -216,6 +218,9 @@ and
 ```
 ➜  async-await-solution git:(main) ✗ cat queue-microtask/counting-progress-bar.html      
 ``` 
+
+this one uses `queueMicrotask` to attempt to split the heavy task into pieces and give the browser a chance to paint changes but it does not work as expected:
+
 ```html
 <!doctype html>
 <body>
