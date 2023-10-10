@@ -179,14 +179,13 @@ function f() {
 
 Explain the differences in behavior between these two progress bar programs: 
 
-- counting-progress-bar-macro.html
-- counting-progress-bar.html
+`counting-progress-bar-macro.html` and `counting-progress-bar.html`:
 
 ```
- async-await-solution git:(main) ✗ cat queue-microtask/counting-progress-bar-macro.html 
- ```
+async-await-solution git:(main) ✗ cat queue-microtask/counting-progress-bar-macro.html 
+```
  
- This one uses `setTimeout` to split the heavy task into pieces and give the browser a chance to paint changes:
+ The `counting-progress-bar-macro.html` uses `setTimeout` to split the heavy task into pieces and give the browser a chance to paint changes:
 
  ```html
 <div id="progress"></div>
@@ -219,7 +218,7 @@ and
 ➜  async-await-solution git:(main) ✗ cat queue-microtask/counting-progress-bar.html      
 ``` 
 
-this one uses `queueMicrotask` to attempt to split the heavy task into pieces and give the browser a chance to paint changes but it does not work as expected:
+The `counting-progress-bar.html` uses `queueMicrotask` to attempt to split the heavy task into pieces and give the browser a chance to paint changes but it does not work as expected:
 
 ```html
 <!doctype html>
@@ -250,7 +249,7 @@ this one uses `queueMicrotask` to attempt to split the heavy task into pieces an
 </body>
 ```
 
-Why is it so?
+What is the explanation?
 
 
 ## Exercise 7: The GitHub REST API
