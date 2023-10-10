@@ -2,7 +2,7 @@
 title: "Generators and Iterables"
 published: true
 date: "2023/10/09 01"
-campus: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=789"
+campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4069&forceview=1"
 delivery: "2023/10/25"
 key: generators
 layout: Practica
