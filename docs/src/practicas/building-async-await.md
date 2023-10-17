@@ -158,7 +158,26 @@ The first call to `gen.next()` yields an object `{value: Promise, done: false}`.
 the expression `gen.next().value.then(res1 => ...)`  assures that the handler `res1 => ...` 
 will be called when the promise returned by `doTask1(arg)` resolves.
 
-That produces an output like:
+Similarly, the second call to `gen.next(res1)` yields an object 
+`{value: Promise, done: false}`. Therefore the sub-expression 
+`gen.next(res1).value.then(res2 => ...)`  assures that the handler `res2 => ...`
+will be called when the promise returned by `doTask2(res1)` resolves.
+
+The third call to `gen.next(res2)` yields an object 
+`{value: Promise, done: false}`. Therefore the sub-expression
+`gen.next(res2).value.then(res3 => ...)`  assures that the handler `res3 => ...`
+will be called when the promise returned by `doTask3(res2)` resolves.
+
+Finally, the expression `gen.next(res3)` yields an object 
+`{value: Promise, done: false}`. Therefore the sub-expression
+
+```js
+gen.next(res3).value.then(returnValue => console.log(`returnValue ${returnValue}`))
+``` 
+
+ouputs the final value.
+
+The execution of the code produces an output like:
 
 ``` 
 node no-async-await-1.js 
