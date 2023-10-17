@@ -68,3 +68,4 @@ A prebuild assembles the main components of a codespace for a particular combina
 It provides a quick way to create a new codespace. For complex and/or large repositories in particular, you can create a new codespace more quickly by using a prebuild.
 Whenever you push changes to your repository, GitHub Codespaces uses GitHub Actions to automatically update your prebuilds.
 
+See [crguezl/dotfiles](https://github.com/crguezl/dotfiles) (private repo)
