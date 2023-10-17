@@ -143,16 +143,20 @@ The `init` can be called this way:
 const gen = init(3);
 
 // no async no await
-gen.next().value.then(
-  res1 => gen.next(res1).value.then(
-      res2 => gen.next(res2).value.then(
-          res3 => Promise.resolve(gen.next(res3).value).then(
-              returnValue => console.log(`returnValue ${returnValue}`)
-          )
-      )
+gen.next().value.then(res1 => 
+  gen.next(res1).value.then(res2 => 
+    gen.next(res2).value.then(res3 => 
+      Promise.resolve(gen.next(res3).value).then(returnValue => 
+        console.log(`returnValue ${returnValue}`)
+        )
+    )
   )
 )
 ```
+
+The first call to `gen.next()` yields an object `{value: Promise, done: false}`. Therefore
+the expression `gen.next().value.then(res1 => ...)`  assures that the handler `res1 => ...` 
+will be called when the promise returned by `doTask1(arg)` resolves.
 
 That produces an output like:
 
