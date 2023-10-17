@@ -140,11 +140,13 @@ If you change `yield` for `await` is the same code!
 The `init` can be called this way:
 
 ```js 
+const gen = init(3);
+
 // no async no await
-g.next().value.then(
-  res1 => g.next(res1).value.then(
-      res2 => g.next(res2).value.then(
-          res3 => Promise.resolve(g.next(res3).value).then(
+gen.next().value.then(
+  res1 => gen.next(res1).value.then(
+      res2 => gen.next(res2).value.then(
+          res3 => Promise.resolve(gen.next(res3).value).then(
               returnValue => console.log(`returnValue ${returnValue}`)
           )
       )
@@ -155,11 +157,11 @@ g.next().value.then(
 That produces an output like:
 
 ``` 
-✗ node no-async-await-1.js
+node no-async-await-1.js 
 3
 5
 8
-Final result: {"value":8,"done":true}
+returnValue 8
 ```
 
 Unfortunately, this current solution is not free of `.then`chains.
@@ -167,7 +169,7 @@ Unfortunately, this current solution is not free of `.then`chains.
 We need something better.
 
 ::: tip Idea
-The problem resembles the `asyncserialize` function we wrote in a previous lab where we found a solution
+The problem resembles the `series` function we wrote in a [previous lab](/practicas/asyncmap.html#variante-del-problema-serial-en-vez-de-paralelo) where we found a solution
 making use of recursivity and detecting when all the tasks were done.
 :::
 
@@ -194,7 +196,7 @@ function waiter(genFun, arg)
 ```
 
 1. creates a `generator`  by calling `genFun(arg)` and 
-2. returns an auxiliary  function  `waitAndrun` (Something like we did in the auxiliary callback in the asyncserialize lab)
+2. returns an auxiliary  function  `waitAndrun` (Something like we did in the auxiliary callback in the `series` function of the [asyncmap lab](/practicas/asyncmap.html#variante-del-problema-serial-en-vez-de-paralelo))
 3. The returned auxiliary function `waitAndRun` has to
    - Get the current promise via `.next` and
    - Wait for that promise to be fulfilled and
@@ -203,28 +205,28 @@ function waiter(genFun, arg)
 It will be used like this:
 
 ```js
-const doIt = waiter(init, 3);
-doIt();
-```
-or shorter:
+function* main() {
+    const res = yield waiter(init, 3)();
+    console.log(`res=${res}`);
+}
 
-```js
-waiter(init, 3)();
+waiter(main)();
 ```
 :::
 
 So that, when we run it with the [generator above](#generator), we obtain:
 
 ```
-➜  async-await-equal-generators-plus-promises git:(main) ✗ node solution.js 
+➜  building-async-await-solution git:(main) node solution.js 
 3
 5
 8
+res=8
 ```
 
 It sounds complicated, but takes only a few lines to implement.
 
-Heres is a [solution](/practicas/building-async-await/solution)
+<!-- Heres is a [solution](/practicas/building-async-await/solution)-->
 
 ## See
 
