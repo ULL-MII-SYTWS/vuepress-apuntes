@@ -139,7 +139,9 @@ If you change `yield` for `await` is the same code!
 
 ## Goal
 
-Your goal is to write a function `waiter(genFun, arg)` that runs the generator `genFun`  to "*wait for the fulfillment of the promise yielded on each iteration*" and yields the final value. It will be used like this:
+Your goal is to write a function `waiter(genFun, arg)` that returns a function that when called 
+`waiter(genFun, arg)()` will iterate on `genFun` with initial arguments `arg` but in such a way that 
+it will "*wait for the fulfillment of the promise yielded on each iteration*" and that will return the final value. It will be used like this:
 
 ```js
 function* main() {
