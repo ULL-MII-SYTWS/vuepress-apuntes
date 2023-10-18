@@ -154,10 +154,18 @@ gen.next().value.then(res1 =>
 )
 ```
 
-The first call to `gen.next()` yields an object `{value: Promise, done: false}`. Therefore
+The first call to `gen.next()` yields an object `{ value: Promise { <pending> }, done: false }`. Therefore
 the expression `gen.next().value.then(res1 => ...)`  assures that the handler `res1 => ...` 
-will be called when the promise returned by `doTask1(arg)` resolves.
+will go to the microqueue and be called after the promise returned by `doTask1(arg)` resolves to `3`.
 
+```js
+function* init(arg) {
+    const res1 = /* Execution pauses here */ yield doTask1(arg); 
+    // res1 is 3 after the assignment
+    console.log(res1); 
+    ...
+}
+```
 Similarly, the second call to `gen.next(res1)` yields an object 
 `{value: Promise, done: false}`. Therefore the sub-expression 
 `gen.next(res1).value.then(res2 => ...)`  assures that the handler `res2 => ...`
