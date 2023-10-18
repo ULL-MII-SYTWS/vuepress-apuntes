@@ -137,6 +137,19 @@ Notice how this generator function resembles our async function!
 
 If you change `yield` for `await` is the same code!
 
+## Goal
+
+Your goal is to write a function `waiter(genFun, arg)` that runs the generator `genFun`  to "*wait for the fulfillment of the promise yielded on each iteration*" and returns the final value. It will be used like this:
+
+```js
+function* main() {
+    const res = yield waiter(init, 3)();
+    console.log(`res=${res}`);
+}
+
+waiter(main)();
+```
+
 The `init` can be called this way:
 
 ```js 
@@ -153,6 +166,8 @@ gen.next().value.then(res1 =>
   )
 )
 ```
+
+## First approach: Using `.then` chains
 
 The first call to `gen.next()` yields an object `{ value: Promise { <pending> }, done: false }`. Therefore
 the expression `gen.next().value.then(res1 => ...)`  assures that the handler `res1 => ...` 
