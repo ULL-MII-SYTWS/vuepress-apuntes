@@ -139,7 +139,7 @@ If you change `yield` for `await` is the same code!
 
 ## Goal
 
-Your goal is to write a function `waiter(genFun, arg)` that runs the generator `genFun`  to "*wait for the fulfillment of the promise yielded on each iteration*" and returns the final value. It will be used like this:
+Your goal is to write a function `waiter(genFun, arg)` that runs the generator `genFun`  to "*wait for the fulfillment of the promise yielded on each iteration*" and yields the final value. It will be used like this:
 
 ```js
 function* main() {
@@ -150,7 +150,9 @@ function* main() {
 waiter(main)();
 ```
 
-The `init` can be called this way:
+## First approach: Using `.then` chains
+
+To run `init` and make it `wait` on echa promise we can  call it this way:
 
 ```js 
 const gen = init(3);
@@ -167,7 +169,6 @@ gen.next().value.then(res1 =>
 )
 ```
 
-## First approach: Using `.then` chains
 
 The first call to `gen.next()` yields an object `{ value: Promise { <pending> }, done: false }`. Therefore
 the expression `gen.next().value.then(res1 => ...)`  assures that the handler `res1 => ...` 
@@ -277,7 +278,7 @@ It sounds complicated, but takes only a few lines to implement.
 ## See
 
 * [Async-Await ≈ Generators + Promises](https://hackernoon.com/async-await-generators-promises-51f1a6ceede2) at [https://hackernoon.com/](https://hackernoon.com/)  Cha on July 26th 2017
-<!-- * [Solution](solutions/async-await-is-generators-and-promises) to this problem -->
+* Public [Solution](solutions/async-await-is-generators-and-promises) to this problem 
 * [Repo ULL-MII-SYTWS//building-async-await-solution](https://github.com/ULL-MII-SYTWS/building-async-await-solution) (private)
   * [Repo ULL-MII-SYTWS-2021/async-await-equal-generators-plus-promises](https://github.com/ULL-MII-SYTWS-2021/async-await-equal-generators-plus-promises) (private)
 
