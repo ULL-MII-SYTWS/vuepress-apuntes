@@ -118,3 +118,4 @@ Create a branch called `trycatch` and develop your solution to this lab in it.
 * [Async-Await ≈ Generators + Promises](https://hackernoon.com/async-await-generators-promises-51f1a6ceede2) at [https://hackernoon.com/](https://hackernoon.com/)  Cha on July 26th 2017
 <!-- * [Solution](solutions/async-await-is-generators-and-promises) to this problem -->
 * [Repo ULL-MII-SYTWS-2021/async-await-equal-generators-plus-promises](https://github.com/ULL-MII-SYTWS-2021/async-await-equal-generators-plus-promises) (private)
+* [Optional chaining (?.)](temas/introduccion-a-javascript/optional-chaining)
