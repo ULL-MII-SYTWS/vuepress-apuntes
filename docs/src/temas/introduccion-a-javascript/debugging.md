@@ -8,13 +8,26 @@
 
 ### Debugging NodeJS with Chrome
 
+Insert at least one `debugger` statement where do you want set the initial stop in your code. For instance:
+
+```js
+function* fails(arg) {
+    try {
+        console.log("----Error handling example---");
+
+        debugger;
+        ...
+    } catch (err) { ... }
+}
+```
+
 En la terminal:
 
 ```
 ➜   node --version
 v14.4.0
-➜   node --inspect-brk logging-espree.js
-Debugger listening on ws://127.0.0.1:9229/331b3011-c7f5-447f-8731-1371c53847a5
+➜  building-async-await-solution git:(trycatch) node --inspect-brk solution.mjs 
+Debugger listening on ws://127.0.0.1:9229/cae3929d-80b4-4179-91cc-3e9ccdb1e4b7
 For help, see: https://nodejs.org/en/docs/inspector
 ```
 
