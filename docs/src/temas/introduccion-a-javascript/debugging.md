@@ -1,6 +1,6 @@
 ---
 ---
-## Debugging with Chrome
+## Debugging 
 
 ### Debugging Client Code with Chrome
 
@@ -33,7 +33,7 @@ Insert `debugger` statements wherever you want to set a break-point:
 
 ![]({{site.baseurl}}/assets/images/chrome-debugging-nodejs-debug-statements.png)
 
-## Debugging with Visual Studio
+## Debugging Node.js with Visual Studio
 
 If the <strong>Auto Attach</strong> feature is enabled, the Node debugger automatically attaches to certain Node.js processes that have been launched from VS Code's Integrated Terminal. To enable the feature, either use the <strong>Toggle Auto Attach</strong> command from the command palette (<span class="keybinding">F1</span>) or, if it's already activated, use the <strong>Auto Attach</strong> Status bar item
 
