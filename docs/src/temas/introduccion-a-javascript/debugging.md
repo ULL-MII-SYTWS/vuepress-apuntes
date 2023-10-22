@@ -21,7 +21,7 @@ function* fails(arg) {
 }
 ```
 
-En la terminal:
+In the terminal:
 
 ```
 ➜   node --version
@@ -38,9 +38,13 @@ the option `--inspect-brk=[host:port]` does the following:
 * Listen on port `port` (default: 9229)
 * Break before user code starts
 
-En el navegador abrimos la URL `chrome://inspect` y hacemos `click` en el enlace *inspect*
+In the browser open the URL `chrome://inspect` and `click` in the *inspect* link:
 
-![]({{site.baseurl}}/assets/images/chrome-debugging-nodejs-inspect.jpg)
+![](/images/chrome-debugging-nodejs-inspect.jpg)
+
+The Chrome debugger will stop in the first `debugger` statement:
+
+![](/images/chrome-debugging-nodejs-debug-statements.png)
 
 Insert `debugger` statements wherever you want to set a break-point:
 
@@ -48,13 +52,44 @@ Insert `debugger` statements wherever you want to set a break-point:
 
 ## Debugging Node.js with Visual Studio
 
-If the <strong>Auto Attach</strong> feature is enabled, the Node debugger automatically attaches to certain Node.js processes that have been launched from VS Code's Integrated Terminal. To enable the feature, either use the <strong>Toggle Auto Attach</strong> command from the command palette (<span class="keybinding">F1</span>) or, if it's already activated, use the <strong>Auto Attach</strong> Status bar item
+### Attach to Node.js Process
+
+You can  run the program as we explained in the chrome debugger section:
+
+```
+➜  building-async-await-solution git:(trycatch) ✗ node --inspect-brk solution.mjs
+Debugger listening on ws://127.0.0.1:9229/64e8d287-ee15-46f4-908f-4cffbc08563d
+For help, see: https://nodejs.org/en/docs/inspector
+```
+And then in the command palette (F1) select `Debug: Attach to Node Process`:
+
+![](/images/attach-to-node-process.png)
+
+Then pick the process you want to debug:
+
+![](/images/pick-the-node-process.png)
+
+The debugger will start controlling the process:
+
+![](/images/node-process-debugging.png)
+
+
+### Auto Attach
+
+If the <strong>Auto Attach</strong> feature is enabled, the Node debugger automatically attaches to certain Node.js processes that have been launched from VS Code's Integrated Terminal. To enable the feature, either use the <strong>Toggle Auto Attach</strong> command from the command palette (<span class="keybinding">F1</span>) 
+
+![](/images/auto-attach.png)
+
+or, if it's already activated, use the <strong>Auto Attach</strong> Status bar item
+
+![](/images/auto-attach-status-bar-item.png)
 
 After enabling Auto Attach, you'll need to restart your terminal. 
 
 ![](https://code.visualstudio.com/assets/docs/nodejs/nodejs-debugging/auto-attach.gif)
 
 See [Node.js debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
+
 
 ## References
 
