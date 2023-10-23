@@ -90,6 +90,12 @@ After enabling Auto Attach, you'll need to restart your terminal.
 
 See [Node.js debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
+## Debug Node apps con Visual Studio Code
+
+Includes both Javascript y Typescript. Por Albert Hernández
+
+<!-- https://youtu.be/NBLrBNDYdkE?si=FaGx-FDIwArh3AVX-->
+<youtube id="NBLrBNDYdkE?si=FaGx-FDIwArh3AVX"></youtube>
 
 ## References
 
