@@ -192,7 +192,7 @@ See file [examples/performance-reject-frstcmfrstsvd.mjs](https://github.com/crgu
 
 ## See
 
-* Here is a [solution](https://github.com/crguezl/frstcmfrstsvd). Don't look at it unless you are blocked
+* This a repo with the source for a npm package [crguezl/frstcmfrstsvd](https://github.com/crguezl/frstcmfrstsvd). Don't look at it unless you are blocked. The repo [ULL-MII-SYTWS/for-await-solution](https://github.com/ULL-MII-SYTWS/for-await-solution/tree/main/async-iteration-and-generators) is a private repo with the solution to this lab.
 * [Stackoverflow question: Performance of Promise.all and for-await-of](https://stackoverflow.com/questions/51916636/performance-of-promise-all-and-for-await-of)
 * [ULL-MII-SYTWS-2022/learning-async-iteration-and-generators](https://github.com/ULL-MII-SYTWS-2022/learning-async-iteration-and-generators) (Private repo)
   * campus-virtual/2021/learning/asyncjs-learning/learning-async-iteration-and-generators
