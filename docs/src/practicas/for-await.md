@@ -21,6 +21,14 @@ rubrica:
 
 Read the chapter [Async iteration and generators](https://javascript.info/async-iterators-generators) of JavaScript.info reproducing the examples and exercises.
 
+To make an object iterable asynchronously:
+
+1. Use `Symbol.asyncIterator` instead of `Symbol.iterator`.
+2. The `next()` method should return a promise (to be fulfilled with the `next` value).
+   * The `async` keyword handles it, we can simply make `async next()`.
+3. To iterate over such an object, we should use a `for await (let item of iterable)` loop.
+   * Note the `await` word.
+
 ## Exercise: for-await-of in a first come first served order
 
 If you use for-await-of on an array of promises, you iterate over it in the specified order, doesn't matter if the next promise in the given array is resolved before the previous one:
