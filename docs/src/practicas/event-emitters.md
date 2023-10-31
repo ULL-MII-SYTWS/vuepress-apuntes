@@ -4,7 +4,7 @@ published: true
 date: "2023/10/31 01"
 campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4073"
 delivery: "2023/11/15"
-key: event-emitters
+key: event-emitter
 layout: Practica
 order: 18
 sidebar: auto
