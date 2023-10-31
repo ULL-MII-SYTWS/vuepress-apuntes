@@ -55,7 +55,10 @@ And here an example of your codespaces page:
 
 ## Personalizing your Codespace
 
-Si quieres personalizar tu Codespace, puedes leer [Personalizing GitHub Codespaces for your account](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account).Puedes personalizar GitHub Codespaces usando un [repositorio `dotfiles` en GitHub](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) o usando [Settings Sync](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync).
+Si quieres personalizar tu Codespace, puedes leer [Personalizing GitHub Codespaces for your account](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account).Puedes personalizar GitHub Codespaces usando 
+
+1. un [repositorio `dotfiles` en GitHub](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) o 
+2. usando [Settings Sync](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync).
 
 To speed up codespace creation, you can configure your project to **prebuild codespaces** for specific branches in specific regions. You create and configure prebuilds in your repository's settings. 
 
@@ -64,8 +67,10 @@ To speed up codespace creation, you can configure your project to **prebuild cod
 
 See the documentation at [codespaces/prebuilding-your-codespaces](https://docs.github.com/en/codespaces/prebuilding-your-codespaces).
 
-A prebuild assembles the main components of a codespace for a particular combination of repository, branch, and devcontainer.json configuration file. 
+A **prebuild** assembles the main components of a codespace for a particular combination of repository, branch, and `devcontainer.json` configuration file. 
+
 It provides a quick way to create a new codespace. For complex and/or large repositories in particular, you can create a new codespace more quickly by using a prebuild.
+
 Whenever you push changes to your repository, GitHub Codespaces uses GitHub Actions to automatically update your prebuilds.
 
 See [crguezl/dotfiles](https://github.com/crguezl/dotfiles) (private repo)

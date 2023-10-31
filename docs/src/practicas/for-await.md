@@ -9,7 +9,7 @@ layout: Practica
 order: 17
 sidebar: auto
 prev: building-async-await.md
-next: #event-emitters.md
+next: event-emitters.md
 rubrica:
   - "códigos correctos"
   - "Informe bien elaborado"
