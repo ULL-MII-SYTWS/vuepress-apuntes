@@ -2,8 +2,8 @@
 title: "GitHub Cli Exercises"
 published: true
 date: "2023/11/04 01"
-campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4074&forceview=1"
-delivery: "2023/12/06"
+campus: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=793"
+delivery: "2022/12/30"
 permalink: /practicas/gh-cli
 key: gh-cli
 layout: Practica

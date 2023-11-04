@@ -1,16 +1,16 @@
 ---
 title: "GitHub Cli Exercises"
 published: true
-date: "2022/11/25 01"
-campus: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=793"
-delivery: "2022/12/30"
+date: "2023/11/04 01"
+campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4074&forceview=1"
+delivery: "2023/12/06"
 permalink: /practicas/gh-cli
 key: gh-cli
 layout: Practica
 order: 20 # may be there is one in between the emitters and this. to decide
 sidebar: auto
 prev: /practicas/event-emitters.md
-next: /practicas/jq-exercises.md
+next: #/practicas/jq-exercises.md
 rubrica:
   - "códigos correctos"
   - "Informe bien elaborado"
