@@ -14,7 +14,7 @@ The **observer pattern** is a software design pattern in which an object, called
 
 See also 
 
-* [Learning JavaScript Design Patterns. A book by Addy Osmani](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#observerpatternjavascript)
+* [Learning JavaScript Design Patterns. A book by Addy Osmani](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#observerpatternjavascript) and the chapter [The Observer Pattern](https://www.patterns.dev/posts/observer-pattern)
 
 ## La Clase EventEmitter
 
