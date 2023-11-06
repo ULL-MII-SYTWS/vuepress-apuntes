@@ -34,6 +34,8 @@ See also
 
 ## on
 
+The `on` method is used to register listeners:
+
 ```js
 [~/.../p4-t2-networking/networking-with-sockets-chapter-3-crguezl(master)]$ node
 Welcome to Node.js v12.10.0.
@@ -60,6 +62,11 @@ EventEmitter {
   _eventsCount: 1,
   _maxListeners: undefined
 }
+```
+
+When you **emit** the event, all the listeners are called:
+
+```js
 > myEmitter.emit('eventOne');
 an event occurred!
 yet another event occurred!
@@ -77,6 +84,11 @@ EventEmitter {
   _eventsCount: 2,
   _maxListeners: undefined
 }
+```
+
+Since the `once` method was called, the listener is called only once:
+
+```js
 > myEmitter.emit('eventOnce');
 eventOnce once fired
 true
@@ -86,6 +98,8 @@ false
 false
 ```
 ## Argumentos
+
+You can pass arguments to the listeners of your event: 
 
 ```js
 > myEmitter.on('status', (code, msg)=> console.log(`Got ${code} and ${msg}`));
@@ -97,6 +111,11 @@ EventEmitter {
   _eventsCount: 2,
   _maxListeners: undefined
 }
+```
+
+Now you can emit the event with arguments:
+
+```js
 > myEmitter.emit('status', 200, 'ok');
 Got 200 and ok
 ```
@@ -113,6 +132,11 @@ EventEmitter {
   _eventsCount: 2,
   _maxListeners: undefined
 }
+```
+
+Since we removed the listener `c1`, it won’t be called when we emit the event:
+
+```js
 > myEmitter.emit('eventOne');  
 yet another event occurred!
 true
@@ -120,9 +144,16 @@ true
 
 ## listenerCount and rawListeners
 
+The method `listenerCount` returns the number of listeners for a given event:
+
 ```js
 > myEmitter.listenerCount('eventOne')
 1
+```
+
+The method `rawListeners` returns an array of listeners for a given event:
+
+```js
 > myEmitter.rawListeners('eventOne')
 [ [Function: c2] ]
 ```
@@ -195,6 +226,8 @@ Esta es una Solución
 ```
 [~/.../networking-with-sockets-chapter-3-crguezl/event-emitter-tutorial(master)]$ cat with-time.js 
 ```
+
+La clase `WithTime` extiende a `EventEmitter` y define un método `execute` que llama a la función  `asyncFunc` que es su primer parámetro pasándole como argumentos `...args`. Aprovechamos la callback para comprobar si hubieron errores en cuyo caso emitimos un evento `error` con el error como argumento. Si no hubo errores emitimos los eventos `result`, `time` y `end`
 
 ```js
 const { EventEmitter } = require("events");
