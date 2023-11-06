@@ -2,15 +2,25 @@
 ---
 # Node.js EventEmitters
 
-**EventEmitter** is a very important class in Node.js. It provides a **channel** for events to be **dispatched** and **listeners** to be notified. Many objects you’ll encounter in Node.js inherit from EventEmitter, like the **Streams** class.
+[EventEmitter](https://nodejs.org/api/events.html#class-eventemitter) is a very important class in Node.js. It provides a **channel** for events to be **dispatched** and **listeners** to be notified. Many objects you’ll encounter in Node.js inherit from EventEmitter, like the **Streams** class.
 
 ## The Observer Pattern
+
+The concept behind EventEmitter is quite simple: 
+
+emitter objects emit named events that cause previously registered listeners to be called. 
+So, an emitter object basically has two main features:
+
+1. Emitting name events.
+2. Registering and unregistering listener functions.
+
+It’s kind of like a pub/sub or observer design pattern (though not exactly).
 
 ::: tip The Observer Pattern
 The **observer pattern** is a software design pattern in which an object, called the **subject**, maintains a list of its dependents, called **observers**, and notifies them automatically of any state changes, usually by calling one of their methods.
 :::
 
-![](/images/observer-design-pattern.png)
+![/images/observer-design-pattern.png](/images/observer-design-pattern.png)
 
 See also 
 
@@ -216,4 +226,6 @@ module.exports = WithTime;
 ## References
 
 * [Práctica de Event Emitters](/practicas/event-emitters)
+* [Learning JavaScript Design Patterns. A book by Addy Osmani](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#observerpatternjavascript) and the chapter [The Observer Pattern](https://www.patterns.dev/posts/observer-pattern)
 * [How to code your own event emitter in Node.js: a step-by-step guide](https://www.freecodecamp.org/news/how-to-code-your-own-event-emitter-in-node-js-a-step-by-step-guide-e13b7e7908e1/)
+  
