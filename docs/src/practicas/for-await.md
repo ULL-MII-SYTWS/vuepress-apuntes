@@ -29,6 +29,106 @@ To make an object iterable asynchronously:
 3. To iterate over such an object, we should use a `for await (let item of iterable)` loop.
    * Note the `await` word.
 
+## Exercise: Write the `fetchCommits` async generator
+
+Create a folder `async-iteration-and-generators`. Use this folder for your solutions to the exercises in the chapter  [Async iteration and generators](https://javascript.info/async-iterators-generators) of the JavaScript.info book. Add  inside it  a file
+[paginated-data.js](https://github.com/ULL-MII-SYTWS/for-await-solution/blob/main/async-iteration-and-generators/paginated-data.js) client program:
+
+```js
+import _ from 'lodash';
+
+import { fetchCommits } from './fetch-commits.js';
+
+(async () => {
+
+    let someRepos = ['torvalds/linux',
+        'ULL-MII-SYTWS-2324/ULL-MII-SYTWS-2324.github.io',
+        'javascript-tutorial/en.javascript.info',
+        'ULL-MII-SYTWS-2324/generators-marcos-barrios-lorenzo-alu0101056944']
+    let count = 0;
+
+    let repoName = _.sample(someRepos);
+    console.log(`repoName = ${repoName}`);
+
+    for await (const commit of fetchCommits(repoName)) {
+
+        if (!commit.author) console.log(commit.commit.author.name);
+        else console.log(commit?.author?.login || "no login known");
+
+        if (++count == 100) { // let's stop at 100 commits
+            break;
+        }
+    }
+
+})();
+```
+
+Write the `fetchCommits` async generator that yields the commits. Put it in the module `async-iteration-and-generators/fetch-commits.js`.
+
+### The Link header
+
+The following script gets the commits of a repo using the GitHub API. It only shows the headers: 
+
+
+```bash
+➜  async-iteration-and-generators git:(main) cat get-commits.sh 
+#!/bin/bash
+# GitHub CLI api
+# https://cli.github.com/manual/gh_api
+OWNER=torvalds
+REPO=linux
+if [ -z "$1" ]; then
+  echo "No owner provided, using defaults owner: ${OWNER} repo: ${REPO}"
+else
+  OWNER=$1
+  if [ -z "$2" ]; then
+    echo "No repo provided, using default: linux"
+  else
+    REPO=$2
+  fi
+fi
+# Option --verbose Includes full HTTP request and response in the output
+# Option --silent does not print the response body
+gh api \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  /repos/${OWNER}/${REPO}/commits \
+  --include --silent
+```
+The excution of the script gives the following output:
+
+```bash
+➜  async-iteration-and-generators git:(main) ./get-commits.sh 
+No owner provided, using defaults owner: torvalds repo: linux
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Cache-Control: private, max-age=60, s-maxage=60
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Wed, 08 Nov 2023 11:08:41 GMT
+Etag: W/"cf1b48d1ef7459a0ee74ff2e86a4205b5d1c16945f763566fcc45a48b6d33720"
+Last-Modified: Wed, 08 Nov 2023 01:16:23 GMT
+Link: <https://api.github.com/repositories/2325298/commits?page=2>; rel="next", <https://api.github.com/repositories/2325298/commits?page=41087>; rel="last"
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: GitHub.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept, Authorization, Cookie, X-GitHub-OTP, Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Oauth-Scopes: 
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: 3B33:6EFB:13ED65F5:142E2662:654B6C38
+X-Oauth-Scopes: admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, codespace, delete:packages, delete_repo, gist, notifications, project, repo, user, workflow, write:discussion, write:packages
+X-Ratelimit-Limit: 5000
+X-Ratelimit-Remaining: 4993
+X-Ratelimit-Reset: 1699444433
+X-Ratelimit-Resource: core
+X-Ratelimit-Used: 7
+X-Xss-Protection: 0
+```
+
 ## Exercise: for-await-of in a first come first served order
 
 If you use for-await-of on an array of promises, you iterate over it in the specified order, doesn't matter if the next promise in the given array is resolved before the previous one:
