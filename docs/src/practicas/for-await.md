@@ -31,7 +31,9 @@ To make an object iterable asynchronously:
 
 ## Exercise: Write the `fetchCommits` async generator
 
-Create a folder `async-iteration-and-generators`. Use this folder for your solutions to the exercises in the chapter  [Async iteration and generators](https://javascript.info/async-iterators-generators) of the JavaScript.info book. Add  inside it  a file
+Create a folder `async-iteration-and-generators`. Use this folder for your solutions to the exercises in the chapter  [Async iteration and generators](https://javascript.info/async-iterators-generators) of the JavaScript.info book. 
+
+Add  inside it  a file
 [paginated-data.js](https://github.com/ULL-MII-SYTWS/for-await-solution/blob/main/async-iteration-and-generators/paginated-data.js) client program:
 
 ```js
@@ -64,6 +66,8 @@ import { fetchCommits } from './fetch-commits.js';
 ```
 
 Write the `fetchCommits` async generator that yields the commits. Put it in the module `async-iteration-and-generators/fetch-commits.js`.
+
+You can find a solution and more details about the exercise in the section [Real-life example: paginated data](https://javascript.info/async-iterators-generators#real-life-example-paginated-data) of the chapter.
 
 ### The Link header
 
