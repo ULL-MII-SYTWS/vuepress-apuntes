@@ -67,7 +67,7 @@ import { fetchCommits } from './fetch-commits.js';
 
 Write the `fetchCommits` async generator that yields the commits. Put it in the module `async-iteration-and-generators/fetch-commits.js`.
 
-You can find a solution and more details about the exercise in the section [Real-life example: paginated data](https://javascript.info/async-iterators-generators#real-life-example-paginated-data) of the chapter.
+You can find a solution and more details about the exercise in the section [Real-life example: paginated data](https://javascript.info/async-iterators-generators#real-life-example-paginated-data) of the chapter [Async iteration and generators](https://javascript.info/async-iterators-generators) of the JavaScript.info book
 
 ### The Link header
 

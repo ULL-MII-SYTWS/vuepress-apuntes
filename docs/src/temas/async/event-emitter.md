@@ -30,11 +30,11 @@ See also
 
 * Algunos métodos de los objetos de la clase [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter):
 
-![](/images/event-emitter-methods.png)
+![image with the methods of an eventemitter](/images/event-emitter-methods.png)
 
 ## on
 
-The `on` method is used to register listeners:
+The [on](https://nodejs.org/api/events.html#emitteroneventname-listener) method is used to register listeners:
 
 ```js
 [~/.../p4-t2-networking/networking-with-sockets-chapter-3-crguezl(master)]$ node
@@ -73,6 +73,8 @@ yet another event occurred!
 true
 ```
 ## once
+
+[emitter.once(eventName, listener)](https://nodejs.org/api/events.html#emitteronceeventname-listener) adds a one-time listener function for the event named `eventName`. The next time `eventName` is triggered, this listener is removed and then invoked.
 
 ```js
 > myEmitter.once('eventOnce', () => console.log('eventOnce once fired')); 
@@ -121,6 +123,10 @@ Got 200 and ok
 ```
 
 ## off
+
+`off` is an alias for [emitter.removeListener(eventName, listener)](https://nodejs.org/api/events.html#emitterremovelistenereventname-listener).
+
+It removes a listener from the listeners array for the specified event:
 
 ```js
 > myEmitter.off('eventOne', c1);

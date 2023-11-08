@@ -18,7 +18,7 @@ See <https://cli.github.com//manual/gh_alias_set>
 
 Declare a word as a command alias that will expand to the specified command(s).
 
-The expansion may specify additional arguments and flags. If the expansion
+The `expansion` may specify additional arguments and flags. If the `expansion`
 includes positional placeholders such as `$1`, `$2`, etc., any extra arguments
 that follow the invocation of an alias will be inserted appropriately.
 
