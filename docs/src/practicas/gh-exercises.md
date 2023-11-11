@@ -18,6 +18,11 @@ rubrica:
 
 # {{ $frontmatter.title }}
 
+As a first step, install the [GitHub CLI](https://cli.github.com/).
+
+::: tip
+GH Cli has not stopped evolving since it was released and includes now many of the features asked for in the exercises. Therefore, when answering the exercises, explore not only the "current" GH Cli best solution **but try also to find to reproduce the current functionality using the `gh api` command**.
+:::
 
 ## get-lab-names
 

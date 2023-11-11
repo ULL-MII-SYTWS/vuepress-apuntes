@@ -27,10 +27,10 @@ You can install the VSCode extension [Thunder Client](https://github.com/rangav/
 ```
 
 ```md
----
+- --
 layout: error
 title: Error
----
+- --
 # Error: ¡Ay Diós mío!
 
 ## Aún no he escrito esta página. 

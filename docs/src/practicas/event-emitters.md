@@ -47,6 +47,7 @@ Se pide que:
 2. Deberá así mismo emitir un evento `result` con el resultado de la operación asíncrona al final de la misma.
 3. Deberá emitir un evento `time` indicando el tiempo que ha tomado la ejecución en nanosegundos (puede usar [`process.hrtime.bigint`](https://nodejs.org/api/process.html#process_process_hrtime_bigint) para ello)
 
+
 Por ejemplo, un código como:
 
 ```js
