@@ -2,14 +2,14 @@
 title: "Prompt Engineering"
 published: true
 date: "2023/11/17 01"
-campus: ""
+campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4075&forceview=1"
 delivery: "2023/12/13"
 permalink: /practicas/prompt-engineering
 key: prompt-engineering
 layout: Practica
 order: 21 # may be there is one in between the emitters and this. to decide
 sidebar: auto
-prev: /practicas/jq-exercises.md # /practicas/event-emitters.md
+prev: /practicas/gh-exercises.md # /practicas/event-emitters.md
 next: #/practicas/jq-exercises.md
 rubrica:
   - "códigos correctos"
