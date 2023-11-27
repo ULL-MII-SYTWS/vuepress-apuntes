@@ -27,7 +27,7 @@ rubrica:
 
 ## Introduction to Open AI REST API
 
-In this lab we will build a web version of the "[prompt engineering](/practicas/prompt-engineering)" app wich we built in the previous lab. For that we are going to follow the old
+In this lab we will build a web version of the "[prompt engineering](/practicas/prompt-engineering)" app wich we built in the previous lab. For that we are going to follow the old OpenAI API quickstart tutorial for Node.js
 
 * OpenAI API [quickstart tutorial Node.js example](https://github.com/openai/openai-quickstart-node).  
 * Or repo [ULL-MII-SYTWS/nextjs-solution](https://github.com/ULL-MII-SYTWS/nextjs-solution/)
