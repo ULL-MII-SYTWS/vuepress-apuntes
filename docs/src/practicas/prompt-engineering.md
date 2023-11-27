@@ -10,7 +10,7 @@ layout: Practica
 order: 21 # may be there is one in between the emitters and this. to decide
 sidebar: auto
 prev: /practicas/gh-exercises.md # /practicas/event-emitters.md
-next: #/practicas/jq-exercises.md
+next: /practicas/nextjs.md
 rubrica:
   - "códigos correctos"
   - "Informe bien elaborado"
