@@ -20,10 +20,12 @@ const navigationBar = [
     text: 'Labs',
     link: '/practicas/index.html'
   },
+  /*
   {
     text: 'Temas',
     items: TemasPublicados,
   },
+  */
   {
     text: 'Teams',
     link: '/teams/index.html'
