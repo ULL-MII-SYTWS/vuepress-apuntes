@@ -33,7 +33,7 @@ Modify the code so that instead of producing slogans for business behaves like t
 
 In Next.js, API routes are used to create serverless functions, which are stateless by nature. This means that each invocation of a serverless function is independent, and there's no built-in mechanism to maintain state or persistence between different invocations. However, we can achieve persistence in our Next.js application by using external services or databases. 
 
-For small pieces of data that don't change often, environment variables can be used.
+If persistence is needed, for small pieces of data that don't change often, environment variables can be used.
 In Next.js, environment variables are preserved across successive executions of serverless functions. Environment variables in Next.js are set at build time and are embedded into the serverless function when it is deployed. This means that they remain consistent and unchanged across all invocations of the serverless function, as long as the deployment remains the same.
 
 ## References
@@ -43,5 +43,3 @@ In Next.js, environment variables are preserved across successive executions of 
 - See repo <https://github.com/ULL-prompt-engineering/next-openai-app>
 - See [last year's version of this lab](/assets/practicas/nextjs/nextjs-2022)
   
-In this lab we will build a web version of the "[prompt engineering](/practicas/prompt-engineering)" app wich we built in the previous lab starting from the repo 
-<https://github.com/ULL-prompt-engineering/next-openai-app>
