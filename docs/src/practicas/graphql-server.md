@@ -9,8 +9,8 @@ key: graphql-server
 layout: Practica
 order: 23 # may be there is one in between the emitters and this. to decide
 sidebar: auto
-prev: /practicas/jq-exercises.md
-next: /practicas/graphql-subscriptions.md
+prev: /practicas/nextjs # jq-exercises.md
+next: #/practicas/graphql-subscriptions.md
 rubrica:
   - "códigos correctos"
   - "Informe bien elaborado"

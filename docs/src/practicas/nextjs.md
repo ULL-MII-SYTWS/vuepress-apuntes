@@ -8,7 +8,7 @@ layout: Practica
 order: 22 # may be there is one in between the emitters and this. to decide
 sidebar: auto
 prev: /practicas/prompt-engineering.md # /practicas/event-emitters.md
-next: #/practicas/jq-exercises.md
+next: /practicas/graphql-server # jq-exercises.md
 permalink: /practicas/nextjs
 key: nextjs
 removed:
