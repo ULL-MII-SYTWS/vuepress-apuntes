@@ -24,15 +24,17 @@ rubrica:
    - "The chat bot with tools is working"
    - "The .zip has been delivered on the campus"
 ---
+# {{ $frontmatter.title }}
+
 ## NextJS current version
 
-Go to <https://nextjs.org/docs> and follow the course for the current version of Next.js. Create a folder `nextjs-quickstart` and follow the steps in the tutorial.
+Go to <https://nextjs.org/docs> and follow the course for the current version of Next.js. Create a folder `nextjs-quickstart` and inside it follow the steps in the tutorial.
 
 ## Vercel AI SDK Quickstart Guide
 
 Follow also the tutorial at repo <https://github.com/ULL-prompt-engineering/vercel-sdk-ai-quickstart>. 
 It is based on the Vercel AI SDK [Quickstart Guide](https://sdk.vercel.ai/docs/getting-started).
-Create a folder `vercel-sdk-ai-quickstart` and follow the steps in the tutorial.
+Create a folder `vercel-sdk-ai-quickstart` and inside it follow the steps in the tutorial.
 
 ## Tutorial on Open AI REST API
 
