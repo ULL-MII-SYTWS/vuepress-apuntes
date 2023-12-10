@@ -1,14 +1,14 @@
 ---
-title: "Prompt Engineering with NextJS"
+title: "Building a Node.JS OpenAI (3.0) app with NextJS (12.1)"
 published: true
 date: "2023/11/27 01"
 campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4075&forceview=1"
 delivery: "2023/12/22"
 layout: Practica
-order: 22 # may be there is one in between the emitters and this. to decide
+order: 23 # may be there is one in between the emitters and this. to decide
 sidebar: auto
-prev: /practicas/prompt-engineering.md # /practicas/event-emitters.md
-next: /practicas/graphql-server # jq-exercises.md
+prev: /practicas/nextjs13.md # /practicas/event-emitters.md
+next: /practicas/graphql-server.md # jq-exercises.md
 permalink: /practicas/nextjs
 key: nextjs
 removed:
@@ -26,21 +26,12 @@ rubrica:
 ---
 # {{ $frontmatter.title }}
 
-## NextJS current version
-
-Go to <https://nextjs.org/docs> and follow the course for the current version of Next.js. Create a folder `nextjs-quickstart` and inside it follow the steps in the tutorial.
-
-## Vercel AI SDK Quickstart Guide
-
-Follow also the tutorial at repo <https://github.com/ULL-prompt-engineering/vercel-sdk-ai-quickstart>. 
-It is based on the Vercel AI SDK [Quickstart Guide](https://sdk.vercel.ai/docs/getting-started).
-Create a folder `vercel-sdk-ai-quickstart` and inside it follow the steps in the tutorial.
 
 ## Tutorial on Open AI REST API
 
-In the previous version of this lab we used Next.js 12 and the old version of the Open AI REST API. You can follow [2022 version of this lab](/assets/practicas/nextjs/nextjs-2022). The template you are using is based on that version.
+In the previous version of this lab we used Next.js 12 and the old version of the Open AI REST API (npm module version 3.0). You can follow [2022 version of this lab](/assets/practicas/nextjs/nextjs-2022). The repo you obtained from the assignment is based on that versions.
 
-For this version you can implement the prompt engineering agent described in previous lab [prompt engineering](/practicas/prompt-engineering)
+If you prefer, you can optionally change the goals required in the [2022 version](/assets/practicas/nextjs/nextjs-2022) of this lab for implementing the prompt engineering agent described in the previous lab [prompt engineering](/practicas/prompt-engineering)
 
 ## References
 

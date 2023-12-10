@@ -7,7 +7,7 @@ delivery: "2023/12/21"
 #permalink: /practicas/graphql-server
 key: graphql-server
 layout: Practica
-order: 23 # may be there is one in between the emitters and this. to decide
+order: 24 # may be there is one in between the emitters and this. to decide
 sidebar: auto
 prev: /practicas/nextjs # jq-exercises.md
 next: #/practicas/graphql-subscriptions.md

@@ -1,9 +1,32 @@
 ---
-sidebar: auto
+permalink: /practicas/nextjs
+key: nextjs
+rubrica:
+   - "Code of the lab is correct and works"
+   - "It has followed the Next.js current version of the tutorial"
+   - "Site deployed at netlify and Vercel"
+   - "Images request added"
+   - "REST answers to exercises are correct"
+   - "Exercise Dynamic Routes reported"
+   - "Report is correct and complete"
+   - "Kanban Board Project reflects the rubric issues"
+   - "The .zip has been delivered on the campus"
 ---
-# Building a Node.JS OpenAI (3.0) app with NextJS (12.1)
 
-## Introduction 
+- [Building a Node.JS OpenAI (3.0) app with NextJS (12.1)](#building-a-nodejs-openai-30-app-with-nextjs-121)
+  - [Introduction to Open AI REST API](#introduction-to-open-ai-rest-api)
+  - [OpenAI First Steps](#openai-first-steps)
+  - [Setup](#setup)
+  - [Web Development with Next.js](#web-development-with-nextjs)
+  - [Exercise: Deploy at Netlify](#exercise-deploy-at-netlify)
+  - [Exercise: Deploy the app to Vercel](#exercise-deploy-the-app-to-vercel)
+  - [Exercise: Get images from OpenAI](#exercise-get-images-from-openai)
+  - [Rubrica](#rubrica)
+  - [References](#references)
+
+#  Building a Node.JS OpenAI (3.0) app with NextJS (12.1)
+
+## Introduction to Open AI REST API
 
 In this lab we will build a "pet name generator web app" wich will be described in this tutorial.
 The OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart?context=node) refers to the current version of the OpenAI API and no longer 
@@ -11,7 +34,7 @@ describes this app.
  
 You can see a solution deployed at netlify:  <https://nextjs-oai.netlify.app/>
 
-The code uses [Next.js](https://nextjs.org/) framework version 12 with [React](https://reactjs.org/) version 17 and OpenAI npm module version 3:
+The code uses [Next.js](https://nextjs.org/) framework version 12 with [React](https://reactjs.org/) version 17 and OpenAI 3:
 
 ```
 ➜  nextjs-solution git:(main) ✗ jq '.dependencies' package.json
@@ -27,38 +50,33 @@ The code uses [Next.js](https://nextjs.org/) framework version 12 with [React](h
 
 [Next.js](https://nextjs.org/learn/foundations/about-nextjs) is a framework on top of React that handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.
 
+Read  this tutorial.  The tutorial at [OpenAI API quickstart tutorial](https://platform.openai.com/docs/quickstart?context=node) covers the current version of OpenAI and I haven't been able to find the version of the old tutorial (2022) that corresponds to this lab.
 
-* OpenAI API [quickstart tutorial Node.js example](https://github.com/openai/openai-quickstart-node).  
-* Or repo [ULL-MII-SYTWS/nextjs-solution](https://github.com/ULL-MII-SYTWS/nextjs-solution/)
- 
-You can see a solution deployed at netlify:  <https://nextjs-oai.netlify.app/>
+## OpenAI First Steps
 
-The code uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). 
-
-## First Steps
-
-See section [OpenAI First Steps](/openai-first-steps) in this tutorial.
+See how to create an account, set an api key and familiarize with the OpenAI API reading the section
+[OpenAI First Steps](/openai-first-steps) in this course site.
 
 ## Setup
 
-See section [Set up and run](/nextjs/setup-and-run) in this tutorial.
-
+See section [Setup and Run]({{ site.baseurl }}/nextjs/setup-and-run) in this tutorial to see how to get the app in your assignment running.
 
 ## Web Development with Next.js
 
-See section [Web Development with Next.js](/web-development-with-nextjs) in this tutorial.
+See section [Web Development with Next.js]({{ site.baseurl }}/web-development-with-nextjs) in this tutorial.
 
 ## Exercise: Deploy at Netlify
 
 Deploy the app at Netlify. 
-For the details, see section [Deploying a Next.js app to Netlify](/nextjs/netlify-deployment) in this tutorial.
+For the details, see section 
+[Deploying a Next.js app to Netlify]({{ site.baseurl }}/nextjs/netlify-deployment) 
+in this tutorial.
 
 
 ## Exercise: Deploy the app to Vercel
 
 Deploy the app at Vercel. 
-Follow the instructions at the tutorial [Deploying to Vercel](/nextjs/vercel-deployment) in this tutorial.
-
+Follow the instructions at the tutorial [Deploying to Vercel]({{ site.baseurl }}/nextjs/vercel-deployment) in this tutorial.
 
 
 ## Exercise: Get images from OpenAI
@@ -74,11 +92,11 @@ Add routes to the app:
 
 The youtube video *Build An AI Image Generator With OpenAI & Node.js* can help:
 
-<youtube id="fU4o_BKaUZE"></youtube>
+{% include video provider="youtube" id="fU4o_BKaUZE" %}
 
-## Exercise: Implement the Prompt Engineering Agent
+## Rubrica
 
-Implement the prompt engineering agent described in previous lab [prompt engineering](/practicas/prompt-engineering)
+{% include rubrica.md %}
 
 ## References
 
