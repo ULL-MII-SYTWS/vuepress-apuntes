@@ -29,9 +29,9 @@ rubrica:
 
 ## Tutorial on Open AI REST API
 
-In the previous version of this lab we used Next.js 12 and the old version of the Open AI REST API (npm module version 3.0). You can follow [2022 version of this lab](/assets/practicas/nextjs/nextjs-2022). The repo you obtained from the assignment is based on that versions.
+This lab was created during the course 2022/2023 and we used Next.js 12 and the old version of the Open AI REST API (npm module version 3.0). The [2022/2023 description of this lab is here](/assets/practicas/nextjs/nextjs-2022). The repo you obtained from the assignment is based on that versions.
 
-If you prefer, you can optionally change the goals required in the [2022 version](/assets/practicas/nextjs/nextjs-2022) of this lab for implementing the prompt engineering agent described in the previous lab [prompt engineering](/practicas/prompt-engineering)
+If you prefer, you can optionally change the goals required in the [2022/2023 description](/assets/practicas/nextjs/nextjs-2022) for implementing the prompt engineering agent described in the previous lab [prompt engineering](/practicas/prompt-engineering)
 
 ## References
 
