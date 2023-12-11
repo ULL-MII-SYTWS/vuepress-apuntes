@@ -28,15 +28,11 @@ rubrica:
 # {{ $frontmatter.title }}
 
 - [{{ $frontmatter.title }}](#-frontmattertitle-)
-- [Introduction to the JAM Stack with NextJS, React, REST and Netlify](#introduction-to-the-jam-stack-with-nextjs-react-rest-and-netlify)
   - [Goals](#goals)
   - [Web Development with Next.js](#web-development-with-nextjs)
   - [Exercise: Deploy at Netlify](#exercise-deploy-at-netlify)
   - [Exercise: Deploy the app to Vercel](#exercise-deploy-the-app-to-vercel)
   - [References](#references)
-
-# Introduction to the JAM Stack with NextJS, React, REST and Netlify
-
 
 ## Goals
 
@@ -44,10 +40,14 @@ This labs intends to introduce to the current version (2023) of NextJS: NextJS 1
 
 * [Next.js 13 Crash Course Tutorial #1 - Introduction & New Features](https://youtu.be/PbFH_VE1Iks?si=1EnwQwDvej_cFKcv) "Next.js Master Class" YouTube list by The Net Ninja
   * See repo [iamshaunjp/nextjs-masterclass](https://github.com/iamshaunjp/nextjs-masterclass/)
+* [Differences between Next.js 13 and 14](/nextjs/differences-13-14)
 
-* Follow also the tutorial at repo <https://github.com/ULL-prompt-engineering/vercel-sdk-ai-quickstart>. 
-  * It is based on the Vercel AI SDK [Quickstart Guide](https://sdk.vercel.ai/docs/getting-started). 
-  * Create a folder `vercel-sdk-ai-quickstart` and follow the steps in the tutorial.
+For each `lesson-#` in the tutorial:, 
+
+- Create a branch `learn-#` from `lesson-#` and push your code in it.
+- Fill a report in the `README.md` of each branch `learn-#` summarizing your experience along the lesson.
+- Create a new [orphan branch](/assets/practicas/nextjs13/orphan.md) `learn-next-ai` and use it to follow the tutorial at repo <https://github.com/ULL-prompt-engineering/vercel-sdk-ai-quickstart> which it is based on the Vercel AI SDK [Quickstart Guide](https://sdk.vercel.ai/docs/getting-started). It shows you how to use streaming to build a prompt engineering agent.
+
 
 ## Web Development with Next.js
 
