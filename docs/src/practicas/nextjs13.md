@@ -42,7 +42,7 @@ This labs intends to introduce to the current version (2023) of NextJS: NextJS 1
   * See repo [iamshaunjp/nextjs-masterclass](https://github.com/iamshaunjp/nextjs-masterclass/)
 * [Differences between Next.js 13 and 14](/nextjs/differences-13-14)
 
-For each `lesson-#` in the tutorial:, 
+For each `lesson-#` from `lesson-2` to `lesson-12` in the public tutorial:, 
 
 - Create a branch `learn-#` from `lesson-#` and push your code in it.
 - Fill a report in the `README.md` of each branch `learn-#` summarizing your experience along the lesson.
