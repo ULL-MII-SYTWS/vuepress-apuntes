@@ -830,3 +830,38 @@ npx next start -p 4000
 ready - started server on 0.0.0.0:4000, url: http://localhost:4000
 info  - Loaded env from /Users/casianorodriguezleon/campus-virtual/2223/learning/openai-learning/openai-quickstart-node/.env
 ```
+
+## Supabase
+
+See the [Supabase Introduction](/assets/practicas/nextjs/supabase)
+  
+See lessons 22 to 38 of the course <https://netninja.dev/courses/next-13-masterclass/lectures/48541276>
+
+### Authentication
+
+22.  Intro to Supabase Auth     <https://netninja.dev/courses/next-13-masterclass/lectures/48541273i>
+23.  Making the Auth Forms      <https://netninja.dev/courses/next-13-masterclass/lectures/48541272i>
+24.  Signing up a New User      <https://netninja.dev/courses/next-13-masterclass/lectures/48541276i>
+25.  Email Redirect Callback    <https://netninja.dev/courses/next-13-masterclass/lectures/48541279i>
+26.  Getting the Current User   <https://netninja.dev/courses/next-13-masterclass/lectures/48541354i>
+27.  Logging Users Out  <https://netninja.dev/courses/next-13-masterclass/lectures/48541275i>
+28.  Logging Users In   <https://netninja.dev/courses/next-13-masterclass/lectures/48541274i>
+29.  Protecting Routes  <https://netninja.dev/courses/next-13-masterclass/lectures/48541278i>
+30.  Session Middleware <https://netninja.dev/courses/next-13-masterclass/lectures/48541277i>
+
+### Adding a Database
+
+31.  Setting up a Database      <https://netninja.dev/courses/next-13-masterclass/lectures/48541565i>
+32.  Adding New Tickets <https://netninja.dev/courses/next-13-masterclass/lectures/48541562i>
+33.  Fetching Data from Supabase        <https://netninja.dev/courses/next-13-masterclass/lectures/48541564i>
+34.  Fetching Single Records    <https://netninja.dev/courses/next-13-masterclass/lectures/48541566i>
+35.  Checking the Ticket Author <https://netninja.dev/courses/next-13-masterclass/lectures/48541563i>
+36.  Deleting Ticket Records    <https://netninja.dev/courses/next-13-masterclass/lectures/48541567i>
+37.  Building the Application   <https://netninja.dev/courses/next-13-masterclass/lectures/48541568i>
+38.  RLS & Policies <https://netninja.dev/courses/next-13-masterclass/lectures/48541569i>
+39.  Intro to Server Components <https://netninja.dev/courses/next-13-masterclass/lectures/48541623i>
+40.  Handling a POST Request in a Server Action <https://netninja.dev/courses/next-13-masterclass/lectures/48541622i>
+41.  Using useFormStatus        <https://netninja.dev/courses/next-13-masterclass/lectures/48541619i>
+42.  Handling Server Errors     <https://netninja.dev/courses/next-13-masterclass/lectures/48541620i>
+43.  Calling Actions Using useTransition        <https://netninja.dev/courses/next-13-masterclass/lectures/48541621i
+  
