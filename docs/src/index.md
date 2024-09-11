@@ -24,7 +24,7 @@ action:
   </div>
 
   <div class="feature">
-    <h2>All Labs</h2>
+    <h2>Labs</h2>
     <practicas></practicas>
   </div>
 
