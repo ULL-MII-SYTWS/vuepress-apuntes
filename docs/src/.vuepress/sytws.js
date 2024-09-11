@@ -77,7 +77,7 @@ const navigationBar = [
       },
       {text: 'Teacher',
         items: [
-          {text: 'ULL-MFP-TFM-Y-PCE-'+course, link: 'https://github.com/ULL-MFP-TFM-Y-PCE-'+course+'/private'},
+          //{text: 'ULL-MFP-TFM-Y-PCE-'+course, link: 'https://github.com/ULL-MFP-TFM-Y-PCE-'+course+'/private'},
           //{text: 'SYTWS Discussions', link: 'https://github.com/ULL-MII-SYTWS-'+course+'/SYTWS-'+course+'-discussions/discussions'},
           {text: 'Global Campus Teachers', link: 'https://github.com/GitHub-Global-Campus/Global-Campus-Teachers/discussions'},
         ]
@@ -134,6 +134,7 @@ const navigationBar = [
       {
         text: 'Vídeos', 
         items: [
+          { text: 'Curso 23/24', link: 'https://www.youtube.com/playlist?list=PLuPGCp-dfrUSHR7MIawBJqAs734iygFmB' },
           { text: 'Curso 22/23', link: 'https://www.youtube.com/playlist?list=PLuPGCp-dfrUQ1SMSQWaW-PDeoxJpk2uzh' },
           { text: 'Curso 21/22', link: 'https://youtube.com/playlist?list=PLuPGCp-dfrUQbbnbT_8qHK1WQYurYwBEY' },
           { text: 'Curso 20/21', link: 'https://www.youtube.com/playlist?list=PLuPGCp-dfrUTzN_o2beArY1QoFUTGH-yd'},

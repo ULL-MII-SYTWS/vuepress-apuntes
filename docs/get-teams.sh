@@ -1,6 +1,7 @@
 
 # ORG="ULL-MII-SYTWS-2223"
-ORG="ULL-MII-SYTWS-2324"
+#ORG="ULL-MII-SYTWS-2324"
+ORG="ULL-MII-SYTWS-2425"
 
 QUERY='query getInfo($organization: String!) {
   organization(login: $organization) {
