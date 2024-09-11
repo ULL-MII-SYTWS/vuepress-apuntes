@@ -849,6 +849,10 @@ See lessons 22 to 38 of the course <https://netninja.dev/courses/next-13-masterc
 29.  Protecting Routes  <https://netninja.dev/courses/next-13-masterclass/lectures/48541278i>
 30.  Session Middleware <https://netninja.dev/courses/next-13-masterclass/lectures/48541277i>
 
+See [Authorization Code Flow with Proof Key for Code Exchange (PKCE)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce)
+
+![](https://images.ctfassets.net/cdy7uua7fh8z/3pstjSYx3YNSiJQnwKZvm5/33c941faf2e0c434a9ab1f0f3a06e13a/auth-sequence-auth-code-pkce.png)
+
 ### Adding a Database
 
 31.  Setting up a Database      <https://netninja.dev/courses/next-13-masterclass/lectures/48541565i>

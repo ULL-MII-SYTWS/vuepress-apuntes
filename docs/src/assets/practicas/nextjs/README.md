@@ -59,24 +59,24 @@ See how to create an account, set an api key and familiarize with the OpenAI API
 
 ## Setup
 
-See section [Setup and Run]({{ site.baseurl }}/nextjs/setup-and-run) in this tutorial to see how to get the app in your assignment running.
+See section [Setup and Run](/nextjs/setup-and-run) in this tutorial to see how to get the app in your assignment running.
 
 ## Web Development with Next.js
 
-See section [Web Development with Next.js]({{ site.baseurl }}/web-development-with-nextjs) in this tutorial.
+See section [Web Development with Next.js](/web-development-with-nextjs) in this tutorial.
 
 ## Exercise: Deploy at Netlify
 
 Deploy the app at Netlify. 
 For the details, see section 
-[Deploying a Next.js app to Netlify]({{ site.baseurl }}/nextjs/netlify-deployment) 
+[Deploying a Next.js app to Netlify](/nextjs/netlify-deployment) 
 in this tutorial.
 
 
 ## Exercise: Deploy the app to Vercel
 
 Deploy the app at Vercel. 
-Follow the instructions at the tutorial [Deploying to Vercel]({{ site.baseurl }}/nextjs/vercel-deployment) in this tutorial.
+Follow the instructions at the tutorial [Deploying to Vercel](/nextjs/vercel-deployment) in this tutorial.
 
 
 ## Exercise: Get images from OpenAI

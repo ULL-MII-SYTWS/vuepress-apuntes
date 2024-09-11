@@ -1,5 +1,5 @@
 {
-  "name": "vuepress-sytws-2324-apuntes",
+  "name": "vuepress-sytws-2425-apuntes",
   "version": "2.0.0",
   "description": "ULL SYTWS pages",
   "main": "index.js",
@@ -17,13 +17,13 @@
   },
   "scripts": {
     "dev": "source $HOME/.nvm/nvm.sh; nvm use && node --version && vuepress dev src -t src/.vuepress/dev -c src/.vuepress/cache",
-    "raw:dev": "http-server $HOME/campus-virtual/2324/sytws2324/vuepress-sytws-2324-apuntes/docs/src/.vuepress/dist -c-1",
+    "raw:dev": "http-server $HOME/campus-virtual/2425/sytws2425/vuepress-sytws-2425-apuntes/docs/src/.vuepress/dist -c-1",
     "raw:build": "nodemon -w . -e 'vue,md,html,js,json,png,jpeg,jpg' --exec 'node_modules/.bin/vuepress build src'",
     "deb": "vuepress --debug dev src",
     "build": "source ~/.nvm/nvm.sh; nvm use && node --version && vuepress build src",
     "deploy": "touch src/.vuepress/dist/.nojekyll; ./deploy.sh",
-    "push": "git ci -am 2324; git push origin; git push origin main",
-    "push2324": "git ci -am 2324; git push origin; git push sytws2324",
+    "push": "git ci -am 2425; git push origin; git push origin main",
+    "push2425": "git ci -am 2425; git push origin; git push sytws2425",
     "github-campus-expert": "npm run commits github-campus-expert",
     "commits": "scripts/get-lab-commits.sh",
     "commits:all": "src/.vuepress/commits-per-lab.js",

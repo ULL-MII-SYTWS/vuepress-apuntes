@@ -48,7 +48,6 @@ For each `lesson-#` from `lesson-2` to `lesson-12` in the public tutorial:,
 - Fill a report in the `README.md` of each branch `learn-#` summarizing your experience along the lesson.
 - Create a new [orphan branch](/assets/practicas/nextjs13/orphan.md) `learn-next-ai` and use it to follow the tutorial at repo <https://github.com/ULL-prompt-engineering/vercel-sdk-ai-quickstart> which it is based on the Vercel AI SDK [Quickstart Guide](https://sdk.vercel.ai/docs/getting-started). It shows you how to use streaming to build a prompt engineering agent.
 
-
 ## Web Development with Next.js
 
 See section [Web Development with Next.js](/web-development-with-nextjs) in this tutorial.

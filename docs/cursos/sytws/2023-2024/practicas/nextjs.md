@@ -1,6 +1,6 @@
 ---
 title: "Building a Node.JS OpenAI (3.0) app with NextJS (12.1)"
-published: true
+published: false
 date: "2023/11/27 01"
 campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4075&forceview=1"
 delivery: "2023/12/22"

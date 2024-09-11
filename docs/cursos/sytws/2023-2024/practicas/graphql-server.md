@@ -1,6 +1,6 @@
 ---
 title: "GraphQL Simple Server"
-published: true
+published: false
 date: "2023/11/30 01"
 campus: "https://campusdoctoradoyposgrado2223.ull.es/mod/assign/view.php?id=35670"
 delivery: "2023/12/21"
