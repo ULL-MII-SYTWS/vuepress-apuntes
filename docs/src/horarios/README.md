@@ -58,17 +58,17 @@ El máster contempla un 50% de no presencialidad y las clases de teoría (Grupos
 
 ## Calendario Académico
 
-[![Calendario Académico](/images/calendario-academico-23-24.png)](https://www.ull.es/estudios-docencia/calendario-academico/)
+[![Calendario Académico](https://www.ull.es/estudios-docencia/wp-content/uploads/sites/7/2024/06/Calendario-24_25_pages-to-jpg-0001.jpg)](https://www.ull.es/estudios-docencia/calendario-academico/)
 
 
 ## Exámenes
 
-* [![imagen de los examenes](/images/examenes-2023-2024.png)](https://docs.google.com/document/d/1bs8rIqrebCvAqWO5f_IbAUa1corBg-M9q6T2CKYl0fc/edit) 
+* [![imagen de los examenes](/images/examenes-2024-2025.png)](https://docs.google.com/document/d/1XwCFqTQSgB2-No9IV1lBFWkdvuZ2l9w492b7Grcoip8/edit) 
 
 En resumen:
 
 | Convocatoria | Fecha | Hora | Aula |
 | ---          |  ---  |  ---  | --- |
-| Enero        | 15/01 | 16:00 | 2.2 |
-|  Junio       | 17/06 | 16:00 | 2.2 |
-| Julio        | 01/07 | 16:00 | 2.2 |
+| Enero        | 13/01 | 16:00 | 2.2 |
+|  Junio       | 16/06 | 16:00 | 2.2 |
+| Julio        | 08/07 | 16:00 | 2.2 |

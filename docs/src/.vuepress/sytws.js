@@ -1,13 +1,13 @@
 // Crguezl: My Jekyll _config.yml file for SYTWS web site
 const TemasPublicados = require('./temas-publicados.js')
-const sytwsId = "2324110726"
-const course = "2324"
-const classroomId = "144119227"
-const campus = "https://campusdoctoradoyposgrado2324.ull.es"
-const teacher = "https://www.ull.es/apps/guias/guias/view_teacher_niu/1049/crguezl/"
-const aet = "https://campusdoctoradoyposgrado2324.ull.es/course/view.php?id=2324110055"
-const tfg = { text: 'TFG', link: "https://campusingenieriaytecnologia2324.ull.es/course/view.php?id=2324090185"}
-const dmsi = { text: "DMSI", link: "https://campusingenieriaytecnologia2324.ull.es/course/view.php?id=2324090033"}
+const sytwsId = "2425110680"
+const course = "2425"
+const classroomId = "176799104" // "144119227"
+const campus = "https://campusdoctoradoyposgrado2425.ull.es"
+const teacher = "https://www.ull.es/apps/guias/guias/view_teacher_niu/1364/crguezl/"
+const aet = "https://campusdoctoradoyposgrado2425.ull.es/course/view.php?id=2425110055"
+const tfg = { text: 'TFG', link: "https://campusingenieriaytecnologia2425.ull.es/course/view.php?id=2425090185"}
+const dmsi = { text: "DMSI", link: "https://campusingenieriaytecnologia2425.ull.es/course/view.php?id=2425090032"}
 const spreadsheets =  {text: 'Spreadsheets', link: 'https://docs.google.com/spreadsheets/u/0/?tgif=d&q=SYTWS'}
 const commitsPerLab = require('./commits-per-lab.json');
 
@@ -70,7 +70,7 @@ const navigationBar = [
       {text: 'Apuntes Repo', 
         items: [
         { text: 'Deploy at GH', link: 'https://ull-mii-sytws.github.io'},
-        { text: "Deploy at netlify", link: 'https://sytws.netlify.app/'},
+        //{ text: "Deploy at netlify", link: 'https://sytws.netlify.app/'},
         { text: 'Source', link: 'https://github.com/ULL-MII-SYTWS/vuepress-apuntes'},
         { text: 'Generated repo', link: 'https://github.com/ULL-MII-SYTWS/ull-mii-sytws.github.io' }
         ]
@@ -92,7 +92,7 @@ const navigationBar = [
        items: [
          { text: "Guía", link: 'https://www.ull.es/apps/guias/guias/view_guide_course/'+course+'/835941105/'},
          { text: "Casiano", link: teacher},
-         {text: 'Horario de Tutorías', link: 'https://www.ull.es/apps/guias/guias/view_guide_course/'+course+'/835941105/3/'},
+         //{text: 'Horario de Tutorías', link: 'https://www.ull.es/apps/guias/guias/view_guide_course/'+course+'/835941105/3/'},
        ]
       },
       { text: 'Campus',
@@ -112,11 +112,12 @@ const navigationBar = [
           {text: 'Editor cvn', link: 'https://cvn.fecyt.es/editor/'},
         ]
       },
-      tfg,
+      //tfg,
       { text: 'Campus de Masters', link: campus+"/"},
-      { text: 'Campus de ESIT', link: "https://campusingenieriaytecnologia2324.ull.es/"},
+      { text: 'Campus de ESIT', link: "https://campusingenieriaytecnologia2425.ull.es/"},
       dmsi,
-      { text: "AET", link: aet },
+      //{ text: "AET", link: aet },
+      { text: "SYTWS 2324", link: "https://ull-mii-sytws-2324.github.io/"}, 
       { text: "SYTWS 2122", link: "https://ull-mii-sytws-2122.github.io/"}, 
 /*
       <li><a :href="$var.foros" target="_blank">Foros</a></li>
@@ -129,7 +130,7 @@ const navigationBar = [
       {text: 'Meet', link: 'https://meet.google.com/bhv-togn-ynm'},
       {text: 'Chat', link: 'https://mail.google.com/chat/u/1/#chat/welcome'},
       spreadsheets,
-      //{text: 'Community', link: 'https://currents.google.com/u/1/communities/104629784252354892324' },
+      //{text: 'Community', link: 'https://currents.google.com/u/1/communities/104629784252354892425' },
       {
         text: 'Vídeos', 
         items: [
@@ -208,7 +209,7 @@ const SYTWSinfo = {
   "horarios_master": "https://www.ull.es/masteres/ingenieria-informatica/informacion-academica/horarios-y-calendario-examenes/",
   "horarios_tutorias": "https://www.ull.es/apps/guias/guias/view_guide/24127/",
   "cita_previa": "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUd1YlJSLURtcE5JfGRlZmF1bHR8ZmNiMWNmMTE4MjNjNzk1MWQwZGQyYTI4ZjZjYjZjY2E",
-  "google_plus": "https://currents.google.com/u/1/communities/104629784252354892324",
+  "google_plus": "https://currents.google.com/u/1/communities/104629784252354892425",
   "organization": {
     "url": "https://github.com/ULL-MII-SYTWS-"+course,
     "name": "ULL-MII-SYTWS-"+course,
