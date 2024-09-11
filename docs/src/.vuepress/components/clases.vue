@@ -21,7 +21,7 @@
 
 <script>
     import * as path from 'path';
-    const CourseStartDate = "2023-09-11"
+    const CourseStartDate = "2024-09-16"
 
     function weekOfTheYear(date) {
         var d = new Date(+date);
