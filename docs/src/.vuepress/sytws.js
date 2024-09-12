@@ -81,6 +81,17 @@ const navigationBar = [
           //{text: 'SYTWS Discussions', link: 'https://github.com/ULL-MII-SYTWS-'+course+'/SYTWS-'+course+'-discussions/discussions'},
           {text: 'Global Campus Teachers', link: 'https://github.com/GitHub-Global-Campus/Global-Campus-Teachers/discussions'},
         ]
+      },
+      {
+        text: 'Previous Courses',
+        items: [
+          { text: "SYTWS 2324", link: "https://ull-mii-sytws-2324.github.io/"},
+          { text: "SYTWS 2223", link: "https://ull-mii-sytws-2223.github.io/"},
+          { text: "SYTWS 2122", link: "https://ull-mii-sytws-2122.github.io/"},
+          { text: "SYTWS 2021", link: "https://ull-mii-sytws-2021.github.io/"},
+          { text: "SYTWS 1920", link: "https://ull-mii-sytws-1920.github.io/"},
+        ]
+
       }
     ]
   },
