@@ -65,7 +65,8 @@ El máster contempla un 50% de no presencialidad y las clases de teoría (Grupos
 
 * [![imagen de los examenes](/images/examenes-2024-2025.png)](https://docs.google.com/document/d/1XwCFqTQSgB2-No9IV1lBFWkdvuZ2l9w492b7Grcoip8/edit) 
 
-En resumen:
+Para el día del examen deberán estar entregadas las prácticas del curso. No se consideran las prácticas entregadas 
+después de la correspondiente fecha de exámen.
 
 | Convocatoria | Fecha | Hora | Aula |
 | ---          |  ---  |  ---  | --- |

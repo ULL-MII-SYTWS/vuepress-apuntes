@@ -16,6 +16,7 @@ rubrica:
   - "El nombre del equipo es correcto"
   - "Solicitado Backpack"
   - "Kanban Board project creado"
+  - "Se ha instalado GitHub CLI"
   - "Informe realizado  mostrando que domina markdown de forma eficiente: Usa imágenes, enlaces, listas, etc."
   - "Ha entregado el .zip en el campus con el repo"
 ---
@@ -63,7 +64,6 @@ Estas son las tareas a realizar:
    2. En todas las prácticas, siempre que ocupe menos de la capacidad admitida por el servidor Moodle, deberá adjuntar el repo en formato zip. En GH vaya a `code`y de ahí a:
 
       ![saveaszip.png](/images/saveaszip.png)
-
 
 ## References
 
