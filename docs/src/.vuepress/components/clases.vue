@@ -1,6 +1,6 @@
 <template>
     <div class="clases">
-      <h1>{{ numberOfClasses}} clases y {{ numberOfWeeks }} semanas</h1>
+      <h2>{{ numberOfClasses}} classes and {{ numberOfWeeks }} weeks</h2>
  
       <div v-for="(page, index) in classFiles" :key="page.key">  
         <h3 v-if="(index >= 1) && (week(page) !== week(classFiles[index-1]))">{{ week(page)+1 }}ª  semana {{ getWeekType(page) }}</h3>
