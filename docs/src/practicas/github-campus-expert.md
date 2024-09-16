@@ -16,7 +16,7 @@ rubrica:
   - "El nombre del equipo es correcto"
   - "Solicitado Backpack"
   - "Kanban Board project creado"
-  - "Se ha instalado GitHub CLI"
+  - "Se ha instalado <a href=\"https://github.com/cli/cli#installation\">GitHub CLI</a>"
   - "Informe realizado  mostrando que domina markdown de forma eficiente: Usa imágenes, enlaces, listas, etc."
   - "Ha entregado el .zip en el campus con el repo"
 ---

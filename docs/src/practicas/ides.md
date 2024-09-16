@@ -28,7 +28,7 @@ rubrica:
 1. Estudie y configure GitPod para trabajar con GitHub
 2. Instale VSCode en su máquina
 3. Siga los tutoriales de VSCode
-4. Instale el plugin Remote SSH  y aprenda a usarlo
+4. Instale el plugin Remote SSH  y aprenda a usarlo (use por ejemplo su máquina del iaas; vea la [siguiente práctica](/practicas/iaas.html))
 5. Use Live Share para colaborar con un compañero
 6. Elabore un informe con la experiencia adquirida en el repositorio asignado
 

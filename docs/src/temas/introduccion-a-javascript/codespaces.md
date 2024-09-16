@@ -73,4 +73,4 @@ It provides a quick way to create a new codespace. For complex and/or large repo
 
 Whenever you push changes to your repository, GitHub Codespaces uses GitHub Actions to automatically update your prebuilds.
 
-See [crguezl/dotfiles](https://github.com/crguezl/dotfiles) (private repo)
+See [codespaces-contrib/dotfiles](https://github.com/codespaces-contrib/dotfiles) and [crguezl/dotfiles](https://github.com/crguezl/dotfiles) (private repo)
