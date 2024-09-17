@@ -28,7 +28,9 @@
     "commits": "scripts/get-lab-commits.sh",
     "commits:all": "src/.vuepress/commits-per-lab.js",
     "save": "npm run push; npm run deploy",
-    "update-teams": "source ./get-teams.sh > src/.vuepress/teams.mjs"
+    "update-teams": "source ./get-teams.sh > src/.vuepress/teams.mjs",
+    "teams": "./get-teams2.sh > src/.vuepress/teams.json"
+
   },
   "license": "MIT",
   "devDependencies": {
