@@ -85,6 +85,7 @@ const navigationBar = [
       {
         text: 'Previous Course Notes',
         items: [
+          { text: "SYTWS 2425", link: "https://ull-mii-sytws-2425.github.io/"},
           { text: "SYTWS 2324", link: "https://ull-mii-sytws-2324.github.io/"},
           { text: "SYTWS 2223", link: "https://ull-mii-sytws-2223.github.io/"},
           { text: "SYTWS 2122", link: "https://ull-mii-sytws-2122.github.io/"},
