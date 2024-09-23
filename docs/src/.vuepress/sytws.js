@@ -70,7 +70,7 @@ const navigationBar = [
       {text: 'Apuntes Repo', 
         items: [
         { text: 'Deploy at GH', link: 'https://ull-mii-sytws.github.io'},
-        //{ text: "Deploy at netlify", link: 'https://sytws.netlify.app/'},
+        { text: "Deploy at GH 24-25", link: 'https://ull-mii-sytws-2425.github.io/'},
         { text: 'Source', link: 'https://github.com/ULL-MII-SYTWS/vuepress-apuntes'},
         { text: 'Generated repo', link: 'https://github.com/ULL-MII-SYTWS/ull-mii-sytws.github.io' }
         ]
