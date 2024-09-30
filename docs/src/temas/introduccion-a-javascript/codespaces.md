@@ -245,6 +245,10 @@ resource-usage.json
 THE `GH_TOKEN` secret does not appear in the `user-secrets.json` file. 
 
 
+## GitHub Codespaces Prebuilds
+
+See [Prebuilding your Codespaces](/temas/introduccion-a-javascript/devcontainers)
+
 ## Teachers: Using it in Classroom Assignments
 
 See [Setting up Codespaces in GitHub Classroom](/temas/introduccion-a-javascript/teachers-classroom-codespaces)
