@@ -47,9 +47,23 @@ See [codespaces-contrib/dotfiles](https://github.com/codespaces-contrib/dotfiles
      ![/images/codespaces-secrets-admin-token.png](/images/codespaces-secrets-admin-token.png)
 
      Then you can use such token to access from the codespace to other repos, organizations, etc. 
+     For instance, you can use it to clone a private repo different from the one you are working on. Here the 
+     user is in a codespace for the repo `ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865` but clones
+     the repo `ULL-MII-SYTWS-2425/race-condition-casiano-rodriguez-leon-alu0100291865`:
+
+     ```bash
+      @casiano-rodriguez ➜ /workspaces/intro2sd-casiano-rodriguez-leon-alu0100291865 (main) $ gh repo clone ULL-MII-SYTWS-2425/race-condition-casiano-rodriguez-leon-alu0100291865
+      Cloning into 'race-condition-casiano-rodriguez-leon-alu0100291865'...
+      remote: Enumerating objects: 8, done.
+      remote: Counting objects: 100% (8/8), done.
+      remote: Compressing objects: 100% (8/8), done.
+      remote: Total 8 (delta 1), reused 2 (delta 0), pack-reused 0 (from 0)
+      Receiving objects: 100% (8/8), 60.96 KiB | 60.96 MiB/s, done.
+      Resolving deltas: 100% (1/1), done.
+      ```
 3. Activate the section **Dotfiles**. 
 4. Create a `dotfiles` repository in your GitHub account. 
-   - [![assets/images/codespaces-dotfile.png](/images/codespaces-dotfile.png)](https://github.com/casiano-rodriguez/dotfiles)
+   - [![/images/codespaces-dotfile.png](/images/codespaces-dotfile.png)](https://github.com/casiano-rodriguez/dotfiles)
    - Copy what you want of your `.gitconfig` and `.bashrc` files to the `dotfiles` repository.
    - Write a `install.sh` script that installs your favorite tools. Example:
   
