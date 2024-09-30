@@ -3,6 +3,8 @@ video: "https://youtu.be/_W9B7qc9lVc"
 ---
 # GitHub CodeSpaces
 
+## Introduction
+
 GitHub Codespaces allows users to use a Visual Studio Code backed editor, terminal, and debugger along with GitHub version control in the browser or on a desktop. 
 
 Integrating Codespaces into your GitHub Classroom experience can provide a scalable solution for quickly getting CS students started using virtually any device including Chromebooks and iPads. 
@@ -64,6 +66,30 @@ See [codespaces-contrib/dotfiles](https://github.com/codespaces-contrib/dotfiles
    - [Settings Sync section of the Visual Studio Code documentation](https://code.visualstudio.com/docs/editor/settings-sync)
 7. Enable [GPG verification](/tema1-introduccion/gpg) in your Codespace
 
+
+### How to login to GitHub Copilot using CLI
+
+See [How to log-into GitHub Copilot using CLI](https://medium.com/@j622amilah/how-to-log-into-github-copilot-using-cli-f11bb29bfaf7)
+
+1. Install `gh`
+2. Use your GitHub account token to login
+
+   ```bash
+   gh auth login --web -h github auth login --with-token ghp_b...hv | gh auth login --scopes "copilot"
+   ```
+   A web interface sign-in without keyboard prompts will open, and you can sign in by entering the one-time code on the screen.
+3. Install the Copilot in the CLI extension
+
+    ```bash
+    gh extension install github/gh-copilot
+    ```
+4. Use the extension
+  
+      ```bash
+      gh copilot suggest -t git "Undo the most recent local commits"
+      ```
+
+      ![/images/codespaces-gh-cli-copilot.png](/images/codespaces-gh-cli-copilot.png)
 
 ### Codespace Personalization: Troubleshooting
 

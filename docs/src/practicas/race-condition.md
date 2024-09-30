@@ -3,7 +3,7 @@ title: "Race Condition: Loading an image with some delay"
 published: true
 date: "2023/09/28 01"
 campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4063" 
-delivery: "2024/10/01"
+delivery: "2023/09/27"
 key: race-condition
 layout: Practica
 order: 8
