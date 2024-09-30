@@ -52,7 +52,8 @@ See [codespaces-contrib/dotfiles](https://github.com/codespaces-contrib/dotfiles
      the repo `ULL-MII-SYTWS-2425/race-condition-casiano-rodriguez-leon-alu0100291865`:
 
      ```bash
-      @casiano-rodriguez ➜ /workspaces/intro2sd-casiano-rodriguez-leon-alu0100291865 (main) $ gh repo clone ULL-MII-SYTWS-2425/race-condition-casiano-rodriguez-leon-alu0100291865
+      @casiano-rodriguez ➜ /workspaces/intro2sd-casiano-rodriguez-leon-alu0100291865 (main) $ \
+        gh repo clone ULL-MII-SYTWS-2425/race-condition-casiano-rodriguez-leon-alu0100291865
       Cloning into 'race-condition-casiano-rodriguez-leon-alu0100291865'...
       remote: Enumerating objects: 8, done.
       remote: Counting objects: 100% (8/8), done.
@@ -89,7 +90,7 @@ See [codespaces-contrib/dotfiles](https://github.com/codespaces-contrib/dotfiles
 6. Activate the [Settings Sync](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync) section.
    - ![/images/codespaces-settings-sync.png](/images/codespaces-settings-sync.png) 
    - [Settings Sync section of the Visual Studio Code documentation](https://code.visualstudio.com/docs/editor/settings-sync)
-7. Enable [GPG verification](/tema1-introduccion/gpg) in your Codespace
+7. Enable [GPG verification](/temas/introduccion-a-javascript/gpg) in your Codespace
 
 
 ### How to login to GitHub Copilot using CLI
