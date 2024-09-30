@@ -1,19 +1,34 @@
 # Prebuilding and Dev Containers
 
-The `.devcontainer/devcontainer.json` file is used to configure **Development Containers** (also known as **Dev Containers**) in Visual Studio Code (VS Code). A **Dev Container** is essentially a Docker-based environment that allows developers to create a fully isolated and reproducible development environment. This ensures consistency across different machines and allows for dependencies, tools, and configurations to be defined in code.
+See the documentation at [codespaces/prebuilding-your-codespaces](https://docs.github.com/en/codespaces/prebuilding-your-codespaces).
 
-GitHub Codespaces prebuilds **help to speed up the creation of new codespaces** for large or complex repositories.
-For repositories owned by organizations, repository-level settings for GitHub Codespaces are available for organizations on **GitHub Team** and GitHub Enterprise plans. See [About GitHub Codespaces prebuilds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/about-github-codespaces-prebuilds). 
+A **prebuild** assembles the main components of a codespace for a particular combination of repository, branch, and `devcontainer.json` configuration file. 
 
+It provides a quick way to create a new codespace. For complex and/or large repositories in particular, you can create a new codespace more quickly by using a prebuild.
 
-Go to the configuration of the repo. In the section **GitHub Codespaces**, you can set up a prebuild configuration.
-When a prebuild configuration workflow runs, GitHub creates a temporary codespace, performing setup operations up to and including any `onCreateCommand` and `updateContentCommand` commands in the [devcontainer.json](https://code.visualstudio.com/docs/remote/devcontainerjson-reference#_devcontainerjson-properties) file. 
+To speed up codespace creation, you can configure your project to **prebuild codespaces** for specific branches in specific regions. You create and configure prebuilds in your repository's settings. 
+
+- Repository-level settings for GitHub Codespaces are available for all repositories owned by *personal accounts*.
+- For repositories owned by organizations, repository-level settings for GitHub Codespaces are available for organizations on GitHub Team plans that there is the one you get from GH Education as a teacher. See [About GitHub Codespaces prebuilds](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/about-github-codespaces-prebuilds). 
+
+Go to the configuration of the repo. In the section **GitHub Codespaces**, you can set up a **prebuild** configuration.
 
 ![/images/codespace-prebuild-configuration.png](/images/codespace-prebuild-configuration.png)
 
-As with other GitHub Actions workflows, running a prebuild configuration workflow will either consume some of the GitHub Actions minutes included with your account, if you have any, or it will incur charges for GitHub Actions minutes. Storage of codespace prebuilds is billed in the same way as storage of active or stopped codespaces. 
+When a prebuild configuration workflow runs, GitHub creates a temporary codespace, performing setup operations up to and including
+
+- any `onCreateCommand` and 
+- `updateContentCommand` commands 
+
+in the [devcontainer.json](https://code.visualstudio.com/docs/remote/devcontainerjson-reference#_devcontainerjson-properties) file. 
+
+Whenever you push changes to your repository, GitHub Codespaces uses GitHub Actions to automatically update your prebuilds.
+As with other GitHub Actions workflows, running a prebuild configuration workflow will either consume some of the GitHub Actions minutes included with your account, if you have any, or it will incur charges for GitHub Actions minutes. 
+Storage of codespace prebuilds is billed in the same way as storage of active or stopped codespaces. 
 
 ## Purpose of `.devcontainer/devcontainer.json`
+
+The `.devcontainer/devcontainer.json` file is used to configure **Development Containers** (also known as **Dev Containers**) in Visual Studio Code (VS Code). A **Dev Container** is essentially a Docker-based environment that allows developers to create a fully isolated and reproducible development environment. This ensures consistency across different machines and allows for dependencies, tools, and configurations to be defined in code.
 
 The `devcontainer.json` file defines how the development environment should be set up inside the Dev Container. This includes specifying 
 
@@ -26,7 +41,7 @@ and any other configuration needed to replicate the development environment.
 
 When a project has a `.devcontainer/devcontainer.json` file, VS Code (with the **Remote - Containers** extension) can automatically detect it and set up the Dev Container as defined in this configuration file.
 
-## Key Features and Benefits:
+## Key Features and Benefits of having a `.devcontainer/devcontainer.json` File
 
 1. **Consistent Development Environment**: All developers working on the project will use the same development environment, including dependencies, tools, and OS setup, which helps to eliminate "works on my machine" issues.
   
@@ -55,7 +70,7 @@ When a project has a `.devcontainer/devcontainer.json` file, VS Code (with the *
 }
 ```
 
-## Explanation of Example:
+Explanation of Example:
 
 - **`name`**: A friendly name for the Dev Container (optional).
 - **`image`**: Specifies the Docker image to use as the base for the Dev Container. In this case, it uses a pre-built image for Node.js development.
