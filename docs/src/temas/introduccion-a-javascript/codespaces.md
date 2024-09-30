@@ -75,7 +75,8 @@ See [How to log-into GitHub Copilot using CLI](https://medium.com/@j622amilah/ho
 2. Use your GitHub account token to login
 
    ```bash
-   gh auth login --web -h github auth login --with-token ghp_b...hv | gh auth login --scopes "copilot"
+   gh auth login --web -h github auth login --with-token ghp_b...hv | \
+                                   gh auth login --scopes "copilot"
    ```
    A web interface sign-in without keyboard prompts will open, and you can sign in by entering the one-time code on the screen.
 3. Install the Copilot in the CLI extension
@@ -85,11 +86,29 @@ See [How to log-into GitHub Copilot using CLI](https://medium.com/@j622amilah/ho
     ```
 4. Use the extension
   
-      ```bash
-      gh copilot suggest -t git "Undo the most recent local commits"
-      ```
+   ```bash
+      @crguezl ➜ /workspaces/intro2sd-casiano-rodriguez-leon-alu0100291865 (main) $ \
+          gh copilot suggest -t git "Undo the most recent local commits"
 
-      ![/images/codespaces-gh-cli-copilot.png](/images/codespaces-gh-cli-copilot.png)
+      Welcome to GitHub Copilot in the CLI!
+      version 1.0.5 (2024-09-12)
+
+      I'm powered by AI, so surprises and mistakes are possible. 
+      Make sure to verify any generated code or suggestions, 
+      and share feedback so that we can learn and improve. 
+      For more information, see https://gh.io/gh-copilot-transparency
+
+      Suggestion: 
+      git reset --hard HEAD~n                                                                   
+      ? Select an option  [Use arrows to move, type to filter]
+      > Copy command to clipboard
+        Explain command
+        Execute command
+        Revise command
+        Rate response
+        Exit
+   ```
+
 
 ### Codespace Personalization: Troubleshooting
 
