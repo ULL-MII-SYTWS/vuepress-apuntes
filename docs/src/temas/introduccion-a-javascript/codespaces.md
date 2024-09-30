@@ -234,7 +234,7 @@ THE `GH_TOKEN` secret does not appear in the `user-secrets.json` file.
 
 ## GitHub Codespaces Prebuilds
 
-See the section [Prebuilding your Codespaces](/temas/introduccion-a-javascript/devcontainers) in this n
+See the section [Prebuilding your Codespaces](/temas/introduccion-a-javascript/devcontainers) in this notes
 
 ## Teachers: Using it in Classroom Assignments
 
