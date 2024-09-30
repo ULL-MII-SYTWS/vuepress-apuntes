@@ -39,12 +39,14 @@ See [codespaces-contrib/dotfiles](https://github.com/codespaces-contrib/dotfiles
 
 ### Exercise: Personalizing your Codespace  
 
-1. Generate a token with admin power (go to https://github.com/settings/tokens). Give them superpowers and save it as `admin` token 
+1. Generate a token with admin power (go to <https://github.com/settings/tokens>). Give them superpowers and save it as `admin` token 
 2. Go to your **Codespace user secrets** section  <https://github.com/settings/codespaces> and
    - Add a `GH_TOKEN` secret in the codespace repository settings. See <https://cli.github.com/manual/gh_help_environment>.
    - As value use the token you generated in the previous step.
      
      ![/images/codespaces-secrets-admin-token.png](/images/codespaces-secrets-admin-token.png)
+
+     Then you can use such token to access from the codespace to other repos, organizations, etc. 
 3. Activate the section **Dotfiles**. 
 4. Create a `dotfiles` repository in your GitHub account. 
    - [![assets/images/codespaces-dotfile.png](/images/codespaces-dotfile.png)](https://github.com/casiano-rodriguez/dotfiles)
@@ -52,6 +54,15 @@ See [codespaces-contrib/dotfiles](https://github.com/codespaces-contrib/dotfiles
    - Write a `install.sh` script that installs your favorite tools. Example:
   
      ```bash
+     #!/bin/bash
+
+      if [ -f /workspaces/.codespaces/.persistedshare/dotfiles/.gitconfig ]; then
+          ln -s /workspaces/.codespaces/.persistedshare/dotfiles/.gitconfig ~/.gitconfig
+      else
+          echo "Error: Archivo .gitconfig not found"
+      fi
+
+
       gh alias set cd '!gh config set current-org "$1" 2>/dev/null'
       gh alias set pwd '!gh config get current-org'
       #gh extension install github/gh-classroom
