@@ -1,1 +1,190 @@
-{"data":{"organization":{"teams":{"totalCount":10,"edges":[{"node":{"name":"casiano-rodriguez-leon-alu0100291865","members":{"totalCount":1,"edges":[{"memberAccessUrl":"https://github.com/orgs/ULL-MII-SYTWS-2425/people/casiano-rodriguez","node":{"name":"Casiano as ULL alumni","url":"https://github.com/casiano-rodriguez","email":"","login":"casiano-rodriguez","avatarUrl":"https://avatars.githubusercontent.com/u/131154928?u=d3332f44c8df591dd1a895cf66dcc20c636782c0&v=4"}}]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/casiano-rodriguez-leon-alu0100291865"}},{"node":{"name":"daniel-jorge-acosta-alu0101239187","members":{"totalCount":1,"edges":[{"memberAccessUrl":"https://github.com/orgs/ULL-MII-SYTWS-2425/people/alu0101239187","node":{"name":"Daniel Jorge Acosta","url":"https://github.com/alu0101239187","email":"alu0101239187@ull.edu.es","login":"alu0101239187","avatarUrl":"https://avatars.githubusercontent.com/u/72458365?u=8aef496f65c3401057806a82586bd2625cc8ad43&v=4"}}]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/daniel-jorge-acosta-alu0101239187"}},{"node":{"name":"daniel_felipe-gomez-alu0101438139","members":{"totalCount":1,"edges":[{"memberAccessUrl":"https://github.com/orgs/ULL-MII-SYTWS-2425/people/DanielFelipeGomez","node":{"name":"Daniel Felipe Gómez Aristizabal","url":"https://github.com/DanielFelipeGomez","email":"","login":"DanielFelipeGomez","avatarUrl":"https://avatars.githubusercontent.com/u/72305356?u=44dbe435e5e1f97fcc84a1cadab6403610d99b5f&v=4"}}]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/daniel_felipe-gomez-alu0101438139"}},{"node":{"name":"ismael-martin-herrera-alu0101397375","members":{"totalCount":1,"edges":[{"memberAccessUrl":"https://github.com/orgs/ULL-MII-SYTWS-2425/people/imh-02","node":{"name":"Ismael Martín Herrera","url":"https://github.com/imh-02","email":"ismael.martin.26@ull.edu.es","login":"imh-02","avatarUrl":"https://avatars.githubusercontent.com/u/72320541?u=1167e73da369d16982136ad66d89a8a0031fcf2b&v=4"}}]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/ismael-martin-herrera-alu0101397375"}},{"node":{"name":"ivan-garcia-gonzalez-alu0101388786","members":{"totalCount":1,"edges":[{"memberAccessUrl":"https://github.com/orgs/ULL-MII-SYTWS-2425/people/Ivan-Garcia02","node":{"name":"Iván García González","url":"https://github.com/Ivan-Garcia02","email":"","login":"Ivan-Garcia02","avatarUrl":"https://avatars.githubusercontent.com/u/72501732?u=45b62166e00688b07d6cd49ec496a49d681442cc&v=4"}}]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/ivan-garcia-gonzalez-alu0101388786"}},{"node":{"name":"nicolas-aranda-robayna-alu01","members":{"totalCount":1,"edges":[{"memberAccessUrl":"https://github.com/orgs/ULL-MII-SYTWS-2425/people/nicarandar","node":{"name":"Nicolás Aranda","url":"https://github.com/nicarandar","email":"","login":"nicarandar","avatarUrl":"https://avatars.githubusercontent.com/u/115658790?u=d67ae45cc62465428e9762ab0c56f3ca9b166e1f&v=4"}}]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/nicolas-aranda-robayna-alu01"}},{"node":{"name":"nicolas-aranda-robayna-alu0123456789","members":{"totalCount":1,"edges":[{"memberAccessUrl":"https://github.com/orgs/ULL-MII-SYTWS-2425/people/nicarandar","node":{"name":"Nicolás Aranda","url":"https://github.com/nicarandar","email":"","login":"nicarandar","avatarUrl":"https://avatars.githubusercontent.com/u/115658790?u=d67ae45cc62465428e9762ab0c56f3ca9b166e1f&v=4"}}]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/nicolas-aranda-robayna-alu0123456789"}},{"node":{"name":"rebeca-rodriguez-alu0101394763","members":{"totalCount":1,"edges":[{"memberAccessUrl":"https://github.com/orgs/ULL-MII-SYTWS-2425/people/rrrguez","node":{"name":"Rebeca Rguez","url":"https://github.com/rrrguez","email":"","login":"rrrguez","avatarUrl":"https://avatars.githubusercontent.com/u/72274516?u=c3f4729cdef5424efad6569fb4e4ab92de2ba85d&v=4"}}]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/rebeca-rodriguez-alu0101394763"}},{"node":{"name":"rebeca-rodriguez-rodriguez-alu0101394763","members":{"totalCount":0,"edges":[]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/rebeca-rodriguez-rodriguez-alu0101394763"}},{"node":{"name":"saul-martin-garcia-alu0101405810","members":{"totalCount":1,"edges":[{"memberAccessUrl":"https://github.com/orgs/ULL-MII-SYTWS-2425/people/SMarGa","node":{"name":"Saúl Martín","url":"https://github.com/SMarGa","email":"","login":"SMarGa","avatarUrl":"https://avatars.githubusercontent.com/u/72317185?v=4"}}]},"url":"https://github.com/orgs/ULL-MII-SYTWS-2425/teams/saul-martin-garcia-alu0101405810"}}]}}}}
+{
+  "data": {
+    "organization": {
+      "teams": {
+        "totalCount": 10,
+        "edges": [
+          {
+            "node": {
+              "name": "casiano-rodriguez-leon-alu0100291865",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/casiano-rodriguez",
+                    "node": {
+                      "name": "Casiano as ULL alumni",
+                      "url": "https://github.com/casiano-rodriguez",
+                      "email": "",
+                      "login": "casiano-rodriguez",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/131154928?u=d3332f44c8df591dd1a895cf66dcc20c636782c0&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/casiano-rodriguez-leon-alu0100291865"
+            }
+          },
+          {
+            "node": {
+              "name": "daniel-jorge-acosta-alu0101239187",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/alu0101239187",
+                    "node": {
+                      "name": "Daniel Jorge Acosta",
+                      "url": "https://github.com/alu0101239187",
+                      "email": "alu0101239187@ull.edu.es",
+                      "login": "alu0101239187",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/72458365?u=8aef496f65c3401057806a82586bd2625cc8ad43&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/daniel-jorge-acosta-alu0101239187"
+            }
+          },
+          
+          {
+            "node": {
+              "name": "ismael-martin-herrera-alu0101397375",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/imh-02",
+                    "node": {
+                      "name": "Ismael Martín Herrera",
+                      "url": "https://github.com/imh-02",
+                      "email": "ismael.martin.26@ull.edu.es",
+                      "login": "imh-02",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/72320541?u=1167e73da369d16982136ad66d89a8a0031fcf2b&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/ismael-martin-herrera-alu0101397375"
+            }
+          },
+          {
+            "node": {
+              "name": "ivan-garcia-gonzalez-alu0101388786",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/Ivan-Garcia02",
+                    "node": {
+                      "name": "Iván García González",
+                      "url": "https://github.com/Ivan-Garcia02",
+                      "email": "",
+                      "login": "Ivan-Garcia02",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/72501732?u=45b62166e00688b07d6cd49ec496a49d681442cc&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/ivan-garcia-gonzalez-alu0101388786"
+            }
+          },
+          {
+            "node": {
+              "name": "nicolas-aranda-robayna-alu01",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/nicarandar",
+                    "node": {
+                      "name": "Nicolás Aranda",
+                      "url": "https://github.com/nicarandar",
+                      "email": "",
+                      "login": "nicarandar",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/115658790?u=d67ae45cc62465428e9762ab0c56f3ca9b166e1f&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/nicolas-aranda-robayna-alu01"
+            }
+          },
+          {
+            "node": {
+              "name": "nicolas-aranda-robayna-alu0123456789",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/nicarandar",
+                    "node": {
+                      "name": "Nicolás Aranda",
+                      "url": "https://github.com/nicarandar",
+                      "email": "",
+                      "login": "nicarandar",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/115658790?u=d67ae45cc62465428e9762ab0c56f3ca9b166e1f&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/nicolas-aranda-robayna-alu0123456789"
+            }
+          },
+          {
+            "node": {
+              "name": "rebeca-rodriguez-alu0101394763",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/rrrguez",
+                    "node": {
+                      "name": "Rebeca Rguez",
+                      "url": "https://github.com/rrrguez",
+                      "email": "",
+                      "login": "rrrguez",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/72274516?u=c3f4729cdef5424efad6569fb4e4ab92de2ba85d&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/rebeca-rodriguez-alu0101394763"
+            }
+          },
+          {
+            "node": {
+              "name": "rebeca-rodriguez-rodriguez-alu0101394763",
+              "members": {
+                "totalCount": 0,
+                "edges": []
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/rebeca-rodriguez-rodriguez-alu0101394763"
+            }
+          },
+          {
+            "node": {
+              "name": "saul-martin-garcia-alu0101405810",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/SMarGa",
+                    "node": {
+                      "name": "Saúl Martín",
+                      "url": "https://github.com/SMarGa",
+                      "email": "",
+                      "login": "SMarGa",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/72317185?v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/saul-martin-garcia-alu0101405810"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -3,25 +3,6 @@ video: "https://youtu.be/_W9B7qc9lVc"
 ---
 # GitHub CodeSpaces
 
-## Announcing GitHub Global Campus and Codespaces for Teachers
-
-GitHub  announced in May 9th 2022 this message:
-
-<https://github.com/github-community/Global-Campus-Teachers/discussions/79>
-
-which is inside of the new page for everything that has to do with educational resources:
-
-<https://education.github.com/>
-
-One of the things they comment on is a certain number of hours of Codespaces integrated with Classroom:
-
-* Your Global Campus teacher status with GitHub gives you a free monthly allowance of Codespaces hours to use in your classroom. 
-* The free allowance is estimated to be enough for a class of 50 with 5 assignments per month, on a 2 core machine with 1 codespace stored per student, which is more than enough to get your students coding like pros in an environment that brings out the best in their skills and allows you to teach seamlessly. 
-* For teachers whose workflows extend beyond the free allowance, more details on Codespaces billing can be found [here](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-codespaces#codespaces-pricing).
-
-
-## Introduction 
-
 GitHub Codespaces allows users to use a Visual Studio Code backed editor, terminal, and debugger along with GitHub version control in the browser or on a desktop. 
 
 Integrating Codespaces into your GitHub Classroom experience can provide a scalable solution for quickly getting CS students started using virtually any device including Chromebooks and iPads. 
@@ -31,34 +12,12 @@ Here is the documentation: [GitHub Codespaces](https://docs.github.com/en/codesp
 
 <youtube></youtube>
 
-## Teachers: Using it in Classroom Assignments
-
-Go to the classroom config and enable codespaces:
-
-![](/images/codespaces-github-classroom-settings.png)
-
-Now inside an assignment you can choose codespaces as eeditor for the students:
-
-![](/images/codespaces-github-classroom-assignment.png)
-
-## Using it as a User
-
-![](/images/codespaces-yours.png)
-
-Here is an example working:
-
-![](/images/codespaces-working.png)
-
-And here an example of your codespaces page:
-
-![](/images/codespaces-screen.png)
-
 ## Personalizing your Codespace
-
+<!-- ## Personalizing your Codespace -->
 Si quieres personalizar tu Codespace, puedes leer [Personalizing GitHub Codespaces for your account](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account).Puedes personalizar GitHub Codespaces usando 
 
-1. un [repositorio `dotfiles` en GitHub](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) o 
-2. usando [Settings Sync](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync).
+1. Un [repositorio `dotfiles` en GitHub](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) o 
+2. Usando [Settings Sync](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync).
 
 To speed up codespace creation, you can configure your project to **prebuild codespaces** for specific branches in specific regions. You create and configure prebuilds in your repository's settings. 
 
@@ -73,4 +32,148 @@ It provides a quick way to create a new codespace. For complex and/or large repo
 
 Whenever you push changes to your repository, GitHub Codespaces uses GitHub Actions to automatically update your prebuilds.
 
-See [codespaces-contrib/dotfiles](https://github.com/codespaces-contrib/dotfiles) and [crguezl/dotfiles](https://github.com/crguezl/dotfiles) (private repo)
+See [codespaces-contrib/dotfiles](https://github.com/codespaces-contrib/dotfiles), 
+[casiano-rodriguez/dotfiles](https://github.com/casiano-rodriguez/dotfiles) and [crguezl/dotfiles](https://github.com/crguezl/dotfiles) (the last two are private repos)
+
+### Exercise: Personalizing your Codespace  
+
+1. Generate a token with admin power (go to https://github.com/settings/tokens). Give them superpowers and save it as `admin` token 
+2. Go to your **Codespace user secrets** section  <https://github.com/settings/codespaces> and
+   - Add a `GH_TOKEN` secret in the codespace repository settings. See <https://cli.github.com/manual/gh_help_environment>.
+   - As value use the token you generated in the previous step.
+     
+     ![/images/codespaces-secrets-admin-token.png](/images/codespaces-secrets-admin-token.png)
+3. Activate the section **Dotfiles**. 
+4. Create a `dotfiles` repository in your GitHub account. 
+   - [![assets/images/codespaces-dotfile.png](/images/codespaces-dotfile.png)](https://github.com/casiano-rodriguez/dotfiles)
+   - Copy what you want of your `.gitconfig` and `.bashrc` files to the `dotfiles` repository.
+   - Write a `install.sh` script that installs your favorite tools. Example:
+  
+     ```bash
+      gh alias set cd '!gh config set current-org "$1" 2>/dev/null'
+      gh alias set pwd '!gh config get current-org'
+      #gh extension install github/gh-classroom
+      #gh extension install github/gh-copilot
+      gh extension install gh-cli-for-education/gh-org-teams
+      gh extension install crguezl/gh-org-clone
+      #gh extension install crguezl/gh-submodule-add
+      ```
+5. Put all you repos as **Trusted repositories** in the corresponding subsection of <https://github.com/settings/codespaces>.
+6. Activate the [Settings Sync](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync) section.
+   - ![/images/codespaces-settings-sync.png](/images/codespaces-settings-sync.png) 
+   - [Settings Sync section of the Visual Studio Code documentation](https://code.visualstudio.com/docs/editor/settings-sync)
+7. Enable [GPG verification](/tema1-introduccion/gpg) in your Codespace
+
+
+### Codespace Personalization: Troubleshooting
+
+See the docs at [Troubleshooting personalization options for GitHub Codespaces](https://docs.github.com/en/codespaces/troubleshooting/troubleshooting-personalization-for-codespaces).
+
+Check `/workspaces/.codespaces/.persistedshare/dotfiles` to see if your `dotfiles` were cloned.
+
+- If your `dotfiles` were cloned, try manually re-running your install script to verify that it is executable.
+  
+- If your `dotfiles` were not cloned, check `/workspaces/.codespaces/.persistedshare/`
+
+  ```bash
+  @casiano-rodriguez ➜ /workspaces $ ls -a .codespaces/.persistedshare/*.log
+  .codespaces/.persistedshare/creation.log
+  @casiano-rodriguez ➜ /workspaces $ ls -a .codespaces/.persistedshare/*.txt
+  .codespaces/.persistedshare/vsserverhostlog.txt  
+  .codespaces/.persistedshare/vsserverterminallog.txt
+  ```
+  The file `.codespaces/.persistedshare/vsserverterminallog.txt` contains the output of the terminal including escape codes.
+
+  The file `.codespaces/.persistedshare/vsserverhostlog.txt` contains the output of the host.
+- Check `/workspaces/.codespaces/.persistedshare/creation.log` for possible issues. For more information, see [Creation logs](https://docs.github.com/en/codespaces/troubleshooting/github-codespaces-logs#creation-logs).
+
+  ```bash
+  @casiano-rodriguez ➜ /workspaces $ cat .codespaces/.persistedshare/creation.log
+  ```
+
+  See the [output of the previous `cat .codespaces/.persistedshare/creation.log` command](/tema1-introduccion/codespaces-persistedhare-creation-log)
+
+
+For instance, I notice that the `.gitconfig` file in the dotfiles repositoryis is in `/workspaces/.codespaces/.persistedshare/dotfiles/.gitconfig`
+but hasn't being copied to the home directory (`/home/codespace`). 
+So I manually link it:
+
+```bash
+ ln -s /workspaces/.codespaces/.persistedshare/dotfiles/.gitconfig ~/
+ ```
+
+### The codespaces shared folder
+
+The shared folder is located at `/root/.codespaces/shared/`.
+
+```bash
+@casiano-rodriguez ➜ /workspaces/intro2sd-casiano-rodriguez-leon-alu0100291865 (main) $ ls -a ../.codespaces/shared
+.environmentConfigurationCompleted  
+devContainerTelemetry.json  
+merged_devcontainer.json  
+unifiedPostCreateOutput.json
+.user-secrets.json                  
+editors                            // folder
+postCreateOutput.json     
+user-secrets-envs.json
+.env          
+codespaceStatusTool.js              
+environment-variables.json  
+read-config.json
+.env-secrets  
+cs-agent.sock                       // a socket
+first-run-notice.txt        
+resource-usage.json
+```
+
+ It contains among others the `user-secrets.json` file:
+
+`➜ /workspaces/dotfiles (main) $ cat ../.codespaces/shared/.user-secrets.json  | jq '.'`
+```json
+[
+  {
+    "type": "EnvironmentVariable",
+    "name": "GITHUB_SERVER_URL",
+    "value": "https://github.com"
+  },
+  {
+    "type": "EnvironmentVariable",
+    "name": "GITHUB_API_URL",
+    "value": "https://api.github.com"
+  },
+  {
+    "type": "EnvironmentVariable",
+    "name": "GITHUB_GRAPHQL_URL",
+    "value": "https://api.github.com/graphql"
+  },
+  ...
+  {
+    "type": "EnvironmentVariable",
+    "name": "GITHUB_TOKEN",
+    "value": "ghu_XXXX...XXX"
+  },
+  ...
+  {
+    "type": "EnvironmentVariable",
+    "name": "GITHUB_USER",
+    "value": "casiano-rodriguez"
+  },
+  ...
+  {
+    "type": "EnvironmentVariable",
+    "name": "CODESPACES",
+    "value": "true"
+  },
+  {
+    "type": "EnvironmentVariable",
+    "name": "CODESPACE_NAME",
+    "value": "studious-potato-blah-blah"
+  }
+]
+```
+THE `GH_TOKEN` secret does not appear in the `user-secrets.json` file. 
+
+
+## Teachers: Using it in Classroom Assignments
+
+See [Setting up Codespaces in GitHub Classroom](/temas/introduccion-a-javascript/teachers-classroom-codespaces)
