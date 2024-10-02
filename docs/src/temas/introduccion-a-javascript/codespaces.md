@@ -253,7 +253,7 @@ You can configure the dev container for a repository so that codespaces created 
 Click Create a new configuration. https://docs.github.com/assets/cb-12613/mw-1440/images/help/codespaces/add-prebuilt-container-command.webp](https://docs.github.com/assets/cb-12613/mw-1440/images/help/codespaces/add-prebuilt-container-command.webp)
 
 2. Click Create a new configuration.
-3. Click **Show All Definitions**. Search for LaTeX, thesis, R, mongodb, [Jekyll](https://github.com/devcontainers/templates/tree/main/src/jekyll) etc. 
+3. Click **Show All Definitions**. Search for [LaTeX](https://github.com/jmuchovej/devcontainers/tree/main/templates/src/latex/), [thesis](https://github.com/TorbenWetter/iu-latex-container-templates/tree/main/src/thesis), R, mongodb, [Jekyll](https://github.com/devcontainers/templates/tree/main/src/jekyll) etc. 
 4. Click the definition you want to use.
 5. Follow the prompts to customize your definition and click OK
 6. Apply your changes by clicking **Rebuild now** in the pop-up at the bottom right of the window.
@@ -262,6 +262,23 @@ Click Create a new configuration. https://docs.github.com/assets/cb-12613/mw-144
 
 See "[Creating a custom dev container configuration](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers#creating-a-custom-dev-container-configuration)."
 
+If you don't already have a `devcontainer.json` file in your repository, you can quickly add one from GitHub.
+
+1. Navigate to your repository and click the  **Code** dropdown.
+2. In the **Codespaces** tab, click the ellipsis (...), then select **Configure dev container**.
+   
+   [Screenshot of the "Code" dropdown, and, within it, another dropdown with the "Configure dev container" option highlighted. ](https://docs.github.com/assets/cb-169907/mw-1440/images/help/codespaces/configure-dev-container.webp)
+   
+   A new `.devcontainer/devcontainer.json` file will open in the editor. 
+   The file will contain some initial properties, including a **features** object to which you can add new tools, libraries, or runtimes. 
+   See "[Adding features to a devcontainer.json file](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/configuring-dev-containers/adding-features-to-a-devcontainer-file?tool=webui)."
+3. To the right of the file editor, in the **Marketplace** tab, browse or search for the feature you want to add (MATLAB, SSH server), then click the name of the feature.
+   
+   ![https://docs.github.com/assets/cb-80759/mw-1440/images/help/codespaces/feature-marketplace.webp](https://docs.github.com/assets/cb-80759/mw-1440/images/help/codespaces/feature-marketplace.webp)
+4. Under "Installation," click the code snippet to copy it to your clipboard, then paste the snippet into the `features` object in your `devcontainer.json` file.
+5. By default, the latest version of the feature will be used. To choose a different version, or configure other options for the feature, expand the properties listed under "**Options**" to view the available values, then add the options by manually editing the object in your `devcontainer.json` file.
+6. Commit the changes to your `devcontainer.json` file.
+   
 ## GitHub Codespaces Prebuilds
 
 See the section [Prebuilding your Codespaces](/temas/introduccion-a-javascript/devcontainers) in this notes
