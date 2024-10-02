@@ -241,22 +241,26 @@ development container hosted on a virtual machine.
 
 You can configure the dev container for a repository so that codespaces created for that repository give you a tailored development environment, complete with all the tools and runtimes you need to work on a specific project.
 
+### Using a predefined dev container configuration
+
 - See "[Using a predefined dev container configuration](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers#using-a-predefined-dev-container-configuration)."
 
-If you want to preserve files outside the `/workspaces` directory over a rebuild, 
-you can create, at the desired location in the container, a symbolic link (symlink) 
-to the persistent directory. 
-For example, in your `/workspaces/.devcontainer` directory, you can create a `config` 
-directory that will be preserved across a rebuild. 
-You can then symlink the `config` directory and its contents as a `postCreateCommand` in your `devcontainer.json` 
-file.
 
-```json 
-{
-    "image": "mcr.microsoft.com/devcontainers/base:alpine",
-    "postCreateCommand": "chmod +x .devcontainer/postCreate.sh && .devcontainer/postCreate.sh"
-}
-```
+1. Access the Visual Studio Code Command Palette `(Shift+Command+P / Ctrl+Shift+P)`, then start typing "`add dev`". 
+   Click **Codespaces: Add Dev Container Configuration Files**.
+   
+   ![Screenshot of the Command Palette, with "add dev" entered and "Codespaces: Add Dev Container Configuration Files" listed.
+Click Create a new configuration. https://docs.github.com/assets/cb-12613/mw-1440/images/help/codespaces/add-prebuilt-container-command.webp](https://docs.github.com/assets/cb-12613/mw-1440/images/help/codespaces/add-prebuilt-container-command.webp)
+
+2. Click Create a new configuration.
+3. Click **Show All Definitions**. Search for LaTeX, thesis, R, mongodb, [Jekyll](https://github.com/devcontainers/templates/tree/main/src/jekyll) etc. 
+4. Click the definition you want to use.
+5. Follow the prompts to customize your definition and click OK
+6. Apply your changes by clicking **Rebuild now** in the pop-up at the bottom right of the window.
+
+### Creating a custom dev container configuration
+
+See "[Creating a custom dev container configuration](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers#creating-a-custom-dev-container-configuration)."
 
 ## GitHub Codespaces Prebuilds
 
