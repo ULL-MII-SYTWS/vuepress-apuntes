@@ -125,6 +125,9 @@ See [How to log-into GitHub Copilot using CLI](https://medium.com/@j622amilah/ho
 
 ### Codespace Personalization: Troubleshooting
 
+When you create a codespace, your repository is cloned into the `/workspaces` directory in your codespace. not in your home directory! 
+Outside `/workspaces`, with the exception of the `/tmp` directory, the directories in a codespace are tied to the lifecycle of the container. 
+
 See the docs at [Troubleshooting personalization options for GitHub Codespaces](https://docs.github.com/en/codespaces/troubleshooting/troubleshooting-personalization-for-codespaces).
 
 Check `/workspaces/.codespaces/.persistedshare/dotfiles` to see if your `dotfiles` were cloned.
@@ -149,7 +152,7 @@ Check `/workspaces/.codespaces/.persistedshare/dotfiles` to see if your `dotfile
   @casiano-rodriguez ➜ /workspaces $ cat .codespaces/.persistedshare/creation.log
   ```
 
-  See the [output of the previous `cat .codespaces/.persistedshare/creation.log` command](/tema1-introduccion/codespaces-persistedhare-creation-log)
+  See the [output of the previous `cat .codespaces/.persistedshare/creation.log` command](/temas/introduccion-a-javascript/codespaces-persistedhare-creation-log)
 
 
 For instance, I notice that the `.gitconfig` file in the dotfiles repositoryis is in `/workspaces/.codespaces/.persistedshare/dotfiles/.gitconfig`

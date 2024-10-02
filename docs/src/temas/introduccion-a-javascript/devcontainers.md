@@ -26,6 +26,22 @@ Whenever you push changes to your repository, GitHub Codespaces uses GitHub Acti
 As with other GitHub Actions workflows, running a prebuild configuration workflow will either consume some of the GitHub Actions minutes included with your account, if you have any, or it will incur charges for GitHub Actions minutes. 
 Storage of codespace prebuilds is billed in the same way as storage of active or stopped codespaces. 
 
+## Example: intro2sd Dev Container for Jekyll
+
+- Repo: [ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865](https://github.com/ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865/tree/main)
+
+- File: [.devcontainer/devcontainer.json](https://github.com/ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865/blob/main/.devcontainer/devcontainer.json)
+
+
+  ```json 
+  {
+    "postCreateCommand": "bundle install && npm install && rake serve"
+  }
+  ```
+- Output:
+  
+  ![images/codespaces-devcontainer.png](/images/codespaces-devcontainer.png)
+  
 ## Purpose of `.devcontainer/devcontainer.json`
 
 The `.devcontainer/devcontainer.json` file is used to configure **Development Containers** (also known as **Dev Containers**) in Visual Studio Code (VS Code). A **Dev Container** is essentially a Docker-based environment that allows developers to create a fully isolated and reproducible development environment. This ensures consistency across different machines and allows for dependencies, tools, and configurations to be defined in code.
@@ -86,18 +102,3 @@ Explanation of Example:
 - **Testing and Debugging**: You can create isolated environments for testing specific versions of dependencies without affecting your main setup.
 - **Cloud-Based Development**: When used in combination with cloud development environments (like GitHub Codespaces), the `devcontainer.json` file allows for a cloud-hosted version of your development environment to be instantly created.
 
-## Example: intro2sd Dev Container for Jekyll
-
-- Repo: [ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865](https://github.com/ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865/tree/main)
-
-- File: [.devcontainer/devcontainer.json](https://github.com/ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865/blob/main/.devcontainer/devcontainer.json)
-
-
-  ```json 
-  {
-    "postCreateCommand": "bundle install && npm install && rake serve"
-  }
-  ```
-- Output:
-  
-  ![images/codespaces-devcontainer.png](/images/codespaces-devcontainer.png)
