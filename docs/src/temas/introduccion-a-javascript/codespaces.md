@@ -234,6 +234,29 @@ resource-usage.json
 ```
 THE `GH_TOKEN` secret does not appear in the `user-secrets.json` file. 
 
+## Introduction to dev containers
+
+When you work in a codespace, the environment you are working in is created using a 
+development container hosted on a virtual machine.
+
+You can configure the dev container for a repository so that codespaces created for that repository give you a tailored development environment, complete with all the tools and runtimes you need to work on a specific project.
+
+- See "[Using a predefined dev container configuration](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers#using-a-predefined-dev-container-configuration)."
+
+If you want to preserve files outside the `/workspaces` directory over a rebuild, 
+you can create, at the desired location in the container, a symbolic link (symlink) 
+to the persistent directory. 
+For example, in your `/workspaces/.devcontainer` directory, you can create a `config` 
+directory that will be preserved across a rebuild. 
+You can then symlink the `config` directory and its contents as a `postCreateCommand` in your `devcontainer.json` 
+file.
+
+```json 
+{
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "postCreateCommand": "chmod +x .devcontainer/postCreate.sh && .devcontainer/postCreate.sh"
+}
+```
 
 ## GitHub Codespaces Prebuilds
 
