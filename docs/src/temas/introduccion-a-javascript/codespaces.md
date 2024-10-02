@@ -279,6 +279,17 @@ If you don't already have a `devcontainer.json` file in your repository, you can
 5. By default, the latest version of the feature will be used. To choose a different version, or configure other options for the feature, expand the properties listed under "**Options**" to view the available values, then add the options by manually editing the object in your `devcontainer.json` file.
 6. Commit the changes to your `devcontainer.json` file.
    
+## Rebuilding codespaces
+
+f you've changed a dev container configuration outside of VS Code (for example, on GitHub), you can use GitHub CLI to rebuild the dev container for an existing codespace.
+
+```console
+(main) $ gh codespace rebuild
+? Choose codespace:  [Use arrows to move, type to filter]
+> ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865 (main): musical pancake
+  ULL-MII-SYTWS-2425/editors-casiano-rodriguez-leon-alu0100291865 (main): special telegram
+```
+
 ## GitHub Codespaces Prebuilds
 
 See the section [Prebuilding your Codespaces](/temas/introduccion-a-javascript/devcontainers) in this notes
