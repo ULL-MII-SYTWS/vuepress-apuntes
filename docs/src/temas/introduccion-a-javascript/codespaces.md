@@ -281,9 +281,33 @@ If you don't already have a `devcontainer.json` file in your repository, you can
    
 ## Rebuilding codespaces
 
+When you rebuild the container, you will have to reinstall anything you've installed manually. To avoid this problem, you can use the `postCreateCommand` property in `devcontainer.json`.
+
+The `postCreateCommand` actions are run once the container is created, so you can also use the property to run commands like `npm install` or to execute a shell script in your source tree (if you have mounted it).
+
+```json
+"postCreateCommand": "bash scripts/install-dependencies.sh"
+```
+
+Tools like NVM won't work without using -i to put the shell in interactive mode:
+
+```json
+"postCreateCommand": "bash -i -c 'nvm install --lts'"
+```
+
+The command needs to exit or the container won't start. For instance, if you add an application start to `postCreateCommand`, the command wouldn't exit. See [ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865](https://github.com/ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865/tree/main/.devcontainer)
+
+```json
+{
+  "postCreateCommand": "bundle install && npm install && rake serve"
+}
+```
+
+## Rebuilding codespaces with gh
+
 f you've changed a dev container configuration outside of VS Code (for example, on GitHub), you can use GitHub CLI to rebuild the dev container for an existing codespace.
 
-```console
+```bash
 (main) $ gh codespace rebuild
 ? Choose codespace:  [Use arrows to move, type to filter]
 > ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865 (main): musical pancake
