@@ -60,6 +60,8 @@ Recuerde cambiar `baseurl` en `_config.yml` para que contenga el nombre de su re
 baseurl                  : "/intro2sd-template/" # the subpath of your site, e.g. "/blog"
 ```
 
+Véase la sección *Developing* en el capítulo [Jekyll](/temas/web/jekyll#developing) para más detalles.
+
 ### Netlify && Vercel
 
 Haga un segundo despliegue en Netlify. Netlify no forma parte del Pack de GH así que tendrá que cambiar la visibilidad de su repo a público. 
