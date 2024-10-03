@@ -12,7 +12,6 @@ published: true
 template: "https://github.com/ULL-MII-SYTWS/github-campus-expert-template"
 rubrica:
   - "Rellenado cuestionario GitHub-Alu"
-  - "Miembro de la comunidad Currents/G+"
   - "El nombre del equipo es correcto"
   - "Solicitado Backpack"
   - "Kanban Board project creado"

@@ -8,7 +8,7 @@ key: race-condition
 layout: Practica
 order: 8
 prev: asyncmap.md
-next: 
+next: intro2sd.md
 rubrica:
   - "Encontrada explicación correcta"
   - "Informe bien elaborado"
