@@ -2,7 +2,7 @@
 title: Async map
 published: true
 date: "2023/09/11 05"
-campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4062"
+campus: "https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=10744"
 delivery: "2023/09/27"
 key: asyncmap
 layout: Practica

@@ -138,7 +138,15 @@ MDN utiliza la terminología *cola de mensajes* para la *cola de callbacks*:
   }
   ```
 
-(`tema1-introduccion/practicas/p2-t1-c3-file-system/event-loop/var.js`)
+```
+➜  event-loop-examples-1920 git:(master) ✗ pwd -P
+/Users/casianorodriguezleon/campus-virtual/1920/sytws1920/apuntes/tema1-introduccion/practicas/p2-t1-c3-file-system/event-loop
+➜  event-loop-examples-1920 git:(master) ✗ ls
+README.md                              hoist.js                               splitting-cpu-hungry-task.html
+animated-circle-with-promise.html      how-the-event-loop-works.png           var.js
+callstack.js                           order.js
+event-loop.png                         settimeout-does-not-run-inmediately.js
+```
 
 ### JS is single threaded 
 

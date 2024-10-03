@@ -2,7 +2,7 @@
 title: GitHub Project Board
 date: "2022/10/03 02"
 delivery: "2022/10/13"
-campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4058"
+campus: "https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=10740"
 published: true
 layout: Practica
 key: github-project-board

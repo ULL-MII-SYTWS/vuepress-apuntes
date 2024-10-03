@@ -4,7 +4,7 @@ layout: Practica
 published: true
 date: "2022/10/03 04"
 delivery: "2022/10/20"
-campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4060"
+campus: "https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=10742"
 key: iaas
 prev: "ides.md"
 next: #"asyncmap.md" #intro2sd.md 

@@ -289,12 +289,6 @@ The `postCreateCommand` actions are run once the container is created, so you ca
 "postCreateCommand": "bash scripts/install-dependencies.sh"
 ```
 
-Tools like NVM won't work without using -i to put the shell in interactive mode:
-
-```json
-"postCreateCommand": "bash -i -c 'nvm install --lts'"
-```
-
 The command needs to exit or the container won't start. For instance, if you add an application start to `postCreateCommand`, the command wouldn't exit. See [ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865](https://github.com/ULL-ESIT-DMSI-2425/intro2sd-casiano-rodriguez-leon-alu0100291865/tree/main/.devcontainer)
 
 ```json

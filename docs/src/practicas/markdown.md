@@ -2,7 +2,7 @@
 title: Aprender Markdown
 date: "2022/10/03 03"
 delivery: "2022/10/13"
-campus: "https://campusdoctoradoyposgrado2324.ull.es/mod/assign/view.php?id=4057"
+campus: "https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=10739"
 published: true
 layout: Practica
 key: markdown
