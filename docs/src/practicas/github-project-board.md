@@ -43,6 +43,10 @@ Sigue un ejemplo de como podría configurar la *vista de tabla* del organization
 Asegúrese de tener configurados como privados sus project boards
 :::
 
+## Video
+
+<youtube id="oPQgFxHcjAw?si=vVGz7KrgI7ZLRnZpW"></youtube>
+
 ## References
 
 * [GitHub Docs: About project boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)
