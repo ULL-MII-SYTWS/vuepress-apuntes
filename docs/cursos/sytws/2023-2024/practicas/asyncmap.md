@@ -103,7 +103,96 @@ Este script crea en el directorio `test` el número de ficheros `f#number.txt` e
 -rw-rw-rw- 1 codespace codespace 6014 Sep 19 12:46 test/f4.txt
 ```
 
+
 ## Entrega
+
+
+### Lectura secuencial de ficheros
+
+Complete el código [callback-hell-example.mjs](https://github.com/ULL-MII-SYTWS-2324/asyncmap-casiano-rodriguez-leon-alu0100291865/blob/callbackhell-solution/callback-hell-example.mjs) para que lea `n` ficheros secuencialmente:
+
+```js
+// Create the inputs: npm run create-inputs
+// Execute it with: node callback-hell-example.mjs -f test/f*
+import fs from 'fs';
+import { Command } from 'commander';
+const program = new Command();
+
+program.option('-f, --files <values...>', 'Ficheros de entrada', []);
+program.parse(process.argv);
+const files = program.files; // ['test/f1.txt', 'test/f2.txt', 'test/f3.txt']
+console.log(files);
+
+function rF(name, cb) {
+  fs.readFile(name, 'utf8', cb);
+}
+
+function readSeq(files, finalCb) {
+  let results = [];
+
+  function next(i) {
+    if (i < files.length) {
+      rF(files[i], (err, data) => {
+        ... // Write your code here
+        //console.log(data)
+        next(i+1);
+      });
+    } else {
+      ... // Write your code here
+    }
+  }
+  next(0);
+}
+
+readSeq(files, (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log(data);
+});
+```
+
+Generalize la solución encontrada y rellene en `concatSerialize.js` el código para la función `series` que resuelve el problema de serializar llamadas a funciones asíncronas
+
+```js
+//node concatSerialize.js -f f1.txt -f f2.txt -f f3.txt -o output.txt
+/* ... */
+var series = function (inputs, fun, callback) {
+    var arr = []
+    var index = 0;
+    function aux() {
+        fun(inputs[index++], (error, data) => {
+            if (error) {
+                /* ... your code here  */
+            } else {
+                /* ... your code here  */
+            }
+        })
+    }
+
+    aux()
+}
+
+                   // results is an array of strings containing the contents of the files
+series(program.files, (file, cb) => fs.readFile(file, "utf-8", cb), function (err, results) {
+    if (err == null) {
+        var file = fs.createWriteStream(program.output);
+        file.on('error', err => { throw new Error("Error en la apertura del archivo " + program.output + " " + err) });
+        results.forEach(i => { file.write(i + '\n'); });
+        file.end();
+    } else {
+        throw new Error("Fallo en la lectura de los ficheros\n" + err)
+    }
+});
+```
+
+1. Añada un fichero `sol-using-async.mjs` que resuelva el mismo problema pero usando la función [series](https://caolan.github.io/async/v3/docs.html#series) de `Async`  
+2. Edite `sol-using-async.mjs` para que usando la función [map](https://caolan.github.io/async/v3/docs.html#map) de Async resuelva el problema de la lectura de ficheros pero en paralelo: esto es, no se espera a que termine la lectura de un fichero para empezar a leer el siguiente.
+3. Edite `my-async.mjs` y provea su propia función`asyncMap` que funciona como el [map](https://caolan.github.io/async/v3/docs.html#map)de `Async`
+
+
+Dejamos aquí un enlace a los apuntes de "[Introduction to the JS Event Loop](/temas/async/event-loop/)"
 
 ### Solución con el Módulo async-js
 

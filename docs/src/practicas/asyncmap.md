@@ -86,6 +86,11 @@ Este script crea un fichero de texto con el nombre, el número de líneas y el c
 
 ```
 crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (training) $ scripts/make-big-file.bash test/f9 10 chuchu
+```
+
+Crea un fichero `test/f9` con 10 líneas de contenido el número de orden seguido de `chuchu`:
+
+```
 @crguezl ➜ /workspaces/asyncmap-casiano-rodriguez-leon-alu0100291865 (training) $ tail -n 2 test/f9 
 9 chuchu
 10 chuchu
@@ -103,11 +108,88 @@ Este script crea en el directorio `test` el número de ficheros `f#number.txt` e
 -rw-rw-rw- 1 codespace codespace 6014 Sep 19 12:46 test/f4.txt
 ```
 
-## Entrega
+El script llama a [scripts/create-input.bash]()
+
+```bash
+➜  asyncmap-solution git:(main) ✗ scripts/create-inputs.bash -h    
+Usage: scripts/create-inputs.bash [numfiles(=3)] [size(=numfiles*3)]
+  numfiles: number of files to create
+  size: number of lines in the first file. Subsequent files 'i' will be of size: size-2*i
+  Files will be created in the test/ folder following the pattern test/f#number.txt
+```
+
+Estos son los contenidos del script en [scripts/create-inputs.bash](/assets/practicas/asyncmap/create-input-bash.md).
+Si quiere sustituya el de su repo por este.
+
+
+
+## Lectura de "n" ficheros preservando el orden
+
+### Lectura secuencial de "n" ficheros
+
+Añada un fichero [callback-hell-example.mjs](https://github.com/ULL-MII-SYTWS-2324/asyncmap-casiano-rodriguez-leon-alu0100291865/blob/callbackhell-solution/callback-hell-example.mjs) 
+que generaliza el `callback-doom-example.mjs` para que lea `n` ficheros secuencialmente: 
+el fichero `f2.txt` no se lee hasta que no se ha leído el fichero `f1.txt`, y así sucesivamente. 
+
+Puede partir de este código:
+
+```js
+// Create the inputs: npm run create-inputs
+// Execute it with: node callback-hell-example.mjs -f test/f*
+import fs from 'fs';
+import { Command } from 'commander';
+const program = new Command();
+
+program.option('-f, --files <values...>', 'Ficheros de entrada', []);
+program.parse(process.argv);
+const files = program.files; // ['test/f1.txt', 'test/f2.txt', 'test/f3.txt']
+console.log(files);
+
+function rF(name, cb) {
+  fs.readFile(name, 'utf8', cb);
+}
+
+function readSeq(files, finalCb) {
+  let results = [];
+
+  function next(i) {
+    if (i < files.length) {
+      rF(files[i], (err, data) => {
+        ... // Write your code here
+        //console.log(data)
+        next(i+1);
+      });
+    } else {
+      ... // Write your code here
+    }
+  }
+  next(0);
+}
+
+readSeq(files, (err, data) => {
+  if (err) { console.error(err); return; }
+  console.log(data);
+});
+```
+
+### Lectura paralela de "n" ficheros  
+
+Otro problema ligeramente distinto es escribir una
+función `readPar(files, finalCb)` que lea los ficheros en paralelo pero llamando a `finalCb(err, data)`  con
+los resultados en `data` en el orden en que se han pasado los ficheros.
+
+Resuelva también este segundo problema de lectura de ficheros y añada la solución
+en el mismo fichero `callback-hell-example.mjs`. 
+
+Dejamos aquí un enlace a los apuntes de "[Introduction to the JS Event Loop](/temas/async/event-loop/)"
 
 ### Solución con el Módulo async-js
 
-Lea la sección [The Async Module](/temas/async/async-js) de los apuntes y encuentre una solución usando `Async`. 
+Lea la sección [The Async Module](/temas/async/async-js) de los apuntes y encuentre una solución usando `Async` al problema de la lectura
+secuencial y paralela de los ficheros. 
+
+* File [sol-using-async.mjs](https://github.com/ULL-MII-SYTWS/asyncmap-template/blob/main/sol-using-async.mjs)  write here your solution to the par problem using the async module
+* File [sol-using-async-series.mjs](https://github.com/ULL-MII-SYTWS/asyncmap-template/blob/main/sol-using-async-series.mjs) write here your solution to the seq problem using the async module
 
 Considere la posibilidad de excepciones debidas a que alguno de los ficheros no exista. 
 
@@ -120,12 +202,27 @@ No se considera una solución usar `fs.readFileSync` o timers (`setTimeout` etc.
 
 ### Abstracción de la solución
 
-Haciendo abstracción de la solución encontrada en el paso anterior escriba una función `asyncMap` que funcione como el `map` del módulo `Async` y que sirva 
-para cualuier función asíncrona que siga el patrón de `callback(err, result)`:
+Haciendo abstracción de la solución encontrada en el paso anterior escriba una función `asyncMap` que funcione como el 
+[map](https://caolan.github.io/async/v3/docs.html#map) del módulo `Async` y que sirva 
+para cualquier función asíncrona que siga el patrón de `callback(err, result)`:
 
-  ```js
-  asyncMap(inputs, (item, cb) => fs.readFile(item, cb), (err, contents) => { ... });
-  ```
+Puede ser con esta API:
+
+```js
+asyncMap(inputs, (item, cb) => fs.readFile(item, cb), (err, contents) => { ... });
+```
+o bien con la del módulo `Async`:
+
+```js
+map(coll, iteratee, callback)
+```
+
+where:
+
+* `coll` - A collection to iterate over.
+* `iteratee` - An async function to apply to each item in `coll`.  (`readFile` in our case)s
+  The iteratee should complete with the transformed item. Invoked with `(item, callback)`.
+* `callback` - A callback which is called with `(err, results)` only when all `iteratee` functions have finished, or an error occurs. `Results` is an array of the transformed items from the `coll`.
 
 ### Variante del Problema: Serial en vez de paralelo
 
