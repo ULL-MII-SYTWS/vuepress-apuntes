@@ -47,6 +47,10 @@ Asegúrese de tener configurados como privados sus project boards
 
 <youtube id="oPQgFxHcjAw?si=vVGz7KrgI7ZLRnZpW"></youtube>
 
+### Ejemplo: Project board Babel compiler at ULL
+
+[![Ejemplo: Project board Babel compiler at ULL](/images/team-project-board-example.png)](https://github.com/orgs/ULL-ESIT-PL/projects/1/views/4)
+
 ## References
 
 * [GitHub Docs: About project boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)
