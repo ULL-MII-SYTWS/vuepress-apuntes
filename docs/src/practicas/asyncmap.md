@@ -175,8 +175,13 @@ readSeq(files, (err, data) => {
 ### Lectura paralela de "n" ficheros  
 
 Otro problema ligeramente distinto es escribir una
-función `readPar(files, finalCb)` que lea los ficheros en paralelo pero llamando a `finalCb(err, data)`  con
-los resultados en `data` en el orden en que se han pasado los ficheros.
+función `readPar(files, finalCb)` que lea los ficheros en paralelo pero 
+que cuando llame a `finalCb(err, data)`  con
+los resultados en `data` estos estén en el orden 
+en que se han pasado los ficheros en el array `files`. 
+Es decir, en este caso se puede leer el Fichero
+`f2.txt` antes que el `f1.txt` pero el resultado de la lectura de `f1.txt` debe aparecer antes que el de `f2.txt` en 
+`data`.
 
 Resuelva también este segundo problema de lectura de ficheros y añada la solución
 en el mismo fichero `callback-hell-example.mjs`. 
