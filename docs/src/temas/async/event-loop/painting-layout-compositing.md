@@ -1,6 +1,12 @@
 # Painting, Layout, and Compositing in Browser Rendering
 
-When a web page is loaded in a browser, the browser goes through several steps to render the content on the screen. These steps include parsing the HTML and CSS, building the **DOM** and **CSSOM**, and finally rendering the page. During the rendering process, the browser performs several operations, including **layout**, **painting**, and **compositing**, to display the content correctly.
+When a web page is loaded in a browser, the browser goes through several steps to render the content on the screen. These steps include
+
+1. parsing the HTML and CSS, 
+2. building the **DOM** and **CSSOM**, and 
+3. finally rendering the page. 
+
+During the rendering process, the browser performs several operations, including **layout**, **painting**, and **compositing**, to display the content correctly.
 In the context of browser rendering, **painting**, **layout**, and **compositing** refer to different stages of the process the browser uses to render web pages onto the screen. These stages occur after the browser parses the HTML and CSS to build the **DOM** (Document Object Model) and **CSSOM** (CSS Object Model). Here’s a breakdown of what each term means and how they differ:
 
 ### 1. **Layout (Reflow)**:
