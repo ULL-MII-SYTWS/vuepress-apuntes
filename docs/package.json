@@ -27,7 +27,7 @@
     "github-campus-expert": "npm run commits github-campus-expert",
     "commits": "scripts/get-lab-commits.sh",
     "commits:all": "src/.vuepress/commits-per-lab.js",
-    "save": "npm run push; npm run deploy",
+    "save": "npm run push; npm run deploy: scripts/get-workflows.sh",
     "teams": "./get-teams2.sh > src/.vuepress/teams.json"
   },
   "license": "MIT",
