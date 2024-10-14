@@ -2,7 +2,7 @@
   "data": {
     "organization": {
       "teams": {
-        "totalCount": 10,
+        "totalCount": 11,
         "edges": [
           {
             "node": {
@@ -46,7 +46,48 @@
               "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/daniel-jorge-acosta-alu0101239187"
             }
           },
-          
+          {
+            "node": {
+              "name": "daniel_felipe-gomez-alu0101438139",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/DanielFelipeGomez",
+                    "node": {
+                      "name": "Daniel Felipe Gómez Aristizabal",
+                      "url": "https://github.com/DanielFelipeGomez",
+                      "email": "",
+                      "login": "DanielFelipeGomez",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/72305356?u=44dbe435e5e1f97fcc84a1cadab6403610d99b5f&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/daniel_felipe-gomez-alu0101438139"
+            }
+          },
+          {
+            "node": {
+              "name": "edwin-plasencia-hernandez-alu0101329888",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/alu0101329888",
+                    "node": {
+                      "name": "Edwin Plasencia Hernández",
+                      "url": "https://github.com/alu0101329888",
+                      "email": "",
+                      "login": "alu0101329888",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/72465967?u=dce9f97c90b2cfc5c89b9d4d2e4ab3f47e6e2067&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/edwin-plasencia-hernandez-alu0101329888"
+            }
+          },
           {
             "node": {
               "name": "ismael-martin-herrera-alu0101397375",
@@ -60,7 +101,7 @@
                       "url": "https://github.com/imh-02",
                       "email": "ismael.martin.26@ull.edu.es",
                       "login": "imh-02",
-                      "avatarUrl": "https://avatars.githubusercontent.com/u/72320541?u=1167e73da369d16982136ad66d89a8a0031fcf2b&v=4"
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/72320541?u=e5e601ec3077824e73f2b4b7d10db3dd6a3e9038&v=4"
                     }
                   }
                 ]
