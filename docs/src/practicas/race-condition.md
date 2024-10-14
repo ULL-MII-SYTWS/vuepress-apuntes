@@ -136,6 +136,8 @@ The `image` object will not be appended to the `container` if the image is loade
 With `let waitFor = 0` try reloading the page. What will happen?
 Is the same thing happening with all browsers?
 
+Go to the developer tools, to the Network tab and clear the cache. Reload. What happens?
+
 <hr/>
 
 ## Objetivo

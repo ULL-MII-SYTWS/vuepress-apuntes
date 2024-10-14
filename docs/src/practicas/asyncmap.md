@@ -341,3 +341,9 @@ El `package.json` ilustra como se pueden definir variables en la sección `"conf
 * Sección [The Async Module](/temas/async/async-js) de estos apuntes
 * El manual del módulo async: <https://caolan.github.io/async/v3/>
 * Pregunta [NodeJS - How to read multiple files asynchronously and write read contents to one file](https://stackoverflow.com/questions/39020704/nodejs-how-to-read-multiple-files-asynchronously-and-write-read-contents-to-on) en StackOverflow
+
+
+## Repos
+
+<repos> </repos>
+

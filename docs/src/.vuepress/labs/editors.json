@@ -1,0 +1,51 @@
+
+> vuepress-sytws-2425-apuntes@2.0.0 commits
+> scripts/get-lab-commits.sh editors
+
+Getting commits for lab editors
+[
+  {
+    "name": "editors-rebeca-rodriguez-alu0101394763",
+    "total": 49
+  },
+  {
+    "name": "editors-nicolas-aranda-robayna-alu01",
+    "total": 6
+  },
+  {
+    "name": "editors-ivan-garcia-gonzalez-alu0101388786",
+    "total": 6
+  },
+  {
+    "name": "editors-ismael-martin-herrera-alu0101397375",
+    "total": 6
+  },
+  {
+    "name": "editors-daniel-jorge-acosta-alu0101239187",
+    "total": 4
+  },
+  {
+    "name": "editors-saul-martin-garcia-alu0101405810",
+    "total": 3
+  },
+  {
+    "name": "editors-edwin-plasencia-hernandez-alu0101329888",
+    "total": 2
+  },
+  {
+    "name": "editors-casiano-rodriguez-leon-alu0100291865",
+    "total": 2
+  },
+  {
+    "name": "editors-rebeca-rodriguez-rodriguez-alu0101394763",
+    "total": null
+  },
+  {
+    "name": "editors-nicolas-aranda-robayna-alu0123456789",
+    "total": null
+  },
+  {
+    "name": "editors-daniel_felipe-gomez-alu0101438139",
+    "total": null
+  }
+]
