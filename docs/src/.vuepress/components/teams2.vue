@@ -13,7 +13,9 @@
             <details>
             <summary>Related Labs</summary>
               <ol>
-                <li v-for="lab in labFiles" :key="lab.frontmatter.key"> {{ lab.title }}
+                <li v-for="lab in labFiles" :key="lab.frontmatter.key">
+                   <a v-if="lab.frontmatter.key" :href="`/practicas/${lab.frontmatter.key}.html#rubrica`" target="_blank">Rubric for {{ lab.title }}</a>
+                   <a v-else :href="lab.frontmatter.campus" target="_blank">Rubric for {{ lab.title }}</a>
                   <studentActivity v-if="lab.frontmatter.key" 
                   :lab="lab.frontmatter.key" 
                   :student="team.name" 
