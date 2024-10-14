@@ -22,7 +22,6 @@ module.exports = [
             { text: 'Web Workers', link: '/temas/async/web-workers' },
         ]
     },
-    /*
     {
         text: 'Servicios y Aplicaciones Web',
         items: [
@@ -70,6 +69,6 @@ module.exports = [
 
 
         ]
-    },*/
+    }
 
 ];

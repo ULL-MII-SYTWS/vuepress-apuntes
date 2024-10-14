@@ -5,7 +5,7 @@ heroLink: "https://www.ull.es/centros/escuela-superior-de-ingenieria-y-tecnologi
 tagline: 
 action:  
   - text: "Campus"
-    link: "https://campusdoctoradoyposgrado2223.ull.es/course/view.php?id=2223110630"
+    link: "https://campusdoctoradoyposgrado2425.ull.es/course/view.php?id=2425110680"
   - text:  "Chat"
     link: "https://mail.google.com/chat/u/1/#chat/welcome"
   - text: "Recursos"
@@ -13,7 +13,7 @@ action:
   - text: "Horarios"
     link: "/horarios/"
   - text:  "Organization"
-    link: "https://github.com/ULL-MII-SYTWS-2223"
+    link: "https://github.com/ULL-MII-SYTWS-2425"
 ---
 
 <div class="features">
