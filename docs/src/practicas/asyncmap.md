@@ -15,6 +15,7 @@ rubrica:
   - "Se da una solucion paralela sin usar la librería async al problema de la lectura de ficheros en el fichero my-async.mjs"
   - "Se crea una función <code>asyncmap</code> genérica que funciona como el <code>map</code> de async"
   - "Se da una función <code>series</code> que resuelve el problema de serializar llamadas a funciones asíncronas en el fichero concatSerialize.mjs"
+  - "Opcional: Se ofrece una solución con errores agregados"
   - "Informe bien elaborado"
   - "Ha entregado el .zip en el campus con el repo"
 ---
