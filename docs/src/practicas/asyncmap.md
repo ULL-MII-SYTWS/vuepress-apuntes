@@ -229,6 +229,23 @@ where:
   The iteratee should complete with the transformed item. Invoked with `(item, callback)`.
 * `callback` - A callback which is called with `(err, results)` only when all `iteratee` functions have finished, or an error occurs. `Results` is an array of the transformed items from the `coll`.
 
+### Variante: Errores agregados
+
+The [AggregateError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError) object represents an error when several errors need to be wrapped in a single error:
+
+```js
+try {
+  throw new AggregateError([new Error("some error")], "Hello");
+} catch (e) {
+  console.log(e instanceof AggregateError); // true
+  console.log(e.message); // "Hello"
+  console.log(e.name); // "AggregateError"
+  console.log(e.errors); // [ Error: "some error" ]
+}
+```
+
+Instead of calling the final callback with the first error found, you can aggregate all the errors in an `AggregateError` object and pass it to the final callback. 
+
 ### Variante del Problema: Serial en vez de paralelo
 
 Ahora cambiamos el problema para lea **en secuencial** el conjunto de ficheros pasados como argumentos en línea de comandos y 
@@ -252,6 +269,8 @@ series(program.files, (file, cb) => fs.readFile(file, "utf-8", cb), function (er
     }
 });
 ```
+
+Instead of calling the final callback with the first error found, you can aggregate all the errors in an `AggregateError` object and pass it to the final callback. 
 
 ### Files 
 
