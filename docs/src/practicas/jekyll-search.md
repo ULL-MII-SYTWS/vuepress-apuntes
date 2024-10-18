@@ -2,7 +2,7 @@
 title: "Jekyll Search"
 published: true
 campus: # to fill
-key: # not needed. They reuse the repo from the jekyll assignment
+key: intro2sd # not needed. They reuse the repo from the jekyll assignment
 layout: Practica
 order: 10
 prev: intro2sd.md
