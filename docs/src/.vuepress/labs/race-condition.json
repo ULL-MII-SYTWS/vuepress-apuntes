@@ -1,10 +1,26 @@
 [
   {
+    "name": "race-condition-nicolas-aranda-robayna-alu01",
+    "total": 3
+  },
+  {
     "name": "race-condition-ismael-martin-herrera-alu0101397375",
     "total": 3
   },
   {
+    "name": "race-condition-saul-martin-garcia-alu0101405810",
+    "total": 2
+  },
+  {
     "name": "race-condition-rebeca-rodriguez-alu0101394763",
+    "total": 2
+  },
+  {
+    "name": "race-condition-ivan-garcia-gonzalez-alu0101388786",
+    "total": 2
+  },
+  {
+    "name": "race-condition-edwin-plasencia-hernandez-alu0101329888",
     "total": 2
   },
   {
@@ -12,27 +28,11 @@
     "total": 2
   },
   {
-    "name": "race-condition-saul-martin-garcia-alu0101405810",
-    "total": null
-  },
-  {
     "name": "race-condition-rebeca-rodriguez-rodriguez-alu0101394763",
     "total": null
   },
   {
     "name": "race-condition-nicolas-aranda-robayna-alu0123456789",
-    "total": null
-  },
-  {
-    "name": "race-condition-nicolas-aranda-robayna-alu01",
-    "total": null
-  },
-  {
-    "name": "race-condition-ivan-garcia-gonzalez-alu0101388786",
-    "total": null
-  },
-  {
-    "name": "race-condition-edwin-plasencia-hernandez-alu0101329888",
     "total": null
   },
   {

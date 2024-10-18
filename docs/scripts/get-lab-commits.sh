@@ -14,4 +14,4 @@ echo "Getting commits for lab $LAB"
 
 gh org-commits -o ULL-MII-SYTWS-2425    \
      -l $LAB \
-     -f ./sytws2425-teams.txt -t 2> /dev/null | jq -s '.[] | sort_by(.total) | reverse'
+     -f ./sytws2425-teams.txt -t 2> /dev/null | jq -s '.[] | sort_by(.total) | reverse' | tee $ROOT/src/.vuepress/labs/${LAB}.json

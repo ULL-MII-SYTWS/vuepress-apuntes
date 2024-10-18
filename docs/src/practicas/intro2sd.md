@@ -8,7 +8,7 @@ key: intro2sd
 layout: Practica
 order: 9
 prev: race-condition.md
-next: 
+next: jekyll-search.md
 rubrica:
   - "Se ha desplegado el sitio Web en GitHub pages usando Jekyll"
   - Se resumen correctamente los conceptos del capítulo
