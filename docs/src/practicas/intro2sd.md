@@ -48,9 +48,7 @@ Haga un resumen de los conceptos más importantes del capítulo y publíquelo co
 
 El template del que parte el repo de la asignación usa el tema [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
 
-## Pasos
-
-
+## Primeros Pasos
 
 - Haga `bundle install` para instalar las gemas necesarias. 
   - Si usa Codespaces y no se ejecutó correctamente el [.devcontainer/devcontainer.json](https://github.com/ULL-MII-SYTWS-2425/ull-mii-sytws-2425-intro2sd-intro2sd-template/blob/main/.devcontainer/devcontainer.json) deberá hacer lo mismo.
