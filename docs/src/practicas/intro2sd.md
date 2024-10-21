@@ -40,13 +40,32 @@ Puede encontrar el pdf y el HTML del libro en este enlace:
 
 para acceder al capítulo es conveniente que está conectado a la red de la ULL y al [PuntoQ](https://www.ull.es/servicios/biblioteca/servicios/puntoq/) de la BULL.
 
-## Objetivo
+## Tarea
 
 Haga un resumen de los conceptos más importantes del capítulo y publíquelo como un post usando [Jekyll](/temas/web/jekyll) y [GitHub Pages](https://pages.github.com/) para desplegar el sitio web con el informe.
 
 ## Tema
 
 El template del que parte el repo de la asignación usa el tema [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
+
+## Codespaces
+
+Si usa Codespaces
+
+- Haga `bundle install` para instalar las gemas necesarias si no se ejecuta correctamente desde el [.devcontainer/devcontainer.json](https://github.com/ULL-MII-SYTWS-2425/ull-mii-sytws-2425-intro2sd-intro2sd-template/blob/main/.devcontainer/devcontainer.json)
+- Haga [rake serve](https://github.com/ULL-MII-SYTWS-2425/ull-mii-sytws-2425-intro2sd-intro2sd-template/blob/main/Rakefile) para servir el sitio web
+- Abra una pestaña en el navegador con la URL que se le indica en el panel TERMINAL http://127.0.0.1:4001/intro2sd-template/ o en PUERTOS
+- Vaya a [_posts/2022-10-01-informe.md](https://github.com/ULL-MII-SYTWS-2425/ull-mii-sytws-2425-intro2sd-intro2sd-template/blob/main/_posts/2022-10-01-informe.md) y practique Liquid y Markdown
+- En el `_config.yml`:
+  - Cambie el [baseurl](/temas/web/jekyll.html#some-explanations)` en `_config.yml` para que contenga el apropiado para su repositorio en GitHub. 
+  - Cambie `author:` para que contenga su nombre,avatar, links, etc.
+  - Cambie `social:` para que contenga sus redes sociales
+  - Cambie `footer:` para que contenga sus links [Font Awesome](https://fontawesome.com/v4/)
+  - Cambie `minimal_mistakes_skin` a `plum`
+  - Vea la sección [collections](https://jekyllrb.com/docs/collections/)
+  - Vea la sección [defaults:](https://jekyllrb.com/docs/step-by-step/09-collections/#front-matter-defaults)
+- Pare y re-arranque el server con `rake serve` cuando cambie el `_config.yml`
+
 
 ## Despliegues
 

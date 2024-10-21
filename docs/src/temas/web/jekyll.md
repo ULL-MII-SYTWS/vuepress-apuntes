@@ -137,15 +137,9 @@ If your Jekyll site lives in `http://example.com/blog`, you have to set `site.ba
 
 See how assets are loaded in you head :
 
-::: v-pre
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-:::   
-
-that can also be :
-
-::: v-pre
+```html
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-:::    
+```   
 
 ### Working in different environments
 
