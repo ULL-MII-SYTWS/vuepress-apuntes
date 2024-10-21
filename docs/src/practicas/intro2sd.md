@@ -48,11 +48,13 @@ Haga un resumen de los conceptos más importantes del capítulo y publíquelo co
 
 El template del que parte el repo de la asignación usa el tema [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
 
-## Codespaces
+## Pasos
 
-Si usa Codespaces
 
-- Haga `bundle install` para instalar las gemas necesarias si no se ejecuta correctamente desde el [.devcontainer/devcontainer.json](https://github.com/ULL-MII-SYTWS-2425/ull-mii-sytws-2425-intro2sd-intro2sd-template/blob/main/.devcontainer/devcontainer.json)
+
+- Haga `bundle install` para instalar las gemas necesarias. 
+  - Si usa Codespaces y no se ejecutó correctamente el [.devcontainer/devcontainer.json](https://github.com/ULL-MII-SYTWS-2425/ull-mii-sytws-2425-intro2sd-intro2sd-template/blob/main/.devcontainer/devcontainer.json) deberá hacer lo mismo.
+  - Si tiene problemas con la instalación de las gemas, puede intentar borrar el `Gemfile.lock` o bien hacer `bundle update` y volver a hacer `bundle install` .
 - Haga [rake serve](https://github.com/ULL-MII-SYTWS-2425/ull-mii-sytws-2425-intro2sd-intro2sd-template/blob/main/Rakefile) para servir el sitio web
 - Abra una pestaña en el navegador con la URL que se le indica en el panel TERMINAL http://127.0.0.1:4001/intro2sd-template/ o en PUERTOS
 - Vaya a [_posts/2022-10-01-informe.md](https://github.com/ULL-MII-SYTWS-2425/ull-mii-sytws-2425-intro2sd-intro2sd-template/blob/main/_posts/2022-10-01-informe.md) y practique Liquid y Markdown
