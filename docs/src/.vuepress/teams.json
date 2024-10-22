@@ -27,6 +27,27 @@
           },
           {
             "node": {
+              "name": "claudia-torres-cruz-alu0101418285",
+              "members": {
+                "totalCount": 1,
+                "edges": [
+                  {
+                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/ClaudiaTC02",
+                    "node": {
+                      "name": "Claudia",
+                      "url": "https://github.com/ClaudiaTC02",
+                      "email": "claudiatcruz2002@gmail.com",
+                      "login": "ClaudiaTC02",
+                      "avatarUrl": "https://avatars.githubusercontent.com/u/25204731?u=1ed5e5a0cbe2cadb8f2d0d552835522c0368ae1c&v=4"
+                    }
+                  }
+                ]
+              },
+              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/claudia-torres-cruz-alu0101418285"
+            }
+          },
+          {
+            "node": {
               "name": "daniel-jorge-acosta-alu0101239187",
               "members": {
                 "totalCount": 1,
@@ -50,19 +71,8 @@
             "node": {
               "name": "daniel_felipe-gomez-alu0101438139",
               "members": {
-                "totalCount": 1,
-                "edges": [
-                  {
-                    "memberAccessUrl": "https://github.com/orgs/ULL-MII-SYTWS-2425/people/DanielFelipeGomez",
-                    "node": {
-                      "name": "Daniel Felipe Gómez Aristizabal",
-                      "url": "https://github.com/DanielFelipeGomez",
-                      "email": "",
-                      "login": "DanielFelipeGomez",
-                      "avatarUrl": "https://avatars.githubusercontent.com/u/72305356?u=44dbe435e5e1f97fcc84a1cadab6403610d99b5f&v=4"
-                    }
-                  }
-                ]
+                "totalCount": 0,
+                "edges": []
               },
               "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/daniel_felipe-gomez-alu0101438139"
             }
@@ -191,16 +201,6 @@
                 ]
               },
               "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/rebeca-rodriguez-alu0101394763"
-            }
-          },
-          {
-            "node": {
-              "name": "rebeca-rodriguez-rodriguez-alu0101394763",
-              "members": {
-                "totalCount": 0,
-                "edges": []
-              },
-              "url": "https://github.com/orgs/ULL-MII-SYTWS-2425/teams/rebeca-rodriguez-rodriguez-alu0101394763"
             }
           },
           {
