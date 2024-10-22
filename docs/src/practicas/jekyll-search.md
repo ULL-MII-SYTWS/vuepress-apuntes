@@ -1,12 +1,12 @@
 ---
 title: "Jekyll Search"
 published: true
-campus: # to fill
+campus: https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=29008
 key: intro2sd # not needed. They reuse the repo from the jekyll assignment
 layout: Practica
 order: 10
 prev: intro2sd.md
-next: #race-condition.md
+next: nextra.md
 rubrica:
   - Busca en todos los ficheros, no solo los  de los posts sino también los de las páginas
   - Admite expresiones regulares
