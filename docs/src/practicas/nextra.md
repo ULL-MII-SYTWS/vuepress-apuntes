@@ -40,6 +40,10 @@ Cree un web site con nextra siguiendo el tutorial en
 
 Véase el tutorial en la sección [First Steps](/temas/web/nextra/first-steps) de estos apuntes.
 
+## MDX
+
+Véase el tutorial en la sección [MDX](/temas/web/nextra/mdx) de estos apuntes.
+
 ## Tutorial en PL
 
 Un  tutorial del profesor está en:
@@ -47,7 +51,7 @@ Un  tutorial del profesor está en:
 - <a href="https://ull-pl.vercel.app/nextra-playground" target="_blank">Learning and Playing with Nextra</a>.
 
 ::: warning
-Mis apuntes han sido hechos con la versión 2.13 de nextra. La versióna a 2024-10 de nextra es la 3.1.
+Mis apuntes han sido hechos con la versión 2.13 de nextra. La versión a 2024-10 de nextra es la 3.1.
 
 En los apuntes de PL (2024-10): 
 

@@ -1,3 +1,7 @@
+---
+prev: /practicas/nextra.md
+next: mdx.md
+---
 # Comented reading of "Get Started tutorial"
 This are my comments on the [Get Started Tutorial of Nextra for the docs theme](https://nextra.site/docs/docs-theme/start).
 
@@ -154,19 +158,6 @@ npm run build  58,57s user 8,77s system 193% cpu 34,798 total
 
 But the `start` is quite fast and there is no recompile of the pages.
 
-If, like me below, you find a port in use, you can kill the process with `lsof -i :3000` and `kill -9 PID`:
-
-```sh
-$ git:(main) ✗ npm run start
- ⨯ Failed to start server
-Error: listen EADDRINUSE: address already in use :::3000
-$ git:(main) ✗ lsof -i :3000
-COMMAND   PID                 USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-node    20891 casianorodriguezleon   20u  IPv6 0xf56f570bd023d5de      0t0  TCP *:hbci (LISTEN)
-$ git:(main) ✗ kill -9 20891
-$ git:(main) ✗ lsof -i :3000
-```
-
 And now you can `start` the server:
 
 ```sh
@@ -178,6 +169,21 @@ $ git:(main) ✗ npm run start
  ✓ Ready in 817ms
 ```
 :::
+
+::: danger Finding a Port in Use and Killing the Process
+If you find a port is in use, you can find the process with `lsof -i :3000` and then kill it with `kill -9 PID`:
+
+```sh
+$ git:(main) ✗ npm run start
+ ⨯ Failed to start server
+Error: listen EADDRINUSE: address already in use :::3000
+$ git:(main) ✗ lsof -i :3000
+COMMAND   PID                 USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+node    20891 casianorodriguezleon   20u  IPv6 0xf56f570bd023d5de      0t0  TCP *:hbci (LISTEN)
+$ git:(main) ✗ kill -9 20891
+$ git:(main) ✗ lsof -i :3000
+```
+::: 
 
 ### Add Next.js Config
 
@@ -209,7 +215,7 @@ Véanse los ejemplos:
 Lastly, create the corresponding `theme.config.jsx` file in your project’s root
 directory. This will be used to configure the Nextra Docs theme:
 
-```jsx filename="theme.config.jsx"
+```jsx 
 export default {
   logo: <span>My Nextra Documentation</span>,
   project: {
@@ -220,13 +226,13 @@ export default {
 ```
 
 Full theme configurations can be found
-[here](/docs/docs-theme/theme-configuration).
+[here](https://nextra.site/docs/docs-theme/theme-configuration).
 
 ### Ready to Go!
 
 Now, you can create your first MDX page as `pages/index.mdx`:
 
-```mdx filename="pages/index.mdx"
+```md
 # Welcome to Nextra
 
 Hello, world!
@@ -237,6 +243,6 @@ developing the project! 🎉
 
 
 
-Next, check out the next section to learn about organizing the documentation
-structure and configuring the website theme:
+Next, check out the [Page Configuration section](https://nextra.site/docs/docs-theme/page-configuration) in the Nextra docs 
+to learn about organizing the documentation structure and configuring the website theme:
 
