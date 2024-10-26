@@ -1,6 +1,6 @@
 ---
-prev: /practicas/nextra.md
-next: 
+prev: /temas/web/nextra/first-steps
+next: /temas/web/nextra/theme-configuration
 ---
 
 # MDX: Markdown for the component era  <img alt="MDX" src="https://mdx-logo.now.sh" width="60" />

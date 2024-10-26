@@ -2,7 +2,7 @@
 prev: /practicas/nextra.md
 next: mdx.md
 ---
-# Comented reading of "Get Started tutorial"
+# Nextra: Comented reading of "Get Started tutorial"
 This are my comments on the [Get Started Tutorial of Nextra for the docs theme](https://nextra.site/docs/docs-theme/start).
 
 > Nextra Docs Theme is a theme that includes almost everything you need to build a
@@ -243,6 +243,9 @@ developing the project! 🎉
 
 
 
-Next, check out the [Page Configuration section](https://nextra.site/docs/docs-theme/page-configuration) in the Nextra docs 
+Next, check out 
+
+1. The [MDX section](mdx)
+2. the [Page Configuration section](https://nextra.site/docs/docs-theme/page-configuration) in the Nextra docs 
 to learn about organizing the documentation structure and configuring the website theme:
 

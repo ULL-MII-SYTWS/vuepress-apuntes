@@ -44,6 +44,10 @@ Véase el tutorial en la sección [First Steps](/temas/web/nextra/first-steps) d
 
 Véase el tutorial en la sección [MDX](/temas/web/nextra/mdx) de estos apuntes.
 
+## Theme Configuration
+
+Véase el tutorial en la sección [Theme Configuration](/temas/web/nextra/theme-configuration) de estos apuntes.
+
 ## Tutorial en PL
 
 Un  tutorial del profesor está en:
