@@ -373,7 +373,7 @@ export default {
 In addition, you can customize the sidebar title using the `sidebarTitle`
 property in your front matter:
 
-```mdx 
+```md 
 ---
 sidebarTitle: Getting Started 🚀
 ---

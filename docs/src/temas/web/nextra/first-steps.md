@@ -3,7 +3,8 @@ prev: /practicas/nextra.md
 next: mdx.md
 ---
 # Nextra: Comented reading of "Get Started tutorial"
-This are my comments on the [Get Started Tutorial of Nextra for the docs theme](https://nextra.site/docs/docs-theme/start).
+These are my comments on the [Get Started Tutorial of Nextra for the docs theme](https://nextra.site/docs/docs-theme/start).
+Read the original tutorial for a complete guide.
 
 > Nextra Docs Theme is a theme that includes almost everything you need to build a
 > modern documentation website. It includes a top navigation bar, a search bar, a
@@ -20,28 +21,25 @@ clicking the link:
 
 [![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
 
-Here is the actual code [they have written for the button](https://github.com/shuding/nextra/blob/main/docs/pages/docs/docs-theme/start.mdx#quick-start-from-template):
+Here is the actual code [for the button](https://github.com/shuding/nextra/blob/main/docs/pages/docs/docs-theme/start.mdx#quick-start-from-template) above:
 
 ```markdown
 You can start by creating your own Nextra site and deploying to Vercel by
 clicking the link:
 
-<a
-  className="mt-3 inline-flex"
-  target="_blank"
-  href="https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false"
->
-  ![](https://vercel.com/button)
-</a>
+[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
 ```
+
+It is a request to Vercel with path `/new/clone`
+and two query parameters: `s` and `showOptionalTeamCreation`.
+
+- `s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template`: This query parameter specifies the source repository to clone, URL-encoded.
+- `showOptionalTeamCreation=false`: This query parameter likely controls whether the optional team creation step is shown during the deployment process.
 
 > Vercel will fork the [Nextra Docs template](https://github.com/shuding/nextra-docs-template) and
 > deploy the site for you. Once done, every commit in the repository will be
 > deployed automatically.
 
-- The URL is a Vercel link that initiates the process of cloning a repository (https://github.com/shuding/nextra-docs-template) and deploying it on Vercel.
-- `s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template`: This query parameter specifies the source repository to clone, URL-encoded.
-- `showOptionalTeamCreation=false`: This query parameter likely controls whether the optional team creation step is shown during the deployment process.
 
 This worked smoothly. I was able to deploy the site to Vercel with a single click.
 
@@ -62,6 +60,48 @@ Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main defined in /Users/casia
 ```
 
 See [issue 85](https://github.com/shuding/nextra-docs-template/issues/85) for more details.
+
+
+This is due to the fact that the `package.json` file of the template uses the latest version of Nextra:
+
+```js
+➜  nextra-docs-template git:(main) jq '.dependencies' package.json 
+{
+  "next": "^13.0.6",
+  "nextra": "latest",
+  "nextra-theme-docs": "latest",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0"
+}
+```
+If we replace the `"latest"`  with older enough versions of `nextra` and `nextra-theme-docs`:
+
+
+```js
+➜  nextra-docs-template git:(main) jq '.dependencies' package.json
+{
+  "next": "^13.0.6",
+  "nextra": "^2.13.2",
+  "nextra-theme-docs": "^2.13.2",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0"
+}
+```
+
+we can run the site with no problems:
+
+```sh
+➜  nextra-docs-template git:(main) ✗ npm i
+added 407 packages, and audited 408 packages in 26s
+➜  nextra-docs-template git:(main) ✗ npm run dev
+> nextra-docs-template@0.0.1 dev
+> next dev
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+/bin/sh: pnpm: command not found
+  - Local:        http://localhost:3002
+ ✓ Ready in 4.2s
+```
 
 ## Start as New Project
 
@@ -182,6 +222,32 @@ COMMAND   PID                 USER   FD   TYPE             DEVICE SIZE/OFF NODE 
 node    20891 casianorodriguezleon   20u  IPv6 0xf56f570bd023d5de      0t0  TCP *:hbci (LISTEN)
 $ git:(main) ✗ kill -9 20891
 $ git:(main) ✗ lsof -i :3000
+```
+
+`lsof` (Lista de archivos abiertos, en español) es una herramienta de monitorización Unix 
+que se utiliza para mostrar todos los archivos que están abiertos por algún proceso, 
+incluyendo los sockets de red abiertos, tuberías, etc. La opción  `-i` lista los sockets abiertos.
+
+An Internet address is specified in the form (Items in square brackets are optional.):
+
+
+            [46][protocol][@hostname|hostaddr][:service|port]
+
+where:
+- 46 specifies the IP version, IPv4 or IPv6 that applies to the following address. '6' may be be specified only if the UNIX dialect supports IPv6.  If neither '4' nor '6' is specified, the following address applies to all IP versions.
+- protocol is a protocol name - TCP, UDP
+- hostname is an Internet host name.  Unless a specific IP version is specified, open network files associated with host names of all versions will be selected.
+- hostaddr is a numeric Internet IPv4 address in dot form; or an IPv6 numeric address in colon form, enclosed in brackets, if the UNIX dialect supports IPv6.  When an IP version is selected, only its numeric addresses may be specified.
+- service is an /etc/services name - e.g., smtp - or a list of them.
+- port is a port number, or a list of them.
+
+Example:
+  
+```sh
+➜  docs git:(main) ✗ lsof -i @localhost:3000
+COMMAND     PID                 USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+Google     1393 casianorodriguezleon   87u  IPv6 0xbfcd493dfd046e84      0t0  TCP localhost:61238->localhost:hbci (ESTABLISHED)
+node      11268 casianorodriguezleon   24u  IPv6 0xa9d1776311b89c55      0t0  TCP localhost:hbci->localhost:61238 (ESTABLISHED)
 ```
 ::: 
 
