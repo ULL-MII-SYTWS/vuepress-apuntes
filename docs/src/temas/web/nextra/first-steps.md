@@ -234,20 +234,22 @@ An Internet address is specified in the form (Items in square brackets are optio
             [46][protocol][@hostname|hostaddr][:service|port]
 
 where:
-- 46 specifies the IP version, IPv4 or IPv6 that applies to the following address. '6' may be be specified only if the UNIX dialect supports IPv6.  If neither '4' nor '6' is specified, the following address applies to all IP versions.
-- protocol is a protocol name - TCP, UDP
-- hostname is an Internet host name.  Unless a specific IP version is specified, open network files associated with host names of all versions will be selected.
-- hostaddr is a numeric Internet IPv4 address in dot form; or an IPv6 numeric address in colon form, enclosed in brackets, if the UNIX dialect supports IPv6.  When an IP version is selected, only its numeric addresses may be specified.
-- service is an /etc/services name - e.g., smtp - or a list of them.
-- port is a port number, or a list of them.
+- **46** specifies the IP version, IPv4 or IPv6 that applies to the following address. '6' may be be specified only if the UNIX dialect supports IPv6.  If neither '4' nor '6' is specified, the following address applies to all IP versions.
+- **protocol** is a protocol name - TCP, UDP
+- **hostname** is an Internet host name.  Unless a specific IP version is specified, open network files associated with host names of all versions will be selected.
+- **hostaddr** is a numeric Internet IPv4 address in dot form; or an IPv6 numeric address in colon form, enclosed in brackets, if the UNIX dialect supports IPv6.  When an IP version is selected, only its numeric addresses may be specified.
+- **service** is an /etc/services name - e.g., smtp - or a list of them.
+- **port** is a port number, or a list of them.
 
 Example:
   
 ```sh
-➜  docs git:(main) ✗ lsof -i @localhost:3000
+➜  docs git:(main) ✗ lsof -i @localhost:3000-3004                    
 COMMAND     PID                 USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+Google     1393 casianorodriguezleon   54u  IPv6 0x1574da25a717e5c5      0t0  TCP localhost:61701->localhost:exlm-agent (ESTABLISHED)
 Google     1393 casianorodriguezleon   87u  IPv6 0xbfcd493dfd046e84      0t0  TCP localhost:61238->localhost:hbci (ESTABLISHED)
 node      11268 casianorodriguezleon   24u  IPv6 0xa9d1776311b89c55      0t0  TCP localhost:hbci->localhost:61238 (ESTABLISHED)
+node      65745 casianorodriguezleon   43u  IPv6  0x853056edac00b72      0t0  TCP localhost:exlm-agent->localhost:61701 (ESTABLISHED)
 ```
 ::: 
 
