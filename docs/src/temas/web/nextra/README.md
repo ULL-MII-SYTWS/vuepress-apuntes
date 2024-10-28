@@ -18,12 +18,15 @@ sidebar: false
 
 ## Examples of Nextra Sites
 
-- [See the nextra/docs)](https://github.com/gh-cli-for-education/nextra/tree/casiano/docs) folder at branch `casiano` at the fork [gh-cli-for-education/nextra](https://github.com/gh-cli-for-education/nextra/) of the original [/shudding/nextra](https://github.com/shuding/nextra) repo. The branch `casiano` has additional comments.
-- [Folder examples](https://github.com/gh-cli-for-education/nextra/tree/casiano/examples) containing:
+- See the nextra documentation in the [nextra/docs](https://github.com/gh-cli-for-education/nextra/tree/casiano/docs) folder at branch `casiano` at the fork [gh-cli-for-education/nextra](https://github.com/gh-cli-for-education/nextra/) of the original [/shudding/nextra](https://github.com/shuding/nextra) repo. 
+- See the [Folder examples](https://github.com/gh-cli-for-education/nextra/tree/casiano/examples) at branch `casiano` at the fork [gh-cli-for-education/nextra](https://github.com/gh-cli-for-education/nextra/) containing:
   - [blog](https://github.com/gh-cli-for-education/nextra/tree/casiano/examples/blog)
   - [docs](https://github.com/gh-cli-for-education/nextra/tree/casiano/examples/docs)
   - [swr-site](https://github.com/gh-cli-for-education/nextra/tree/casiano/examples/swr-site) 
+  - See my comments in the [README.md](https://github.com/gh-cli-for-education/nextra/blob/casiano/README.md#development-1) on how to serve locally those examples.
 - [PL site](https://ull-pl.vercel.app/)
+- [GraphQL site](https://github.com/graphql/graphql.github.io/tree/source) and its deployment [GraphQL](https://graphql.org/)
+- [Nextra ShowCase](https://nextra.site/showcase): A list of open source projects powered by Nextra
 
 ### Actual SWR Site 
 
