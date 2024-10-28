@@ -113,6 +113,7 @@ To create a Nextra Docs site manually, you have to install **Next.js**,
 the following command to install the dependencies:
 
 ```sh 
+npm init -f
 npm i next react react-dom nextra nextra-theme-docs
 ```
 
