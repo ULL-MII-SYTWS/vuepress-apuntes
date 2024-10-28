@@ -26,4 +26,7 @@ See also the actual SWR
 
 **SWR (`stale-while-revalidate`** is a cache invalidation strategy) is a React Hooks library for remote data fetching. 
 
-See an example of use in the [PL site in the components/teams.jsx](https://github.com/crguezl/pl-nextra/blob/main/components/teams.jsx) file
+See an example of use in the [PL site in the components/teams.jsx](https://github.com/crguezl/pl-nextra/blob/main/components/teams.jsx) file 
+(Remember to have the credentials updated in the `.env.local` file). 
+
+[![images/nextra/swr-pl-teams.png](/images/nextra/swr-pl-teams.png)](https://ull-pl.vercel.app/user)
