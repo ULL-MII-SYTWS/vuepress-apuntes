@@ -30,7 +30,7 @@ rubrica:
 
 # Práctica {{ $frontmatter.title }}
 
-[Nextra](https://nextra.site/docs) is a framework on top of Next.js, that lets you build content focused websites. It has all the great features from Next.js, plus extra power to create Markdown-based content with ease.
+[Nextra](/temas/web/nextra) is a framework on top of Next.js, that lets you build content focused websites. It has all the great features from Next.js, plus extra power to create Markdown-based content with ease.
 
 Cree un web site con nextra siguiendo el tutorial en 
 
