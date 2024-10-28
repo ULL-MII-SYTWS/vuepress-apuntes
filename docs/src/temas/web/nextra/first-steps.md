@@ -238,8 +238,8 @@ where:
 - **protocol** is a protocol name - TCP, UDP
 - **hostname** is an Internet host name.  Unless a specific IP version is specified, open network files associated with host names of all versions will be selected.
 - **hostaddr** is a numeric Internet IPv4 address in dot form; or an IPv6 numeric address in colon form, enclosed in brackets, if the UNIX dialect supports IPv6.  When an IP version is selected, only its numeric addresses may be specified.
-- **service** is an /etc/services name - e.g., smtp - or a list of them.
-- **port** is a port number, or a list of them.
+- **service** is an /etc/services name - e.g., smtp - *or a list of them*.
+- **port** is a port number, *or a list of them*.
 
 Example:
   
@@ -258,15 +258,18 @@ node      65745 casianorodriguezleon   43u  IPv6  0x853056edac00b72      0t0  TC
 > Create the following `next.config.js` file in your project’s root directory:
 
 ```js 
-const withNextra = require('nextra')({
+import nextra from 'nextra'
+ 
+const withNextra = nextra({
   theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.jsx'
+  themeConfig: './theme.config.jsx',
+  latex: true, // Enable LaTeX support!
 })
-
-module.exports = withNextra()
-
+ 
+export default withNextra()
+ 
 // If you have other Next.js configurations, you can pass them as the parameter:
-// module.exports = withNextra({ /* other next.js config */ })
+// export default withNextra({ /* other next.js config */ })
 ```
 
 > With the above configuration, Nextra can handle Markdown files in your Next.js
@@ -280,7 +283,7 @@ Véanse los ejemplos:
   
 ### Create Docs Theme Config
 
-Lastly, create the corresponding `theme.config.jsx` file in your project’s root
+> Lastly, create the corresponding `theme.config.jsx` file in your project’s root
 directory. This will be used to configure the Nextra Docs theme:
 
 ```jsx 
@@ -293,27 +296,67 @@ export default {
 }
 ```
 
+See the [theme.config.jsx](https://github.com/crguezl/pl-nextra/blob/main/theme.config.tsx) file in the teacher's notes for [the PL web site](https://ull-pl.vercel.app/).
+
 Full theme configurations can be found
 [here](https://nextra.site/docs/docs-theme/theme-configuration).
 
 ### Ready to Go!
 
-Now, you can create your first MDX page as `pages/index.mdx`:
+> Now, you can create your first MDX page as `pages/index.mdx`:
 
-```md
-# Welcome to Nextra
+````md
+---
+title: "Introduction"
+description: "Satori (悟り) is a Japanese Buddhist term for awakening, comprehension, understanding"
+password: "Irotas"
+---
+import { useConfig } from 'nextra-theme-docs'
+ 
+export const getFrontMatter = () => {
+    return useConfig().frontMatter
+}
 
-Hello, world!
+# {getFrontMatter().title}
+ 
+Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+
+## Accesing frontmatter
+
+- The frontmatter `description` is: *{getFrontMatter().description}*
+- The frontmatter `password` is: *{getFrontMatter().password}*
+
+## Code blocks
+
+```js filename="demo.js" copy {3} showLineNumbers
+let a = 1;
+if (a == 1) {
+  console.log(a);
+}
 ```
 
+{/* Comment example: The documentation is available at [https://nextra.site](https://nextra.site). */}
+
+## JS expressions
+
+- Current year: {new Date().getFullYear()}
+- $$\LaTeX{}$$ and JavaScript expressions: $$2 \times \pi =$$ {2 * Math.PI}
+````
+
 And run the `next` or `next dev` command specified in `package.json`to start
-developing the project! 🎉
+developing the project! 🎉. The page will look like this:
+
+| Look of the former mdx page    |    
+| --- |
+| ![src/.vuepress/public/images/nextra/first-steps-nextra.png](/images/nextra/first-steps-nextra.png) |
+|     |
 
 
+## Next Steps
 
 Next, check out 
 
 1. The [MDX section](mdx)
-2. the [Page Configuration section](https://nextra.site/docs/docs-theme/page-configuration) in the Nextra docs 
-to learn about organizing the documentation structure and configuring the website theme:
+2. The [Theme Configuration section](theme-configuration) in this chapter 
+to learn about organizing the documentation structure and configuring the website theme
 

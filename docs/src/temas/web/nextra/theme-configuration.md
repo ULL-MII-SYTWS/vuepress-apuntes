@@ -1,21 +1,38 @@
 ---
 prev: /temas/web/nextra/first-steps
-next: /practicas/nextra
+next: /temas/web/nextra/
 ---
 # Theme Configuration
 
-The theme is configured with the
-[theme.config.jsx](https://nextra.site/docs/docs-theme/start#create-docs-theme-config) file. It
+The theme is configured with the 
+[theme.config.jsx](https://nextra.site/docs/docs-theme/theme-configuration) file. It
 should export an object that contains your configurations, for example:
 
 ```jsx 
 export default {
+  logo: <>
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M14.683 14.828a4.055 4.055 0 0 1-1.272.858a4.002 4.002 0 0 1-4.875-1.45l-1.658 1.119a6.063 6.063 0 0 0 1.621 1.62a5.963 5.963 0 0 0 2.148.903a6.035 6.035 0 0 0 3.542-.35a6.048 6.048 0 0 0 1.907-1.284c.272-.271.52-.571.734-.889l-1.658-1.119a4.147 4.147 0 0 1-.489.592z M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10s10-4.486 10-10S17.514 2 12 2zm0 2c2.953 0 5.531 1.613 6.918 4H5.082C6.469 5.613 9.047 4 12 4zm0 16c-4.411 0-8-3.589-8-8c0-.691.098-1.359.264-2H5v1a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2h2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-1h.736c.166.641.264 1.309.264 2c0 4.411-3.589 8-8 8z"
+      />
+    </svg>
+    <span style={{ marginLeft: '.4em', fontWeight: 800 }}>
+      My Cool Project
+    </span>
+  </>,
+  logoLink: '/advanced/satori', // Link to go to when clicking the logo
   project: {
-    link: 'https://github.com/shuding/nextra'
+    link: 'https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865'
   },
-  logo: <b>Project</b>
+  docsRepositoryBase: 'https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/main/'
+  // ... other theme options
 }
 ```
+
+See also the examples:
+
+- [examples/docs/src/theme.config.jsx](https://github.com/shuding/nextra/blob/v3/examples/docs/src/theme.config.jsx) in the Nextra repository.
 
 Detailed information for each option is listed below.
 
@@ -27,10 +44,9 @@ Set the repository URL of the documentation. It’s used to generate the
 “[Edit this page](#edit-link)” link and the “[Feedback](#feedback-link)” link.
 
 
-|                    |          |                                     |
+| Option | Type | Description |
 | ------------------ | -------- | ----------------------------------- |
 | docsRepositoryBase | `string` | URL of the documentation repository |
-
 
 #### Specify a Path
 
@@ -44,6 +60,15 @@ export default {
 }
 ```
 
+Here is another example:
+
+```jsx
+export default {
+  docsRepositoryBase: 'https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/main/',
+}
+```
+
+
 Then Nextra will automatically generate the correct file path for all pages.
 
 ### Head Tags
@@ -53,7 +78,7 @@ favicon, etc.
 
 
 
-|      |                                |                                             |
+| Option | Type | Description |
 | ---- | ------------------------------ | ------------------------------------------- |
 | head | `React.ReactNode \|  React.FC` | Component that renders the `<head>` content |
 
@@ -116,7 +141,7 @@ Customize the theme behavior of the website.
 
 
 
-|            |           |                                                                                                       |
+| Option | Type | Description |
 | ---------- | --------- | ----------------------------------------------------------------------------------------------------- |
 | darkMode   | `boolean` | Show or hide the dark mode toggle button                                                              |
 | nextThemes | `object`  | Configuration for the [next-themes](https://github.com/pacocoursey/next-themes#themeprovider) package |
@@ -130,7 +155,7 @@ saturation values for light and dark themes.
 
 
 
-|                       |                                             |                                           |
+| Option | Type | Description |
 | --------------------- | ------------------------------------------- | ----------------------------------------- |
 | color.hue             | `number \| { dark: number; light: number }` | The hue of the primary theme color        |
 | color.saturation      | `number \| { dark: number; light: number }` | The saturation of the primary theme color |
@@ -147,7 +172,7 @@ The logo of the website rendered on the navbar. It can be a React node or a
 function component.
 
 
-|          |                               |                     |
+| Option | Type | Description |
 | -------- | ----------------------------- | ------------------- |
 | logo     | `React.ReactNode \| React.FC` | Logo of the website |
 | logoLink | `boolean \| string`           | Link of the logo    |
@@ -182,7 +207,7 @@ it links to Nextra’s GitHub repository.
 
 
 
-|              |                               |                                     |
+| Option | Type | Description |
 | ------------ | ----------------------------- | ----------------------------------- |
 | project.link | `string`                      | URL of the project homepage         |
 | project.icon | `React.ReactNode \| React.FC` | Icon or element of the project link |
@@ -216,7 +241,7 @@ navbar.
 
 
 
-|           |                               |                                  |
+| Option | Type | Description |
 | --------- | ----------------------------- | -------------------------------- |
 | chat.link | `string`                      | URL of the chat link             |
 | chat.icon | `React.ReactNode \| React.FC` | Icon or element of the chat link |
@@ -253,7 +278,7 @@ to learn how to add custom menus or links to the navbar.
 
 
 
-|                    |                                                                                  |                  |
+| Option | Type | Description |
 | ------------------ | -------------------------------------------------------------------------------- | ---------------- |
 | search.component   | `React.ReactNode \|`<br/>`React.FC<{ className?: string; directories: Item[] }>` |                  |
 | search.emptyResult | `React.ReactNode \| React.FC`                                                    | Not found text   |
@@ -270,7 +295,7 @@ notice.
 
 
 
-|                      |                               |                                                         |
+| Option | Type | Description |
 | -------------------- | ----------------------------- | ------------------------------------------------------- |
 | `banner.dismissible` | `boolean`                     | Closable banner or not                                  |
 | `banner.key`         | `string`                      | Storage key to keep the banner state (dismissed or not) |
@@ -312,7 +337,7 @@ Customize the entire navbar component.
 
 
 
-|                     |                                            |                                       |
+| Option | Type | Description |
 | ------------------- | ------------------------------------------ | ------------------------------------- |
 | navbar.component    | `React.ReactNode \| React.FC<NavBarProps>` | Navbar component                      |
 | navbar.extraContent | `React.ReactNode \| React.FC`              | Display extra content after last icon |
@@ -323,7 +348,7 @@ Customize the entire navbar component.
 
 
 
-|                                  |           |                                                                                                 |
+| Option | Type | Description |
 | -------------------------------- | --------- | ----------------------------------------------------------------------------------------------- |
 | sidebar.defaultMenuCollapseLevel | `number`  | Specifies the folder level at which the menu on the left is collapsed by default. Defaults to 2 |
 | sidebar.autoCollapse             | `boolean` | If true, automatically collapse inactive folders above `defaultMenuCollapseLevel`               |
@@ -396,7 +421,7 @@ code blocks.
 
 
 
-|            |                            |                       |
+| Option | Type | Description |
 | ---------- | -------------------------- | --------------------- |
 | components | `Record<string, React.FC>` | Custom MDX components |
 
@@ -408,7 +433,7 @@ The default writing direction of the website.
 
 
 
-|           |                  |                           |
+| Option | Type | Description |
 | --------- | ---------------- | ------------------------- |
 | direction | `"ltr" \| "rtl"` | Default writing direction |
 
@@ -421,7 +446,7 @@ render a comment section, a newsletter form, or any other type of content.
 
 
 
-|      |                                           |                           |
+| Option | Type | Description |
 | ---- | ----------------------------------------- | ------------------------- |
 | main | `React.FC<{ children: React.ReactNode }>` | Component of main content |
 
@@ -436,7 +461,7 @@ navigating between headings.
 
 
 
-|                  |                                         |                                                          |
+| Option | Type | Description |
 | ---------------- | --------------------------------------- | -------------------------------------------------------- |
 | toc.component    | `React.ReactNode \| React.FC<TOCProps>` | Custom renderer of the TOC                               |
 | toc.extraContent | `React.ReactNode \| React.FC`           | Display extra content below the TOC content              |
@@ -459,7 +484,7 @@ Show an “Edit this page” link on the page that points to the file URL on Git
 
 
 
-|                    |                                                                                          |                                |
+| Option | Type | Description |
 | ------------------ | ---------------------------------------------------------------------------------------- | ------------------------------ |
 | editLink.content   | `React.ReactNode \| React.FC`                                                            | Content of the edit link       |
 | editLink.component | `React.FC<{ children: React.ReactNode; className?: string; filePath?: string }> \| null` | Customized edit link component |
@@ -479,7 +504,7 @@ the docs repository, with the current website title prefilled:
 
 
 
-|                  |                               |                                                                                           |
+| Option | Type | Description |
 | ---------------- | ----------------------------- | ----------------------------------------------------------------------------------------- |
 | feedback.content | `React.ReactNode \| React.FC` | Content of the feedback button                                                            |
 | feedback.labels  | `string`                      | Labels that can be added to the new created GitHub issue                                  |
@@ -500,7 +525,7 @@ navigating between pages.
 
 
 
-|                 |                     |                                          |
+| Option | Type | Description |
 | --------------- | ------------------- | ---------------------------------------- |
 | navigation      | `boolean \| object` | Enable or disable navigation link        |
 | navigation.prev | `boolean`           | Enable or disable the previous page link |
@@ -526,7 +551,7 @@ of the content.
 
 
 
-|              |                                                    |                                           |
+| Option | Type | Description |
 | ------------ | -------------------------------------------------- | ----------------------------------------- |
 | gitTimestamp | `React.ReactNode \| React.FC<{ timestamp: Date }>` | Component to render the last updated info |
 
@@ -539,7 +564,7 @@ default footer, or fully customize it with a custom component.
 
 
 
-|                  |                                                  |                                 |
+| Option | Type | Description |
 | ---------------- | ------------------------------------------------ | ------------------------------- |
 | footer.content   | `React.ReactNode \| React.FC`                    | Content of the footer component |
 | footer.component | `React.ReactNode \| React.FC<{ menu: boolean }>` | Customized footer component     |
@@ -571,7 +596,7 @@ export default {
 
 
 
-|                        |                                                                             |                                      |
+| Option | Type | Description |
 | ---------------------- | --------------------------------------------------------------------------- | ------------------------------------ |
 | themeSwitch.component  | `React.ReactNode \|`<br/>`React.FC<{ lite?: boolean, className?: string }>` | Component to render the theme switch |
 | themeSwitch.useOptions | `ThemeOptions \| () => ThemeOptions`                                        | Options in the theme switch          |
@@ -602,7 +627,7 @@ Options to configure report of broken link on not found page.
 
 
 
-|                  |                   |                                                |
+| Option | Type | Description |
 | ---------------- | ----------------- | ---------------------------------------------- |
 | notFound.content | `ReactNode \| FC` | Default: `Submit an issue about broken link →` |
 | notFound.labels  | `string`          | Default: `bug`                                 |
@@ -616,7 +641,7 @@ Options to configure the language dropdown for
 
 
 
-|                        |                  |                                                        |
+| Option | Type | Description |
 | ---------------------- | ---------------- | ------------------------------------------------------ |
 | i18n[number].locale    | `string`         | Locale from `i18n.locales` field in `next.config` file |
 | i18n[number].name      | `string`         | Locale name in dropdown                                |
@@ -631,7 +656,7 @@ favicon of the website simply by using an emoji or character.
 
 
 
-|              |          |                                 |
+| Option | Type | Description |
 | ------------ | -------- | ------------------------------- |
 | faviconGlyph | `string` | The glyph to use as the favicon |
 
