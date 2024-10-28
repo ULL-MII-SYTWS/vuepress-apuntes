@@ -1,6 +1,6 @@
 ---
 sidebar: auto
-title: pnpm Workspace
+title: pnpm Workspaces
 ---
 
 # {{ $frontmatter.title }}
