@@ -22,6 +22,8 @@ rubrica:
   -  Mermaid, 
   -  Using Components (MDX) y 
   -  useConfig
+  -  Ha hecho un despliegue en Vercel
+  -  "Ha hecho un fork the nextra y se ha familiarizado con el concepto de monorepo"
   - "Código de la práctica correcto y funciona"
   - "Informe bien elaborado"
   - "Kanban Board project conteniendo las incidencias de la rúbrica"
@@ -32,14 +34,7 @@ rubrica:
 
 [Nextra](/temas/web/nextra) is a framework on top of Next.js, that lets you build content focused websites. It has all the great features from Next.js, plus extra power to create Markdown-based content with ease.
 
-Cree un web site con nextra siguiendo los tutoriales en 
-
-- [nextra.site](https://nextra.site/docs). 
-- [Nextra Docs Theme](https://nextra.site/docs/docs-theme/start)
-  
-## First Steps
-
-Véase el tutorial en la sección [Nextra](/temas/web/nextra/) de estos apuntes.
+Cree un web site con nextra siguiendo los tutoriales en la sección [Nextra](/temas/web/nextra/) de estos apuntes.
 
 ## MDX
 
@@ -49,38 +44,14 @@ Véase el tutorial en la sección [MDX](/temas/web/nextra/mdx) de estos apuntes.
 
 Véase el tutorial en la sección [Theme Configuration](/temas/web/nextra/theme-configuration) de estos apuntes.
 
-## Tutorial en PL
+## Introducción a los monorepos
 
-Un  tutorial del profesor está en:
+- [Introducción a los monorepos con Nextra monorepo](/temas/web/nextra/nextra-monorepo)
+- [pnpm workspaces](/temas/introduccion-a-javascript/pnpm/workspaces)
 
-- <a href="https://ull-pl.vercel.app/nextra-playground" target="_blank">Learning and Playing with Nextra</a>.
+## Examples of Nextra Sites
 
-::: warning
-Mis apuntes de PL han sido hechos con la versión 2.13 de nextra. La versión a 2024-10 de nextra es la 3.1.
-
-En los apuntes de PL (2024-10): 
-
-```
-➜  pl2324-apuntes git:(main) ✗ npm ls nextra
-pl-nextra@0.0.2 /Users/casianorodriguezleon/campus-virtual/2324/pl2324/pl2324-apuntes
-├─┬ nextra-theme-docs@2.13.2
-│ └── nextra@2.13.2 deduped
-└── nextra@2.13.2
-```
-
-En su tarea será algo así:
-
-```
-➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(main) ✗ npm ls nextra
-nextra-docs-template@1.0.0 /Users/casianorodriguezleon/campus-virtual/2425/sytws2425/practicas/nextra/nextra-casiano-rodriguez-leon-alu0100291865
-├─┬ nextra-theme-docs@3.1.0
-│ └── nextra@3.1.0 deduped
-└── nextra@3.1.0
-```
-:::
-
-Véase el blog de Dimitri Postolov [Nextra 3 – Your Favourite MDX Framework, Now on 🧪 Steroids](https://the-guild.dev/blog/nextra-3) for a list of the changes.
-
+Véase la sección [Examples of Nextra Sites](/temas/web/nextra/nextra-examples) de estos apuntes.
 
 ## Tareas
 
@@ -99,8 +70,8 @@ Deberá leer e incluir en su repo ejemplos como se describen en las secciones
 - Using Components  (MDX)
 - useConfig
 
-que se describen en el capítulo <a href="https://ull-pl.vercel.app/nextra-playground" target="_blank">Learning and Playing with Nextra</a>
-de los apuntes de PL del profesor.
+Puede apoyarse en el capítulo <a href="https://ull-pl.vercel.app/nextra-playground" target="_blank">Learning and Playing with Nextra</a>
+de los apuntes de PL.
 
 ## Despliegues
 
