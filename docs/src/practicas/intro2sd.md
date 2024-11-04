@@ -109,6 +109,13 @@ Para hacer una página 404 personalizada puede inspirarse en [la que se describe
 
 You can install the VSCode extension [Thunder Client](https://github.com/rangav/thunder-client-support) for testing the cat API.
 
+## Tips
+
+- Do not forget `site.baseurl`  in the links
+- [Using multiple configuration files](/temas/web/jekyll.html#working-in-different-environments)
+- `jekyll build -b, --baseurl <URL>`  Serve the website from the given base URL
+- Vercel and Netlify require the repo to be public
+
 ## Página Personal en GitHub
 
 Con lo aprendido desarrolle su página personal en GitHub (si no es que ya tiene una).
