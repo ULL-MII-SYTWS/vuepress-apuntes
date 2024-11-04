@@ -45,10 +45,11 @@ This worked smoothly. I was able to deploy the site to Vercel with a single clic
 
 ### Fork the Template
 
-> You can also manually fork the [template repository](https://github.com/shuding/nextra-docs-template).
+> You can also manually fork, for instance in your GitHub account the [template repository](https://github.com/shuding/nextra-docs-template).
 
 I forked the template but there were errors when running `npm run dev`. Seems to be out of sync
-with the current version of Nextra. Currently (October 2024) nextra-docs-template's files correspond to nextra@v2.
+with the current version of Nextra. 
+Currently (October 2024) nextra-docs-template's files correspond to nextra@v2 while the currrent version of nextra is v3.
 
 ```sh
 ➜  nextra-docs-template git:(main) node --version
@@ -74,6 +75,9 @@ This is due to the fact that the `package.json` file of the template uses the la
   "react-dom": "^18.2.0"
 }
 ```
+
+The error does not appear if you use `pnpm` since the file [pnpm-lock.yaml](https://github.com/crguezl/nextra-docs-template/blob/main/pnpm-lock.yaml#L11-L16) sets the depedency from `nextra@v2`.
+
 If we replace the `"latest"`  with older enough versions of `nextra` and `nextra-theme-docs`:
 
 
@@ -102,6 +106,11 @@ added 407 packages, and audited 408 packages in 26s
   - Local:        http://localhost:3002
  ✓ Ready in 4.2s
 ```
+
+::: tip
+See now the page  in [pages/another](https://raw.githubusercontent.com/shuding/nextra-docs-template/refs/heads/main/pages/another.mdx) 
+and get your first contact with [React Hooks](/react/hooks)
+:::
 
 ## Start as New Project
 

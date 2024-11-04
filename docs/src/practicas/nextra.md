@@ -34,6 +34,8 @@ rubrica:
 
 [Nextra](/temas/web/nextra) is a framework on top of Next.js, that lets you build content focused websites. It has all the great features from Next.js, plus extra power to create Markdown-based content with ease.
 
+## Introducción
+
 Cree un web site con nextra siguiendo los tutoriales en la sección [Nextra](/temas/web/nextra/) de estos apuntes.
 
 ## MDX
@@ -45,6 +47,8 @@ Véase el tutorial en la sección [MDX](/temas/web/nextra/mdx) de estos apuntes.
 Véase el tutorial en la sección [Theme Configuration](/temas/web/nextra/theme-configuration) de estos apuntes.
 
 ## Introducción a los monorepos
+
+Read the sections and follow the instructions:
 
 - [Introducción a los monorepos con Nextra monorepo](/temas/web/nextra/nextra-monorepo)
 - [pnpm workspaces](/temas/introduccion-a-javascript/pnpm/workspaces)
