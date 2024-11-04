@@ -42,6 +42,8 @@ Estos son algunos requisitos:
 * Lea el capítulo 2 del libro *Developing Information Systems*, editado by James Cadle y haga un resumen en un post del web site 
   * [Capítulo 2: Lifecycle types and their rationales](https://ebookcentral-proquest-com.accedys2.bbtk.ull.es/lib/bull-ebooks/detail.action?docID=1713962#)  por Lynda Girvan
 
+Véase un ejemplo en funcionamiento en [ull-mfp-aet.github.io/search/](https://ull-mfp-aet.github.io/search/).
+
 ## ¿Como hacerlo?
 
 1. Since Jekyll has no server side execution, we have to rely on storing all the required content in a single file and search our keyword from that file.
@@ -68,6 +70,7 @@ Véase [search.json](https://raw.githubusercontent.com/ULL-MII-SYTWS-1920/ull-mi
 
 ## Liquid template to generate at build time the _site/assets/src/search.json
 
+In your case  it is convenient to have this file in the `pages` 
 ::: v-pre
 ```liquid
 ---
@@ -110,14 +113,14 @@ sitemap: false
 ::: 
 
 You can find the 
-<a href="https://github.com/ULL-MFP-AET/ull-mfp-aet.github.io/blob/main/assets/src/search.json" target="_blank">source code at `/ULL-MFP-AET/ull-mfp-aet.github.io/main/assets/src/search.json`</a> 
+<a href="https://github.com/ULL-MFP-AET/ull-mfp-aet.github.io/blob/main/assets/src/search.json" target="_blank">source code</a> at `/ULL-MFP-AET/ull-mfp-aet.github.io/main/assets/src/search.json`
 
 ::: v-pre
 * `layout: null`: To disable layout in Jekyll.
 * `sitemap: false`: 
   - A Sitemap is an XML file that lists the URLs for a site. This allows search engines to crawl the site more efficiently and to find URLs that may be isolated from rest of the site's content. The [sitemaps protocol is a URL inclusion protocol](https://www.sitemaps.org/protocol.html) and complements `robots.txt`, a URL exclusion protocol. We can use the  front-matter to set the `sitemap` property to `false`
   - [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap) is a Jekyll plugin to silently generate a sitemaps.org compliant sitemap for your Jekyll site 
-* Liquid:` {% capture json %} ... {% endcapture %}` [Captures the string inside of the opening and closing tags and assigns it to a variable. Variables that you create using capture are stored as strings.](https://help.shopify.com/en/themes/liquid/tags/variable-tags#capture)
+* Liquid:` {% capture json %} ... {% endcapture %}` [Captures the string inside of the opening and closing tags and assigns it to a variable](https://shopify.dev/docs/api/liquid/tags/capture). Variables that you create using capture are stored as strings.
 * `{{ json | lstrip }}`: 
   - Filters are simple methods that modify the output of numbers, strings, variables and objects. They are placed within an output tag `{{ }}` and are denoted by a pipe character `|`.
   - [lstrip: Removes all whitespace (tabs, spaces, and newlines) from the left side of a string. It does not affect spaces between words.](https://shopify.github.io/liquid/filters/lstrip/)
@@ -129,10 +132,10 @@ You can find the
 * [iteration in Liquid](https://shopify.github.io/liquid/tags/iteration/)
 * `site.html_pages`: A subset of `site.pages` listing those which end in `.html`.
 
-Use the [Liquid Playground](https://liquidjs.com/playground.html) to test the Liquid expressions above.
+Use the [Liquid Playground](https://liquidjs.com/playground.html) to play with Liquid expressions like the ones above.
 The lower left panel is to enter a JSON holding variables that can be accesed in the upper left panel by its name. 
 
-## Entendiendo la línea `"content": {{ page.content | markdownify | strip_html | jsonify }},`
+## Entendiendo la línea `"content": {{ page.content | markdownify | strip_html | jsonify }}
 
 * `page.content` el contenido de la página todavia sin renderizar (se supone que es fundamentalmente markdown, pero puede contener yml en el front-matter, html, scripts, liquid, etc.)
 * `markdownify`: Convert a Markdown-formatted string into HTML.
@@ -140,9 +143,10 @@ The lower left panel is to enter a JSON holding variables that can be accesed in
 * `jsonify`: If the data is an array or hash you can use the jsonify filter to convert it to JSON.
 :::
 
+::: tip
 La idea general es que necesitamos suprimir los tags, tanto yml, markdown, HTML, etc. para que no confundan al método de busca. 
 Por eso convertimos el markdown a HTML y después suprimimos los tags HTML. También convertimos el yml a JSON.
-
+:::
 
 ## La página de Búsqueda: search.md
 
