@@ -20,8 +20,10 @@ rubrica:
   -  iframe, 
   -  Markdown import, 
   -  Mermaid, 
-  -  Using Components (MDX) y 
+  -  Using Components (MDX) 
+  -  useState
   -  useConfig
+  -  useSWR
   -  Ha hecho un despliegue en Vercel
   -  "Ha hecho un fork the nextra y se ha familiarizado con el concepto de monorepo"
   - "Código de la práctica correcto y funciona"

@@ -10,6 +10,7 @@ sidebar: false
 - [First Steps with Nextra](/temas/web/nextra/first-steps)
 - [MDX: Markdown for the component era](/temas/web/nextra/mdx)
 - [Theme Configuration](/temas/web/nextra/theme-configuration)
+- [SWR: Stale While Revalidate](/temas/web/nextra/swr)
 
 ## Nextra Monorepo
 

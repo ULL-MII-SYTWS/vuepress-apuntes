@@ -1,5 +1,5 @@
 ---
-permalink: /react/hooks
+permalink: /react/intro
 ---
 
 ## What is React?
@@ -25,6 +25,60 @@ Some examples of side effects are: fetching data, directly updating the DOM, and
 
 1. **Rendering and Reconciliation**: React’s reconciliation algorithm compares the current Virtual DOM with the previous version to determine the minimum number of changes required. Only the components whose data has changed are re-rendered.
 
+## useState
+
+The `useState` hook is a function that allows you to add state to a functional component. It returns an array with two elements: the current state value and a function that lets you update it. 
+
+```jsx
+## Component
+
+import { useState } from 'react'
+
+{/* Import CSS modules */}
+import styles from '../components/counters.module.css'
+
+export const Counter = () => {
+  const [count, setCount] = useState(4);
+  return (
+    <div>
+      <button onClick={
+         () => setCount(count + 1)} className={styles.counter}
+      >Clicked {count} times</button>
+    </div>
+  );
+};
+
+<Counter/>
+```
 
 
+We say that `count` is a **state** variable. 
 
+The initial state of the `count` variable is `4`, the value passed to `useState`.
+
+The `setCount` function **must be used** to update the `count` state variable. 
+
+When the button is clicked, the `onClick` handler will be eventually executed:
+
+```js 
+() => setCount(count + 1)
+```
+
+and consequently, the `setCount` function is called with the new value `count + 1` and so the `count` state variable is incremented.
+
+We can also see how a CSS module is imported in the variable `styles`. 
+The variable `styles` is used to apply the CSS class `counter` to the button.  
+The `className` attribute is used instead of `class`, since `class` is a reserved keyword in JavaScript. **JSX is not HTML!**.
+
+CSS modules are used to scope CSS styles to a specific component by generating unique class names.
+
+`File counters.module.css`
+
+```css
+.counter {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 2px 6px;
+  margin: 12px 0 0;
+}
+```

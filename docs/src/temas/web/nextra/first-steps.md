@@ -109,7 +109,7 @@ added 407 packages, and audited 408 packages in 26s
 
 ::: tip
 See now the page  in [pages/another](https://raw.githubusercontent.com/shuding/nextra-docs-template/refs/heads/main/pages/another.mdx) 
-and get your first contact with [React Hooks](/react/hooks)
+and get your first contact with [React](/react/intro)
 :::
 
 ## Start as New Project
