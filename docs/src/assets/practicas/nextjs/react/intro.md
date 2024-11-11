@@ -1,9 +1,11 @@
 ---
 permalink: /react/intro
+sidebar: auto
 ---
 
 ## What is React?
 
+::: tip Key Points 
 React is a JavaScript library for building user interfaces, primarily designed around a UI component-based architecture. 
 **A UI component is a reusable, self-contained piece of UI that manages its own structure, styling, and behavior**.
 React allows developers to create  UI components and re-render only the parts of the interface that need updating. 
@@ -20,10 +22,11 @@ React allows developers to create  UI components and re-render only the parts of
    - **Props** are inputs to a component, allowing data to be passed from a parent to a child component.
    - **State** is data managed within a component that can change over time. When the state updates, the component re-renders to reflect these changes.
 
-6. **Hooks**: [Hooks](https://react.dev/reference/react/hooks) are functions that let you *hook into* React **state** and **lifecycle** features from function components. React’s hooks, such as [useState](https://react.dev/reference/react/useState) and [useEffect](https://react.dev/reference/react/useEffect), let developers add state and side-effects to function components. 
+6. **Hooks**: [Hooks](https://react.dev/reference/react/hooks) are functions that let you *hook into* React **state** and **lifecycle** features from function components. React’s hooks, such as [useState](https://react.dev/reference/react/useState) and [useEffect](https://react.dev/reference/react/useEffect), let developers add state and side-effects to function components. Next.js adds a few hooks to the React library to help with server-side rendering and data fetching like [useSWR](/temas/web/nextra/swr/#swr-in-next-js-with-the-swr-library)
 Some examples of side effects are: fetching data, directly updating the DOM, and timers.
 
 1. **Rendering and Reconciliation**: React’s reconciliation algorithm compares the current Virtual DOM with the previous version to determine the minimum number of changes required. Only the components whose data has changed are re-rendered.
+:::
 
 ## useState
 
@@ -47,8 +50,6 @@ export const Counter = () => {
     </div>
   );
 };
-
-<Counter/>
 ```
 
 
@@ -66,6 +67,7 @@ When the button is clicked, the `onClick` handler will be eventually executed:
 
 and consequently, the `setCount` function is called with the new value `count + 1` and so the `count` state variable is incremented.
 
+::: warning CSS Modules
 We can also see how a CSS module is imported in the variable `styles`. 
 The variable `styles` is used to apply the CSS class `counter` to the button.  
 The `className` attribute is used instead of `class`, since `class` is a reserved keyword in JavaScript. **JSX is not HTML!**.
@@ -82,3 +84,4 @@ CSS modules are used to scope CSS styles to a specific component by generating u
   margin: 12px 0 0;
 }
 ```
+:::
