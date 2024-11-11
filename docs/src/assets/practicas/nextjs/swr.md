@@ -104,7 +104,7 @@ The `fetcher` function is a function that fetches the data.
 It should return a promise that resolves to the data, that is why we use 
 `fetch(catURL).then((res) => res.json())`. 
 
-The `options` object is an optional object that can be used to configure the behavior of the SWR hook.
+[The `options` object is an optional object](https://swr.vercel.app/docs/api#options) that can be used to configure the behavior of the SWR hook.
 Here we set `revalidateOnFocus` to `false` to avoid revalidating the data when the window regains focus.
 
 The **return Values** are:
