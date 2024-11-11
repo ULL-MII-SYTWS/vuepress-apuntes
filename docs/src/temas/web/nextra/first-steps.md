@@ -361,6 +361,51 @@ developing the project! 🎉. The page will look like this:
 | ![src/.vuepress/public/images/nextra/first-steps-nextra.png](/images/nextra/first-steps-nextra.png) |
 |     |
 
+# tsconfig.json and jsconfig.json
+
+If you are using TypeScript, you can create a `tsconfig.json` file in your project’s root directory or a `jsconfig.json` file if you are using JavaScript.
+
+::: warning
+Even if you are using JavaScript, Next.js is using a transpiler.
+The current (2024) Next.js Compiler is written in Rust using 
+[SWC](https://swc.rs/), a Rust-based platform for the Web, 
+to transform and minify the JavaScript code for production. 
+This replaces [Babel](https://babeljs.io/) for individual files.
+
+Compilation using the Next.js Compiler is 17x faster than [Babel](https://babeljs.io/) and enabled by default since Next.js version 12. If you have an existing Babel configuration or are using unsupported features, your application will opt-out of the Next.js Compiler and continue using [Babel](https://babeljs.io/).
+::: 
+
+Here is an example of a `jsconfig.json` file:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": "src/",
+    "paths": {
+      "@/styles/*": ["styles/*"],
+      "@/components/*": ["components/*"]
+    }
+  }
+}
+```
+
+Now, instead of relative imports:
+
+```js
+import Cat from '../../components/cat'
+```
+
+we can use absolute `imports` in our Nextra MDX files: 
+
+```js
+import Cat from '@/components/cat'
+```
+
+Each of the `"paths"` are relative to the `baseUrl` location. 
+For the configuration above, `src/components/cat` would be the file path for the import.
+
+
+See also section [How do I define `@` as an alias of the root of the project in Next.js?](/temas/web/making-alias-for-the-root-of-the-project).
 
 ## Next Steps
 
