@@ -1,6 +1,6 @@
 ---
 prev: /temas/web/nextra/first-steps
-next: /temas/web/nextra/
+next: /assets/practicas/nextjs/swr.md
 ---
 # Theme Configuration
 

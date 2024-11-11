@@ -81,13 +81,13 @@ const key = catURL;
 const fetcher = () => fetch(catURL).then((res) => res.json())
 const options = { revalidateOnFocus: false }
 
-export default function Cat() {
+export default function DCat() {
   const { data, isLoading, error } = useSWR(key, fetcher, options);
 
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>Error: {error}</div>
 
-  return <img src={data[0].url} width={data[0].width} height={data[0].height}/>
+  return <Image src={data[0].url} width={data[0].width} height={data[0].height}/>
 }
 ```
 
@@ -120,10 +120,60 @@ More information can be found [here](https://swr.vercel.app/docs/advanced/unders
 Once we have defined the `DCat` component, we can use it in a Nextra MDX file:
 
 ````markdown
+
 ## SWR
 
-import DCat from '../components/dcat'
+import DCat from '@/components/dcat'
 
 <DCat />
-
 ````
+
+## External Images and Next.js
+
+::: warning Protecting External Images
+
+To protect your application from malicious users, Next requires additional configuration in order to use external images. This ensures that only external images from your account can be served from the Next.js Image Optimization API. These external images can be configured with the [remotePatterns](https://nextjs.org/docs/pages/api-reference/components/image#remotepatterns) property in your `next.config.js` file, as shown below:
+
+File `next.config.js`:
+
+```js
+import nextra from 'nextra'
+ 
+const withNextra = nextra({
+  theme: 'nextra-theme-docs',
+  themeConfig: './theme.config.jsx',
+  latex: true,
+  search: true
+})
+
+let nextConfig = withNextra()
+nextConfig.images = { 
+  remotePatterns: [ // See https://nextjs.org/docs/pages/api-reference/components/image#remotepatterns
+    {
+      protocol: 'https',
+      hostname: 'avatars.githubusercontent.com',
+      //port: '80',
+      pathname: '/u/**',
+    },
+    {
+      protocol: 'https',
+      hostname: 'cdn2.thecatapi.com',
+      //port: '80',
+      pathname: '/images/**',
+    },
+  ],
+  domains: ['avatars.githubusercontent.com'],
+};
+ 
+export default nextConfig
+ 
+// If you have other Next.js configurations, you can pass them as the parameter:
+// export default withNextra({ /* other next.js config */ })
+```
+::: 
+
+::: tip Good to know
+The example above will ensure the `src` property of `next/image` must start with 
+`https://cdn2.thecatapi.com/images/`. Any other protocol, hostname, port, or unmatched path will respond with 
+**400 Bad Request**.
+:::

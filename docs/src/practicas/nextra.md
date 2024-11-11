@@ -25,6 +25,7 @@ rubrica:
   -  useState
   -  useConfig
   -  useSWR
+  -  Uses external images with the Image component
   -  Uses `@` to import components
   -  Deployment in Vercel
   - "Has forked nextra and familiarized with the concept of monorepo"
