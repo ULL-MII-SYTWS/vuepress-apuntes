@@ -10,6 +10,7 @@ next:
 campus: https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=29486
 rubrica:
   -  Contiene ejemplos de Bleed, 
+  -  Banner,
   -  Callout, 
   -  Cards, 
   -  Code Extensions, 
@@ -24,12 +25,13 @@ rubrica:
   -  useState
   -  useConfig
   -  useSWR
-  -  Ha hecho un despliegue en Vercel
-  -  "Ha hecho un fork the nextra y se ha familiarizado con el concepto de monorepo"
-  - "Código de la práctica correcto y funciona"
-  - "Informe bien elaborado"
-  - "Kanban Board project conteniendo las incidencias de la rúbrica"
-  - "Ha entregado el .zip en el campus con el repo"
+  -  Uses `@` to import components
+  -  Deployment in Vercel
+  - "Has forked nextra and familiarized with the concept of monorepo"
+  - "Practice code is correct and works"
+  - "Well-prepared report"
+  - "Kanban Board project containing the rubric issues"
+  - "Has submitted the .zip on the campus with the repo"
 ---
 
 # Práctica {{ $frontmatter.title }}
