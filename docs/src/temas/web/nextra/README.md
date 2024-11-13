@@ -11,6 +11,7 @@ sidebar: false
 - [MDX: Markdown for the component era](/temas/web/nextra/mdx)
 - [Theme Configuration](/temas/web/nextra/theme-configuration)
 - [SWR: Stale While Revalidate](/temas/web/nextra/swr)
+- [Server Side Nextra](/temas/web/nextra/server-side-nextra)  
 
 ## Nextra Monorepo
 

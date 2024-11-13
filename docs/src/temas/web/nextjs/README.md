@@ -1,6 +1,6 @@
 # Next.js
 
-See the notes [Introduction to the JAM Stack with NextJS, React, REST and Netlif](https://ull-esit-dmsi.github.io/practicas/nextjs) and the associated repo [ULL-MII-SYTWS/nextjs-solution](https://github.com/ULL-MII-SYTWS/nextjs-solution). 
+See the notes [Introduction to the JAM Stack with NextJS, React, REST and Netlify](https://ull-esit-dmsi.github.io/practicas/nextjs) and the associated repo [ULL-MII-SYTWS/nextjs-solution](https://github.com/ULL-MII-SYTWS/nextjs-solution). 
 
 ## Next.js Learning
 
