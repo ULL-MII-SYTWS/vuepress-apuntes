@@ -29,6 +29,7 @@ rubrica:
   -  Uses `@` to import components
   -  Uses getStaticProps to make a fetch at build time
   -  Has a hello world  on the server side using pages/api/hello.js
+  -  Has an example of middleware
   -  Deployment in Vercel
   - "Has forked nextra and familiarized with the concept of monorepo"
   - "Practice code is correct and works"

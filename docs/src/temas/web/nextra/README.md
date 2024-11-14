@@ -11,7 +11,8 @@ sidebar: false
 - [MDX: Markdown for the component era](/temas/web/nextra/mdx)
 - [Theme Configuration](/temas/web/nextra/theme-configuration)
 - [SWR: Stale While Revalidate](/temas/web/nextra/swr)
-- [Server Side Nextra](/temas/web/nextra/server-side-nextra)  
+- [Server Side Nextra](/temas/web/nextra/server-side-nextra) 
+- [Next.js middleware](https://nextjs.org/docs/pages/building-your-application/routing/middleware) (Check in the docs you are using Pages.router and using stable version 15)
 
 ## Nextra Monorepo
 
