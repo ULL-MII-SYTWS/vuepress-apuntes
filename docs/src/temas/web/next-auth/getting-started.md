@@ -31,7 +31,9 @@ So, I follow with the section **[Existing Project](https://next-auth.js.org/gett
 
 I started fron the nextra assignment for the fake student <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865>. 
 
-Made  a new branch `guide` from commit `526ce78` when I was on `main`: <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/tree/guide>
+Made  a new branch `guide` from commit 
+[526ce78](https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/commit/526ce781323598534d5fe9e455cd1f201a4b61e6) 
+when I was on `main`: <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/tree/guide>
 
 Added the API route `pages/api/auth/[...nextauth].js` as explained at <https://next-auth.js.org/getting-started/example#add-api-route>. See <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/pages/api/auth/%5B...nextauth%5D.js>
 
@@ -66,6 +68,51 @@ export default function App({
 }
 ```
 
+
 See <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/pages/_app.jsx>
 
-Added the `login-btn` component as explained at https://next-auth.js.org/getting-started/example#frontend---add-react-hook
+### login-btn component
+
+Added the `login-btn` component as explained at 
+<https://next-auth.js.org/getting-started/example#frontend---add-react-hook>
+
+```jsx
+import { useSession, signIn, signOut } from "next-auth/react"
+
+export default function Component() {
+  const { data: session, status: status } = useSession()
+  if (status === "loading") {
+    return <p>Loading...</p>
+  }
+  if (session) {
+    return (
+      <>
+        Signed in as {session.user.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    )
+  }
+  return (
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
+  )
+}
+```
+
+The `useSession()` React Hook in the NextAuth.js **client** is the easiest way to check if someone is signed in.
+
+`useSession()` returns an object containing two values: `data` and `status`:
+
+**data**: This can be three values: `Session` / `undefined` / `null`.
+- when the session hasn't been fetched yet, `data` will be `undefined`
+- in case it failed to retrieve the session, `data` will be `null`
+- in case of success, `data` will be a `Session` object.
+
+**status**: Is a enum mapping to three possible session states: `"loading" | "authenticated" | "unauthenticated"`
+
+To wrap all the pages, make sure that `<SessionProvider>` is added to `pages/_app.js`.
+
+
+See <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/components/login-btn.jsx>
