@@ -101,7 +101,9 @@ export default function Component() {
 }
 ```
 
-The `useSession()` React Hook in the NextAuth.js **client** is the easiest way to check if someone is signed in.
+### useSession() NextAuth React Hook
+
+The [useSession()](https://next-auth.js.org/getting-started/client#usesession) React Hook in the NextAuth.js **client** is the easiest way to check if someone is signed in.
 
 `useSession()` returns an object containing two values: `data` and `status`:
 
@@ -116,3 +118,37 @@ To wrap all the pages, make sure that `<SessionProvider>` is added to `pages/_ap
 
 
 See <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/components/login-btn.jsx>
+
+### signIn() method
+
+Using the client side [signIn()](https://next-auth.js.org/getting-started/client#signin) method ensures the user ends back on the page they started on after completing a sign in flow. 
+It will also handle CSRF Tokens for you automatically when signing in with email.
+
+By default, when calling the `signIn()` method with no arguments, you will be redirected to the NextAuth.js sign-in page. If you want to skip that and get redirected to your provider's page immediately, call the signIn() method with the provider's id.
+
+For example to sign in with GitHub:
+
+```jsx
+import { signIn } from "next-auth/react"
+
+export default () => (
+  <button onClick={() => signIn("github")}>Sign in with GitHub</button>
+)
+```
+
+The `signIn()` method receives a second argument, an object with options. 
+The most common options are [callbackUrl](https://next-auth.js.org/getting-started/client#specifying-a-callbackurl) 
+and [redirect](https://next-auth.js.org/getting-started/client#using-the-redirect-false-option).
+
+The **callbackUrl** specifies to which URL the user will be redirected after signing in. Defaults to the page URL the sign-in is initiated from.
+
+Examples:
+
+```js
+signIn(undefined, { callbackUrl: '/foo' }) // By default it requires the URL to be an absolute URL at the same host name, or a relative url starting with a slash
+signIn('google', { callbackUrl: 'http://localhost:3000/bar' })
+signIn('email', { email, callbackUrl: 'http://localhost:3000/foo' })
+signIn('credentials', { redirect: false, password: 'password' })   // Disable the redirect and handle the error on the same page.
+signIn('email', { redirect: false, email: 'bill@fillmurray.com' }) // In such case signIn will return a Promise,
+```
+
