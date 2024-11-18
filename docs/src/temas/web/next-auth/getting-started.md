@@ -25,7 +25,6 @@ Discarded the idea of using it as the main learning resource.
 
 So, I follow with the section **[Existing Project](https://next-auth.js.org/getting-started/example#existing-project)** path.
 
-## Issues when following the guide
 
 ### Initial Steps
 
@@ -41,7 +40,34 @@ Added the API route `pages/api/auth/[...nextauth].js` as explained at <https://n
 I forced  the script `"dev": "next -p 3000",` to listen in port 3000 in the `package.json`,  since I have found a bug in next-auth GitHub provider. The `sigin` page seems to have hardcoded the port to 3000 `http://localhost:3000/api/auth/signin/github`: <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/package.json#L6-L10>
 ::: 
 
-### SessionProvider component in `pages/_app.jsx`
+## Add API route
+
+When reading the section [Add API route](Add API route) for Nextra I've got errors that were fixed 
+by changing the calls to `GithubProvider` and `NextAuth`  by adding `.default`:
+
+File `pages/api/auth/[...nextauth].js`
+
+```js  {7,29} 
+import NextAuth from "next-auth" // https://next-auth.js.org/getting-started/example#add-api-route
+import GithubProvider from "next-auth/providers/github"
+
+export const authOptions = {
+  // Configure one or more authentication providers
+  providers: [
+    GithubProvider.default({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
+    // ...add more providers here
+  ]
+}
+
+export default NextAuth.default(authOptions)
+```
+
+
+
+## SessionProvider component in `pages/_app.jsx`
 
 I also changed the main file `pages/_app.jsx` to use the `SessionProvider` as explained at 
 <https://next-auth.js.org/getting-started/example#configure-shared-session-state>
@@ -71,7 +97,7 @@ export default function App({
 
 See <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/pages/_app.jsx>
 
-### login-btn component
+## login-btn component
 
 Added the `login-btn` component as explained at 
 <https://next-auth.js.org/getting-started/example#frontend---add-react-hook>
@@ -101,7 +127,7 @@ export default function Component() {
 }
 ```
 
-### useSession() NextAuth React Hook
+## useSession() NextAuth React Hook
 
 The [useSession()](https://next-auth.js.org/getting-started/client#usesession) React Hook in the NextAuth.js **client** is the easiest way to check if someone is signed in.
 
@@ -119,7 +145,7 @@ To wrap all the pages, make sure that `<SessionProvider>` is added to `pages/_ap
 
 See <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/components/login-btn.jsx>
 
-### signIn() method
+## signIn() method
 
 Using the client side [signIn()](https://next-auth.js.org/getting-started/client#signin) method ensures the user ends back on the page they started on after completing a sign in flow. 
 It will also handle CSRF Tokens for you automatically when signing in with email.
@@ -145,10 +171,21 @@ The **callbackUrl** specifies to which URL the user will be redirected after sig
 Examples:
 
 ```js
-signIn(undefined, { callbackUrl: '/foo' }) // By default it requires the URL to be an absolute URL at the same host name, or a relative url starting with a slash
-signIn('google', { callbackUrl: 'http://localhost:3000/bar' })
+signIn(undefined, { callbackUrl: '/foo' }) // A relative url starting with a slash
+signIn('google', { callbackUrl: 'http://localhost:3000/bar' }) // Or an absolute URL at the same host name,
 signIn('email', { email, callbackUrl: 'http://localhost:3000/foo' })
 signIn('credentials', { redirect: false, password: 'password' })   // Disable the redirect and handle the error on the same page.
 signIn('email', { redirect: false, email: 'bill@fillmurray.com' }) // In such case signIn will return a Promise,
 ```
 
+If `redirect` is set to `false`, the `signIn` method will return a Promise that resolves to 
+an object with the following properties:
+
+```js
+{
+  error: string | undefined // Error message if there was an error
+  status: number // HTTP status code
+  ok: boolean // `true` if the request was successful, `false` otherwise
+  url: string | null // The URL the user should be redirected to or null `null` if there was an error
+}
+```

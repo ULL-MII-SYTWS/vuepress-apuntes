@@ -32,7 +32,7 @@ rubrica:
   -  Has an example of middleware
   -  Deployment in Vercel
   - "Has forked nextra and familiarized with the concept of monorepo"
-  - "Practice code is correct and works"
+  - "The code is correct and works"
   - "Well-prepared report"
   - "Kanban Board project containing the rubric issues"
   - "Has submitted the .zip on the campus with the repo"
