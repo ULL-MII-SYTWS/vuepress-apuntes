@@ -28,6 +28,7 @@ rubrica:
   -  Uses external images with the Image component
   -  Uses `@` to import components
   -  Uses getStaticProps to make a fetch at build time
+  -  Uses useEffect to make a fetch at runtime
   -  Has a hello world  on the server side using pages/api/hello.js
   -  Has an example of middleware
   -  Deployment in Vercel

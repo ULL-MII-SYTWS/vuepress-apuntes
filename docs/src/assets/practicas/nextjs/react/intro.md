@@ -85,3 +85,11 @@ CSS modules are used to scope CSS styles to a specific component by generating u
 }
 ```
 :::
+
+See also in the *Web Development with Next.js* chapter the section 
+[State in React](/web-development-with-nextjs/#state-in-react)
+
+## useEffect
+
+See in the PL teacher the chapter 
+[Functional Components Life Cycle and the useEffect Hook](https://ull-pl.vercel.app/nextra-playground/clientComponent).

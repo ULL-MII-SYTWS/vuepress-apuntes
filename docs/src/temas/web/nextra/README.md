@@ -19,6 +19,10 @@ sidebar: false
 - [Nextra monorepo](/temas/web/nextra/nextra-monorepo)
 - [pnpm workspaces](/temas/introduccion-a-javascript/pnpm/workspaces)
 
+## Introduction to React 
+
+See the section [Introduction to React](/react/intro).
+
 ## Examples of Nextra Sites
 
 See section [Examples of Nextra Sites](/temas/web/nextra/nextra-examples).
