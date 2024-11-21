@@ -4,7 +4,7 @@ layout: Practica
 published: true
 sidebar: auto
 order: 15
-key: nextauth
+key: nextra
 prev: nextra.md
 next: 
 campus: 
