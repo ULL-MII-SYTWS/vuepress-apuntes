@@ -38,6 +38,8 @@ On platforms like Vercel, Middleware is run at the [Edge][edge]
 - See the section [Middleware](https://next-auth.js.org/configuration/nextjs#middleware) on the next-auth.js docs
 - See also <https://next-auth.js.org/configuration/nextjs#basic-usage>
 - Midleware in Next.js: <https://nextjs.org/docs/pages/building-your-application/routing/middleware>
+- See the section [Organizing Next.js Middleware](/temas/web/nextjs/middleware)
+
 
 ## Pages
 

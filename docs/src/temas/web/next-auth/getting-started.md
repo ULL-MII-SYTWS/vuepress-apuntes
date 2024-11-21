@@ -47,7 +47,7 @@ by changing the calls to `GithubProvider` and `NextAuth`  by adding `.default`:
 
 File `pages/api/auth/[...nextauth].js`
 
-```js  {7,29} 
+```js  {7,15} 
 import NextAuth from "next-auth" // https://next-auth.js.org/getting-started/example#add-api-route
 import GithubProvider from "next-auth/providers/github"
 
@@ -65,7 +65,13 @@ export const authOptions = {
 export default NextAuth.default(authOptions)
 ```
 
+For an explanation of how Next.js API routes work see <https://ull-pl.vercel.app/nextra-playground/authorization/next-auth-tutorial#creating-the-server-config> at my PL Notes.
 
+
+Behind the scenes, this code creates all the relevant OAuth API routes 
+within `/api/auth/*` so that auth API requests can be handled by NextAuth.js. 
+In this way, NextAuth.js stays in charge of the whole application's request/response flow. 
+See <https://ull-pl.vercel.app/nextra-playground/authorization/next-auth-tutorial#routes>
 
 ## SessionProvider component in `pages/_app.jsx`
 
