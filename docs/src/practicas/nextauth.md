@@ -7,7 +7,7 @@ order: 15
 key: nextra
 prev: nextra.md
 next: 
-campus: 
+campus: https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=32998&forceview=1
 rubrica:
   - Provides authentication to the Nextra Site with NextAuth.js
   -  Deployment in Vercel
