@@ -142,7 +142,7 @@ Now in the file
 ```
 ````
 
-When we go to the browser and refresh the page we see the eyes emoji in the warning callout:
+When we go to the browser to somehting like `http://localhost:3002/themes/docs/callout` and refresh the page we see the eyes emoji in the warning callout:
 
 ![warning callout](/images/nextra/warning-callout.png)
 
