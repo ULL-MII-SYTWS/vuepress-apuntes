@@ -10,6 +10,7 @@ next:
 campus: https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=32998&forceview=1
 rubrica:
   - Provides authentication to the Nextra Site with NextAuth.js
+  - Gives examples of useRef
   -  Deployment in Vercel
   - "Has forked nextra and familiarized with the concept of monorepo"
   - "The code is correct and works"

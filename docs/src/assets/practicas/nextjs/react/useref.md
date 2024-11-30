@@ -32,7 +32,7 @@ const refContainer = useRef(initialValue);
 
 See the code at file [/components/accesingDOM.jsx](https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/allrepos/components/accesingDOM.jsx) at branch `allrepos`
 
-```jsx
+```jsx {6,8-11,16,21}
 import React, { useState, useRef } from "react";
 import styles from '@/components/Home.module.css'
 
@@ -61,14 +61,24 @@ export default function TextInputWithFocusButton() {
 }
 ```
 
-`inputRef.current` refers to the DOM element that `inputRef` is attached to.
-The [focus](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus) method is called directly on the DOM element!.
+The `ref={inputRef}` attribute in the JSX code at line 16 is used to attach a reference to the DOM element, 
+allowing you to directly access and manipulate the element in your React component.
+
+The `inputRef.current` used at line 10 refers to the DOM element that `inputRef` is attached to.
+
+The [inputRef.current.focus()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus) 
+method is called directly on the DOM element via `inputRef.current`!.
+
+
+When the user clicks the button, the `focusInput` function is called, and the cursor is moved to the input field:
+
+![accesingDOM](/images/nextjs/useref-accesngdom.png)
 
 ### 2. Storing Mutable Values Without Re-renders
 
 See file [ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/components/usereftimer.jsx](https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/allrepos/components/usereftimer.jsx) at branch `allrepos`:
 
-```jsx
+```jsx {6,9-11,20-23,25,33,36}
 import React, { useState, useRef } from 'react';
 import styles from '@/components/counters.module.css'
 
@@ -160,11 +170,17 @@ function Stopwatch() {
 export default Stopwatch;
 ```
 
+- When you click the **start** button, the stopwatch begins counting up but does not cause a re-render. We see the `00:00.00` time displayed.
+- When you click the **stop** button the stopwatch stops counting but due to the state variable `isRunning` changing, the component re-renders. 
+  We see the time displayed at the moment the stopwatch was stopped.
+
+![/images/nextjs/useref-no-rendering.png](/images/nextjs/useref-no-rendering.png)
+
 ### 3. Tracking Previous Values
 
 See the code at file [ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/components/userefTracker.jsx](https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/allrepos/components/userefTracker.jsx) at branch `allrepos`:
 
-```jsx
+```jsx {5-7,20,42}
 import React, { useState, useRef, useEffect } from "react";
 import styles from "@/components/UserRepos.module.css";
 
@@ -218,6 +234,14 @@ export default function PreviousValueTracker() {
   );
 }
 ```
+ 
+The  `inputValue` state declared at line 6 holds the current value of the `input` field, and `setInputValue` is used at line 20 (coming from 42) 
+to update this value as the user types. 
+
+Now when you click the **Increment** button, the count increases, and the previous count is displayed.
+If you write a number in the input field and click the **Set Count** button, the count is set to the input value, and the previous count is displayed.
+
+![/images/nextjs/useref-tracking-values.png](/images/nextjs/useref-tracking-values.png)
 
 ## Key Differences from `useState`
 
