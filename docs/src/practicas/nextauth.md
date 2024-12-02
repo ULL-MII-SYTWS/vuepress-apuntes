@@ -11,6 +11,8 @@ campus: https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=32998
 rubrica:
   - Provides authentication to the Nextra Site with NextAuth.js
   - Gives examples of useRef
+  - Add an example of `serverSideProps`  fetching data 
+  - Add an example of pagination 
   -  Deployment in Vercel
   - "Has forked nextra and familiarized with the concept of monorepo"
   - "The code is correct and works"
@@ -30,6 +32,11 @@ The task is to add authentication to the Nextra Site using NextAuth.js.
 - See the tutorial at section
 [Reading "Getting Started with NextAuth.js"](https://ull-mii-sytws.github.io/next-auth-getting-started/)
 - See also the tutorial [Auth.js tutorial for Nextra and Next.js with GitHub](https://ull-pl.vercel.app/nextra-playground/authorization/next-auth-tutorial) at my PL notes (Nextra v2)
+
+
+- See section [useRef explained](/react/useref)
+- See section [getServerSideProps](/temas/web/nextra/server-side-nextra.html)
+- See the GitHub Docs chapter [Using pagination in the REST API](https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api?apiVersion=2022-11-28#using-link-headers)
 
 <Rubrica :items="$frontmatter.rubrica" />
 

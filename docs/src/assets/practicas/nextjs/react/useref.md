@@ -238,6 +238,9 @@ export default function PreviousValueTracker() {
 The  `inputValue` state declared at line 6 holds the current value of the `input` field, and `setInputValue` is used at line 20 (coming from 42) 
 to update this value as the user types. 
 
+The combination of `useRef` and `useEffect` allows the component to keep track of the previous value of `count` without causing additional re-renders. 
+
+
 Now when you click the **Increment** button, the count increases, and the previous count is displayed.
 If you write a number in the input field and click the **Set Count** button, the count is set to the input value, and the previous count is displayed.
 
