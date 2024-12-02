@@ -1,7 +1,4 @@
-# Building Dynamic mdx with Nextra
-
-
-## Example
+## Building Dynamic mdx with Nextra
 
 The following example shows how to build dynamic content with Nextra using the `buildDynamicMDX` function, the `RemoteContent` component and 
 a `getStaticProps` function.
@@ -11,14 +8,18 @@ a `getStaticProps` function.
 
 ```js
 import Cat from '@/components/dcat'
-
 import { RemoteContent } from 'nextra/components'
 import { buildDynamicMDX } from 'nextra/remote'
 
+
 export async function getStaticProps() {
+  const randomURL = 'http://www.randomnumberapi.com/api/v1.0/random?min=1&max=100&count=5'
+  const fetcher = () => fetch(randomURL).then(res => res.json())
+
   const title = `# buildDynamicMDX and RemoteContent`
   const section1 = `## Example of dynamic MDX\nWe write a \`getStaticProps\` function to fetch the content of the \`mdx\` files and then we use \`RemoteContent\` and \`buildDynamicMDX\` to build the \`mdx\` content.` // Some fetched content
-  const section2 = `## A cat\n\n  <Cat />`   // More fetched content
+  const res = (await fetcher()).join('\n- ')
+  const section2 = `## A cat\n\n  <Cat />\n\n## Random numbers\n\n- ${res}`   // More fetched content
 
   const props = await buildDynamicMDX(`
 ${title}
@@ -34,10 +35,10 @@ ${section2}
 <RemoteContent components={{ Cat }} />
 ```
 
-Notice that since we are using the dynamic cat component (`useSWR`), 
-the image of the cat changes with each reload even if we are using `next start`.
+Notice that we are using the dynamic cat component (`useSWR`).
+The image of the cat changes with each reload even if we are using `next start` but the random numbers do not.
 
-## RemoteContent
+### RemoteContent
 
 The `RemoteContent` component is used to render the dynamic content. 
 
@@ -47,7 +48,7 @@ The `RemoteContent` component is used to render the dynamic content.
 
 The `components` prop is used to pass the components that will be used in the dynamic content.
 
-## buildDynamicMDX
+### buildDynamicMDX
 
 The `buildDynamicMDX` function is used to build the dynamic content. It calls the markdown compiler
 and returns the compiled content and the frontMatter.
@@ -62,6 +63,10 @@ export async function buildDynamicMDX(content: string, compileMdxOptions) {
   }
 }
 ```
+
+See also [An Example of Remote Docs Fetched from GitHub](https://the-guild.dev/blog/nextra-3#remote-docs-support) inside the blog 
+*Nextra 3 – Your Favourite MDX Framework, Now on 🧪 Steroids*
+
 
 ## getStaticProps
 
