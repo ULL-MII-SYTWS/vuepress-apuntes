@@ -38,6 +38,10 @@ ${section2}
 Notice that we are using the dynamic cat component (`useSWR`).
 The image of the cat changes with each reload even if we are using `next start` but the random numbers do not.
 
+When you use `useSWR` inside a component in Next.js, that component becomes a Client Component. 
+`useSWR` is a React hook, and hooks can only be used in Client Components .
+
+
 ### RemoteContent
 
 The `RemoteContent` component is used to render the dynamic content. 
