@@ -45,6 +45,8 @@ When you use `useSWR` inside a component in Next.js, that component becomes a Cl
 `useSWR` is a React hook, and hooks can only be used in Client Components .
 
 
+### test-value.jsx
+
 This is the code of the `test-value.jsx` component:
 
 `➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(allrepos) cat components/test-value.jsx`
@@ -57,6 +59,34 @@ export default function TestValue() {
   return <span>{frontMatter.test}</span>
 }
 ```
+
+### dcat.jsx
+
+It is a client component that fetches a cat image from the cat API.
+
+`➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(allrepos) cat components/dcat.jsx`
+
+```jsx
+import useSWR from 'swr'
+import Image from 'next/image'
+
+const catURL=  "https://api.thecatapi.com/v1/images/search?size=full"
+
+const key = catURL; // The key param represents the URL, in the case of REST APIs, to which the request is to be made. The reason for the key name is because it actually is a key. It is a unique string that represents the data that is being fetched. If the key changes, the data will be refetched.
+const fetcher = () => fetch(catURL).then((res) => res.json())
+const options = { revalidateOnFocus: false }
+
+export default function DCat() {
+  const { data, isLoading, error } = useSWR(key, fetcher, options);
+
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>Error: {error}</div>
+
+  return <Image src={data[0].url} width={data[0].width} height={data[0].height}/>
+}
+```
+
+### The page
 
 Here is how it looks the page:
 
@@ -97,7 +127,7 @@ See also [An Example of Remote Docs Fetched from GitHub](https://the-guild.dev/b
 When visiting this page, the `getStaticProps` function
 fetches the cat image at build time and returns the props to the page.
 
-Even if we are using `next start`, the image of the cat does not change with each reload.
+When we are using `next start`, the image of the cat does not change with each reload.
 
 
 `➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(allrepos) cat pages/get-static-props.mdx`
