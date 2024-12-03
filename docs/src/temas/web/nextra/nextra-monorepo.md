@@ -72,23 +72,25 @@ Try to reproduce the steps in the video in the Nextra monorepo.
 ## Instructions 
 
 See and follow the instructions in the [README.md](https://github.com/gh-cli-for-education/nextra/blob/casiano/README.md) 
-in the branch `casiano` at the fork of the [Nextra monorepo](https://github.com/gh-cli-for-education/nextra/tree/casiano).
+in the branch `casiano` at the fork of the [Nextra monorepo](https://github.com/shuding/nextra). 
+The teacher's fork is at [gh-cli-for-education/nextra/tree/casiano](https://github.com/gh-cli-for-education/nextra/tree/casiano).
+
+Make your own fork of the teacher's fork in your personal GitHub account.
+
+
+## Installation. Turborepo and PNPM Workspaces
 
 The Nextra repository uses [PNPM Workspaces](https://pnpm.io/workspaces) and
 [Turborepo](https://github.com/vercel/turborepo). To install dependencies, run
 `pnpm install` in the project root directory.
 
-## Installation. Turborepo and PNPM Workspaces
-
-Worked with node v22.2.0 but not with v23.0.0:
+For me, the installation worked with node v22.2.0 but not with v23.0.0:
 
 ```
 ➜  nextra-theme-docs git:(casiano) ✗ node --version
 v22.2.0
 ```
 
-The Nextra repository uses [PNPM Workspaces](https://pnpm.io/workspaces) and
-[Turborepo](https://github.com/vercel/turborepo). 
 
 ### Turborepo
 
