@@ -142,13 +142,15 @@ It uses the `package.json` scripts, the dependencies you've already declared, an
 
 [pnpm has built-in support for monorepositories](https://pnpm.io/workspaces). You can create a workspace to unite multiple projects inside a single repository. A workspace must have a `pnpm-workspace.yaml` file in its root. A workspace also may have an .npmrc in its root.
 
-```bash
+```yml
 ➜  nextra git:(casiano) ✗ cat pnpm-workspace.yaml 
 packages:
   - packages/*
   - examples/*
   - docs
+```
 
+```bash 
 ➜  nextra git:(casiano) ✗ cat .npmrc 
 strict-peer-dependencies=false
 shell-emulator=true
