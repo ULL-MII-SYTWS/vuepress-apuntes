@@ -57,14 +57,21 @@ Véase el tutorial en la sección [Theme Configuration](/temas/web/nextra/theme-
 
 ## Introducción a los monorepos
 
-Read the sections and follow the instructions:
 
-- [Introducción a los monorepos con Nextra monorepo](/temas/web/nextra/nextra-monorepo)
-- [pnpm workspaces](/temas/introduccion-a-javascript/pnpm/workspaces)
+See [Introducción a los monorepos con Nextra monorepo](/temas/web/nextra/nextra-monorepo).
+
+You can fork my own fork of nextra and start from  branch `casiano`  https://github.com/gh-cli-for-education/nextra/tree/casiano
+or the original at https://github.com/shuding/nextra.
+
+Getting to master building a monorepo is complicated, I just ask that you take a look, get familiar with the tools used in this case and give some proof that you tried to fulfill this requirement *"Has forked nextra and familiarized with the concept of monorepo"*.
+The fork with some commit on a branch with your `name` is enough. Remember to put the link to the fork in the README.md file of the assignment.
+
+See also [pnpm workspaces](/temas/introduccion-a-javascript/pnpm/workspaces)
 
 ## Examples of Nextra Sites
 
 Véase la sección [Examples of Nextra Sites](/temas/web/nextra/nextra-examples) de estos apuntes.
+
 
 ## Tareas
 
