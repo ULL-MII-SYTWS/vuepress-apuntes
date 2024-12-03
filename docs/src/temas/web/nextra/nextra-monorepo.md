@@ -4,6 +4,72 @@ title: "Nextra monorepo"
 
 # {{ $frontmatter.title }}
 
+## Introduction to Monorepos. Nextra as an example
+
+
+::: tip 📚 Monorepo Definition 
+A **monorepo** is a single repository containing multiple distinct projects , with well-defined relationships between them.
+One of the main reasons for using a monorepo is to have a single source of truth for all projects. This means that all projects can be kept in sync and changes can be made across all projects in a single commit. 
+When working in JavaScript and Node.js projects, monorepos are often used to manage multiple packages that are published to npm.
+This is the case of Nextra.
+
+You can see that is a monorepo for the presence of a `packages` directory in the root of the project containing three npm related packages:
+::: 
+
+```bash
+➜  nextra git:(casiano) ✗ tree -L 1 packages
+packages
+├── nextra
+├── nextra-theme-blog
+└── nextra-theme-docs
+```
+
+Also you can see in the Nextra `package.json` that the project depends on the npm module [changesets](https://github.com/changesets/changesets/tree/main#readme), which is also a monorepo!. 
+
+::: tip 📚 Changesets
+**Changesets** is a concept that hold two bits of information: 
+1. A version type (following [semver](https://semver.org/)), and 
+2. Change information to be added to a changelog. 
+   
+In a monorepo context, changesets will handle bumping dependencies of changed packages.
+::: 
+
+
+There is a configuration file `.changeset/config.json ` that specifies the packages that are part of the monorepo:
+
+```js
+➜  nextra git:(casiano) ✗ cat .changeset/config.json 
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.0.1/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [["nextra", "nextra-theme-docs", "nextra-theme-blog"]],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
+    "onlyUpdatePeerDependentsWhenOutOfRange": true
+  },
+  "ignore": ["example-blog", "example-docs", "swr-site", "docs"]
+}
+```
+
+The overall changeset cycle after initialization should lead is a loop that looks like:
+
+1. Changesets added along with each change
+2. The `version` command is run when a release is ready, and the changes are verified
+3. The `publish` command is run afterwards.
+
+See the changesets [glossary](https://github.com/changesets/changesets/blob/main/docs/dictionary.md).
+
+Watch the video below **Version Your Packages with Changesets**:
+
+<youtube id="vO80X5zM8_Y?si=Xr6EHWA9yEi7xcwh"></youtube>
+
+
+## Instructions 
+
 See and follow the instructions in the [README.md](https://github.com/gh-cli-for-education/nextra/blob/casiano/README.md) 
 in the branch `casiano` at the fork of the [Nextra monorepo](https://github.com/gh-cli-for-education/nextra/tree/casiano).
 
