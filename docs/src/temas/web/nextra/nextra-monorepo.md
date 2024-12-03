@@ -78,7 +78,7 @@ The Nextra repository uses [PNPM Workspaces](https://pnpm.io/workspaces) and
 [Turborepo](https://github.com/vercel/turborepo). To install dependencies, run
 `pnpm install` in the project root directory.
 
-## Installation
+## Installation. Turborepo and PNPM Workspaces
 
 Worked with node v22.2.0 but not with v23.0.0:
 
@@ -88,7 +88,74 @@ v22.2.0
 ```
 
 The Nextra repository uses [PNPM Workspaces](https://pnpm.io/workspaces) and
-[Turborepo](https://github.com/vercel/turborepo). To install dependencies, run
+[Turborepo](https://github.com/vercel/turborepo). 
+
+### Turborepo
+
+Turborepo uses [remote cache stores](https://turbo.build/repo/docs/core-concepts/remote-caching) via providers like [Vercel](https://turbo.build/repo/docs/core-concepts/remote-caching#vercel) to cache the result of tasks like `npm run build`, so that CI tasks avoid to do the same work twice. Other tasks are test, lint...
+It parallelizes work across all available cores.
+It uses the `package.json` scripts, the dependencies you've already declared, and a single `turbo.json` file. 
+
+
+`➜  nextra git:(casiano) ✗ cat turbo.json`
+
+```json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        // Run `build` in workspaces I depend on first
+        "^build"
+      ],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "build:tailwind": {
+      "dependsOn": [],
+      "outputs": ["style.css"]
+    },
+    "test": {
+      "outputs": ["dist/**"]
+    },
+    "types:check": {
+      "dependsOn": [
+        // Run `build` in workspaces I depend on first
+        "^build"
+      ],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "dependsOn": [
+        // Run `build` in workspaces I depend on first
+        "^build"
+      ],
+      "cache": false
+    }
+  }
+}
+```
+
+### pnpm Workspaces
+
+[pnpm has built-in support for monorepositories](https://pnpm.io/workspaces). You can create a workspace to unite multiple projects inside a single repository. A workspace must have a `pnpm-workspace.yaml` file in its root. A workspace also may have an .npmrc in its root.
+
+```bash
+➜  nextra git:(casiano) ✗ cat pnpm-workspace.yaml 
+packages:
+  - packages/*
+  - examples/*
+  - docs
+
+➜  nextra git:(casiano) ✗ cat .npmrc 
+strict-peer-dependencies=false
+shell-emulator=true
+```
+### Installation
+
+To install dependencies, run
 `pnpm install` in the project root directory.
 
 ## Build Nextra Core
