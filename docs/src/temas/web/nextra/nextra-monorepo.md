@@ -67,6 +67,7 @@ Watch the video below **Version Your Packages with Changesets**:
 
 <youtube id="vO80X5zM8_Y?si=Xr6EHWA9yEi7xcwh"></youtube>
 
+Try to reproduce the steps in the video in the Nextra monorepo.
 
 ## Instructions 
 
