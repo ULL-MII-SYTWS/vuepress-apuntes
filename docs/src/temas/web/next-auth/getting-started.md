@@ -65,13 +65,16 @@ export const authOptions = {
 export default NextAuth.default(authOptions)
 ```
 
+::: tip 
 For an explanation of how Next.js API routes work see <https://ull-pl.vercel.app/nextra-playground/authorization/next-auth-tutorial#creating-the-server-config> at my PL Notes.
-
 
 Behind the scenes, this code creates all the relevant OAuth API routes 
 within `/api/auth/*` so that auth API requests can be handled by NextAuth.js. 
 In this way, NextAuth.js stays in charge of the whole application's request/response flow. 
 See <https://ull-pl.vercel.app/nextra-playground/authorization/next-auth-tutorial#routes>
+:::
+
+![OAuth explained](https://ull-pl.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Foauth.e8a62d80.png&w=640&q=75)
 
 ## SessionProvider component in `pages/_app.jsx`
 
@@ -108,7 +111,9 @@ See <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100
 Added the `login-btn` component as explained at 
 <https://next-auth.js.org/getting-started/example#frontend---add-react-hook>
 
-```jsx
+`File components/login-btn.jsx`
+
+```jsx {1,4,5,8}
 import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Component() {
@@ -133,7 +138,18 @@ export default function Component() {
 }
 ```
 
+The component is used in the page `pages/auth/login.mdx`:
+
+```js
+➜  nextra-solution git:(guide) cat pages/auth/login.mdx 
+import LoginBtn from '@/components/login-btn'
+
+<LoginBtn />
+```
+
 ## useSession() NextAuth React Hook
+
+::: tip 
 
 The [useSession()](https://next-auth.js.org/getting-started/client#usesession) React Hook in the NextAuth.js **client** is the easiest way to check if someone is signed in.
 
@@ -147,20 +163,24 @@ The [useSession()](https://next-auth.js.org/getting-started/client#usesession) R
 **status**: Is a enum mapping to three possible session states: `"loading" | "authenticated" | "unauthenticated"`
 
 To wrap all the pages, make sure that `<SessionProvider>` is added to `pages/_app.js`.
-
+:::
 
 See <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/components/login-btn.jsx>
 
 ## signIn() method
 
+::: tip
 Using the client side [signIn()](https://next-auth.js.org/getting-started/client#signin) method ensures the user ends back on the page they started on after completing a sign in flow. 
-It will also handle CSRF Tokens for you automatically when signing in with email.
+**It will also handle CSRF Tokens for you automatically when signing in with email**.
 
-By default, when calling the `signIn()` method with no arguments, you will be redirected to the NextAuth.js sign-in page. If you want to skip that and get redirected to your provider's page immediately, call the signIn() method with the provider's id.
+By default, when calling the `signIn()` method with no arguments, you will be redirected to the NextAuth.js sign-in page. 
+:::
+
+If you want to skip that and get redirected to your provider's page immediately, call the signIn() method with the provider's id.
 
 For example to sign in with GitHub:
 
-```jsx
+```jsx {4}
 import { signIn } from "next-auth/react"
 
 export default () => (
@@ -171,6 +191,8 @@ export default () => (
 The `signIn()` method receives a second argument, an object with options. 
 The most common options are [callbackUrl](https://next-auth.js.org/getting-started/client#specifying-a-callbackurl) 
 and [redirect](https://next-auth.js.org/getting-started/client#using-the-redirect-false-option).
+
+### Specifying a `callbackUrl`
 
 The **callbackUrl** specifies to which URL the user will be redirected after signing in. Defaults to the page URL the sign-in is initiated from.
 
@@ -184,6 +206,8 @@ signIn('credentials', { redirect: false, password: 'password' })   // Disable th
 signIn('email', { redirect: false, email: 'bill@fillmurray.com' }) // In such case signIn will return a Promise,
 ```
 
+### Using the `redirect: false` option
+
 If `redirect` is set to `false`, the `signIn` method will return a Promise that resolves to 
 an object with the following properties:
 
@@ -195,3 +219,92 @@ an object with the following properties:
   url: string | null // The URL the user should be redirected to or null `null` if there was an error
 }
 ```
+
+## [Protecting an API Route](https://next-auth.js.org/getting-started/example#backend---api-route)
+
+To protect an API Route, you can use the [getServerSession()](https://next-auth.js.org/configuration/nextjs#unstable_getserversession) method.
+
+### pages/api/restricted.js
+
+Here is the `pages/api/restricted.js` API route.
+
+`➜  nextra-solution git:(guide) cat pages/api/restricted.js `
+
+```js {1,5}
+import { getServerSession } from "next-auth/next"
+import { authOptions } from "./auth/[...nextauth]"
+
+export default async (req, res) => {
+  const session = await getServerSession(req, res, authOptions)
+
+  if (session) {
+    res.send({
+      content:
+        "This is protected content. You can access this content because you are signed in.",
+    })
+  } else {
+    res.send({
+      error: "You must be signed in to view the protected content on this page.",
+    })
+  }
+}
+```
+
+### pages/auth/restricted.mdx
+
+Here is the `pages/auth/restricted.mdx` page:
+
+````md  {1}
+import Restricted from '@/components/restricted'
+
+<Restricted />
+
+## Public content
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Nullam in dui mauris. Vivamus hendrerit arcu sed 
+````
+
+### components/restricted.jsx
+
+And here is the **client** `components/restricted.jsx` component.
+
+`➜  nextra-solution git:(guide) cat components/restricted.jsx`
+
+```jsx {7,9}
+"use client"
+
+import { useSession, signOut } from "next-auth/react" // https://next-auth.js.org/getting-started/client#usesession
+import styles from './counters.module.css'
+
+export default function User() {
+  const { data: session, status } = useSession()
+
+  if (status === "authenticated") {
+    console.error("***********Session***********")
+    console.error(session)
+      return (<div> 
+        <br />
+        <hr />
+        <br />
+        <h2>I want to share with you some secrets ... </h2>
+        <br />
+        This is the user information:
+        <ul>
+          <li> 
+            <img src={session.user.image} alt={session.user.name} width="32" height="32" />
+          </li>
+          <li><span>Email: {session.user.email}</span></li>
+          <li>Name: {session.user.name}</li>
+        </ul>     
+    </div>)
+  }
+
+  return <a href="/api/auth/signin" className={ styles.button}>Sign in</a>
+}
+```
+
+That when authenticated, looks like this:
+
+![/images/nextra/api-restricted.png](/images/nextra/api-restricted.png)
+
