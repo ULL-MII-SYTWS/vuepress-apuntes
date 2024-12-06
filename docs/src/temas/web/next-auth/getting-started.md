@@ -4,7 +4,7 @@ permalink: next-auth-getting-started
 # Reading "Getting Started with NextAuth.js" 
 
 These are my comments when reading the [Getting Started](https://next-auth.js.org/getting-started/example) guide of NextAuth.js
-for a [Nextra lab](/practicas/nextra.html).
+for a [Nextra lab](/practicas/nextra.html). November 2024.
 
 ## Repo https://github.com/nextauthjs/next-auth-example/ 
 
@@ -308,3 +308,133 @@ That when authenticated, looks like this:
 
 ![/images/nextra/api-restricted.png](/images/nextra/api-restricted.png)
 
+
+## NEXTAUTH_SECRET
+
+This environment variable is used to encrypt the NextAuth.js JWT, and to hash [email verification tokens](https://authjs.dev/guides/creating-a-database-adapter?_gl=1*2bm1l*_gcl_au*Mjc4NTU3NDkzLjE3MzExNjEyMTEuNDQwOTc4NDgxLjE3MzMzOTI2ODcuMTczMzM5MjY4Ng..#verification-tokens).
+This environment . This is the default value for the secret option in NextAuth and Middleware. 
+Alternatively, you can also set `AUTH_SECRET`, which is an alias.
+
+::: tip
+
+The **Auth.js** cli
+
+```bash
+➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(guide) ✗ npx auth --help
+Usage: auth [options] [command]
+
+The CLI tool by Auth.js to supercharge your authentication workflows.
+
+Options:
+  -V, --version               output the version number
+  -h, --help                  display help for command
+
+Commands:
+  ask [options]               Ask about docs, API, or auth concepts.
+  init [options] [framework]  Initialize a project.
+  secret [options]            Generate a random string and add it to the .env file.
+  add [provider]              Register a new authentication provider
+  help [command]              display help for command
+```
+:::
+
+Here is an example of how to generate a secret:
+
+```bash
+➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(guide) ✗ npx auth secret --raw 
+Zg6aLaJzvOLaLq+WF1kdOntYf887LU/oU8+GxQnakto=
+```
+
+Here is an example of `.env.local` file:
+
+```bash
+# When deploying to production, set the NEXTAUTH_URL environment variable to the canonical URL of your site.
+NEXTAUTH_SECRET=your secret
+GITHUB_ID=your id
+GITHUB_SECRET=your gh secret
+GITHUB_TOKEN=your gh token
+```
+
+
+## Middleware
+
+The most simple usage is when you want to require authentication for your entire site. You can add a `middleware.js` file 
+in the root of your project.
+
+`➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(guide) cat -n middleware.js`
+
+```js 
+/* 
+See https://nextjs.org/docs/pages/building-your-application/routing/middleware#matcher
+*/
+import AuthMiddleware from "next-auth/middleware"
+
+export const middleware = AuthMiddleware.default // To get the function. Only for nextra
+
+export const config = { 
+  matcher: ["/protected/:path*"],
+}
+```
+
+If a user is not logged in, the default behavior is to redirect them to the sign-in page.
+
+You must set the same secret in the middleware that the one you used in the file `pages/api/auth/[...nextauth].js`
+when calling `NextAuth.default(authOptions)`
+The easiest way is to set the `NEXTAUTH_SECRET` environment variable. 
+It will be picked up by both the `NextAuth` config, as well as the `middleware.js` config.
+
+## [Deploying to production](https://next-auth.js.org/getting-started/example#deploying-to-production)
+
+When deploying your site set the NEXTAUTH_URL environment variable to the canonical URL of the website.
+
+```bash
+NEXTAUTH_URL=https://example.com
+```
+
+That looks like this in Vercel:
+
+[![/images/nextra/vercel-project-environment-variables-1.png](/images/nextra/vercel-project-environment-variables-1.png)](https://vercel.com/crguezls-projects/ull-pl-6ph6/settings/environment-variables)
+
+![/images/nextra/vercel-project-environment-variables-2.png](/images/nextra/vercel-project-environment-variables-2.png)
+
+## [Extensibility](https://next-auth.js.org/getting-started/example#extensibility)
+
+NextAuth.js allows you to hook into various parts of the authentication flow via their 
+[built-in callbacks](https://next-auth.js.org/configuration/callbacks).
+
+For example, to pass a value from the sign-in to the frontend, client-side, you can use a combination of the [session](https://next-auth.js.org/configuration/callbacks) and 
+[jwt](https://next-auth.js.org/configuration/callbacks#jwt-callback) callback like so:
+
+`File pages/api/auth/[...nextauth].js`
+
+```js
+...
+callbacks: {
+  async jwt({ token, account }) {
+    // Persist the OAuth access_token to the token right after signin
+    if (account) {
+      token.accessToken = account.access_token
+    }
+    return token
+  },
+  async session({ session, token, user }) {
+    // Send properties to the client, like an access_token from a provider.
+    session.accessToken = token.accessToken
+    return session
+  }
+}
+...
+```
+
+Now whenever you call `getSession` or `useSession`, the data object which is returned will include the `accessToken` value.
+
+`components/accessToken.jsx`
+
+```jsx
+import { useSession, signIn, signOut } from "next-auth/react"
+export default function Component() {
+  const { data } = useSession()
+  const { accessToken } = data
+  return <div>Access Token: {accessToken}</div>
+}
+```
