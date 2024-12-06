@@ -176,6 +176,29 @@ export function Cats() {
 
 ## Building Dynamic mdx with Nextra at Server Side Rendering Time
 
-To be written
+`➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(guide) cat pages/dynamic-mdx.mdx`
+
+```jsx
+import { RemoteContent } from 'nextra/components'
+import { buildDynamicMDX } from 'nextra/remote'
+import ShowFrontmatter from '@/components/showFrontmatter'
+import { arrayToMarkdownList } from '@/src/utils'
+
+import DPage from '@/src/dynamicPage' 
+
+import Cat from '@/components/dcat'
+
+export async function getServerSideProps() {
+  const randomURL = 'http://www.randomnumberapi.com/api/v1.0/random?min=1&max=100&count=5' // if you move the fetcher function outside of the getStaticProps, 
+  const fetcher = () => fetch(randomURL).then(res => res.json())  // you will get an error because fetcher is not defined
+  const res = arrayToMarkdownList(await fetcher()) // More fetched content
+
+  const props = await buildDynamicMDX(DPage(res))
+  props.__nextra_dynamic_opts.frontMatter = {a: '4', b: '5'} 
+  return { props }
+}
+
+<RemoteContent components={{ Cat, ShowFrontmatter }} />
+```
 
 !!!include(temas/web/next-auth/dynamic-protected-client.md)!!!

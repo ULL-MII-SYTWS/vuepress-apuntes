@@ -41,7 +41,7 @@ See https://next-auth.js.org/tutorials/securing-pages-and-api-routes#client-side
 <AuthenticatedContent dependencies={{Cat, ShowFrontmatter}}/>
 ```
 
-### src/authenticatedContent.js
+### components/authenticatedContent.js
 
 `➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(guide) cat components/authenticatedContent.jsx`
 
@@ -49,6 +49,7 @@ See https://next-auth.js.org/tutorials/securing-pages-and-api-routes#client-side
 import { useSession, getSession, signIn, signOut } from "next-auth/react"
 import { RemoteContent } from 'nextra/components'
 import Styles from "@/components/UserRepos.module.css"
+
 
 export default function AuthenticatedContent({error, dependencies}) {
   const { data: session, status } = useSession()
@@ -139,6 +140,6 @@ export default function ShowFrontmatter() {
 `➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(guide) cat src/utils.js`
 
 ```js 
-export const replaceQuotes = s => s.replace(/(\\")|(")/g, function(m, p1, p2) { return p1? "\\`" : "`"})
+export const replaceQuotes = s => s.replace(/(\\")|(")/g, function(m, p1, p2) { return p1? '"' : "`" })
 export const arrayToMarkdownList = res => res.map(n => `- ${n}`).join("\n") 
 ```

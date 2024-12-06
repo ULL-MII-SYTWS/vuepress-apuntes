@@ -428,6 +428,7 @@ That looks like this in Vercel:
 ![/images/nextra/vercel-project-environment-variables-2.png](/images/nextra/vercel-project-environment-variables-2.png)
 
 <!-- Warning included material -->
+
 !!!include(temas/web/next-auth/dynamic-protected-client.md)!!!
 
 ## [Extensibility](https://next-auth.js.org/getting-started/example#extensibility)
