@@ -222,7 +222,12 @@ an object with the following properties:
 
 ## [Protecting an API Route](https://next-auth.js.org/getting-started/example#backend---api-route)
 
+::: tip 
+
+**getServerSession**
+
 To protect an API Route, you can use the [getServerSession()](https://next-auth.js.org/configuration/nextjs#unstable_getserversession) method.
+::: 
 
 ### pages/api/restricted.js
 
@@ -421,6 +426,9 @@ That looks like this in Vercel:
 [![/images/nextra/vercel-project-environment-variables-1.png](/images/nextra/vercel-project-environment-variables-1.png)](https://vercel.com/crguezls-projects/ull-pl-6ph6/settings/environment-variables)
 
 ![/images/nextra/vercel-project-environment-variables-2.png](/images/nextra/vercel-project-environment-variables-2.png)
+
+<!-- Warning included material -->
+!!!include(temas/web/next-auth/dynamic-protected-client.md)!!!
 
 ## [Extensibility](https://next-auth.js.org/getting-started/example#extensibility)
 
