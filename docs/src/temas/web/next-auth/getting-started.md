@@ -376,12 +376,37 @@ export const config = {
 }
 ```
 
+Notice the `.default` at the end of the import at line 6. 
+
 If a user is not logged in, the default behavior is to redirect them to the sign-in page.
 
 You must set the same secret in the middleware that the one you used in the file `pages/api/auth/[...nextauth].js`
 when calling `NextAuth.default(authOptions)`
 The easiest way is to set the `NEXTAUTH_SECRET` environment variable. 
 It will be picked up by both the `NextAuth` config, as well as the `middleware.js` config.
+
+### pages/protected/secret.mdx
+
+`➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(guide) cat pages/protected/secret.mdx`
+
+````jsx {6}
+import User from '@/components/user'
+
+import LoginBtn from '@/components/login-btn'
+
+# Middleware Protected Secrets
+
+- This page is protected by the middleware!
+- Only authorized users can see this
+
+<User />
+
+<LoginBtn />
+````
+
+When you visit the page and are authenticated, you will see the page:
+
+![/images/nextra/next-auth-middleware-protected-page.png](/images/nextra/next-auth-middleware-protected-page.png)
 
 ## [Deploying to production](https://next-auth.js.org/getting-started/example#deploying-to-production)
 
