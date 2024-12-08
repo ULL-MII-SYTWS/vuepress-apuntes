@@ -10,6 +10,8 @@ next:
 campus: https://campusdoctoradoyposgrado2425.ull.es/mod/assign/view.php?id=32998&forceview=1
 rubrica:
   - Provides authentication to the Nextra Site with NextAuth.js
+  - Middleware protected pages
+  - Protected a Dynamic mdx page at Client Side Rendering Time
   - Gives examples of useRef
   - Add an example of `serverSideProps`  fetching data 
   - Add an example of pagination 
