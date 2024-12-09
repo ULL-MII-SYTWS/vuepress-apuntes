@@ -114,10 +114,11 @@ Now, when you visit a post that doesn't exist:
 
 ### The role of the function `getStaticPaths`
 
-[The function `getStaticPaths` plays a crucial role in Next.js](https://nextjs.org/docs/pages/api-reference/functions/get-static-paths) when working with dynamic routes and static generation. 
+[The function `getStaticPaths` plays a crucial role in Next.js](https://nextjs.org/docs/pages/api-reference/functions/get-static-paths) is used to specify which dynamic routes should be pre-rendered at build time. 
 
 ::: danger Here's an explanation of its purpose and functionality:
-1. **Specifying Dynamic Routes**: `getStaticPaths` is used to define which paths will be pre-rendered for pages that use dynamic routes. In the example above, it's determining which post IDs should be pre-rendered at build time.
+1. **Specifying Dynamic Routes**: `getStaticPaths` is used to define which paths will be pre-rendered for pages that use dynamic routes. In the example above, it's determining which post IDs should be pre-rendered at build time. 
+
 2. **Static Generation**: When you export `getStaticPaths` from a page that uses dynamic routes, *Next.js will statically pre-render all the paths specified by `getStaticPaths`*. This means that **these pages are generated at build time**, resulting in faster page loads and better SEO.
 3. **Defining Paths**: The function returns an object with a `paths` key, which is an array of objects. Each object in this array represents a route that should be pre-rendered . In our example, it's creating a path for each markdown file in the `posts` directory.
 4. [**Fallback Behavior**](https://nextjs.org/docs/pages/api-reference/functions/get-static-paths#fallback-false): `getStaticPaths` also allows you to control the fallback behavior for paths that aren't pre-rendered. In our example, [`fallback: false`](https://nextjs.org/docs/pages/api-reference/functions/get-static-paths#fallback-false) means that any paths not returned by `getStaticPaths` will result in a [404 page]() .
@@ -227,4 +228,8 @@ Also, keep in mind that reading and passing the full content of all files might 
 1. Implementing pagination
 2. Fetching file contents on-demand (e.g., when a user clicks on a file name)
 3. Using `getServerSideProps` instead of `getStaticProps` if you need the latest file contents on each request
+
+## Others
+
+You can get information from environment variables vias `process.env` or via `fetch` or reading files from the file system.
 
