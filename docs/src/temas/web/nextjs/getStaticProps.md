@@ -34,21 +34,34 @@ import path from 'path'
 import { useRouter } from 'next/router'
 //import { NotFoundPage } from 'nextra-theme-docs'
 
+import { remark } from 'remark'
+import html from 'remark-html'
+import styles from '@/styles/Home.module.css'
+import markdownStyles from '@/styles/Markdown.module.css'
 
-export default function Post({ postContent }) {
+export default function Post({ filename, contentHtml }) {
   const router = useRouter()
 
   if (router.isFallback) {
     return <div>Loading...</div>
   }
 
-  if (!postContent) {
-    return (<div>
-              <h1>404. Page not found!</h1>
+  if (!contentHtml) {
+    return (<div className={styles.content}>
+              <h1 className={styles.title}>404. Page not found!</h1>
             </div>)
   }
-
-  return <pre>{postContent}</pre>
+  return  (
+    <div className={styles.container}>
+      <h1 className={styles.title}>{filename}</h1>
+        <article key={filename} className={styles.article}>
+          <div 
+            className={`${styles.content} ${markdownStyles.markdown}`}
+            dangerouslySetInnerHTML={{ __html: contentHtml }} 
+          />
+        </article>
+    </div>
+  )
 }
 
 export async function getStaticProps({ params }) {
@@ -58,17 +71,26 @@ export async function getStaticProps({ params }) {
 
   try {
     const postContent = await fs.readFile(filePath, 'utf8')
+
+    const processedContent = await remark()
+        .use(html)
+        .process(postContent)
+    
+    const contentHtml = processedContent.toString()
+
     return {
       props: {
-        postContent,
+        filename: id,
+        contentHtml,
       },
     }
   } catch (error) {
-    // If the file is not found, return null for postContent
+    // If the file is not found, return null for contentHtml
     if (error.code === 'ENOENT') {
       return {
         props: {
-          postContent: null,
+          filename: id,
+          contentHtml: null,
         },
       }
     }
