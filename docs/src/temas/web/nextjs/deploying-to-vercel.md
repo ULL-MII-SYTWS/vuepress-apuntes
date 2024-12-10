@@ -73,7 +73,7 @@ jobs:
 
 ![/images/nextjs/vercel-action-github.png](/images/nextjs/vercel-action-github.png)
 
-## Errors
+## Errors and Fixing them
 
 The building finishes, but after it, there is a warning followed by an error:
 
@@ -103,3 +103,7 @@ See this topic: <https://github.com/orgs/community/discussions/21061>
 The change must be done by an owner of the organization:
 
 ![/images/nextjs/vercel-action-changing-workflow-permissions.png](/images/nextjs/vercel-action-changing-workflow-permissions.png)
+
+Once it is done, the action runs successfully:
+
+![/images/nextjs/vercel-action-working.png](/images/nextjs/vercel-action-working.png)
