@@ -1,6 +1,6 @@
 ## Introduction
 
-These are my notes in my expereince when reading and reproducing the following articles:
+These are my notes in my experience when reading and reproducing the following articles:
 
 - [Deploying to Vercel from an organization for free using GitHub actions](https://gist.github.com/ky28059/1c9af929a9030105da8cf00006b50484#the-solution)
 - [Nextjs CI/CD on Vercel with Github actions](https://dev.to/chuddyjoachim/nextjs-ci-cd-on-vercel-with-github-actions-7g7)
