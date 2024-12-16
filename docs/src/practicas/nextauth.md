@@ -16,9 +16,13 @@ rubrica:
   - Add an example of `serverSideProps`  fetching data 
   - Add an example of pagination 
   - Add an example of a "dynamic" mdx page
-  -  Deployment in Vercel
+  - Add a "live" component
+  - Add an example of passing information to getStaticProps
+  - Build your own mdx /posts and give them an style compatible with nextra
+  -  Deployment to Vercel if possible using the GitHub Actions
   - "Has forked nextra and familiarized with the concept of monorepo"
   - "The code is correct and works"
+  - "Mention in your report the meaning of the information provided by 'next build'"
   - "Well-prepared report"
   - "Kanban Board project containing the rubric issues"
   - "Has submitted the .zip on the campus with the repo"
@@ -44,6 +48,8 @@ These sections can be useful for the extra requirements:
 - See section [getServerSideProps](/temas/web/nextra/server-side-nextra.html)
 - See the GitHub Docs chapter [Using pagination in the REST API](https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api?apiVersion=2022-11-28#using-link-headers)
 - See the section [Building Dynamic mdx with Nextra](/temas/web/nextra/dynamicmdx.html)
+- Section [Dynamically read and process a MDX File](/temas/web/nextra/dynamic-readmdxfile.html#pages-dynamic-post-building-mdx) illustrates how to build your own mdx posts and give them an style compatible with nextra. It  uses `getStaticProps`, `RemoteContent`, `buildDynamicMDX` 
+
 
 <Rubrica :items="$frontmatter.rubrica" />
 

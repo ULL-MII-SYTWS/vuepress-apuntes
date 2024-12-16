@@ -255,3 +255,10 @@ Also, keep in mind that reading and passing the full content of all files might 
 
 You can get information from environment variables vias `process.env` or via `fetch` or reading files from the file system.
 
+## Building the site
+
+See section [Building the site](/temas/web/nextjs/next-build).
+
+## References
+
+See the deployment at vercel <https://nextra-casiano-rodriguez-leon-alu0100291865.vercel.app/>

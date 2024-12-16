@@ -91,6 +91,10 @@ import Live from "@/components/live"
 <Live />
 ````
 
+## Running the Live Component
+
 It looks like this:
 
 ![/images/nextra/live.png](/images/nextra/live.png)
+
+Now you can edit the code and lively run it seeing the results in real-time.
