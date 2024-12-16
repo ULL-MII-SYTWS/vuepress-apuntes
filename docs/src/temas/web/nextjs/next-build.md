@@ -115,6 +115,9 @@ The [home route](https://nextra-casiano-rodriguez-leon-alu0100291865.vercel.app/
 
 This dynamic route for [posts](https://nextra-casiano-rodriguez-leon-alu0100291865.vercel.app/posts/2024-12-08-leccion) is using Static Site Generation (SSG) and took 1823 ms to generate. It has a very small route-specific size (642 B) but still requires 160 kB on first load. See section [Passing Information to getStaticProps](/temas/web/nextra/get-static-props). Since the SSG route has a `getStaticPaths` function, it generates pages for all the posts in the `posts` directory.
 
+The route `/posts/2024-12-10-leccion` should be processed by the dynamic route code at `/pages/posts/[id].js`  but in fact the actual code in it does not know how to process and .mdx file and gives a page with a error message. See section [Dynamically read and process a MDX File](/temas/web/nextra/dynamic-readmdxfile.html#pages-dynamic-post-building-mdx)
+
+
 ```plaintext
 ├ ○ /live (377 ms)                                   87.1 kB         251 kB
 ```
@@ -127,7 +130,7 @@ The ["/live"](https://nextra-casiano-rodriguez-leon-alu0100291865.vercel.app/liv
 
 This indicates that 174 kB of JavaScript is shared across all routes.
 
-## 
+## dynamic-mdx, dynamic-post-building and dynamic-post-building-getstaticprops
 
 ```plaintext
 ├ ƒ /dynamic-mdx                                     2.3 kB          171 kB
@@ -140,7 +143,9 @@ The `pages/dynamic-mdx.mdx` in the branch `guide` that is mapped to the route `/
 The `pages/dynamic-post-building.mdx` in the branch `guide` that is mapped to the route `/dynamic-post-building`  uses `getServerSideProps`, `RemoteContent`, `buildDynamicMDX` and appears with an `ƒ` symbol which corresponds to a dynamic route, server-rendered on each request. It has a route-specific JS size of 2.31 kB and requires 171 kB on first load.
 
 The `pages/dynamic-post-building-getstaticprops.mdx` in the branch `guide` is explained in section [Dynamically read and process a MDX File](/temas/web/nextra/dynamic-readmdxfile.html#pages-dynamic-post-building-mdx) and is mapped to the route 
-`/dynamic-post-building-getstaticprops`. It illustrates how to build your own mdx posts and give them an style compatible with nextra. It  uses `getStaticProps`, `RemoteContent`, `buildDynamicMDX` and appears with an `●` symbol which corresponds to a static site generation route, using `getStaticProps`. It has a route-specific JS size of 2.31 kB and requires 171 kB on first load.
+`/dynamic-post-building-getstaticprops`. It illustrates how to build your own mdx posts and give them an style compatible with nextra. It  uses `getStaticProps`, `RemoteContent`, `buildDynamicMDX` and appears with an `●` symbol which corresponds to a static site generation route, using `getStaticProps`. It has a route-specific JS size of 2.31 kB and requires 171 kB on first load. 
+
+
 
 
 ## CSS Files
