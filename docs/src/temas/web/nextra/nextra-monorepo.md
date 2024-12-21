@@ -13,6 +13,8 @@ One of the main reasons for using a monorepo is to have a single source of truth
 When working in JavaScript and Node.js projects, monorepos are often used to manage multiple packages that are published to npm.
 This is the case of Nextra.
 
+<youtube id="2QSBXhuqSlI?si=0EDpbna1EWyRebtk"></youtube>
+
 You can see that is a monorepo for the presence of a `packages` directory in the root of the project containing three npm related packages:
 ::: 
 
@@ -68,6 +70,43 @@ Watch the video below **Version Your Packages with Changesets**:
 <youtube id="vO80X5zM8_Y?si=Xr6EHWA9yEi7xcwh"></youtube>
 
 Try to reproduce the steps in the video in the Nextra monorepo.
+
+## Workspace Dependencies in the  `package.json`  
+
+If you look at the `package.json`  of nextra, you find this line:
+
+```json
+   ...
+ "devDependencies": {
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+     ...
+    "nextra": "workspace:*",
+    ...
+    "vitest": "^2.0.3"
+  },
+ ...
+}
+```
+
+The `"workspace:*"` syntax in the `package.json` file is related to workspace management in monorepos. Let me explain its meaning and significance:
+
+1. **Workspace Protocol**:
+The `workspace:` prefix is known as the "workspace protocol" . It's used in monorepo setups to reference other packages within the same repository.
+1. **Version Specifier**:
+The `*` after `workspace:` is a version specifier. In this case, it means "use the version of the package that exists in the current workspace" .
+1. **Local Package Reference**:
+`"nextra": "workspace:*"` indicates that this package depends on another package named "`nextra`" that exists within the same monorepo workspace .It will use whatever version of `nextra` is currently in the workspace, making it easier to develop and test changes across multiple packages simultaneously.
+1. **Flexible Versioning**:
+Using `workspace:*` allows for more flexible versioning within a monorepo. It ensures that the package always uses the latest version of the dependency from the workspace, rather than a specific pinned version .
+1. **Build Tools Integration**:
+This syntax is supported by modern JavaScript package managers like Yarn (v2+) and pnpm, which are designed to work efficiently with monorepos .
+1. **Development Workflow**:
+It's particularly useful during development in a monorepo, as it allows you to work on multiple packages simultaneously without needing to manually update version numbers or publish packages to test changes.
+
+## pnpm Workspaces and Nx
+
+<youtube id="PwfR77oe1E8?si=xaMoRgQ6oupsNk9c"></youtube>
+
 
 ## Instructions 
 
