@@ -15,7 +15,13 @@ This is the case of Nextra.
 
 <youtube id="2QSBXhuqSlI?si=0EDpbna1EWyRebtk"></youtube>
 
-You can see that is a monorepo for the presence of a `packages` directory in the root of the project containing three npm related packages:
+See also the tutorial <a href="https://youtu.be/KEkRy4q_0oI?si=cF419bnZBWBR159V" target="_blank">💥 Monorepo multipaquete con NPM Workspaces 📦 (FullStack Bootcamp JavaScript)</a> by Midudev.
+
+<youtube id="KEkRy4q_0oI?si=cF419bnZBWBR159V"></youtube>
+
+
+You can see that is a monorepo for the presence of a `package
+s` directory in the root of the project containing three npm related packages:
 ::: 
 
 ```bash
