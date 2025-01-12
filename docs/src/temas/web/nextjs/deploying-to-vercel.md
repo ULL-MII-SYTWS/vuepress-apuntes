@@ -36,6 +36,7 @@ upstream        https://github.com/ULL-MII-SYTWS-2425/ull-mii-sytws-2425-nextra-
 ## Vercel cli
 
 Was installed with node version 20.5.0 and npm version 9.8.0:
+
 ```
 ➜  apuntes-pl git:(main) nvm use v20
 Now using node v20.5.0 (npm v9.8.0)

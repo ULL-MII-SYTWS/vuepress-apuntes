@@ -40,14 +40,15 @@ when I was on `main`: <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodr
 
 Added the API route `pages/api/auth/[...nextauth].js` as explained at <https://next-auth.js.org/getting-started/example#add-api-route>. See <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/pages/api/auth/%5B...nextauth%5D.js>
 
-::: danger Bug  
-I forced  the script `"dev": "next -p 3000",` to listen in port 3000 in the `package.json`,  since I have found a bug in next-auth GitHub provider. The `sigin` page seems to have hardcoded the port to 3000 `http://localhost:3000/api/auth/signin/github`: <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/package.json#L6-L10>
+::: danger Limitation/Bug  
+I forced  the script `"dev": "next -p 3000",` to listen in port 3000 in the `package.json`,  since I have found a Limitation in next-auth GitHub provider. The `sigin` page seems to have hardcoded the port to 3000 `http://localhost:3000/api/auth/signin/github`: <https://github.com/ULL-MII-SYTWS-2425/nextra-casiano-rodriguez-leon-alu0100291865/blob/guide/package.json#L6-L10>
 ::: 
 
 ## Add API route
 
-When reading the section [Add API route](Add API route) for Nextra I've got errors that were fixed 
-by changing the calls to `GithubProvider` and `NextAuth`  by adding `.default`:
+When reading the section [Add API route](https://next-auth.js.org/getting-started/example#add-api-route) 
+I've got errors that were fixed 
+by changing the calls to `GithubProvider` and `NextAuth`  by adding `.default`. This may be due to the fact that I am using Nextra isntead of Next.js:
 
 File `pages/api/auth/[...nextauth].js`
 
