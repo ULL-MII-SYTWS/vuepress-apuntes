@@ -45,6 +45,29 @@ Vercel CLI 39.1.3
 39.1.3
 ```
 
+## The solution
+
+The idea is to use GitHub actions as our CI and deploy the project through your personal (hobby) subscription via the [Vercel CLI](https://vercel.com/docs/cli).
+Full docs on the CLI are linked, but all we need to do locally is to create and link the project to Vercel.
+
+Install the Vercel CLI by running
+```
+npm i -g vercel
+```
+and in your project directory, link it to Vercel by running
+```
+vercel
+```
+The CLI will prompt you about project details; when asked for a deployment scope, choose your own username. 
+This should initialize the project on Vercel under your personal account, and automatically detect and configure the framework and build presets.
+
+![image](https://gist.github.com/assets/60120929/3d26d90b-c33b-4f46-9c72-8e1dbe7a31be)
+
+After successfully initializing a project, the CLI will create a `.vercel` directory containing a generated `project.json` that looks something like this:
+```json
+{"orgId": "...", "projectId": "..."}
+```
+
 ## .github/workflows/deploy.yml 
 
 ```yaml
