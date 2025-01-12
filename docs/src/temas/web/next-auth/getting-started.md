@@ -17,11 +17,11 @@ If you go to the
 [package.json](https://github.com/nextauthjs/next-auth-example/blob/main/package.json#L33-L34), in the `main` branch,
 you can see that the version of  `next-auth` is  `beta` and 
 `next` is `latest`. The example used the `app` folder instead of `pages`.
-The version of `next` installed at this time (November 2024) was:
+The version of `next` installed at this time (November 2024) was `15.03`.
 
 I noticed the next-auth has no public documentation for the `beta` version. 
 
-There are 5 branches. The others 4 are `stale`. 2  `test/*` branches, one `feat/*` branch and one `apple-sign-in ` branch using `next` 12. All of them can be used to learn.
+There are 5 branches. [The others 4 are `stale`](https://github.com/nextauthjs/next-auth-example/branches/stale). 2  `test/*` branches, one `feat/*` branch and one `apple-sign-in ` branch using `next` 12. All of them can be used to learn.
 
 ::: danger Conclusion
 Discarded the idea of using it as the main learning resource.
