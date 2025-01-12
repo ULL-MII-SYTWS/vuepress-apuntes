@@ -1,3 +1,5 @@
+# Deploying to Vercel from an organization for free using GitHub actions
+
 ## Introduction
 
 These are my notes in my experience when reading and reproducing the following articles:
@@ -106,6 +108,39 @@ jobs:
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
 ```
+
+## VERCEL_TOKEN
+
+
+Once the Vercel CLI is installed, you need to log in to your Vercel account. Run the following command:
+
+```plaintext
+vercel login
+```
+
+This will prompt you to enter your email address and will send you a verification link .
+
+After you've logged in, you can create an access token by navigating to your Account Settings on the Vercel website. Here's how:
+
+1. Go to [https://vercel.com/account/tokens](https://vercel.com/account/tokens)
+2. Click on the "Create" button to open the create token modal
+3. Enter a descriptive name for your token
+4. Choose the scope of access for the token from the dropdown
+5. Click "Create Token" 
+6. Once created, make sure to copy the token immediately. It will only be shown once for security reasons .
+7. You can now use this token in your deployment scripts or CI/CD pipelines. For example, you might set it as an environment variable named `VERCEL_TOKEN` .
+
+
+Here's an example of how you might use these in a deployment script:
+
+```shellscript
+vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+vercel build --prod --token=$VERCEL_TOKEN
+vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+```
+
+This script pulls the latest environment variables, builds the project, and deploys it to production .
+
 
 ## Secrets
 

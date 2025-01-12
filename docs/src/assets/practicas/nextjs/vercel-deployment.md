@@ -41,3 +41,7 @@ Watch the video *Vercel - Create a Next.js App and Deploy with Vercel CLI*:
 ## Troubleshooting
 
 If you have trouble with this or other Next.js steps use [GitHub Discussions: next.js](https://github.com/vercel/next.js/discussions)
+
+## See also
+
+[Deploying to Vercel from an organization for free using GitHub actions](/temas/web/nextjs/deploying-to-vercel)
