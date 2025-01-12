@@ -5,7 +5,7 @@ permalink: /nextjs/vercel-deployment
 
 # Deploying to Vercel
 
-Follow the instructions at the tutorial [Deploying Your Next.js App](https://nextjs.org/learn/basics/deploying-nextjs-app)
+Follow the instructions at the Next.js tutorial [Deploying Your Next.js App](https://nextjs.org/learn/basics/deploying-nextjs-app)
 
 ## Deploying with the Vercel CLI
 

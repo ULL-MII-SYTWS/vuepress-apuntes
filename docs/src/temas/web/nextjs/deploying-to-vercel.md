@@ -47,28 +47,43 @@ Vercel CLI 39.1.3
 
 ## The solution
 
-The idea is to use GitHub actions as our CI and deploy the project through your personal (hobby) subscription via the [Vercel CLI](https://vercel.com/docs/cli).
-Full docs on the CLI are linked, but all we need to do locally is to create and link the project to Vercel.
+The idea is to use GitHub actions as our CI and deploy the project through your personal (hobby) subscription via the [Vercel CLI](https://vercel.com/docs/cli). All we need to do locally is to create and link the project to Vercel.
 
 Install the Vercel CLI by running
+
 ```
 npm i -g vercel
 ```
+
 and in your project directory, link it to Vercel by running
+
 ```
 vercel
 ```
-The CLI will prompt you about project details; when asked for a deployment scope, choose your own username. 
+
+:::tip As scope use your own username
+
+The CLI will prompt you about project details; 
+
+- when asked for a deployment scope, **choose your own username**. 
+  
 This should initialize the project on Vercel under your personal account, and automatically detect and configure the framework and build presets.
+::: 
 
 ![image](https://gist.github.com/assets/60120929/3d26d90b-c33b-4f46-9c72-8e1dbe7a31be)
 
 After successfully initializing a project, the CLI will create a `.vercel` directory containing a generated `project.json` that looks something like this:
+
 ```json
 {"orgId": "...", "projectId": "..."}
 ```
 
+This will give you the `orgId` and `projectId` needed to deploy the project via the CLI!.
+
 ## .github/workflows/deploy.yml 
+
+The GitHub action is defined in the file `.github/workflows/deploy.yml`. It needs the secrets 
+`ORG_ID` and `PROJECT_ID` that were obtained before and will be stored as secrets in the repository settings.
 
 ```yaml
 ➜  nextra-casiano-rodriguez-leon-alu0100291865 git:(guide) cat .github/workflows/deploy.yml 
@@ -93,6 +108,9 @@ jobs:
 ```
 
 ## Secrets
+
+To set the secrets go to the repository settings and click on the secrets tab.
+Choose `actions` and add the following secrets:
 
 ![/images/nextjs/vercel-action-secrets.png](/images/nextjs/vercel-action-secrets.png)
 
@@ -134,3 +152,7 @@ The change must be done by an owner of the organization:
 Once it is done, the action runs successfully:
 
 ![/images/nextjs/vercel-action-working.png](/images/nextjs/vercel-action-working.png)
+
+## See also
+
+* Section [Deploy to vercel your Next.js App](/nextjs/vercel-deployment/) in this notes
