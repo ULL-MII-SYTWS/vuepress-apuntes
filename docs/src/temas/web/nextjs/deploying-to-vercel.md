@@ -57,7 +57,42 @@ Install the Vercel CLI by running
 npm i -g vercel
 ```
 
-and in your project directory, link it to Vercel by running
+Once the Vercel CLI is installed, you need to log in to your Vercel account. Run the following command:
+
+```plaintext
+vercel login
+```
+
+This will prompt you to authenticate:
+
+```
+➜  apuntes-pl git:(main) vercel whoami 
+Vercel CLI 39.2.6
+> casiano-rodriguez
+➜  apuntes-pl git:(main) vercel login
+Vercel CLI 39.2.6
+? Log in to Vercel (Use arrow keys)
+❯ Continue with GitHub
+  Continue with GitLab
+  Continue with Bitbucket
+  Continue with Email
+  Continue with SAML Single Sign-On
+ ─────────────────────────────────
+  Cancel
+```
+If we choose GitHub, we will be asked to authenticate with GitHub:
+
+``` 
+? Log in to Vercel Continue with GitHub
+> Success! GitHub authentication complete for crguezl@ull.edu.es
+Congratulations! You are now logged in. In order to deploy something, run `vercel`.
+💡  Connect your Git Repositories to deploy every branch push automatically (https://vercel.link/git).
+➜  apuntes-pl git:(main) vercel whoami
+Vercel CLI 39.2.6
+> crguezl
+```
+
+In your project directory, link the project to Vercel by running
 
 ```
 vercel
@@ -112,13 +147,6 @@ jobs:
 ## VERCEL_TOKEN
 
 
-Once the Vercel CLI is installed, you need to log in to your Vercel account. Run the following command:
-
-```plaintext
-vercel login
-```
-
-This will prompt you to enter your email address and will send you a verification link .
 
 After you've logged in, you can create an access token by navigating to your Account Settings on the Vercel website. Here's how:
 

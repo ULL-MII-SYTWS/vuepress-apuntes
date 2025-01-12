@@ -44,4 +44,4 @@ If you have trouble with this or other Next.js steps use [GitHub Discussions: ne
 
 ## See also
 
-[Deploying to Vercel from an organization for free using GitHub actions](/temas/web/nextjs/deploying-to-vercel)
+- [Deploying to Vercel from an organization for free using GitHub actions](/temas/web/nextjs/deploying-to-vercel)
