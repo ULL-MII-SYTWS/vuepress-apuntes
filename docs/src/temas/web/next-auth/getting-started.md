@@ -11,7 +11,11 @@ for a [Nextra lab](/practicas/nextra.html). November 2024.
 In the section [New Project](https://next-auth.js.org/getting-started/example#new-project) the guide suggests to clone the repo 
 <https://github.com/nextauthjs/next-auth-example> whose live demo is at <https://next-auth-example.vercel.app/> and learn from it, so I cloned it.
 
-In the `main` branch the version of  `next-auth` is  `beta` and 
+This tutorial was written when the last commit was <https://github.com/nextauthjs/next-auth-example/commit/10f10f1a46a1e230b6524252a1a65001f1a58757>. Things may have changed since then.
+
+If you go to the 
+[package.json](https://github.com/nextauthjs/next-auth-example/blob/main/package.json#L33-L34), in the `main` branch,
+you can see that the version of  `next-auth` is  `beta` and 
 `next` is `latest`. The example used the `app` folder instead of `pages`.
 The version of `next` installed at this time (November 2024) was:
 
