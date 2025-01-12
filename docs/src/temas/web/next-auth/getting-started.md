@@ -8,8 +8,8 @@ for a [Nextra lab](/practicas/nextra.html). November 2024.
 
 ## Repo https://github.com/nextauthjs/next-auth-example/ 
 
-In [New Project](https://next-auth.js.org/getting-started/example#new-project) the guide suggests to clone the repo 
-<https://next-auth-example.vercel.app/> and learn from it, so I cloned it.
+In the section [New Project](https://next-auth.js.org/getting-started/example#new-project) the guide suggests to clone the repo 
+<https://github.com/nextauthjs/next-auth-example> whose live demo is at <https://next-auth-example.vercel.app/> and learn from it, so I cloned it.
 
 In the `main` branch the version of  `next-auth` is  `beta` and 
 `next` is `latest`. The example used the `app` folder instead of `pages`.
